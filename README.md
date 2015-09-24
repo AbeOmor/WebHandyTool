@@ -1,4 +1,4 @@
-GE tech
+new AGE tech
 Group H
 Eric Le Fort, 1308609
 Osarumwense Abraham Omorogbe, 1310163

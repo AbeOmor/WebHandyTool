@@ -1,4 +1,4 @@
-ss[12pt]{article}
+\documentclass[12pt]{article}
 
 \usepackage{xcolor} % for different colour comments
 
