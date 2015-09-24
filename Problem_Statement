@@ -1,0 +1,57 @@
+ss[12pt]{article}
+
+\usepackage{xcolor} % for different colour comments
+
+%% Comments
+\newif\ifcomments\commentsfalse %i replaced comments true by comment false so the comments will be hidden
+
+\ifcomments
+\newcommand{\authornote}[3]{\textcolor{#1}{[#3 ---#2]}}
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+\else
+\newcommand{\authornote}[3]{}
+\newcommand{\todo}[1]{}
+\fi
+
+\newcommand{\wss}[1]{\authornote{magenta}{SS}{#1}}
+\newcommand{\hm}[1]{\authornote{blue}{HM}{#1}} %Hediyeh
+\newcommand{\tz}[1]{\authornote{blue}{TZ}{#1}} %Tahereh
+\newcommand{\pl}[1]{\authornote{blue}{PL}{#1}} %Peng
+
+\begin{document}
+\title{pylinkvalidator \\
+ Problem Statement }
+\author{Genevieve Okon, Abraham Omorogbe, Eric Le Fort}
+\date{\today}
+	
+\maketitle
+Problem we are trying to solve?\newline
+
+When someone navigates through the web, it is sometimes difficult to locate pertinent information using standard methods of search such as search engine. This issue effects those trying to research existing information on the web as well as developers trying to verify webpage functionality\newline
+
+\maketitle
+Why is this an important problem?\newline
+
+As the world-wide web increases in size, it's becoming more cumbersome for users to sift through links and find useful information on the web that is related to their search item. Due to the inefficiency of current methods it is excessively time consuming to carry of these tasks. By decreasing the amount of time spent on these trivial tasks, individuals can allocate this time to more consequential matters.  \newline
+
+\maketitle
+What is the context of the problem you are solving?\newline
+
+Researchers, developers and their employers will benefit from our solution. We will be focusing on implementing the core functionality of a web crawler as the primary objective with secondary functionality added in if time permits. \newline
+Researchers will be able to search through websites to find important information and download all the resources at once. \newline
+Developers crawl through a website in order to map its structure, check status code on links and possibly download resources available on the site.\newline
+Companies will be able to save money and resources because their employees will spend less time and effort on trivial tasks such as, webpage link validation. \newline 
+Given various starting details, maps the links of a given website as well as notifying the user of any errors arising from those links.\newline
+Stakeholders of the project, as of this moment, are researchers, developers, and companies. \newline
+
+
+
+\noindent \wss{This is an example comment.  You can turn comments off by replacing
+  commentstrue by commentsfalse.}\\
+\hm{Sample comment}\\
+\tz{Sample comment}\\
+\pl{Sample comment}
+
+\end{document}
+
+
