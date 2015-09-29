@@ -25,23 +25,23 @@
 \date{\today}
 	
 \maketitle
-Problem we are trying to solve?\newline
+Existing Problem\newline
 
-When someone navigates through the web, it is sometimes difficult to locate pertinent information using standard methods of search such as search engine. This issue effects those trying to research existing information on the web as well as developers trying to verify webpage functionality\newline
-
-\maketitle
-Why is this an important problem?\newline
-
-As the world-wide web increases in size, it's becoming more cumbersome for users to sift through links and find useful information on the web that is related to their search item. Due to the inefficiency of current methods it is excessively time consuming to carry of these tasks. By decreasing the amount of time spent on these trivial tasks, individuals can allocate this time to more consequential matters.  \newline
+When someone navigates through the web, it can be difficult to locate pertinent information using standard methods of search such as search engines. This issue affects those trying to research existing information on the web as well as developers trying to verify website functionality.\newline
 
 \maketitle
-What is the context of the problem you are solving?\newline
+Importance\newline
 
-Researchers, developers and their employers will benefit from our solution. We will be focusing on implementing the core functionality of a web crawler as the primary objective with secondary functionality added in if time permits. \newline
-Researchers will be able to search through websites to find important information and download all the resources at once. \newline
+As the world-wide web increases in size, it's becoming more cumbersome for users to sift through links and find useful information that is related to their intended search. Due to the inefficiency of current methods it is excessively time consuming to carry out these tasks in a thorough manner. By decreasing the amount of time spent on these sort of trivial tasks, individuals can reallocate this time to more consequential matters. \newline
+
+\maketitle
+Context\newline
+
+Researchers, developers and their employers will benefit from our solution. We will be focusing on implementing the core functionality of a web crawler as the primary objective along with various secondary functionalities if time permits. \newline
+Researchers will be able to search through websites to find important information and download available resources all at once. \newline
 Developers crawl through a website in order to map its structure, check status code on links and possibly download resources available on the site.\newline
-Companies will be able to save money and resources because their employees will spend less time and effort on trivial tasks such as, webpage link validation. \newline 
-Given various starting details, maps the links of a given website as well as notifying the user of any errors arising from those links.\newline
+Companies will be able to save money and resources due to their employees spending less time and effort on trivial tasks such as link validation. \newline 
+This system will be able to, given various starting details, map the links of a given website as well as notifying the user of any errors arising from those links.\newline
 Stakeholders of the project, as of this moment, are researchers, developers, and companies. \newline
 
 
@@ -53,5 +53,9 @@ Stakeholders of the project, as of this moment, are researchers, developers, and
 \pl{Sample comment}
 
 \end{document}
+
+
+
+
 
 
