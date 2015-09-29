@@ -1,6 +1,7 @@
-\documentclass[12pt]{article}
-
+\documentclass[11pt]{article}
 \usepackage{xcolor} % for different colour comments
+\usepackage{geometry}
+\usepackage{tabto}
 
 %% Comments
 \newif\ifcomments\commentsfalse %i replaced comments true by comment false so the comments will be hidden
@@ -18,6 +19,11 @@
 \newcommand{\tz}[1]{\authornote{blue}{TZ}{#1}} %Tahereh
 \newcommand{\pl}[1]{\authornote{blue}{PL}{#1}} %Peng
 
+
+
+\setlength{\voffset}{0.00in}
+\setlength{\headsep}{-10pt}
+\setlength{\footskip}{100pt}
 \begin{document}
 \title{pylinkvalidator \\
  Problem Statement }
@@ -37,13 +43,8 @@ As the world-wide web increases in size, it's becoming more cumbersome for users
 \maketitle
 Context\newline
 
-Researchers, developers and their employers will benefit from our solution. We will be focusing on implementing the core functionality of a web crawler as the primary objective along with various secondary functionalities if time permits. \newline
-Researchers will be able to search through websites to find important information and download available resources all at once. \newline
-Developers crawl through a website in order to map its structure, check status code on links and possibly download resources available on the site.\newline
-Companies will be able to save money and resources due to their employees spending less time and effort on trivial tasks such as link validation. \newline 
-This system will be able to, given various starting details, map the links of a given website as well as notifying the user of any errors arising from those links.\newline
-Stakeholders of the project, as of this moment, are researchers, developers, and companies. \newline
-
+Researchers, developers and their employers will benefit from our solution. We will be focusing on implementing the core functionality of a web crawler as the primary objective along with various secondary functionalities if time permits. Researchers will be able to search through websites to find important information and download available resources all at once. Developers can crawl through a website in order to map its structure, check status code on links and possibly download resources available on the site.Companies will be able to save money and resources due to their employees spending less time and effort on trivial tasks such as link validation. Given various starting details,the system will be able to map the links of a given website as well as notifying the user of any errors arising from those links.\newline
+Stakeholders of the project, as of this moment, are researchers, developers, and companies.
 
 
 \noindent \wss{This is an example comment.  You can turn comments off by replacing
