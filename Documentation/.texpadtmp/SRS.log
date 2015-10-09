@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  9 OCT 2015 16:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  9 OCT 2015 16:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -214,7 +214,12 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \tf@lot=\write5
 \openout5 = `SRS.lot'.
 
- [1]
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--39
+
+ []
+
+[1]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
@@ -238,26 +243,26 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no à in font cmr10!
 Missing character: There is no Ç in font cmr10!
  [4]
-Underfull \hbox (badness 10000) in paragraph at lines 251--252
+Underfull \hbox (badness 10000) in paragraph at lines 255--256
 
  []
 
 <../images/Work_Context_Diagram.png, id=23, 545.03625pt x 354.32375pt>
 File: ../images/Work_Context_Diagram.png Graphic file (type png)
  <use ../images/Work_Context_Diagram.png>
-Package pdftex.def Info: ../images/Work_Context_Diagram.png used on input line 258.
+Package pdftex.def Info: ../images/Work_Context_Diagram.png used on input line 262.
 (pdftex.def)             Requested size: 327.02428pt x 212.59589pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 2096) in paragraph at lines 267--267
+Underfull \hbox (badness 2096) in paragraph at lines 271--271
 \OT1/cmr/m/n/10 spe-cific info gath-er-ing set-ting
  []
 
 
-Underfull \hbox (badness 2293) in paragraph at lines 273--273
+Underfull \hbox (badness 2293) in paragraph at lines 277--277
 []\OT1/cmr/m/n/10 All re-sources from a web-site
  []
 
@@ -267,39 +272,39 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <../images/pylinkvalidator_Use_Case_Diagram.png, id=25, 746.79pt x 689.57625pt>
 File: ../images/pylinkvalidator_Use_Case_Diagram.png Graphic file (type png)
  <use ../images/pylinkvalidator_Use_Case_Diagram.png>
-Package pdftex.def Info: ../images/pylinkvalidator_Use_Case_Diagram.png used on input line 287.
+Package pdftex.def Info: ../images/pylinkvalidator_Use_Case_Diagram.png used on input line 291.
 (pdftex.def)             Requested size: 560.09111pt x 517.18091pt.
 
-Overfull \hbox (31.15436pt too wide) in paragraph at lines 287--288
+Overfull \hbox (31.15436pt too wide) in paragraph at lines 291--292
  [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 293.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 297.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 293.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 297.
  [5]
-Underfull \hbox (badness 10000) in paragraph at lines 304--310
+Underfull \hbox (badness 10000) in paragraph at lines 308--314
 
  []
 
 [6 <../images/Work_Context_Diagram.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 310--316
+Underfull \hbox (badness 10000) in paragraph at lines 314--320
 
  []
 
 [7 <../images/pylinkvalidator_Use_Case_Diagram.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 316--322
+Underfull \hbox (badness 10000) in paragraph at lines 320--326
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 322--328
+Underfull \hbox (badness 10000) in paragraph at lines 326--332
 
  []
 
@@ -310,17 +315,17 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ù in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 328--334
+Underfull \hbox (badness 10000) in paragraph at lines 332--338
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 334--340
+Underfull \hbox (badness 10000) in paragraph at lines 338--344
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 340--346
+Underfull \hbox (badness 10000) in paragraph at lines 344--350
 
  []
 
@@ -329,37 +334,37 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 447--448
+Underfull \hbox (badness 10000) in paragraph at lines 451--452
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 447--448
+Underfull \hbox (badness 10000) in paragraph at lines 451--452
 
  []
 
 [10] [11] [12]
-Underfull \hbox (badness 10000) in paragraph at lines 560--562
+Underfull \hbox (badness 10000) in paragraph at lines 564--566
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 560--562
+Underfull \hbox (badness 10000) in paragraph at lines 564--566
 
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 632--637
+Underfull \hbox (badness 10000) in paragraph at lines 636--641
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 632--637
+Underfull \hbox (badness 10000) in paragraph at lines 636--641
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 632--637
+Underfull \hbox (badness 10000) in paragraph at lines 636--641
 
  []
 
@@ -373,7 +378,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  37i,10n,35p,585b,241s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on /Users/Abe/Documents/pylinkvalidator/Documentation/.texpadtmp/SRS.pdf (15 pages, 221205 bytes).
+Output written on /Users/Abe/Documents/pylinkvalidator/Documentation/.texpadtmp/SRS.pdf (15 pages, 221263 bytes).
 PDF statistics:
  82 PDF objects out of 1000 (max. 8388607)
  54 compressed objects within 1 object stream
