@@ -1,0 +1,397 @@
+
+\documentclass[12pt, titlepage]{article}
+\usepackage{xcolor} % for different colour comments
+\usepackage[left=15mm,right=15mm,top=1in,bottom=1in]{geometry}
+\usepackage{framed}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+%% Comments
+\newif\ifcomments\commentsfalse %i replaced comments true by comment false so the comments will be hidden
+
+\ifcomments
+\newcommand{\authornote}[3]{\textcolor{#1}{[#3 ---#2]}}
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+\else
+\newcommand{\authornote}[3]{}
+\newcommand{\todo}[1]{}
+\fi
+
+\newcommand{\wss}[1]{\authornote{magenta}{SS}{#1}}
+\newcommand{\hm}[1]{\authornote{blue}{HM}{#1}} %Hediyeh
+\newcommand{\tz}[1]{\authornote{blue}{TZ}{#1}} %Tahereh
+\newcommand{\pl}[1]{\authornote{blue}{PL}{#1}} %Peng
+
+\begin{document}
+\title{pylinkvalidator \\
+ Testing Plan : newAGEtech, Group H }
+\author{Genevieve Okon (Okong), Abraham Omorogbe(Omorogoa),\\
+ Eric Le Fort(Leforte)}
+\date{\today}
+\maketitle
+\pagebreak
+
+\tableofcontents
+
+\pagebreak
+\listoffigures
+\listoftables
+\pagebreak
+
+
+\section{Revision History}
+\begin{table}[h!]
+	\begin{tabular}{| p{5cm} | p{5cm} | p{5cm} |p{5cm} |}    \hline
+Revision  &Revision Date &Description of Change &Author\\ \hline
+1& 20-10-15& Initiate Test Plan Document&Genevieve Okon\\ \hline
+2& 20-10-15& Define Objectives,Scope, Constraints andTypes of tests&Genevieve Okon\\ \hline
+3& 20-10-15& Define Test Items&Abraham Omorogbe\\ \hline
+4& 20-10-15& Indicate project test factors&Abraham Omorogbe\\ \hline
+5& 20-10-15&Proofreading of test factors Creation test schedule and deliverables sections&Genevieve Okon\\ \hline
+6& 20-10-15&Plan for Automated Testing, Features to not be tested&Genevieve Okon\\ \hline
+7& 22-10-15& Proofreading and merging of overall content&Eric Le Fort\\ \hline
+8& 22-10-15& Correct table of contents mapping&Eric Le Fort\\ \hline
+9& 23-10-15& Modification to Factors to be tested&Abraham Omorogbe\\ \hline
+10& 23-10-15& Test factors rationale and testing methods&Abraham Omorogbe\\ \hline
+11& 22-10-15& Table of Contents&Eric Le Fort\\ \hline
+       \end{tabular}
+       
+       \caption{Revision History}
+       \label{table:Revision History}
+\end{table}
+
+
+\section{Introduction}
+This is the test plan for the pylinkvalidator webcrawler application.  It will address how the system will be tested; the approach, constraints, and schedule relating to the testing of the webcrawler. This document follows the Software Test Plan (STP) Template.
+This plan will address only those items and elements that are related to the process of producing an effective webcrawler which can traverses a web site, report errors encountered and also be able to download resources such as images, scripts and stylesheets. The details for levels of testing in this project will be addressed further in this test plan document, like in the testing approach section.
+
+\subsection{Objectives}
+This test plan for testing for the webcrawler program supports the following objectives:
+
+\begin{enumerate}
+\item To detail the activities required to prepare for and support the test.
+\item To communicate to all responsible individuals the tasks which they are to perform and the schedule to be followed in performing the tasks.
+\item To define the sources of information used to prepare the test plan.
+\item To define what approach we expect to use for the tests and recommend and describe the testing strategies to be employed.
+\item To define the test tools and environment needed to conduct the test.
+\item To list the deliverable elements of the test activities.
+\item  To list the recommended test requirements.
+\item  Identify existing project information and the software components that should be tested.
+\end{enumerate}
+
+\subsection{Scope}
+This Test Plan applies to the unit,  integration and system tests that will be conducted on the webcrawler. It presents a schema for testing the functionality of the webcrawler and the approach intended to be used to test this functionality. It has the objective to show that users of the webcrawler will be able to crawl websites in an easy and effective way, attempt to find missing attributes and failure conditions. This Revision 0 Test Plan serves to organize testing activities. This documentation at this level does not attempt to present much detailed testing information, as this information will be included in subsequent test reports as well as the final test plan.
+
+\subsection{Constraints}
+The principal constraint relating to the testing of this project is time. The project is to be delivered by December 2015, within this period we also need to focus on the development/implementation, documentation of the program as well as the testing. Human resources are also a  constraint, as this project is limited to three individuals to perform all aspects of this project along with the consultancy of a supervisor. \\
+
+\subsection{Acronyms and Definitions}
+Table on next page
+ 
+\begin{table}[h!]
+    \begin{tabular}{| p{5cm} | p{5cm} | p{5cm} |}    \hline
+    Abbreviation&Meaning&Description\\ \hline
+    SDLC&Software Development Life Cycle&This describes a process for planning, creating, testing, maintaining and deploying a software project.\\ \hline
+SRS&SRS Software Requirements Specification&Document reporting objectives, intended features, risks and constraints of the product. It is a comprehensive description of the intended purpose and environment for the software. The SRS fully describes what the software will do and how it will be expected to perform.\\ \hline
+JUnit&Java unit test&Unit testing tool\\ \hline
+PyUnit&Python unit test&Python language version of JUnit\\ \hline
+PoC&Proof of Concept&Presentation with a purpose to demonstrate that the project is feasible\\ \hline
+Broken link&Broken link&Is a link on a web page that doesn?t work.The destination website permanently moved or no longer exists\\ \hline
+HTTP&Hypertext Transfer Protocol&HTTP is the protocol to exchange or transfer hypertext.\\ \hline
+HTTPS&HTTP Secure&This is a protocol for secure communication over a computer network which is used on the Internet.\\ \hline
+Anchor Tags& Anchor tags&If  an anchor tag is within a webpage, links can be added to the body of the post which when clicked allow the user to jump to another location on the page.\\ \hline
+
+    
+       \end{tabular}
+    \caption{Acronyms and Definitions}
+\label{table:Acronyms and Definitions}
+\end{table}
+
+
+\section{Tested Properties}
+\subsection{Summary}
+
+These properties will be a succinct list of the aspects of the software we plan to test. The verification of the properties will be must useful in validating most non-functional requirements. A list of the properties, the explanation of each property and the different techniques we will implement to test the properties are shown below:\\
+
+The table \ref{table:Test Properties  List} is a Test Properties  List.
+
+\begin{table}[h!]
+    \begin{tabular}{| p{5cm} | p{5cm} | p{5cm} |}    \hline
+    Test Components  &	Description	&  Method Used\\ \hline
+   Ease of Use & Generally difficulty and average time to input a query	&   Functional System Testing\\ \hline
+   
+  Accuracy & Verify that specific output from the program is correct and accurate	& Dynamic Testing \\ \hline
+    
+    Speed  & Verify the average speed of each query &  Structural System Testing\\ \hline
+     
+     Fault-Tolerance	& Verify the program handle common users errors &  Functional System testing  \\ \hline
+      
+           Adaptability & Verify program runs on multiple operating systems	& Manual Testing \\ \hline
+            
+                  Legal Requirements & Verify web crawler cannot be used to crawler website, that discourage web crawls. i.e Kijiji and Footlocker	&  Functional System Testing \\ \hline
+      
+    \end{tabular}
+    \caption{Test Properties List}
+\label{table:Test Properties List}
+\end{table}
+
+\subsection{Properties To Be Tested on Pyweblinkvalidator}
+Different properties of the program that must be considered and verified through testing.\\
+\subsubsection{Ease of Use}
+The main objective of ease of use testing is ensuring the program is easy to set up and can easily be used by the stakeholders mentioned in the SRS document.\\
+
+\textbf{Rationale}  \\
+
+This program setup time and ease of use must be verify. As developers we need to ensure the program is easy enough for any of the stakeholders to use and setup in minutes.\\
+
+\textbf{Testing Approach} \\ 
+
+ We are going to use one of the  Functional System Tests, Usability Testing. To prove our program is easy to use and step up. We will analysis our code and make sure everything is well documented, users are prompt corrected and the program is fairly easy to debug. After we believe the code is sound and easy to use, we will ask 5 non-engineers to use the program to crawl their favourite website and they will rate the ease of use. We aim to have an average score of 8/10
+
+\subsubsection{Accuracy}
+The main objective for the accuracy testing is to verify the results and status codes from the web-crawler are accurate.\\
+
+\textbf{Rationale}  \\
+
+This program must have accurate results, so customers and stakeholders trust to products and will continue to use it to increase efficiency.\\
+
+\textbf{Testing Approach} \\ 
+
+ We are going to use one of the  Dynamic Testing. To prove our program is produces the correct results we will have a set of test HTML files that the  program shall crawl. The programs output must correspond to what occurs when a user manual clicks all the links on the test HTML and the status codes on each HTML page.
+
+\subsubsection{Speed}
+The main objective of speed testing is to make sure the program, returns results in a timely manner.\\
+
+\textbf{Rationale}  \\
+
+This program speed must be verified, we must assure stakeholders that the program will work quickly and increase efficiency, like we mentioned in our SRS.\\
+
+\textbf{Testing Approach} \\ 
+
+ We are going to use one of the Structural System Tests, Speed Testing. To prove the program will run in a reasonable timeframe, In order to do this we are going to setup a stopwatch function at the begin of each query and it will print the time it took for each query. The time to crawl a page for any content should be between 0-2 seconds.
+
+\subsubsection{Fault-Tolerance}
+The main objective of Fault-Tolerance is to make sure this program can handle any kind of user input\\
+
+\textbf{Rationale}  \\
+
+This program should able to take any input and if the input is the wrong format, the program should inform the user or fix the issue. This feedback with be essential in helping user use the software correctly.\\
+
+\textbf{Testing Approach} \\ 
+
+ We are going to use one of the  Functional System Tests, Error Handling. To prove the program can handle invalid entries and it can correct inputs missing HTTP:// or www before the domain name, we with input queries that should break the program. Queries include but not limited to 23wew, example.com, www.hi.me,1/2/2 and much more. These queries should be handled with such response as "invalid entry" or a list crawled website (normal output) if the domain was missing HTTP:// or www.
+
+\subsubsection{Adaptability}
+The main objective of Adaptability is to make sure this program will work as expect on any operating system.\\
+
+\textbf{Rationale}  \\
+
+This program should be platform independent, our software should be able to run on any system that the use decides to use.\\
+
+\textbf{Testing Approach} \\ 
+
+ We are going to use Manual Tests to verify this works. The team with test is the program works on a Linus system, Mac system and Windows system. We will load up the program on each of the mentioned Operating Systems and verify the program acts identical across each platform.
+
+\subsubsection{Legal Requirements }
+The main objective of Legal Requirements, verify our program follows the law and a website's Terms of Use.\\
+
+\textbf{Rationale}  \\
+
+This program should block sites that has strict rules against web crawl, such as Kijiji, Foot Looker and eBay\\
+
+\textbf{Testing Approach} \\ 
+
+ We are going to use Dynamic Testing. We are going to query website on our list of forbidden website and make sure the program respond with a message along the lines of "Web Crawling is not permitted by this website". We will query sites on our forbidden list such as Kijiji and eBay and verify the program outputs the message above.
+ 
+ 
+\section{Tested Components}
+\subsection{Summary}
+These components are different parts of our code and design we need to test and review in order verify all functional requirements have been met and the program is functioning correctly. The following section with be a list of all the components we plan on testing and an overview of how we plan to test these components. 
+
+\begin{enumerate}
+  \item Software Requirements Specifications
+  \item Code
+  \item Features
+  \item Error Handling
+\end{enumerate}
+
+\subsection{Software Requirements Testing}
+As we continue working on this project and developing more features, we most be able to run some tests that can verify all the requirements in the SRS have been met. We will implement black box tests to achieve this.
+
+\subsection{Code Testing}
+As we continue to build we must vet every team members commits to the repository. After every submission any team member other than the original submitter should analyze the submitted code, and make sure all the is sound logically and functionally. We would be using a form white box testing.
+
+\subsection{Features Testing}
+We will be observing the code as we add more features. We must verify every feature does exactly what it is supposed to do and each feature can be traced back to a requirement. More details on individual test cases with be provides sections 5 and 6.
+
+\subsection{Error Handling Testing}
+We are building a program that should be able to handle any query from the user and different error that may occur during run-time. We will implement tests that will reproduce these errors and ensure there are handled corrected. More details mentioned in sections 3,5 and 6.
+
+
+\section{Features Tested in POC}
+\subsection{Webpage HTML File Download}
+This application needs to be able to download the HTML file associated with a webpage. It should download the whole file without any missing or incomplete data.\\
+
+\textbf{Approach}\\
+
+This feature will be tested by setting up sample webpages or using existing ones on the web and verifying the data received by this application matches that stored in the file. This test will be considered to be passed if all expected results occur.\\
+
+\textbf{Test Cases (Blackbox, Using PyUnit)}\\
+The process will involve reading in the files listed below and then comparing the results to the expected results.\\
+The output will be a String containing the data read in.\\
+
+\textbf{Files Used:}
+\begin{itemize}
+\item a.html
+\item alone.html
+\item c.html
+\item d.html
+\item f.html
+\item index.html
+\end{itemize}
+
+\subsection{Find Anchor Tags in HTML file}
+This application needs to parse through an HTML document in order to locate all of the links to other pages. This is what the application will need to do in order to continue crawling deeper into a website.\\
+
+\textbf{Approach}\\
+This feature will be tested by setting up sample webpages or using existing ones on the web and verifying that all link tags are extracted correctly. This test will be considered to be passed if all expected results occur.
+
+\textbf{Test Cases (Blackbox, Using PyUnit)}\\
+The process will involve parsing a file, extracting the links, comparing them to expected links.\\
+The output will be an array of Strings containing the extracted links.\\
+
+\textbf{Files Used:}
+\begin{itemize}
+\item a.html
+\item alone.html
+\item c.html
+\item d.html
+\item f.html
+\end{itemize}
+
+
+\section{Features Tested in Final}
+\subsection{Depth First Crawl}
+This type of crawl involves going down into every link that is found recursively down as deep as possible first. This is optimal for smaller websites as you can analyze the whole website very efficiently.\\
+
+\textbf{Approach}\\
+
+This feature will be tested by setting up a sample website and ensuring all of its pages are traversed in the correct order as well as that pages that shouldn?t be accessible are not. This test will be considered to be passed if all expected results occur.\\
+
+\textbf{Test Cases (White Box, Using PyUnit)}\\
+
+root.html, (perform algorithm, record links visited and any notifications), (String array containing the list of links and notifications in the order they were visited)
+evenTree.html
+
+\subsection{Breadth First Crawl}
+This type of crawl involves finding every link found on a page and then following each one. From there, this step occurs iteratively while there are remaining links that don?t lead to dead-ends. This is optimal for larger websites as you can analyze the website layer by layer in a short time instead of taking a large amount of time delving all the way down first.\\
+
+\textbf{Approach}\\
+
+This feature will be tested by setting up a sample website and ensuring all of its pages are traversed in the correct order as well as that pages that shouldn?t be accessible are not. This test will be considered to be passed if all expected results occur.\\
+
+\textbf{Test Cases (White Box, Using PyUnit)}\\
+
+root.html, (Perform algorithm, record links visited and any notifications), (String array containing the list of links and notifications in the order they were visited)
+evenTree.html
+
+\subsection{Download Media Resources}
+This application should be able to download various resources that are made readily available on the host server. Notifications will also be provided for any resources that are not visible or that are not available for download.\\
+
+\textbf{Approach}\\
+
+This feature will be tested by adding various resources to our website (including broken links) and attempting to download them. We will then test to ensure that the downloaded resource matches the original version or that broken links return the correct notification. This test will be considered to be passed if all expected results occur.\\
+
+\textbf{Test Cases (White Box, Using PyUnit)}\\
+
+media.html, (Performs a crawl, downloads all the images on each page visited), (Nested folders containing all the downloaded images for each page (i.e. img1, img2, etc))
+evenTree.html
+
+\subsection{Error Verification and Notification}
+This application must inform the user of various issued raised while performing its checks. These errors include various HTML error codes such as server faults, permission conflicts and invalid requests.\\
+
+\textbf{Approach}\\
+
+This feature will be tested by forcing the occurrence of errors and ensuring that the notifications that are provided match the ones expected to. This test will be considered to be passed if all expected results occur.\\
+
+\textbf{Test Cases (White Box, Using PyUnit)}\\
+
+errorLinks.html, (Parse file, handle all broken links correctly, receive error notifications), (String array containing the notifications in the order that they occurred)
+
+\subsection{Attempting to Correct Invalid Links}
+In HTML code, links are frequently written without the ?http://? or ?www? part of their prefix which will bring rise to errors when attempting to connect to the webpage. This application will attempt to correct this issue by adding the to any broken links before creating any error notifications.\\
+
+\textbf{Approach}\\
+This feature will be tested by providing broken links, functioning links and links that are just missing the prefix. The application should do nothing to the functioning links and try to append the prefix to the links that did not work. The broken links should still not work, the functioning links should still be functioning and those links missing their prefix should now be functioning. This test will be considered to be passed if all these expected results occur.\\
+
+\textbf{Test Cases (Black Box, Using PyUnit)}\\
+
+www.google.ca, (check for http://, add http://), (http://www.google.ca)
+htttp://www.google.ca, (check for http://, try adding http:// and http://www.), (Error in link notification)
+google.ca, (check for http:/ try adding http:// and http://www.), (http://www.google.ca)
+http://google.ca, (check for http://, add www. after), (http://www.google.ca)
+
+\subsection{Recognizing Cycles within the Links}
+When traversing a website, it is possible to have links which end up creating a cycle. A computer would not recognize this and would end up stuck traversing this loop infinitely. This application should be able to keep track of previously visited links and compare them to new ones in order to prevent this situation.\\
+
+\textbf{Approach}\\
+
+This feature will be tested by setting up sample webpages that contain cycles within the structure of their links. The program should be able to avoid getting caught in these cycles. This test will be considered to be passed if all tests perform the expected number of steps to completely traverse the websites.\\
+
+\textbf{Test Cases (Using PyUnit)}\\
+
+cycle0.html, (Enters the file, records address name, continues visiting addresses, doesn?t enter a previously visited address), (The list of three files)
+
+\subsection{Usability Testing}
+This application must be usable from anyone with basic terminal usage experience with how to run a python application. There should not be much of a learning curve, at least for the more simple functionality of the program.\\
+
+\textbf{Approach}\\
+
+	The usability metric will be determined by getting a sample of ten individuals who are capable of running an application from the Terminal or Command Line. These users will perform a series of predetermined tasks using the program and then fill out a brief survey regarding their experience. This test will be considered to be passed if the average scoring of the survey is 90\% or higher.\\
+
+Tested by way of a survey.
+
+\subsection{Reliability Testing}
+This application must reliably produce the same (correct) results for the same inputs. For example, if there is no change in the state of any pages on the website, performing a traversal should output the same links and downloading resources should return the same resources.\\
+
+\textbf{Approach}\\
+	
+The aforementioned individuals will be required to perform certain tests multiple times in order to confirm that the results are consistent. This test will be considered to be passed if the average score of these tests are 90\% or higher (100\% would be optimal but it is possible the error is on the tester?s end).\\
+
+Tested by way of a survey.
+
+
+\section{Features Not Tested}
+No features will go untested.
+
+
+\section{Automated Testing Plans}
+\subsection{PyUnit}
+Unit and integration tests will be used to test this webcrawler. PyUnit is Python\textsc{\char13}s unit testing framework. Unittest supports test automation, it also supports some important concepts like test fixture, test suite, test runner and test case. A test case is the smallest unit of testing. It checks for a specific response to a particular set of inputs.  These tests can be used to check if the results of a webcrawler match an expected result. e.g. The error code for a particular website.
+
+\section{Testing Schedule}
+Testing will be performed at several points of the SDLC.  The test report revision 0 will be completed by November 23 2014 and the final test report will be completed by December 8 2015. The group members and the supervisor will handle the organization of task division and timelines for the project completion. The python unit tests on the webcrawler will be performed every week, during these tests any errors found in the webcrawler implementation and states will be corrected. The test cases will be modified every month since the development of the webcrawler will be progressed because of new features implemented. Also before any code for the program is committed it is the individual?s responsibility to test it.
+
+
+\section{Appendix}
+\subsection{Test Deliverables}
+\begin{table}[h!]
+\begin{tabular}{| p{5cm} | p{5cm} | p{5cm} |}    \hline
+Test Document&Objective&Delivery date\\ \hline
+Test Plan - Revision 0&Set some deliverables for future test cases. Set initial guidelines and objectives for testing&October 19, 2015\\ \hline
+Test Report -Revision 0&Report tracking progress, history and results of tests performed&November 23, 2015\\ \hline
+Test Plan -Final&Indicate test cases and considerations for testing prior to the final completion of the webcrawler program&December 8, 2015\\ \hline
+Test Report - Final&Report tracking progress, results of test and whether they were expected or not and history of tests performed&December 8, 2015\\ \hline
+\end{tabular}
+\caption{Test Deliverables}
+\label{table:Test Deliverables}
+\end{table}
+
+\subsection{Files to be Used During Testing}
+\begin{itemize}
+\item evenTree.html: This html page has 2 links. Each of these links point to 4 links to other pages.
+\item brokenLinks.html: This html page has a few broken links and not much else.
+\item cycle0.html: This html page links to cycle1.html, cycle1.html links to cycle2.html and cycle2.html links back to cycle0.html to complete a cycle.
+\end{itemize}
+
+
+\end{document}
