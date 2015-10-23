@@ -1,0 +1,169 @@
+
+\documentclass[12pt]{article}
+\usepackage{xcolor} % for different colour comments
+\usepackage[left=15mm,right=15mm,top=1in,bottom=1in]{geometry}
+\usepackage{framed}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+%% Comments
+\newif\ifcomments\commentsfalse %i replaced comments true by comment false so the comments will be hidden
+
+\ifcomments
+\newcommand{\authornote}[3]{\textcolor{#1}{[#3 ---#2]}}
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+\else
+\newcommand{\authornote}[3]{}
+\newcommand{\todo}[1]{}
+\fi
+
+\newcommand{\wss}[1]{\authornote{magenta}{SS}{#1}}
+\newcommand{\hm}[1]{\authornote{blue}{HM}{#1}} %Hediyeh
+\newcommand{\tz}[1]{\authornote{blue}{TZ}{#1}} %Tahereh
+\newcommand{\pl}[1]{\authornote{blue}{PL}{#1}} %Peng
+
+\begin{document}
+\title{pylinkvalidator \\
+ Problem Statement : newAGEtech, Group H }
+ \title{Sections and Chapters}
+\author{Genevieve Okon (Okong), Abraham Omorogbe(Omorogoa),\\
+ Eric Le Forti(Leforte)}
+\date{\today}
+\renewcommand*\contentsname{Table of Contents}
+
+\maketitle
+
+
+\section{Revision History}
+
+
+\begin{table}[h!]
+\subsection{The table \ref {table:Revision History} is a Revision History.}
+    \begin{tabular}{| p{5cm} | p{5cm} | p{5cm} |p{5cm} |}    \hline
+Revision  &Revision Date &Description of Change &Author\\ \hline
+1& 20-10-15& Initiate Test Plan Document&Genevieve Okon\\ \hline
+2& 20-10-15& Define Objectives,Scope, Constraints andTypes of tests&Genevieve Okon\\ \hline
+3& 20-10-15& Define Test Items&Abraham Omorogbe\\ \hline
+4& 20-10-15& Indicate project test factors&Abraham Omorogbe\\ \hline
+5& 20-10-15&Proofreading of test factors Creation test schedule and deliverables sections&Genevieve Okon\\ \hline
+  6& 20-10-15&Plan for Automated Testing, Features to not be tested&Genevieve Okon\\ \hline
+
+
+
+ 7& 22-10-15& Proofreading and merging of overall content&Eric Le Fort\\ \hline
+  
+    8& 22-10-15& Correct table of contents mapping&Eric Le Fort\\ \hline
+
+    
+9& 23-10-15& Modification to Factors
+to be tested&Abraham Omorogbe\\ \hline
+
+10& 23-10-15& Test factors rationale and testing methods&Abraham Omorogbe\\ \hline
+11& 22-10-15& Table of Contents&Eric Le Fort\\ \hline
+
+       \end{tabular}
+       
+    \caption{Revision History}
+\label{table:Revision History}
+
+\end{table}
+
+
+
+\section{Introduction}
+This is the test plan for the pylinkvalidator webcrawler application.  It will address how the system will be tested; the approach, constraints, and schedule relating to the testing of the webcrawler. This document follows the Software Test Plan (STP) Template.
+This plan will address only those items and elements that are related to the process of producing an effective webcrawler which can traverses a web site, report errors encountered and also be able to download resources such as images, scripts and stylesheets. The details for levels of testing in this project will be addressed further in this test plan document, like in the testing approach section.
+
+	
+
+
+\subsection{Objectives}
+This test plan for testing for the webcrawler program supports the following objectives:
+
+\begin{enumerate}
+
+\item To detail the activities required to prepare for and support the test.
+ 
+\item To communicate to all responsible individuals the tasks which they are to perform and the schedule to be followed in performing the tasks.
+
+\item To define the sources of information used to prepare the test plan.
+
+\item To define what approach we expect to use for the tests and recommend and describe the testing strategies to be employed.
+ 
+\item To define the test tools and environment needed to conduct the test.
+
+\item To list the deliverable elements of the test activities.
+
+\item  To list the recommended test requirements.
+
+\item  Identify existing project information and the software components that should be tested.
+
+\end{enumerate}
+
+
+\subsection{Scope}
+This Test Plan applies to the unit,  integration and system tests that will be conducted on the webcrawler. It presents a schema for testing the functionality of the webcrawler and the approach intended to be used to test this functionality. It has the objective to show that users of the webcrawler will be able to crawl websites in an easy and effective way, attempt to find missing attributes and failure conditions. This Revision 0 Test Plan serves to organize testing activities. This documentation at this level does not attempt to present much detailed testing information, as this information will be included in subsequent test reports as well as the final test plan.
+
+
+\subsection{Constraints}
+The principal constraint relating to the testing of this project is time. The project is to be delivered by December 2015, within this period we also need to focus on the development/implementation, documentation of the program as well as the testing. Human resources are also a  constraint, as this project is limited to three individuals to perform all aspects of this project along with the consultancy of a supervisor. \newline
+
+
+
+ \section{Acronyms and Definitions}
+ Table on next page
+ 
+\begin{table}[h!]
+\subsection{The table \ref{table:Acronyms and Definitions} is a Acronyms and Definitions.}
+    \begin{tabular}{| p{5cm} | p{5cm} | p{5cm} |}    \hline
+  Abbreviation&Meaning&Description\\ \hline
+SDLC&Software Development Life Cycle&This describes a process for planning, creating, testing, maintaining and deploying a software project.\\ \hline
+SRS&SRS Software Requirements Specification&Document reporting objectives, intended features, risks and constraints of the product. It is a comprehensive description of the intended purpose and environment for the software. The SRS fully describes what the software will do and how it will be expected to perform.\\ \hline
+JUnit&Java unit test&Unit testing tool\\ \hline
+PyUnit&Python unit test&Python language version of JUnit\\ \hline
+PoC&Proof of Concept&Presentation with a purpose to demonstrate that the project is feasible\\ \hline
+Broken link&Broken link&Is a link on a web page that doesn?t work.The destination website permanently moved or no longer exists\\ \hline
+HTTP&Hypertext Transfer Protocol&HTTP is the protocol to exchange or transfer hypertext.\\ \hline
+HTTPS&HTTP Secure&This is a protocol for secure communication over a computer network which is used on the Internet.\\ \hline
+Anchor Tags& Anchor tags&If  an anchor tag is within a webpage, links can be added to the body of the post which when clicked allow the user to jump to another location on the page.\\ \hline
+
+    
+       \end{tabular}
+    \caption{Acronyms and Definitions}
+\label{table:Acronyms and Definitions}
+\end{table}
+
+
+
+%part after 5 and 6, after Eric's part
+
+\section{Features not to be Tested}
+The unit and integration testing, which will be done using PyUnit, will not be done during the development of the webcrawler. It will be done after the development of the webcrawler. The parts of the tests that require the user interface will not be tested as of now.
+ 
+
+\section{Plans for Automated Testing}
+\subsection{PyUnit}
+Unit and integration tests will be used to test this webcrawler. PyUnit is Python\textsc{\char13}s unit testing framework. Unittest supports test automation, it also supports some important concepts like test fixture, test suite, test runner and test case. A test case is the smallest unit of testing. It checks for a specific response to a particular set of inputs.  These tests can be used to check if the results of a webcrawler match an expected result. e.g. The error code for a particular website.
+
+\section{Testing schedule}
+Testing will be performed at several points of the SDLC.  The test report revision 0 will be completed by November 23 2014 and the final test report will be completed by December 8 2015. The group members and the supervisor will handle the organization of task division and timelines for the project completion. The python unit tests on the webcrawler will be performed every week, during these tests any errors found in the webcrawler implementation and states will be corrected. The test cases will be modified every month since the development of the webcrawler will be progressed because of new features implemented. Also before any code for the program is committed it is the individual?s responsibility to test it.
+
+
+ \section{Test Deliverables}
+ \begin{table}[h!]
+\subsection{The table \ref {table:Test Deliverables} is a Acronyms and Definitions.}
+    \begin{tabular}{| p{5cm} | p{5cm} | p{5cm} |}    \hline
+    
+Test Document&Objective&Delivery date\\ \hline
+Test Plan - Revision 0&Set some deliverables for future test cases. Set initial guidelines and objectives for testing&October 19, 2015\\ \hline
+Test Report -Revision 0&Report tracking progress, history and results of tests performed&November 23, 2015\\ \hline
+Test Plan -Final&Indicate test cases and considerations for testing prior to the final completion of the webcrawler program&December 8, 2015\\ \hline
+Test Report - Final&Report tracking progress, results of test and whether they were expected or not and history of tests performed&December 8, 2015\\ \hline
+
+\end{tabular}
+    \caption{Test Deliverables}
+\label{table:Test Deliverables}
+\end{table}
+
+
+
+\end{document}
