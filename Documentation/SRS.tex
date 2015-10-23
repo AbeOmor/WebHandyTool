@@ -39,7 +39,14 @@ First Draft October 10th 2015\\
 Revision0 Draft October 10th 2015\\
 \clearpage
 
+
+
 \addcontentsline{toc}{section}{Project Drivers}
+
+\section *{Template Used}
+This document makes usage of the Volere Template for all its organization
+
+
 
 \section{The Purpose of the Project}
 
@@ -305,15 +312,47 @@ The figure \ref{figure:use case} is a Use case Diagram and the product boundary.
 \subsection*{Individual Product Use Cases  }
 \begin{enumerate}
   \item  Product Use Case Name: Locate Information and related websites \\
-  Trigger: User requests a website to be processed \\Preconditions: User has to specify website that exists\\Interested Stakeholders: Researchers\\Actors: User, Website\\Outcome: If the website is a valid HTML page, the link on the page a verified and information is gathered (text-based), if the website is an invalid, an error is displayed.\\
+  Trigger: User requests a website to be processed \\
+Preconditions: User has to specify website that exists\\
+Interested Stakeholders: Researchers\\
+Actors: User, Website\\
+Outcome: If the website is a valid HTML page, the link on the page a verified and information is gathered (text-based), if the website is an invalid, an error is displayed.\\
   \item Product Use Case Name: Automatically download resources from a web page.\\
-  Trigger: User types in command to download dataPreconditions: Web server has to have existing resources available, and user needs permission to the website.\\Interested Stakeholders: Researchers and companies\\Actors: User, Web Server, Website\\Outcome: User has all the resources from the website (images, attached files etc.).\\
+  Trigger: User types in command to download data
+Preconditions: Web server has to have existing resources available, and user needs permission to the website.\\
+Interested Stakeholders: Researchers and companies\\
+Actors: User, Web Server, Website\\
+Outcome: User has all the resources from the website (images, attached files etc.).\\
   \item Product Use Case Name: View list of status codes from website\\
-  Trigger: User types in command to show status code\\Preconditions: User must have Internet connection and must have entered a valid URL.\\Interested Stakeholders: Developers\\Actors: User\\Outcome: User can see a list of all the status codes on websites associated with the initial site.\\
-  \item Product Use Case Name: Specify website to crawl\\Trigger: User types in a website to crawl\\Preconditions: User must have Internet connection and a valid website to crawl.\\Interested Stakeholders: Developers\\Actors User, Website\\Outcome: The web crawler begins to traverse through website.\\
-  \item Product Use Case Name: Audit Content on companies website \\Trigger: User requests a list of all websites associated with the starting point.\\Preconditions: User must enter a website with valid $<$a href= "\ldots"$>$ $<$/a$>$ tags\\Interested Stakeholders: Companies and Developers\\Actors: User, Website\\Outcome: The users can see a list of on the links and resources attached to every webpage associated with the specified domain.\\
-  \item Product Use Case Name: Map website structure\\Trigger: User requests a structure of a website\\Preconditions: Must have entered a valid URL/HTML.\\Interested Stakeholders: Researchers, Developers and companies\\Actors: Web Server, Website\\Outcome: User is shown the website file structure.\\
-  \item Product Use Case Name: Return website status code\\Trigger: Web crawler sends request query to web server\\Preconditions: Web server must respond to queries with status codes. \\Interested Stakeholders: Developers\\Actors: Web Server\\Outcome: The web server responds with correct status code.\\
+  Trigger: User types in command to show status code\\
+Preconditions: User must have Internet connection and must have entered a valid URL.\\
+Interested Stakeholders: Developers\\
+Actors: User\\
+Outcome: User can see a list of all the status codes on websites associated with the initial site.\\
+  \item Product Use Case Name: Specify website to crawl\\
+Trigger: User types in a website to crawl\\
+Preconditions: User must have Internet connection and a valid website to crawl.\\
+Interested Stakeholders: Developers\\
+Actors User, Website\\
+Outcome: The web crawler begins to traverse through website.\\
+  \item Product Use Case Name: Audit Content on companies website \\
+Trigger: User requests a list of all websites associated with the starting point.\\
+Preconditions: User must enter a website with valid $<$a href= "\ldots"$>$ $<$/a$>$ tags\\
+Interested Stakeholders: Companies and Developers\\
+Actors: User, Website\\
+Outcome: The users can see a list of on the links and resources attached to every webpage associated with the specified domain.\\
+  \item Product Use Case Name: Map website structure\\
+Trigger: User requests a structure of a website\\
+Preconditions: Must have entered a valid URL/HTML.\\
+Interested Stakeholders: Researchers, Developers and companies\\
+Actors: Web Server, Website\\
+Outcome: User is shown the website file structure.\\
+  \item Product Use Case Name: Return website status code\\
+Trigger: Web crawler sends request query to web server\\
+Preconditions: Web server must respond to queries with status codes. \\
+Interested Stakeholders: Developers\\
+Actors: Web Server\\
+Outcome: The web server responds with correct status code.\\
 \end{enumerate}
 
 \section{Functional and Data Requirements}
@@ -322,31 +361,94 @@ The figure \ref{figure:use case} is a Use case Diagram and the product boundary.
 
 \begin{framed}
 
-\textbf{Requirement \#}: 1 \hfill \textbf{Requirement Type}: 9 \hfill\textbf{Event/Use case \#}: 7 \hfill\\\textbf{Description}:  The product shall return the status code of websites\\\textbf{Rationale}: To allow the users verify the status of all the pages on a website. Checks if it is offline, Unauthorized etc.\\\textbf{Originator}: Abraham Omorogbe\\\textbf{Fit Criterion}: The web crawler displays an error with it reaches an website that is not online (Status Code: 200 ) and the status code related the error (Status Code: 400,500 etc.).	\\\textbf{Customer Satisfaction}: 5 \hfill 	\textbf{Customer Dissatisfaction}: 5 \hfill\\\textbf{Priority}: High \hfill \textbf{Conflicts}: None \hfill 		\\\textbf{Supporting Material}: None\\\textbf{History}: Created October 9, 2015 \hfill	 \textbf{Volere}\hfill
+\textbf{Requirement \#}: 1 \hfill \textbf{Requirement Type}: 9 \hfill\textbf{Event/Use case \#}: 7 \hfill\\
+\textbf{Description}:  The product shall return the status code of websites\\
+\textbf{Rationale}: To allow the users verify the status of all the pages on a website. Checks if it is offline, Unauthorized etc.\\
+\textbf{Originator}: Abraham Omorogbe\\
+\textbf{Fit Criterion}: The web crawler displays an error with it reaches an website that is not online (Status Code: 200 ) and the status code related the error (Status Code: 400,500 etc.).	\\
+\textbf{Customer Satisfaction}: 5 \hfill 	\textbf{Customer Dissatisfaction}: 5 \hfill\\
+\textbf{Priority}: High \hfill \textbf{Conflicts}: None \hfill 		\\
+\textbf{Supporting Material}: None\\
+\textbf{History}: Created October 9, 2015 \hfill	 \textbf{Volere}\hfill
+
 \end{framed}
 
 \begin{framed}
-\textbf{Requirement \#}: 2 \hfill \textbf{Requirement Type}: 9 \hfill\textbf{Event/Use case \#}: 2 \hfill\\\textbf{Description}:  The product shall download resources from a website\\\textbf{Rationale}: To allow users quickly download all the HTML, images, CSS and other data related to a website\\\textbf{Originator}: Abraham Omorogbe\\\textbf{Fit Criterion}:  The download resources can be retrieved and used.\\\textbf{Customer Satisfaction}: 5 \hfill 	\textbf{Customer Dissatisfaction}: 5 \hfill\\\textbf{Priority}: High \hfill \textbf{Conflicts}: None \hfill 		\\\textbf{Supporting Material}: None\\\textbf{History}: Created October 9, 2015 \hfill	 \textbf{Volere}\hfill
+\textbf{Requirement \#}: 2 \hfill \textbf{Requirement Type}: 9 \hfill\textbf{Event/Use case \#}: 2 \hfill\\
+\textbf{Description}:  The product shall download resources from a website\\
+\textbf{Rationale}: To allow users quickly download all the HTML, images, CSS and other data related to a website\\
+\textbf{Originator}: Abraham Omorogbe\\
+\textbf{Fit Criterion}:  The download resources can be retrieved and used.\\
+\textbf{Customer Satisfaction}: 5 \hfill 	\textbf{Customer Dissatisfaction}: 5 \hfill\\
+\textbf{Priority}: High \hfill \textbf{Conflicts}: None \hfill 		\\
+\textbf{Supporting Material}: None\\
+\textbf{History}: Created October 9, 2015 \hfill	 \textbf{Volere}\hfill
+
 \end{framed}
 
 \begin{framed}
-\textbf{Requirement \#}: 3 \hfill \textbf{Requirement Type}: 9 \hfill\textbf{Event/Use case \#}: 1,5 \hfill\\\textbf{Description}:  The product shall have adjustable search max-depth\\\textbf{Rationale}: To allow the user specific how many layers of the website, the user want to analyse. Helps with auditing and finding related sites.\\\textbf{Originator}: Abraham Omorogbe\\\textbf{Fit Criterion}: The web crawler only show top-level links when max-depth is at 0, and shows more levels of the website when depth $\geq$ 1\\\textbf{Customer Satisfaction}: 5 \hfill 	\textbf{Customer Dissatisfaction}: 5 \hfill\\\textbf{Priority}: High \hfill \textbf{Conflicts}: None \hfill \\\textbf{Supporting Material}: None\\\textbf{History}: Created October 9, 2015 \hfill	 \textbf{Volere}\hfill
+\textbf{Requirement \#}: 3 \hfill \textbf{Requirement Type}: 9 \hfill\textbf{Event/Use case \#}: 1,5 \hfill\\
+\textbf{Description}:  The product shall have adjustable search max-depth\\
+\textbf{Rationale}: To allow the user specific how many layers of the website, the user want to analyse. Helps with auditing and finding related sites.\\
+\textbf{Originator}: Abraham Omorogbe\\
+\textbf{Fit Criterion}: The web crawler only show top-level links when max-depth is at 0, and shows more levels of the website when depth $\geq$ 1\\
+\textbf{Customer Satisfaction}: 5 \hfill 	\textbf{Customer Dissatisfaction}: 5 \hfill\\
+\textbf{Priority}: High \hfill \textbf{Conflicts}: None \hfill \\
+\textbf{Supporting Material}: None\\
+\textbf{History}: Created October 9, 2015 \hfill	 \textbf{Volere}\hfill
+
 \end{framed}
 
 \begin{framed}
-\textbf{Requirement \#}: 4 \hfill \textbf{Requirement Type}: 9 \hfill\textbf{Event/Use case \#}: 4 \hfill\\\textbf{Description}:  The product shall always users enter a starting URL or local HTML page\\\textbf{Rationale}: To allow the user crawl any website that is on or offline\\\textbf{Originator}: Abraham Omorogbe\\\textbf{Fit Criterion}: The crawler starts from the inputted website.\\\textbf{Customer Satisfaction}: 5 \hfill 	\textbf{Customer Dissatisfaction}: 5 \hfill\\\textbf{Priority}: High \hfill \textbf{Conflicts}: None \hfill 		\\\textbf{Supporting Material}: None\\\textbf{History}: Created October 9, 2015 \hfill	 \textbf{Volere}\hfill
+\textbf{Requirement \#}: 4 \hfill \textbf{Requirement Type}: 9 \hfill\textbf{Event/Use case \#}: 4 \hfill\\
+\textbf{Description}:  The product shall always users enter a starting URL or local HTML page\\
+\textbf{Rationale}: To allow the user crawl any website that is on or offline\\
+\textbf{Originator}: Abraham Omorogbe\\
+\textbf{Fit Criterion}: The crawler starts from the inputted website.\\
+\textbf{Customer Satisfaction}: 5 \hfill 	\textbf{Customer Dissatisfaction}: 5 \hfill\\
+\textbf{Priority}: High \hfill \textbf{Conflicts}: None \hfill 		\\
+\textbf{Supporting Material}: None\\
+\textbf{History}: Created October 9, 2015 \hfill	 \textbf{Volere}\hfill
+
 \end{framed}
 
 \begin{framed}
-\textbf{Requirement \#}: 5 \hfill \textbf{Requirement Type}: 9 \hfill\textbf{Event/Use case \#}: 3,5 \hfill\\\textbf{Description}:  The product shall display all a report of all found results and corresponding websites\\\textbf{Rationale}: This is one of the main functionality of a web crawl, the application should be able to start at one sites and find related links. List will be used to gather info and check status codes	\\\textbf{Originator}: Abraham Omorogbe\\\textbf{Fit Criterion}: The reports are accurate. All link that are reported as status code 404 are offline and all details of resource match source website.\\\textbf{Customer Satisfaction}: 5 \hfill 	\textbf{Customer Dissatisfaction}: 5 \hfill\\\textbf{Priority}: High \hfill \textbf{Conflicts}: None \hfill 		\\\textbf{Supporting Material}: None\\\textbf{History}: Created October 9, 2015 \hfill	 \textbf{Volere}\hfill
+\textbf{Requirement \#}: 5 \hfill \textbf{Requirement Type}: 9 \hfill\textbf{Event/Use case \#}: 3,5 \hfill\\
+\textbf{Description}:  The product shall display all a report of all found results and corresponding websites\\
+\textbf{Rationale}: This is one of the main functionality of a web crawl, the application should be able to start at one sites and find related links. List will be used to gather info and check status codes	\\
+\textbf{Originator}: Abraham Omorogbe\\
+\textbf{Fit Criterion}: The reports are accurate. All link that are reported as status code 404 are offline and all details of resource match source website.\\
+\textbf{Customer Satisfaction}: 5 \hfill 	\textbf{Customer Dissatisfaction}: 5 \hfill\\
+\textbf{Priority}: High \hfill \textbf{Conflicts}: None \hfill 		\\
+\textbf{Supporting Material}: None\\
+\textbf{History}: Created October 9, 2015 \hfill	 \textbf{Volere}\hfill
+
 \end{framed}
 
 \begin{framed}
-\textbf{Requirement \#}: 6 \hfill \textbf{Requirement Type}: 9 \hfill\textbf{Event/Use case \#}: 5,6 \hfill\\\textbf{Description}:  The product shall able to display website’s structure\\\textbf{Rationale}: Give to users a visually representation of the structure for entered website.\\\textbf{Originator}: Abraham Omorogbe\\\textbf{Fit Criterion}: The web structure matches the structure of inputted website.	\\\textbf{Customer Satisfaction}: 5 \hfill 	\textbf{Customer Dissatisfaction}: 5 \hfill\\\textbf{Priority}: High \hfill \textbf{Conflicts}: None \hfill 		\\\textbf{Supporting Material}: None\\\textbf{History}: Created October 9, 2015 \hfill	 \textbf{Volere}\hfill
+\textbf{Requirement \#}: 6 \hfill \textbf{Requirement Type}: 9 \hfill\textbf{Event/Use case \#}: 5,6 \hfill\\
+\textbf{Description}:  The product shall able to display website’s structure\\
+\textbf{Rationale}: Give to users a visually representation of the structure for entered website.\\
+\textbf{Originator}: Abraham Omorogbe\\
+\textbf{Fit Criterion}: The web structure matches the structure of inputted website.	\\
+\textbf{Customer Satisfaction}: 5 \hfill 	\textbf{Customer Dissatisfaction}: 5 \hfill\\
+\textbf{Priority}: High \hfill \textbf{Conflicts}: None \hfill 		\\
+\textbf{Supporting Material}: None\\
+\textbf{History}: Created October 9, 2015 \hfill	 \textbf{Volere}\hfill
+
 \end{framed}
 
 \begin{framed}
-\textbf{Requirement \#}: 7 \hfill \textbf{Requirement Type}: 9 \hfill\textbf{Event/Use case \#}: 1 \hfill\\\textbf{Description}:  The product shall find specific information from specified websites and related sites\\\textbf{Rationale}: To allow user enter details they are looking for, and the application can return data based on starting URL.\\\textbf{Originator}: Abraham Omorogbe\\\textbf{Fit Criterion}: Returned websites most be related with inputted website and information return must match what the user specified.\\\textbf{Customer Satisfaction}: 5 \hfill 	\textbf{Customer Dissatisfaction}: 5 \hfill\\\textbf{Priority}: High \hfill \textbf{Conflicts}: None \hfill 		\\\textbf{Supporting Material}: None\\\textbf{History}: Created October 9, 2015 \hfill	 \textbf{Volere}\hfill
+\textbf{Requirement \#}: 7 \hfill \textbf{Requirement Type}: 9 \hfill\textbf{Event/Use case \#}: 1 \hfill\\
+\textbf{Description}:  The product shall find specific information from specified websites and related sites\\
+\textbf{Rationale}: To allow user enter details they are looking for, and the application can return data based on starting URL.\\
+\textbf{Originator}: Abraham Omorogbe\\
+\textbf{Fit Criterion}: Returned websites most be related with inputted website and information return must match what the user specified.\\
+\textbf{Customer Satisfaction}: 5 \hfill 	\textbf{Customer Dissatisfaction}: 5 \hfill\\
+\textbf{Priority}: High \hfill \textbf{Conflicts}: None \hfill 		\\
+\textbf{Supporting Material}: None\\
+\textbf{History}: Created October 9, 2015 \hfill	 \textbf{Volere}\hfill
+
 \end{framed}
 
 \subsection*{Data Requirements}
@@ -508,7 +610,7 @@ Making changes to the web-crawler as more changes occur
 \begin{itemize}
   \item Work on prototype and get feedback from supervisor.
   \item Discuss missing requirements and add them.
-  \item After getting feedback on prototype, work on revisions.
+     \item Revise requirements document.  \item Create a test plan.  \item Demonstrate a proof of concept.  \item Draw up design documents.  \item Revision 0 project demonstration.\item Final revision project demonstration.
 \end{itemize}
 
 \section{Migration to the New Product }
@@ -521,10 +623,11 @@ Not applicable.
 \subsection*{Learning of the software tools:} Some of the software tools are new to the team members, so in order to successfully complete implementation of the program and meet project deadlines it is imperative that the members of the group learn to use these tools in a timely manner.
 
 \section{Costs }
-This program is not for profit.
+This program is not for profit. There are no direct monetary costs associated with this project.
 
 \section{User Documentation and Training }
-User’s will provided with information on program use via a “Help” option which, when selected, willopen a dialog box detailing general functionality of the program along with an FAQ section.
+User’s will provided with information on program use via a “Help” option which, when selected, will
+open a dialog box detailing general functionality of the program along with an FAQ section.
 
 \section{Waiting Room}
 New features of this product would include Linux functionality and multiple language support.
