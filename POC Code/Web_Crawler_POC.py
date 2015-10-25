@@ -13,24 +13,28 @@ class Web_Crawler_POC(object):
     def __init__(self):
         self.start = 'www.example.com'
 
+    """
+    Used to get all the links on a page
+    """
     def grabLinks(self):
         self.start = raw_input("What website do you what to crawl (Input format = www.example.com):")
-
         r  = requests.get("HTTP://" + self.start)
-
         data = r.text
-
         soup = BeautifulSoup(data)
 
         for link in soup.find_all('a'):
             print "Found this link on the page :" + link.get('href')
 
+    """
+    Used to download the HTML and all the images
+    """
     def downloadHTML(self):
-        start = raw_input("What website do you what to crawl (Input format = www.example.com):")
-        URL = "HTTP://" + start
+        self.start = raw_input("What website do you what to crawl (Input format = www.example.com):")
+        URL = "HTTP://" + self.start
         soup = BeautifulSoup(urlopen(URL))
         parsed = list(urlparse.urlparse(URL))
         for image in soup.findAll("img"):
+            #Print out the string of the image file being processed
             print "Image: %(src)s" % image
             filename = image["src"].split("/")[-1]
             outpath = os.path.join('imgs/', filename)
