@@ -20,7 +20,7 @@ class Web_Crawler_POC(object):
         self.start = raw_input("What website do you what to crawl (Input format = www.example.com):")
         r  = requests.get("HTTP://" + self.start)
         data = r.text
-        soup = BeautifulSoup(data)
+        soup = BeautifulSoup(data,"lxml")
 
         for link in soup.find_all('a'):
             print "Found this link on the page :" + link.get('href')
@@ -31,7 +31,7 @@ class Web_Crawler_POC(object):
     def downloadHTML(self):
         self.start = raw_input("What website do you what to crawl (Input format = www.example.com):")
         URL = "HTTP://" + self.start
-        soup = BeautifulSoup(urlopen(URL))
+        soup = BeautifulSoup(urlopen(URL),"lxml")
         parsed = list(urlparse.urlparse(URL))
         for image in soup.findAll("img"):
             #Print out the string of the image file being processed
