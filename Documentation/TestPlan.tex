@@ -1,4 +1,3 @@
-
 \documentclass[12pt, titlepage]{article}
 \usepackage{xcolor} % for different colour comments
 \usepackage[left=15mm,right=15mm,top=1in,bottom=1in]{geometry}
@@ -134,7 +133,7 @@ The table \ref{table:Test Properties  List} is a Test Properties  List.
 \label{table:Test Properties List}
 \end{table}
 
-\subsection{Properties To Be Tested on Pyweblinkvalidator}
+\subsection{Properties To Be Tested on Pylinkvalidator}
 Different properties of the program that must be considered and verified through testing.\\
 \subsubsection{Ease of Use}
 The main objective of ease of use testing is ensuring the program is easy to set up and can easily be used by the stakeholders mentioned in the SRS document.\\
@@ -232,7 +231,6 @@ We are building a program that should be able to handle any query from the user 
 This application needs to be able to download the HTML file associated with a webpage. It should download the whole file without any missing or incomplete data.\\
 
 \textbf{Approach}\\
-
 This feature will be tested by setting up sample webpages or using existing ones on the web and verifying the data received by this application matches that stored in the file. This test will be considered to be passed if all expected results occur.\\
 
 \textbf{Test Cases (Blackbox, Using PyUnit)}\\
@@ -268,54 +266,68 @@ The output will be an array of Strings containing the extracted links.\\
 \item f.html
 \end{itemize}
 
-
 \section{Features Tested in Final}
 \subsection{Depth First Crawl}
 This type of crawl involves going down into every link that is found recursively down as deep as possible first. This is optimal for smaller websites as you can analyze the whole website very efficiently.\\
 
 \textbf{Approach}\\
-
-This feature will be tested by setting up a sample website and ensuring all of its pages are traversed in the correct order as well as that pages that shouldn?t be accessible are not. This test will be considered to be passed if all expected results occur.\\
+This feature will be tested by setting up a sample website and ensuring all of its pages are traversed in the correct order as well as that pages that should not be accessible are not. This test will be considered to be passed if all expected results occur.\\
 
 \textbf{Test Cases (White Box, Using PyUnit)}\\
+The process will involve performing the crawling algorithm, recording links visited and any notifications raised.\\
+The output will be an array of Strings containing the list of links and notifications in the order they were visited.\\
 
-root.html, (perform algorithm, record links visited and any notifications), (String array containing the list of links and notifications in the order they were visited)
-evenTree.html
+\textbf{Files Used:}
+\begin{itemize}
+\item root.html
+\item evenTree.html
+\end{itemize}
 
 \subsection{Breadth First Crawl}
 This type of crawl involves finding every link found on a page and then following each one. From there, this step occurs iteratively while there are remaining links that don?t lead to dead-ends. This is optimal for larger websites as you can analyze the website layer by layer in a short time instead of taking a large amount of time delving all the way down first.\\
 
 \textbf{Approach}\\
-
 This feature will be tested by setting up a sample website and ensuring all of its pages are traversed in the correct order as well as that pages that shouldn?t be accessible are not. This test will be considered to be passed if all expected results occur.\\
 
 \textbf{Test Cases (White Box, Using PyUnit)}\\
+The process will involve performing the crawling algorithm, recording links visited and any notifications raised.\\
+The output will be an array of Strings containing the list of links and notifications in the order they were visited.\\
 
-root.html, (Perform algorithm, record links visited and any notifications), (String array containing the list of links and notifications in the order they were visited)
-evenTree.html
+\textbf{Files Used:}
+\begin{itemize}
+\item root.html
+\item evenTree.html
+\end{itemize}
 
 \subsection{Download Media Resources}
 This application should be able to download various resources that are made readily available on the host server. Notifications will also be provided for any resources that are not visible or that are not available for download.\\
 
 \textbf{Approach}\\
-
 This feature will be tested by adding various resources to our website (including broken links) and attempting to download them. We will then test to ensure that the downloaded resource matches the original version or that broken links return the correct notification. This test will be considered to be passed if all expected results occur.\\
 
 \textbf{Test Cases (White Box, Using PyUnit)}\\
+The process will involve performing the crawling algorithm, download all links and any notifications in the order they were visited.\\
+The output will be a set of nested folders containing all the downloaded images for each page (i.e. img1, img2, etc).\\
 
-media.html, (Performs a crawl, downloads all the images on each page visited), (Nested folders containing all the downloaded images for each page (i.e. img1, img2, etc))
-evenTree.html
+\textbf{Files Used:}
+\begin{itemize}
+\item media.html
+\end{itemize}
 
 \subsection{Error Verification and Notification}
 This application must inform the user of various issued raised while performing its checks. These errors include various HTML error codes such as server faults, permission conflicts and invalid requests.\\
 
 \textbf{Approach}\\
-
 This feature will be tested by forcing the occurrence of errors and ensuring that the notifications that are provided match the ones expected to. This test will be considered to be passed if all expected results occur.\\
 
 \textbf{Test Cases (White Box, Using PyUnit)}\\
+The process will involve parsing the file, handling all broken links correctly and receiving error notifications.\\
+The output will be a String array containing the notifications in the order that they occurred.\\
 
-errorLinks.html, (Parse file, handle all broken links correctly, receive error notifications), (String array containing the notifications in the order that they occurred)
+\textbf{Files Used:}
+\begin{itemize}
+\item errorLinks.html
+\end{itemize}
 
 \subsection{Attempting to Correct Invalid Links}
 In HTML code, links are frequently written without the ?http://? or ?www? part of their prefix which will bring rise to errors when attempting to connect to the webpage. This application will attempt to correct this issue by adding the to any broken links before creating any error notifications.\\
@@ -325,28 +337,41 @@ This feature will be tested by providing broken links, functioning links and lin
 
 \textbf{Test Cases (Black Box, Using PyUnit)}\\
 
-www.google.ca, (check for http://, add http://), (http://www.google.ca)
-htttp://www.google.ca, (check for http://, try adding http:// and http://www.), (Error in link notification)
-google.ca, (check for http:/ try adding http:// and http://www.), (http://www.google.ca)
-http://google.ca, (check for http://, add www. after), (http://www.google.ca)
+\begin{table}[h!]
+	\begin{tabular}{| p{5cm} | p{5cm} | p{5cm} |}    \hline
+	Input  &Process &Output\\ \hline
+	www.google.ca &check for http:// \newline add http:// \newline check link &http://www.google.ca\\ \hline
+	htttp://www.google.ca &check for http:// \newline try adding http:// \newline check link \newline try adding http://www \newline check link &Error in link notification\\ \hline
+	google.ca &check for http:// \newline try adding http:// \newline check link \newline try adding http://www. \newline check link &http://www.google.ca \\ \hline
+	http://google.ca &check for http:// \newline add www. after http:// \newline check link &http://www.google.ca \\ \hline
+	\end{tabular}
+       
+       \caption{Invalid Link Test Process}
+       \label{table:Invalid Link Test Process}
+\end{table}
 
 \subsection{Recognizing Cycles within the Links}
 When traversing a website, it is possible to have links which end up creating a cycle. A computer would not recognize this and would end up stuck traversing this loop infinitely. This application should be able to keep track of previously visited links and compare them to new ones in order to prevent this situation.\\
 
 \textbf{Approach}\\
-
 This feature will be tested by setting up sample webpages that contain cycles within the structure of their links. The program should be able to avoid getting caught in these cycles. This test will be considered to be passed if all tests perform the expected number of steps to completely traverse the websites.\\
 
 \textbf{Test Cases (Using PyUnit)}\\
+The process will involve parsing a file, recording the address name, continuing to visit addresses, and finally, not re-entering a previously visited address.\\
+The output will be a String array containing the names of the files in the order they were visited.\\
 
-cycle0.html, (Enters the file, records address name, continues visiting addresses, doesn?t enter a previously visited address), (The list of three files)
+\textbf{Files Used:}
+\begin{itemize}
+\item cycle0.html
+\item cycle1.html
+\item cycle2..html
+\end{itemize}
 
 \subsection{Usability Testing}
 This application must be usable from anyone with basic terminal usage experience with how to run a python application. There should not be much of a learning curve, at least for the more simple functionality of the program.\\
 
 \textbf{Approach}\\
-
-	The usability metric will be determined by getting a sample of ten individuals who are capable of running an application from the Terminal or Command Line. These users will perform a series of predetermined tasks using the program and then fill out a brief survey regarding their experience. This test will be considered to be passed if the average scoring of the survey is 90\% or higher.\\
+The usability metric will be determined by getting a sample of ten individuals who are capable of running an application from the Terminal or Command Line. These users will perform a series of predetermined tasks using the program and then fill out a brief survey regarding their experience. This test will be considered to be passed if the average scoring of the survey is 90\% or higher.\\
 
 Tested by way of a survey.
 
@@ -354,7 +379,6 @@ Tested by way of a survey.
 This application must reliably produce the same (correct) results for the same inputs. For example, if there is no change in the state of any pages on the website, performing a traversal should output the same links and downloading resources should return the same resources.\\
 
 \textbf{Approach}\\
-	
 The aforementioned individuals will be required to perform certain tests multiple times in order to confirm that the results are consistent. This test will be considered to be passed if the average score of these tests are 90\% or higher (100\% would be optimal but it is possible the error is on the tester?s end).\\
 
 Tested by way of a survey.
@@ -371,7 +395,7 @@ Unit and integration tests will be used to test this webcrawler. PyUnit is Pytho
 \section{Testing Schedule}
 Testing will be performed at several points of the SDLC.  The test report revision 0 will be completed by November 23 2014 and the final test report will be completed by December 8 2015. The group members and the supervisor will handle the organization of task division and timelines for the project completion. The python unit tests on the webcrawler will be performed every week, during these tests any errors found in the webcrawler implementation and states will be corrected. The test cases will be modified every month since the development of the webcrawler will be progressed because of new features implemented. Also before any code for the program is committed it is the individual?s responsibility to test it.
 
-
+\pagebreak
 \section{Appendix}
 \subsection{Test Deliverables}
 \begin{table}[h!]
