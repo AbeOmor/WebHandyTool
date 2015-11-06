@@ -104,20 +104,36 @@ N/A
 \subsection{Behaviour Hiding Modules}
 \subsubsection{Download Resources}
 void downloadResources(String: link, String: fileType, String: destination)\\
-\textbf{Secrets}
-Parse through the HTML code in the link provided in order to locate \\
-\textbf{Services}
+
+\textbf{Secrets}\\
+
+Parse through the HTML code in the link provided in order to locate all files that match the specified file type. For each file, the result is downloaded into a folder specified by the user.\\
+
+\textbf{Services}\\
+
 Writes all resources matching the given file type from the page link to the file specified by destination.\\
-\textbf{Implemented By}
+
+\textbf{Implemented By}\\
 
 \subsubsection{Exact Query Search}
-\textbf{Secrets}
-\textbf{Services}
-\textbf{Implemented By}
+int[] searchForString(String: query, String: data)\\
+
+\textbf{Secrets}\\
+
+Iterates through the data provided and records every instance matching the query String that was passed in. This will be accomplished using the Knuth-Morris-Pratt String searching algorithm.
+
+\textbf{Services}\\
+
+Returns a list of all occurrences of a given query in the data provided.
+
+\textbf{Implemented By}\\
+
+
 \subsubsection{Similar Query Search}
 \textbf{Secrets}
 \textbf{Services}
 \textbf{Implemented By}
+
 \subsubsection{Whitespace Checker}
 \textbf{Secrets}
 \textbf{Services}
@@ -165,15 +181,16 @@ String prettyStructure webStructModel(String: link, int: depth)\\
 It provides a structured model of the website and other site the initial site is connect to. It displays a hierarchy that will show users how crawled link interact with each other.\\
 \textbf{Implemented By:} Python
 
-\subsection{Software Decision Modules}
 \subsubsection{Options}
 \textbf{Secrets}
 \textbf{Services}
 \textbf{Implemented By}
+
 \subsubsection{Crawler}
 \textbf{Secrets}
 \textbf{Services}
 \textbf{Implemented By}
+
 \subsubsection{HTML Corrector}
 \textbf{Secrets}
 \textbf{Services}
