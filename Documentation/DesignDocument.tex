@@ -1,0 +1,207 @@
+\documentclass[titlepage]{article}
+\usepackage{xcolor} % for different colour comments
+\usepackage[left=15mm,right=15mm,top=1in,bottom=1in]{geometry}
+\usepackage{framed}
+\usepackage{graphicx}
+\graphicspath{ {../images/} }
+%% Comments
+\newif\ifcomments\commentsfalse %i replaced comments true by comment false so the comments will be hidden
+
+\ifcomments
+\newcommand{\authornote}[3]{\textcolor{#1}{[#3 ---#2]}}
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+\else
+\newcommand{\authornote}[3]{}
+\newcommand{\todo}[1]{}
+\fi
+
+\newcommand{\wss}[1]{\authornote{magenta}{SS}{#1}}
+\newcommand{\hm}[1]{\authornote{blue}{HM}{#1}} %Hediyeh
+\newcommand{\tz}[1]{\authornote{blue}{TZ}{#1}} %Tahereh
+\newcommand{\pl}[1]{\authornote{blue}{PL}{#1}} %Peng
+
+
+\begin{document}
+\title{pylinkvalidator \\
+ Design Document Module Guide : newAGEtech, Group H }
+\author{Genevieve Okon (Okong), Abraham Omorogbe(Omorogoa),\\
+ Eric Le Forte(Leforte)}
+\date{\today}
+\maketitle
+
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\textbf{Revision History} \\ \normalsize
+\pagebreak
+
+\section{Introduction}
+
+
+\section{Anticipated \& Likely Changes}
+
+
+\section{Module Hierarchy}
+This section contains the module design structure of our project. Modules are summarized in a hierarchy as shown in Table 1. The modules listed below, most of which are leaves in the hierarchy tree, are the modules that will actually be implemented.
+\\
+
+\textbf{Modules}\\
+
+M1: Option Module\\
+M2: Crawler Module\\
+M3: HTML Corrector Module\\
+M4: Download Resources Module\\
+M5: Exact Query Search Module\\
+M6: Similar Query Search Module\\
+M7: Whitespace Checker Module\\
+M8: Find Links Module\\
+M9: Check Errors Module\\
+M10: Parse Data Module\\
+M11: Query Search Module\\
+M12: Depth Setter Module\\
+M13: Website Structure Modelling Module\\
+
+Note that M5, M6, M7 are submodules of the larger Query Search Module. M2 is the highest level module and utilizes all others internally.\\
+
+\textbf{Hardware hiding}\\
+
+N/A\\
+
+\textbf{Behaviour Hiding Modules}
+
+\begin{itemize}
+\item{Download Resources Module}\\
+\item{Exact Query Search Module}\\
+\item{Similar Query Search Module}\\
+\item{Whitespace Checker Module}\\
+\item{Find Links Module}\\
+\item{Check Errors Module}\\
+\item{Parse Data Module}\\
+\item{Query Search Module}\\
+\item{Website Structure Modelling Module}\\
+\end{itemize}
+
+\textbf{Software Decision Modules}
+
+\begin{itemize}
+\item{Option Module}\\
+\item{Crawler Module}\\
+\item{HTML Corrector Module}\\
+\item{Depth Setter Module}\\
+\end{itemize}
+
+
+\section{Connection Between Requirements \& Design}
+
+This design was developed using the requirements document to help guide the decomposition of the project's modules. The requirements were matched to corresponding modules which complete the various tasks. For example, Requirement \#2 from the requirements document (The product shall download resources from a website) will be accomplished using module M4.
+
+
+\section{Module Decomposition}
+\subsection{Hardware Hiding Modules}
+N/A
+\subsection{Behaviour Hiding Modules}
+\subsubsection{Download Resources}
+void downloadResources(String: link, String: fileType, String: destination)
+\textbf{Secrets}
+Parse through the HTML code in the link provided in order to locate 
+\textbf{Services}
+Writes all resources matching the given file type from the page link to the file specified by destination.
+\textbf{Implemented By}
+
+\subsubsection{Exact Query Search}
+\textbf{Secrets}
+\textbf{Services}
+\textbf{Implemented By}
+\subsubsection{Similar Query Search}
+\textbf{Secrets}
+\textbf{Services}
+\textbf{Implemented By}
+\subsubsection{Whitespace Checker}
+\textbf{Secrets}
+\textbf{Services}
+\textbf{Implemented By}
+\subsubsection{Find Links}
+\textbf{Secrets}
+\textbf{Services}
+\textbf{Implemented By}
+\subsubsection{Check Errors}
+\textbf{Secrets}
+\textbf{Services}
+\textbf{Implemented By}
+\subsubsection{Parse Data}
+\textbf{Secrets}
+\textbf{Services}
+\textbf{Implemented By}
+\subsubsection{Query Search}
+\textbf{Secrets}
+\textbf{Services}
+\textbf{Implemented By}
+\subsubsection{Website Structure Modelling}
+\textbf{Secrets}
+\textbf{Services}
+\textbf{Implemented By}
+\subsection{Software Decision Modules}
+\subsubsection{Options}
+\textbf{Secrets}
+\textbf{Services}
+\textbf{Implemented By}
+\subsubsection{Crawler}
+\textbf{Secrets}
+\textbf{Services}
+\textbf{Implemented By}
+\subsubsection{HTML Corrector}
+\textbf{Secrets}
+\textbf{Services}
+\textbf{Implemented By}
+\subsubsection{Depth Setter}
+\textbf{Secrets}
+\textbf{Services}
+\textbf{Implemented By}
+
+\section{Traceability Matrix}
+\begin{table}[h!]
+\centering
+    \begin{tabular}{| p{5cm} | p{5cm} |}    \hline
+    Requirements &Modules\\ \hline
+    
+      R1  &M1, M2, M3, M9, M10 \\ \hline
+      R2  &M1, M2, M3, M4, M10 \\ \hline
+      R3  &M12 \\ \hline
+      R4  &M2 \\ \hline
+      R5  &M1, M2, M3, M4, M5, M6, M7, M8, M9, M10, M11, M12, M13 \\ \hline
+      R6  &M1, M2, M3, M8, M10, M12, M13 \\ \hline
+      R7  &M1, M2, M3, M5, M6, M7, M8, M10, M11, M12 \\ \hline
+      
+    \end{tabular}
+    \caption{Traceback to Requirements}
+\label{table:Traceback to Requirements}
+\end{table}
+
+\begin{table}[h!]
+\centering
+    \begin{tabular}{| p{5cm} | p{5cm} |}    \hline
+    Requirements &Modules\\ \hline
+    
+      AC1  & \\ \hline
+      AC2  & \\ \hline
+      
+    \end{tabular}
+    \caption{Traceback to Anticipated Changes}
+\label{table:Traceback to Anticipated Changes}
+\end{table}
+
+
+\section{Use Hierarchy Between Modules}
+The figure below depicts the uses relationships between all the modules in the project. It can be seen that the graph is a directed acyclic graph (DAG). The facade design pattern is being used to design this system. Higher level modules in relation to the hierarchy are inherently simpler because they delegate work to  modules from the lower levels.
+
+
+
+\noindent \wss{This is an example comment.  You can turn comments off by replacing
+  commentstrue by commentsfalse.}\\
+\hm{Sample comment}\\
+\tz{Sample comment}\\
+\pl{Sample comment}
+
+\end{document}
