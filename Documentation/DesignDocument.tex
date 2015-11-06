@@ -46,7 +46,7 @@ Revision  &Revision Date &Description of Change &Author\\ \hline
 3& 3-11-15& created Tracability matrix &Abraham Omorogbe\\ \hline
 4& 3-11-15& created  Module Hierarchy&Abraham Omorogbe\\ \hline
 5& 3-11-15&Proofreading of design document&Genevieve Okon\\ \hline
-6& 3-11-15&created pert and Grant chart&Genevieve Okon\\ \hline
+6& 3-11-15&created pert and Gantt chart&Genevieve Okon\\ \hline
 7& 4-11-15& Proofreading and merging of overall content&Geneviieve Okon\\ \hline
 8& 4-11-15& Use Hierarchy Between Modules&Eric Le Fort\\ \hline
 9& 4-11-15&Connection Between Requirements and Design&Eric Le Fort\\ \hline
@@ -62,14 +62,15 @@ Revision  &Revision Date &Description of Change &Author\\ \hline
 
 
 \section{Introduction}
-The following document details the Module Interface Specifications for the implemented modules in Pylinkvalidator. This will Identify and describe the program modules that need to be built in detail so that developers or viewers can easily understand the program.  Navigation through the program will be made easier for design and maintenance purposes. Complementary documents include the System Requirement Specifications.
+The following document details the Module Interface Specifications for the implemented modules in Pylinkvalidator. This will identify and describe the program modules that need to be built in detail so that developers and other viewers can easily understand the program.  Navigation through the program will be simplified for design and maintenance purposes. Complementary documents include the System Requirement Specifications.\\
 
-
-The rest of the document is organized as follows. Section 2 lists the anticipated and unlikely changes of the software requirements. Section 3 summarizes the module decomposition that was constructed according to the likely changes. Section 4 specifies the connections between the software requirements and the modules. The design will be compared with the requirements provided in the SRS.
+The rest of the document is organized as follows. Section 2 lists the anticipated and unlikely changes of the software requirements. Section 3 summarizes the module decomposition that was constructed according to the likely changes. Section 4 specifies the connections between the software requirements and the modules. Section 5 will clarify the levels of modules present in the project. Section 6 will compare the design to the requirements provided in the SRS. Section 7 will give a detailed module-by-module breakdown. Section 8 will trace anticipated changes and modules back to requirements. Section 9 will show the use hierarchy between the modules in the program. Section 10 will set a timeline for the rest of the development process. Section 11 will provide a Gantt and Pert chart to provide a visualization to these task breakdowns.
 
 
 \section{Anticipated \& Likely Changes}
 Anticipated changes are the source of the information that is to be hidden inside the modules. Ideally, changing one of the anticipated changes will only require changing the one module that hides the associated decision.\\
+
+\noindent
 AC1: The specific hardware on which the webcrawler is running.\\
 AC2: The format of the initial input data.\\
 AC3: The format of the input parameters.\\
@@ -84,6 +85,8 @@ AC8: The implementation for the visual version of the structure model\\
 2.2 Unlikely Changes
 The module design should be as general as possible. However, a general system is more complex. Sometimes this complexity is not necessary. Fixing some design decisions at the system architecture stage can simplify the software design. If these decision should later need to be changed, then many parts of the design will potentially need to be modified.
 These are few unlikely changes.\\
+
+\noindent
 UC1: Input/Output devices (Input: File and/or Keyboard, Output: File, Memory, and/or
 Screen)\\
 UC2: There will always be a source of input data external to the software.\\
@@ -96,6 +99,7 @@ This section contains the module design structure of our project. Modules are su
 
 \textbf{Modules}\\
 
+\noindent
 M1: Option Module\\
 M2: Crawler Module\\
 M3: HTML Corrector Module\\
@@ -307,10 +311,10 @@ int depthSetter(int depth) Exception: Not positive int\\
 \textbf{Environment Variables}\\
 rawInput: Users keyboard input\\
 
-\textbf{Secrets}
+\textbf{Secrets:}
 Assignor which sets the depth variable\\
 
-\textbf{Services}
+\textbf{Services:}
 Sets the default max depth variable for the web crawler\\
 
 \textbf{Implemented By:}
@@ -340,8 +344,14 @@ Python
     \begin{tabular}{| p{5cm} | p{5cm} |}    \hline
     Requirements &Modules\\ \hline
     
-      AC1  & \\ \hline
+      AC1  & N/A\\ \hline
       AC2  & \\ \hline
+      AC3  & R3, R4\\ \hline
+      AC4  & \\ \hline
+      AC5  & \\ \hline
+      AC6  & \\ \hline
+      AC7  & \\ \hline
+      AC8  & \\ \hline
       
     \end{tabular}
     \caption{Traceback to Anticipated Changes}
@@ -352,22 +362,30 @@ Python
 \section{Use Hierarchy Between Modules}
 The figure below depicts the uses relationships between all the modules in the project. It can be seen that the graph is a directed acyclic graph (DAG). The facade design pattern is being used to design this system. Higher level modules in relation to the hierarchy are inherently simpler because they delegate work to  modules from the lower levels.\\
 
-
-\section{Detailed timeline for the rest of the course}
-\includegraphics[width=25cm, height=20cm]{detaildesign}\\
-
-
-
-\section{Grant and pert charts for the timeline}
-\includegraphics[width=19cm, height=13cm]{grant}\\
-\break
-\includegraphics[width=20cm, height=15cm]{pert1}\\
-\includegraphics[width=20cm, height=15cm]{pert2}
+\begin{figure}
+	\includegraphics[width=25cm, height=20cm]{detaildesign}
+	\caption{Detail Design for the Development Process}
+	\label{fig:Detail Design for the Development Process}
+\end{figure}
 
 
+\begin{figure}
+	\includegraphics[width=19cm, height=13cm]{gantt}
+	\caption{Gantt Chart}
+	\label{fig:Gantt}
+\end{figure}
 
+\begin{figure}
+	\includegraphics[width=20cm, height=15cm]{pert1}
+	\caption{Pert Chart(1)}
+	\label{fig:Pert Chart(1)}
+\end{figure}
 
-
+\begin{figure}
+	\includegraphics[width=20cm, height=15cm]{pert2}
+	\caption{Pert Chart(2)}
+	\label{fig:Pert Chart(2)}
+\end{figure}
 
 \noindent \wss{This is an example comment.  You can turn comments off by replacing
   commentstrue by commentsfalse.}\\
