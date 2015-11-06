@@ -103,11 +103,11 @@ This design was developed using the requirements document to help guide the deco
 N/A
 \subsection{Behaviour Hiding Modules}
 \subsubsection{Download Resources}
-void downloadResources(String: link, String: fileType, String: destination)
+void downloadResources(String: link, String: fileType, String: destination)\\
 \textbf{Secrets}
-Parse through the HTML code in the link provided in order to locate 
+Parse through the HTML code in the link provided in order to locate \\
 \textbf{Services}
-Writes all resources matching the given file type from the page link to the file specified by destination.
+Writes all resources matching the given file type from the page link to the file specified by destination.\\
 \textbf{Implemented By}
 
 \subsubsection{Exact Query Search}
@@ -122,26 +122,49 @@ Writes all resources matching the given file type from the page link to the file
 \textbf{Secrets}
 \textbf{Services}
 \textbf{Implemented By}
+
 \subsubsection{Find Links}
-\textbf{Secrets}
-\textbf{Services}
-\textbf{Implemented By}
+List Links findLinks(BeautifulSoup: data, String: destination) Exceptions: No Data Found\\
+\textbf{Secrets:}
+Parser that parsers through the HTML code in the data provided\\
+\textbf{Services:}
+Finds all the links ($<$a$>$$<$/a$>$ anchor tags on page) on a page \\
+\textbf{Implemented By:} Python
+
 \subsubsection{Check Errors}
-\textbf{Secrets}
-\textbf{Services}
-\textbf{Implemented By}
+List Errors checkErrors(String: link, Array: List of links) Exceptions: Webpage Unavailable\\
+\textbf{Secrets:}
+Algorithm to check the header in all the links provided \\
+\textbf{Services:}
+Checks the all the links and reports the error message associated with all the links inputed\\
+\textbf{Implemented By:} Python
+
 \subsubsection{Parse Data}
-\textbf{Secrets}
-\textbf{Services}
-\textbf{Implemented By}
+BeautifulSoup data parseData(String: link) Exceptions: Invalid Link\\
+\textbf{Secrets:}
+Converter that converts HTML code link to BeautifulSoup object \\
+\textbf{Services:}
+Returns Beautiful object for the link given, this will allow modules parse through pages data much faster\\
+\textbf{Implemented By:} Python
+
 \subsubsection{Query Search}
-\textbf{Secrets}
-\textbf{Services}
-\textbf{Implemented By}
+void querySearch(String: Query, BeautifulSoup: data, String: choice) Exceptions: Invalid Choice\\
+\textbf{Environment Variables:}
+rawInput: Users keyboard input\\
+\textbf{Secrets:}
+An algorithm that figures out what query search type to implement \\
+\textbf{Services:}
+Writes all resources matching the given file type from the page link to the file specified by destination.\\
+\textbf{Implemented By:} Python
+
 \subsubsection{Website Structure Modelling}
-\textbf{Secrets}
-\textbf{Services}
-\textbf{Implemented By}
+String prettyStructure webStructModel(String: link, int: depth)\\
+\textbf{Secrets:}
+ An algorithm that uses the seed link and structures the crawled links by depth\\
+\textbf{Services:}
+It provides a structured model of the website and other site the initial site is connect to. It displays a hierarchy that will show users how crawled link interact with each other.\\
+\textbf{Implemented By:} Python
+
 \subsection{Software Decision Modules}
 \subsubsection{Options}
 \textbf{Secrets}
@@ -155,10 +178,16 @@ Writes all resources matching the given file type from the page link to the file
 \textbf{Secrets}
 \textbf{Services}
 \textbf{Implemented By}
+
 \subsubsection{Depth Setter}
+int depth depthSetter(int depth) Exception: Not positive int\\
+\textbf{Environment Variables}\\
+rawInput: Users keyboard input\\
 \textbf{Secrets}
+Assignor which sets the depth variable  \\
 \textbf{Services}
-\textbf{Implemented By}
+Sets the default max depth variable for the web crawler\\
+\textbf{Implemented By:} Python
 
 \section{Traceability Matrix}
 \begin{table}[h!]
