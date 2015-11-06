@@ -105,106 +105,164 @@ N/A
 \subsubsection{Download Resources}
 void downloadResources(String: link, String: fileType, String: destination)\\
 
-\textbf{Secrets}\\
-
+\textbf{Secrets:}
 Parse through the HTML code in the link provided in order to locate all files that match the specified file type. For each file, the result is downloaded into a folder specified by the user.\\
 
-\textbf{Services}\\
-
+\textbf{Services:}
 Writes all resources matching the given file type from the page link to the file specified by destination.\\
 
-\textbf{Implemented By}\\
+\textbf{Implemented By:}
+Python
 
 \subsubsection{Exact Query Search}
 int[] searchForString(String: query, String: data)\\
 
-\textbf{Secrets}\\
+\textbf{Secrets:}
+Iterates through the data provided and records every instance matching the query String that was passed in. This will be accomplished using the Knuth-Morris-Pratt String searching algorithm.\\
 
-Iterates through the data provided and records every instance matching the query String that was passed in. This will be accomplished using the Knuth-Morris-Pratt String searching algorithm.
+\textbf{Services:}
+Returns a list of all occurrences of a given query in the data provided.\\
 
-\textbf{Services}\\
-
-Returns a list of all occurrences of a given query in the data provided.
-
-\textbf{Implemented By}\\
+\textbf{Implemented By:}
+Python
 
 
 \subsubsection{Similar Query Search}
-\textbf{Secrets}
-\textbf{Services}
-\textbf{Implemented By}
+int[] searchForSimilarString(String: query, String: data, int: proximity)\\
+
+\textbf{Secrets:}
+Iterates through the data provided and records every instance sufficiently close to matching the query String that was passed in. This will be accomplished using a slight deviation from the Knuth-Morris-Pratt String searching algorithm that recognizes fuzzy string searching.\\
+
+\textbf{Services:}
+Returns a list of all occurrences within a certain deviation of a given query in the data provided.\\
+
+\textbf{Implemented By:}
+Python
 
 \subsubsection{Whitespace Checker}
-\textbf{Secrets}
-\textbf{Services}
-\textbf{Implemented By}
+boolean isWhitespace(char: character)\\
+
+\textbf{Secrets:}
+Checks to see if the character passed in is a tab, a space or a new line character.\\
+
+\textbf{Services:}
+Returns whether the character passed in is certain types of whitespace.\\
+
+\textbf{Implemented By:}
+Python
 
 \subsubsection{Find Links}
-List Links findLinks(BeautifulSoup: data, String: destination) Exceptions: No Data Found\\
+List<Links> findLinks(BeautifulSoup: data, String: destination) Exceptions: No Data Found\\
+
 \textbf{Secrets:}
 Parser that parsers through the HTML code in the data provided\\
+
 \textbf{Services:}
 Finds all the links ($<$a$>$$<$/a$>$ anchor tags on page) on a page \\
-\textbf{Implemented By:} Python
+
+\textbf{Implemented By:}
+Python
 
 \subsubsection{Check Errors}
-List Errors checkErrors(String: link, Array: List of links) Exceptions: Webpage Unavailable\\
+List<Errors> checkErrors(String: link, Array: List of links) Exceptions: Webpage Unavailable\\
+
 \textbf{Secrets:}
 Algorithm to check the header in all the links provided \\
+
 \textbf{Services:}
 Checks the all the links and reports the error message associated with all the links inputed\\
+
 \textbf{Implemented By:} Python
 
 \subsubsection{Parse Data}
-BeautifulSoup data parseData(String: link) Exceptions: Invalid Link\\
+BeautifulSoup parseData(String: link) Exceptions: Invalid Link\\
+
 \textbf{Secrets:}
 Converter that converts HTML code link to BeautifulSoup object \\
+
 \textbf{Services:}
 Returns Beautiful object for the link given, this will allow modules parse through pages data much faster\\
+
 \textbf{Implemented By:} Python
 
 \subsubsection{Query Search}
 void querySearch(String: Query, BeautifulSoup: data, String: choice) Exceptions: Invalid Choice\\
+
 \textbf{Environment Variables:}
 rawInput: Users keyboard input\\
+
 \textbf{Secrets:}
 An algorithm that figures out what query search type to implement \\
+
 \textbf{Services:}
 Writes all resources matching the given file type from the page link to the file specified by destination.\\
-\textbf{Implemented By:} Python
+
+\textbf{Implemented By:}
+Python
 
 \subsubsection{Website Structure Modelling}
-String prettyStructure webStructModel(String: link, int: depth)\\
+String webStructureModel(String: link, int: depth)\\
+
 \textbf{Secrets:}
  An algorithm that uses the seed link and structures the crawled links by depth\\
+ 
 \textbf{Services:}
 It provides a structured model of the website and other site the initial site is connect to. It displays a hierarchy that will show users how crawled link interact with each other.\\
-\textbf{Implemented By:} Python
 
+\textbf{Implemented By:}
+Python
+
+\subsection{Software Decision Modules}
 \subsubsection{Options}
-\textbf{Secrets}
-\textbf{Services}
-\textbf{Implemented By}
+void chooseOption()\\
+
+\textbf{Secrets:}
+Obtains input from the user to decide whether they would like to download resources, crawl a website, search for a certain String or model a website. Uses searchDepth to allow the user to set their search depth for all but the download resources option as well as allowing the user to set their seed link.\\
+
+\textbf{Services:}
+Gets user input to set various program options related to how the user would like to handle crawling a webpage.\\
+
+\textbf{Implemented By:}
+Python
 
 \subsubsection{Crawler}
-\textbf{Secrets}
-\textbf{Services}
-\textbf{Implemented By}
+void crawler()\\
+
+\textbf{Secrets:}
+Directly calls the methods shown in the Use Hierarchy (found in section 7 of this document) and consolidates the results.
+
+\textbf{Services:}
+Delegates various tasks of crawling a webpage to the other methods of this program.\\
+
+\textbf{Implemented By:}
+Python
 
 \subsubsection{HTML Corrector}
-\textbf{Secrets}
-\textbf{Services}
-\textbf{Implemented By}
+String HTMLCorrector(String: link)\\
+
+\textbf{Secrets:}
+Tries to fix the given String in various ways in order to create a functioning link. This can include fixing the prefix (http://), adding www., or appending the link to the current page's path.\\
+
+\textbf{Services:}
+Fixes the link passed in such that it becomes either a functioning link or is flagged as a broken link.\\
+
+\textbf{Implemented By:}
+Python
 
 \subsubsection{Depth Setter}
-int depth depthSetter(int depth) Exception: Not positive int\\
+int depthSetter(int depth) Exception: Not positive int\\
+
 \textbf{Environment Variables}\\
 rawInput: Users keyboard input\\
+
 \textbf{Secrets}
-Assignor which sets the depth variable  \\
+Assignor which sets the depth variable\\
+
 \textbf{Services}
 Sets the default max depth variable for the web crawler\\
-\textbf{Implemented By:} Python
+
+\textbf{Implemented By:}
+Python
 
 \section{Traceability Matrix}
 \begin{table}[h!]
