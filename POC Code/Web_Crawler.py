@@ -111,8 +111,33 @@ class Web_Crawler(object):
         :param data:
         :return Query results:
         """
-
-        pass
+        locations = [];
+        queryIndex = 0;
+        
+        data.strip();
+        query.strip();
+        query = query.lower();
+        data = data.lower();
+        
+                                                    # Impossible for data to contain query or query is nonsensical.
+        if len(query) > len(data) or (len(query) == len(data) and not query is data) or len(query) == 0: 
+            return [];
+        
+        for i in range(0, len(data)):
+            if data[i] == query[queryIndex]:        # Current location is matching the query pattern so far.
+                if queryIndex == len(query) - 1:    # The whole query pattern is matched, add starting index.
+                    locations.append(i - len(query) + 1);
+                    queryIndex = 0;
+                else:
+                    queryIndex += 1;
+                
+            else:                                   #Current location didn't match the pattern.
+                if data[i] == query[0]:
+                    queryIndex = 1;
+                else:
+                    queryIndex = 0;   
+                
+        return locations;
 
     def similar_query(self, query, data, proximity):
         """
@@ -123,7 +148,46 @@ class Web_Crawler(object):
         :param proximity:
         :return Query results:
         """
-        pass
+        locations = [];
+        queryIndex = 0;
+        distance = 0;
+        
+        data.strip();
+        query.strip();
+        query = query.lower();
+        data = data.lower();
+        
+        if len(query) > len(data) or (len(query) == len(data) and not query is data) or len(query) == 0 or proximity > (0.4) * len(query):
+            return [];
+        
+        for i in range(0, len(data)):
+            if data[i] == query[queryIndex]:
+                if queryIndex == len(query) - 1:
+                    locations.append(i - len(query) + 1);
+                    queryIndex = 0;
+                    distance = 0;
+                else:
+                    queryIndex += 1;
+            elif distance < proximity:
+                if queryIndex == len(query) - 1:
+                    locations.append(i - len(query) + 1);
+                    queryIndex = 0;
+                    distance = 0;
+                elif isWhitespace(data[i]):
+                    distance += 1;
+                else:
+                    distance += 1;
+                    queryIndex += 1;
+            else:
+                if data[i] == query[0]:
+                    queryIndex = 0;
+                    distance = 0;
+                else:
+                    queryIndex = 0;
+                    distance = 0;
+
+        return locations;
+
 
     def whitespace_checker(self,character):
         """
