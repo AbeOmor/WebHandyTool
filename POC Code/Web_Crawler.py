@@ -196,7 +196,7 @@ class Web_Crawler(object):
         :param character:
         :return boolean, if there is whitespace True:
         """
-        pass
+        return a == ' ' or a == '    ' or a == os.linesep;
 
     def find_links(self,link,destination=None):
         """
