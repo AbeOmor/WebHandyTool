@@ -4,13 +4,10 @@ from bs4 import BeautifulSoup
 from urllib2 import *
 import datetime
 import urllib2
-
-
-
-
-
+import re
 
 class Web_Crawler(object):
+
     """
     Main class, it is for crawling.
     Class variable includes depth,algo,chocies,choice,output,seed,list of links
@@ -49,7 +46,7 @@ class Web_Crawler(object):
         :param link:
         :return  Url object of split url result corrected link Ex; SplitResult(scheme=u'http', netloc=u'canvasgroup.ca', path=u'/zdfzd', query=u'', fragment=u'') :
         """
-
+        HTML_corrector_helper = HTML_corrector_help()
         if not link:
             raise ValueError('The URL must not be empty')
         split_result = urlparse.urlsplit(link)
@@ -61,7 +58,7 @@ class Web_Crawler(object):
                 url = self.SCHEME_HTTP + "://" + link
             split_result = urlparse.urlsplit(url)
 
-        split_result = self.convert_iri_to_uri(split_result)
+        split_result = HTML_corrector_helper.convert_iri_to_uri(split_result)
 
         return split_result
 
@@ -173,7 +170,7 @@ class Web_Crawler(object):
                     locations.append(i - len(query) + 1);
                     queryIndex = 0;
                     distance = 0;
-                elif isWhitespace(data[i]):
+                elif self.whitespace_checker(data[i]):
                     distance += 1;
                 else:
                     distance += 1;
@@ -188,7 +185,6 @@ class Web_Crawler(object):
 
         return locations;
 
-
     def whitespace_checker(self,character):
         """
         Returns whether the character passed in is certain types of whitespace.
@@ -196,7 +192,7 @@ class Web_Crawler(object):
         :param character:
         :return boolean, if there is whitespace True:
         """
-        return a == ' ' or a == '    ' or a == os.linesep;
+        return character == ' ' or character == '    ' or character == os.linesep;
 
     def find_links(self,link,destination=None):
         """
@@ -207,7 +203,9 @@ class Web_Crawler(object):
         :param destination:
         :return List of Links:
         """
-        data = self.parse_data(link)
+
+        HTML_corrector_helper = HTML_corrector_help()
+        data = self.BS_parse_data(link)
         links = []
 
         if destination:
@@ -219,7 +217,7 @@ class Web_Crawler(object):
         for link in data.find_all('a'):
             links.append(link.get('href'))
 
-        links = [link for link in links if self.is_link(link)]
+        links = [link for link in links if HTML_corrector_helper.is_link(link)]
 
         # More understandable version of code above
         #list_of_valid_links = []
@@ -240,8 +238,8 @@ class Web_Crawler(object):
         """
 
         status_msg_list = []
-
         base_url = self.HTML_corrector(link)
+
 
         if list_of_links:
             for link in list_of_links:
@@ -277,7 +275,7 @@ class Web_Crawler(object):
 
             return str(base_url) + ' -- ' + success
 
-    def parse_data(self,link):
+    def BS_parse_data(self,link):
         """
         Returns BeautifulSoup object for the link given, this will allow modules parse through pages data much faster
 
@@ -288,6 +286,19 @@ class Web_Crawler(object):
         soup = BeautifulSoup(urlopen(link),"html.parser")
 
         return soup
+    
+    def HTML_text(self,link):
+        """
+        Returns HTML text data for Query search
+
+        :param link:
+        :return String :
+        """
+
+
+        soup = BeautifulSoup(urlopen(link),"html.parser")
+        data = re.sub(r'\n\s*\n', r'\n\n', soup.get_text().strip(), flags=re.M)
+        return data
 
     def query_search(self,query,data,choice):
         """
@@ -327,6 +338,13 @@ class Web_Crawler(object):
 
         pass
 
+class HTML_corrector_help(object):
+    """
+    Library of helper functions that are used by HTML corrector to
+    fix url links.
+    """
+    def __init__(self):
+        self.NOT_LINK = ['data','#', ]
     def is_link(self,url):
         """
         Return True if the url is not base 64 data or a local ref (#)
@@ -390,6 +408,11 @@ if __name__ == '__main__':
 
     print crawler.absolute_HTML_corrector('/about', crawler.HTML_corrector('http://www.canvasgroup.ca')).geturl()
 
-   # print(crawler.find_links(crawler.HTML_corrector("canvasgroup.ca")))
-   # print(crawler.check_errors(crawler.HTML_corrector("canvasgroup.ca/zdfzd").geturl()))
+    #links = crawler.find_links(crawler.HTML_corrector("canvasgroup.ca").geturl())
+    indexes = crawler.similar_query("ehima",crawler.HTML_text(crawler.HTML_corrector("canvasgroup.ca").geturl()),2)
+
+    print indexes
+
+    for i in range(0,len(indexes)):
+        print crawler.HTML_text(crawler.HTML_corrector("canvasgroup.ca").geturl())[indexes[i]-30:indexes[i]+30]
 
