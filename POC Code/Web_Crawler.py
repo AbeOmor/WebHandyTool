@@ -46,11 +46,10 @@ class Web_Crawler(object):
         link = raw_input("Website you would like use: ")
         link = self.HTML_corrector(link).geturl()
 
-        self.depth_setter(raw_input("Choose a depth of 0 or greater to parse the website using."));
+        self.depth_setter(input("Choose a depth of 0 or greater to parse the website using."));
         #parseType = raw_input("Would you like to do a breadth-first (0) or depth-first (1) search?");
-
+        print self.depth
         self.choice = self.choices.get(choice)
-        print self.choices.get(choice)
         self.list_of_links = crawler.bfs(link)
 
         if self.choice == "download":
@@ -100,9 +99,10 @@ class Web_Crawler(object):
         next_depth = []
         #print seed
         links = []
-        self.depth = 2
         while count <= self.depth:
-            print count
+            print "Depth " + str(count)
+            print "LINKS USED IN DEPTH " + str(count)
+            print current_depth
             for link in current_depth:
                 links.append(self.HTML_corrector(link).geturl())
                 #data = HTML_text(nextDepth[i]);
@@ -112,12 +112,15 @@ class Web_Crawler(object):
                 if new_links:
                     for link in new_links:
                         next_depth.append(self.absolute_HTML_corrector(link,base_link).geturl())
-                        print link
-            
+                    print "Links on this page: " + str(correct_link) + " HERE is the list: "
+                    print new_links
+
+            print "ALL LINKS FOUND IN DEPTH " + str(count)
+            print next_depth
+
             current_depth = next_depth
             next_depth = []
             count += 1
-        
         return links
 
     def HTML_corrector(self,link):
