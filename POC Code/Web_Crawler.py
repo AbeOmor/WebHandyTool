@@ -38,7 +38,7 @@ class Web_Crawler(object):
                            + "Download Resources = 1 \n"
                            + "Check for Errors = 2 \n"
                            + "Search for Query = 3 \n"
-                           + "Crawl all links = 4  \n")
+                           + "Just Crawl = 4  \n")
 
     def HTML_corrector(self,link):
         """
@@ -345,6 +345,7 @@ class HTML_corrector_help(object):
     """
     def __init__(self):
         self.NOT_LINK = ['data','#', ]
+        
     def is_link(self,url):
         """
         Return True if the url is not base 64 data or a local ref (#)
@@ -396,23 +397,57 @@ class HTML_corrector_help(object):
             url_part.encode("utf-8")).decode("ascii")
 
 if __name__ == '__main__':
-    crawler = Web_Crawler()
-    #crawler.option()
-    #print crawler.HTML_corrector('http://www.canvasgroup.ca','link')
-
+    crawler = new Web_Crawler();
+    option = crawler.option();
+    seed = raw_input("Enter the website url which you would like to begin parsing from.");
+    
+    if option == 1:
+        download_resources(seed);
+    elif option > 1 or option < 6:
+        crawler.depth_setter(raw_input("Choose a depth of 0 or greater to parse the website using."));
+        parseType = raw_input("Would you like to do a breadth-first (0) or depth-first (1) search?");
+        
+        if parseType == 0:
+            if option == 2:
+                #crawler.bfs(2)
+            elif option == 3:
+                #crawler.bfs(3)
+            elif option == 4:
+                #crawler.bfs(4)
+        elif parseType == 1:
+            if option == 2:
+                #crawler.dfs(2)
+            elif option == 3:
+                #crawler.dfs(3)
+            elif option == 4:
+                #crawler.dfs(4)
+        else:
+            print "Incorrect input."
+        
+        if option == 2:
+            #TODO implement check_errors(link, list_of_links)
+        elif option == 3:
+            #TODO implement querySearch
+        elif option == 4:
+        #Choose breadth or depth
+        #Choose max depth
+        #3 - query search, 4 - depth, 5 - breadth first
+    else:
+        print "Invalid option.";
+    
     #crawler.get_absolute_url_split(url, base_url_split)
     #base_url_split = crawler.get_clean_url_split('http://www.canvasgroup.ca')
     #print(crawler.get_absolute_url_split("about.html", base_url_split).geturl())
 
     #crawler.download_resources('http://www.canvasgroup.ca')
 
-    print crawler.absolute_HTML_corrector('/about', crawler.HTML_corrector('http://www.canvasgroup.ca')).geturl()
+    #print crawler.absolute_HTML_corrector('/about', crawler.HTML_corrector('http://www.canvasgroup.ca')).geturl()
 
     #links = crawler.find_links(crawler.HTML_corrector("canvasgroup.ca").geturl())
-    indexes = crawler.similar_query("ehima",crawler.HTML_text(crawler.HTML_corrector("canvasgroup.ca").geturl()),2)
+    #indexes = crawler.similar_query("ehima",crawler.HTML_text(crawler.HTML_corrector("canvasgroup.ca").geturl()),2)
 
-    print indexes
+    #print indexes
 
-    for i in range(0,len(indexes)):
-        print crawler.HTML_text(crawler.HTML_corrector("canvasgroup.ca").geturl())[indexes[i]-30:indexes[i]+30]
+    #for i in range(0,len(indexes)):
+    #    print crawler.HTML_text(crawler.HTML_corrector("canvasgroup.ca").geturl())[indexes[i]-30:indexes[i]+30]
 
