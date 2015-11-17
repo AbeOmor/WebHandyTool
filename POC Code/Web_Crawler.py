@@ -13,10 +13,10 @@ class Web_Crawler(object):
     Class variable includes depth,algo,chocies,choice,output,seed,list of links
     """
     def __init__(self):
-        self.depth = self.depth_setter(0)
+        self.depth = 0
         self.algo = 'bfs'
-        self.choices = {1:'download', 2:'error', 3:'search', 4:'crawl'}
-        self.choice = self.choices[4] #the default is crawl
+        self.choices = {'1':'download', '2':'error', '3':'search', '4':'crawl'}
+        self.choice = self.choices['4'] #the default is crawl
         self.output = ""
         self.seed = ""
         self.list_of_links = []
@@ -40,30 +40,85 @@ class Web_Crawler(object):
                            + "Search for Query = 3 \n"
                            + "Just Crawl = 4  \n")
 
+        self.choice = self.choices.get(choice)
+        print self.choices.get(choice)
+
+        link = raw_input("Website you would like use: ")
+        link = self.HTML_corrector(link).geturl()
+
+        self.depth_setter(raw_input("Choose a depth of 0 or greater to parse the website using."));
+        #parseType = raw_input("Would you like to do a breadth-first (0) or depth-first (1) search?");
+
+        self.choice = self.choices.get(choice)
+        print self.choices.get(choice)
+        self.list_of_links = crawler.bfs(link)
+
+        if self.choice == "download":
+            self.download_resources(link)
+
+        elif self.choice == "error":
+            self.check_errors(link,self.list_of_links)
+
+        elif self.choice == "search":
+            query = raw_input("What's your query: ")
+            indexes = crawler.exact_query(query,crawler.HTML_text(crawler.HTML_corrector(link).geturl()))
+            print indexes
+            for i in range(0,len(indexes)):
+                print crawler.HTML_text(crawler.HTML_corrector(link).geturl())[indexes[i]-30:indexes[i]+30]
+
+        elif self.choice == "crawl":
+            print self.list_of_links
+
+
+        #elif option > 1 or option < 6:
+        # if parseType == "0":
+        #     if option == 2:
+        #         crawler.bfs(2);     #Check errors
+        #
+        #     elif option == 3:
+        #         crawler.bfs(3);     #Query Search
+        #     elif option == 4:
+        #         crawler.bfs(4);     #Plain crawl
+        # elif parseType == "1":
+        #     if option == 2:
+        #         crawler.dfs(2)      #Plain crawl
+        #     elif option == 3:
+        #         crawler.dfs(3)      #Plain crawl
+        #     elif option == 4:
+        #         crawler.dfs(4)      #Plain crawl
+        # else:
+        #     print "Incorrect input."
+
     def dfs(self, choice):
         #TODO implement
         pass
         
-    def bfs(self, choice):
-        count = 0;
-        currentDepth = [seed];
-        print seed;
-        
-        while(count <= depth and currentDepth > 0):
-            print count;
-            for i in currentDepth:
-                nextDepth = [];
-                links.append(currentDepth[i]);
+    def bfs(self, link):
+        count = 0
+        base_link = self.HTML_corrector(link)
+        current_depth = [link]
+        next_depth = []
+        #print seed
+        links = []
+        self.depth = 2
+        while count <= self.depth:
+            print count
+            for link in current_depth:
+                links.append(self.HTML_corrector(link).geturl())
                 #data = HTML_text(nextDepth[i]);
-                newLinks = find_links(currentDepth[i]);
-                for j in newLinks:
-                    nextDepth.append(newLinks[j]);
-                    print newLinks[j];
+                #print self.absolute_HTML_corrector(link,base_link).geturl()
+                correct_link = self.absolute_HTML_corrector(link,base_link).geturl()
+                new_links = self.find_links(correct_link)
+                if new_links:
+                    for link in new_links:
+                        next_depth.append(self.absolute_HTML_corrector(link,base_link).geturl())
+                        print link
             
-            currentDepth = nextDepth;
-            count += 1;
+            current_depth = next_depth
+            next_depth = []
+            count += 1
         
-        return links;
+        return links
 
     def HTML_corrector(self,link):
         """
@@ -109,7 +164,6 @@ class Web_Crawler(object):
         :return:
         """
 
-        link = raw_input("Website you would like to download: ")
         file_type = raw_input("Enter the extension you would like to download: ")
         more_request = raw_input('Do you want more, enter Y or N: ')
 
@@ -230,7 +284,10 @@ class Web_Crawler(object):
         """
 
         HTML_corrector_helper = HTML_corrector_help()
+
         data = self.BS_parse_data(link)
+        if data == 'HTTP Error':
+            return False
         links = []
 
         if destination:
@@ -308,7 +365,10 @@ class Web_Crawler(object):
         :return BeautifulSoup :
         """
 
-        soup = BeautifulSoup(urlopen(link),"html.parser")
+        try:
+            soup = BeautifulSoup(urlopen(link),"html.parser")
+        except urllib2.HTTPError:
+            soup = 'HTTP Error'
 
         return soup
     
@@ -320,9 +380,12 @@ class Web_Crawler(object):
         :return String :
         """
 
-
-        soup = BeautifulSoup(urlopen(link),"html.parser")
-        data = re.sub(r'\n\s*\n', r'\n\n', soup.get_text().strip(), flags=re.M)
+        try:
+            soup = BeautifulSoup(urlopen(link),"html.parser")
+            data = re.sub(r'\n\s*\n', r'\n\n', soup.get_text().strip(), flags=re.M)
+        except urllib2.HTTPError:
+            soup = 'HTTP Error'
+            return soup
         return data
 
     def query_search(self,query,data,choice):
@@ -424,30 +487,31 @@ class HTML_corrector_help(object):
 if __name__ == '__main__':
     crawler = Web_Crawler();
     option = crawler.option();
-    seed = raw_input("Enter the website url which you would like to begin parsing from.");
-    
-    if option == 1:
-        download_resources(seed);
-    elif option > 1 or option < 6:
-        crawler.depth_setter(raw_input("Choose a depth of 0 or greater to parse the website using."));
-        parseType = raw_input("Would you like to do a breadth-first (0) or depth-first (1) search?");
-        
-        if parseType == "0":
-            if option == 2:
-                crawler.bfs(2);     #Check errors
-            elif option == 3:
-                crawler.bfs(3);     #Query Search
-            elif option == 4:
-                crawler.bfs(4);     #Plain crawl    
-        elif parseType == "1":
-            if option == 2:
-                crawler.dfs(2)      #Plain crawl
-            elif option == 3:
-                crawler.dfs(3)      #Plain crawl
-            elif option == 4:
-                crawler.dfs(4)      #Plain crawl
-        else:
-            print "Incorrect input."
+    # seed = raw_input("Enter the website url which you would like to begin parsing from.");
+    #
+    # if option == 1:
+    #     crawler.download_resources(seed);
+    # elif option > 1 or option < 6:
+    #     crawler.depth_setter(raw_input("Choose a depth of 0 or greater to parse the website using."));
+    #     parseType = raw_input("Would you like to do a breadth-first (0) or depth-first (1) search?");
+    #
+    #     if parseType == "0":
+    #         if option == 2:
+    #             crawler.bfs(2);     #Check errors
+    #
+    #         elif option == 3:
+    #             crawler.bfs(3);     #Query Search
+    #         elif option == 4:
+    #             crawler.bfs(4);     #Plain crawl
+    #     elif parseType == "1":
+    #         if option == 2:
+    #             crawler.dfs(2)      #Plain crawl
+    #         elif option == 3:
+    #             crawler.dfs(3)      #Plain crawl
+    #         elif option == 4:
+    #             crawler.dfs(4)      #Plain crawl
+    #     else:
+    #         print "Incorrect input."
         
         #if option == 2:
             #TODO implement check_errors(link, list_of_links)
@@ -457,9 +521,9 @@ if __name__ == '__main__':
         #Choose breadth or depth
         #Choose max depth
         #3 - query search, 4 - depth, 5 - breadth first
-    else:
-        print "Invalid option.";
-    
+   # else:
+      #  print "Invalid option.";
+    #
     #crawler.get_absolute_url_split(url, base_url_split)
     #base_url_split = crawler.get_clean_url_split('http://www.canvasgroup.ca')
     #print(crawler.get_absolute_url_split("about.html", base_url_split).geturl())
