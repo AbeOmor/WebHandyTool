@@ -40,6 +40,31 @@ class Web_Crawler(object):
                            + "Search for Query = 3 \n"
                            + "Just Crawl = 4  \n")
 
+    def dfs(self, choice):
+        #TODO implement
+        pass
+        
+    def bfs(self, choice):
+        count = 0;
+        currentDepth = [seed];
+        print seed;
+        
+        while(count <= depth and currentDepth > 0):
+            print count;
+            for i in currentDepth:
+                nextDepth = [];
+                links.append(currentDepth[i]);
+                #data = HTML_text(nextDepth[i]);
+                newLinks = find_links(currentDepth[i]);
+                for j in newLinks:
+                    nextDepth.append(newLinks[j]);
+                    print newLinks[j];
+            
+            currentDepth = nextDepth;
+            count += 1;
+        
+        return links;
+
     def HTML_corrector(self,link):
         """
         Fixes the link passed in such that it becomes either a functioning link or is flagged as a broken link.
@@ -397,7 +422,7 @@ class HTML_corrector_help(object):
             url_part.encode("utf-8")).decode("ascii")
 
 if __name__ == '__main__':
-    crawler = new Web_Crawler();
+    crawler = Web_Crawler();
     option = crawler.option();
     seed = raw_input("Enter the website url which you would like to begin parsing from.");
     
@@ -407,28 +432,28 @@ if __name__ == '__main__':
         crawler.depth_setter(raw_input("Choose a depth of 0 or greater to parse the website using."));
         parseType = raw_input("Would you like to do a breadth-first (0) or depth-first (1) search?");
         
-        if parseType == 0:
+        if parseType == "0":
             if option == 2:
-                #crawler.bfs(2)
+                crawler.bfs(2);     #Check errors
             elif option == 3:
-                #crawler.bfs(3)
+                crawler.bfs(3);     #Query Search
             elif option == 4:
-                #crawler.bfs(4)
-        elif parseType == 1:
+                crawler.bfs(4);     #Plain crawl    
+        elif parseType == "1":
             if option == 2:
-                #crawler.dfs(2)
+                crawler.dfs(2)      #Plain crawl
             elif option == 3:
-                #crawler.dfs(3)
+                crawler.dfs(3)      #Plain crawl
             elif option == 4:
-                #crawler.dfs(4)
+                crawler.dfs(4)      #Plain crawl
         else:
             print "Incorrect input."
         
-        if option == 2:
+        #if option == 2:
             #TODO implement check_errors(link, list_of_links)
-        elif option == 3:
+        #elif option == 3:
             #TODO implement querySearch
-        elif option == 4:
+        #elif option == 4:
         #Choose breadth or depth
         #Choose max depth
         #3 - query search, 4 - depth, 5 - breadth first
