@@ -173,6 +173,13 @@ class Web_Crawler(object):
         else:
             p = subprocess.call(["wget",options,link])
 
+    """
+     Searches through a String for a certain phrase or term. Returns the starting index for all occurrences of the query String.
+     If the query is not located, it will return an empty array.
+     @param query - The String we are looking for.
+     @param data - The String we are searching through.
+     @return Indexes corresponding to the beginning of the location of the String in question.
+    """
     def exact_query(self,query,data):
         """
         Returns a list of all occurrences of a given query in the data provided.
@@ -256,7 +263,11 @@ class Web_Crawler(object):
                     distance = 0;
 
         return locations;
-
+    """
+     Returns true if the character passed in is a whitespace character such as tab, space or newline.
+     @param a - The character to be checked.
+     @return Whether the character is whitespace.
+    """
     def whitespace_checker(self,character):
         """
         Returns whether the character passed in is certain types of whitespace.
