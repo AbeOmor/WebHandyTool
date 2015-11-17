@@ -91,7 +91,6 @@ class Web_Crawler(object):
         base_link = self.HTML_corrector(link)
         current_depth = [link]
         next_depth = []
-        #print seed
         links = []
         while count <= self.depth:
             print "Depth " + str(count)
@@ -99,8 +98,6 @@ class Web_Crawler(object):
             print current_depth
             for link in current_depth:
                 links.append(self.HTML_corrector(link).geturl())
-                #data = HTML_text(nextDepth[i]);
-                #print self.absolute_HTML_corrector(link,base_link).geturl()
                 correct_link = self.absolute_HTML_corrector(link,base_link).geturl()
                 new_links = self.find_links(correct_link)
                 if new_links:
@@ -191,7 +188,6 @@ class Web_Crawler(object):
         query.strip();
         query = query.lower();
         data = data.lower();
-        
                                                     # Impossible for data to contain query or query is nonsensical.
         if len(query) > len(data) or (len(query) == len(data) and not query is data) or len(query) == 0: 
             return [];
@@ -479,8 +475,11 @@ class HTML_corrector_help(object):
         """
 
         for prefix in self.NOT_LINK:
-            if url.startswith(prefix):
-                return False
+            try:
+                if url.startswith(prefix):
+                    return False
+            except AttributeError as e:
+                pass
         return True
 
     def convert_iri_to_uri(self,url_split):
