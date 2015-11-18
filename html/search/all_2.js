@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['beautifulsoup',['BeautifulSoup',['../classpylinkvalidator_1_1included_1_1bs4_1_1_beautiful_soup.html',1,'pylinkvalidator::included::bs4']]],
-  ['beautifulsouphtmlparser',['BeautifulSoupHTMLParser',['../classpylinkvalidator_1_1included_1_1bs4_1_1builder_1_1__htmlparser_1_1_beautiful_soup_h_t_m_l_parser.html',1,'pylinkvalidator::included::bs4::builder::_htmlparser']]],
-  ['beautifulstonesoup',['BeautifulStoneSoup',['../classpylinkvalidator_1_1included_1_1bs4_1_1_beautiful_stone_soup.html',1,'pylinkvalidator::included::bs4']]],
-  ['benchmark_5fparsers',['benchmark_parsers',['../namespacepylinkvalidator_1_1included_1_1bs4_1_1diagnose.html#a303acadff810ee8ed980898cd4957fa8',1,'pylinkvalidator::included::bs4::diagnose']]],
-  ['build_5flogger',['build_logger',['../classpylinkvalidator_1_1crawler_1_1_process_site_crawler.html#a6c9b377265d8d3f4f2bdc8f3ee284c0c',1,'pylinkvalidator::crawler::ProcessSiteCrawler']]],
-  ['build_5fqueue',['build_queue',['../classpylinkvalidator_1_1crawler_1_1_site_crawler.html#a3ad4ec0f0bad1d1eee38f673a01c2a6f',1,'pylinkvalidator::crawler::SiteCrawler']]]
+  ['check_5ferrors',['check_errors',['../class_web___crawler_1_1_web___crawler.html#ab027bb04acd098be1ad92d2908f71416',1,'Web_Crawler::Web_Crawler']]],
+  ['convert_5firi_5fto_5furi',['convert_iri_to_uri',['../class_web___crawler_1_1_h_t_m_l__corrector__help.html#a71530aacd9f02ba14c0eb6683698dba9',1,'Web_Crawler::HTML_corrector_help']]]
 ];

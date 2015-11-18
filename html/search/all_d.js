@@ -1,16 +1,7 @@
 var searchData=
 [
-  ['_5fhtmlparser',['_htmlparser',['../namespacepylinkvalidator_1_1included_1_1bs4_1_1builder_1_1__htmlparser.html',1,'pylinkvalidator::included::bs4::builder']]],
-  ['bs4',['bs4',['../namespacepylinkvalidator_1_1included_1_1bs4.html',1,'pylinkvalidator::included']]],
-  ['diagnose',['diagnose',['../namespacepylinkvalidator_1_1included_1_1bs4_1_1diagnose.html',1,'pylinkvalidator::included::bs4']]],
-  ['pagecrawler',['PageCrawler',['../classpylinkvalidator_1_1crawler_1_1_page_crawler.html',1,'pylinkvalidator::crawler']]],
-  ['pageelement',['PageElement',['../classpylinkvalidator_1_1included_1_1bs4_1_1element_1_1_page_element.html',1,'pylinkvalidator::included::bs4::element']]],
-  ['parse_5fapi_5fconfig',['parse_api_config',['../classpylinkvalidator_1_1models_1_1_config.html#a6b31bf19826934f444f29d54d2941b4c',1,'pylinkvalidator::models::Config']]],
-  ['parse_5fcli_5fconfig',['parse_cli_config',['../classpylinkvalidator_1_1models_1_1_config.html#adf19f9c01e02e73caab4759db614cefb',1,'pylinkvalidator::models::Config']]],
-  ['preformattedstring',['PreformattedString',['../classpylinkvalidator_1_1included_1_1bs4_1_1element_1_1_preformatted_string.html',1,'pylinkvalidator::included::bs4::element']]],
-  ['prepare_5fmarkup',['prepare_markup',['../classpylinkvalidator_1_1included_1_1bs4_1_1builder_1_1__htmlparser_1_1_h_t_m_l_parser_tree_builder.html#a80d371fb70f6a1af1abfdd79bf785745',1,'pylinkvalidator.included.bs4.builder._htmlparser.HTMLParserTreeBuilder.prepare_markup()'],['../classpylinkvalidator_1_1included_1_1bs4_1_1builder_1_1__lxml_1_1_l_x_m_l_tree_builder_for_x_m_l.html#a57d5331f3c5161a4015475f529b48e45',1,'pylinkvalidator.included.bs4.builder._lxml.LXMLTreeBuilderForXML.prepare_markup()']]],
-  ['process_5fpage_5fcrawl',['process_page_crawl',['../classpylinkvalidator_1_1crawler_1_1_site_crawler.html#ab266db0978b166bcd261c79fbb2ac572',1,'pylinkvalidator::crawler::SiteCrawler']]],
-  ['processinginstruction',['ProcessingInstruction',['../classpylinkvalidator_1_1included_1_1bs4_1_1element_1_1_processing_instruction.html',1,'pylinkvalidator::included::bs4::element']]],
-  ['processsitecrawler',['ProcessSiteCrawler',['../classpylinkvalidator_1_1crawler_1_1_process_site_crawler.html',1,'pylinkvalidator::crawler']]],
-  ['reporter',['reporter',['../namespacepylinkvalidator_1_1reporter.html',1,'pylinkvalidator']]]
+  ['web_5fcrawler',['Web_Crawler',['../class_web___crawler_1_1_web___crawler.html',1,'Web_Crawler']]],
+  ['web_5fcrawler_5fpoc',['Web_Crawler_POC',['../class_web___crawler___p_o_c_1_1_web___crawler___p_o_c.html',1,'Web_Crawler_POC']]],
+  ['website_5fstructure',['website_structure',['../class_web___crawler_1_1_web___crawler.html#a568ddfd327450f38b5b3e8db2355131c',1,'Web_Crawler::Web_Crawler']]],
+  ['whitespace_5fchecker',['whitespace_checker',['../class_web___crawler_1_1_web___crawler.html#ac8850d91b2011b6f490d711033e8f191',1,'Web_Crawler::Web_Crawler']]]
 ];

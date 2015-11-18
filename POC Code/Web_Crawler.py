@@ -10,12 +10,12 @@ class Web_Crawler(object):
 
     """
     Main class, it is for crawling.
-    Class variable includes depth,algo,chocies,choice,output,seed,list of links
+    Class variable includes depth,algo,choices,choice,output,seed,list of links
     """
     def __init__(self):
         self.depth = 0
         self.algo = 'bfs'
-        self.choices = {'1':'download', '2':'error', '3':'search', '4':'crawl'}
+        self.choices = {'1':'download', '2':'error', '3':'search', '4':'crawl','5':'web structure'}
         self.search_choices = {'1':'exact', '2':'similar'}
         self.choice = self.choices['4'] #the default is crawl
         self.search_choice = self.choices['1'] #the default is crawl
@@ -40,7 +40,8 @@ class Web_Crawler(object):
                            + "Download Resources = 1 \n"
                            + "Check for Errors = 2 \n"
                            + "Search for Query = 3 \n"
-                           + "Just Crawl = 4  \n")
+                           + "Just Crawl = 4  \n"
+                           + "Web Structure = 5  \n")
 
         self.choice = self.choices.get(choice)
         print self.choices.get(choice)
@@ -52,16 +53,16 @@ class Web_Crawler(object):
         #parseType = raw_input("Would you like to do a breadth-first (0) or depth-first (1) search?");
         print self.depth
         self.choice = self.choices.get(choice)
-        self.list_of_links = crawler.bfs(link)
 
         if self.choice == "download":
             self.download_resources(link)
 
         elif self.choice == "error":
+            self.list_of_links = crawler.bfs(link)
             self.check_errors(link,self.list_of_links)
 
         elif self.choice == "search":
-
+            self.list_of_links = crawler.bfs(link)
             # indexes = self.exact_query('ehima',self.HTML_text(link))
             # print indexes
             # for i in range(0,len(indexes)):
@@ -77,7 +78,14 @@ class Web_Crawler(object):
             crawler.query_search(query,link,self.list_of_links,self.search_choice)
 
         elif self.choice == "crawl":
+            self.list_of_links = crawler.bfs(link)
             print self.list_of_links
+
+        elif self.choice == "web structure":
+            print "===================================================="
+            print "\t\t\tWeb Tree"
+            print "===================================================="
+            self.website_structure(link,self.depth)
 
         else:
             print "Incorrect input."
@@ -87,6 +95,12 @@ class Web_Crawler(object):
         pass
         
     def bfs(self, link):
+        """
+        Finds all the links on a give website using the BFS algorithm
+        :param link:
+        :return A list of all the links found by BFS:
+        """
+
         count = 0
         base_link = self.HTML_corrector(link)
         current_depth = [link]
@@ -173,20 +187,15 @@ class Web_Crawler(object):
         else:
             p = subprocess.call(["wget",options,link])
 
-    """
-     Searches through a String for a certain phrase or term. Returns the starting index for all occurrences of the query String.
-     If the query is not located, it will return an empty array.
-     @param query - The String we are looking for.
-     @param data - The String we are searching through.
-     @return Indexes corresponding to the beginning of the location of the String in question.
-    """
+
     def exact_query(self,query,data):
         """
-        Returns a list of all occurrences of a given query in the data provided.
+        Searches through a String for a certain phrase or term. Returns the starting index for all occurrences of the query String.
+        If the query is not located, it will return an empty array.
 
-        :param query:
-        :param data:
-        :return Query results:
+        :param query - The String we are looking for:
+        :param data - The String we are searching through.:
+        :return Indexes corresponding to the beginning of the location of the String in question.:
         """
         locations = [];
         queryIndex = 0;
@@ -217,12 +226,14 @@ class Web_Crawler(object):
 
     def similar_query(self, query, data, proximity):
         """
-        Returns a list of all occurrences within a certain deviation of a givegit n query in the data provided.
+        Searches through a String for a certain phrase or term. Returns results that are close to the query as well.
+        (i.e. "ap ple" or "bpple" would be noted for "apple") Returns the starting index for all occurrences of Strings sufficiently close to
+        the query. If the query is not located, it will return an empty array.
 
-        :param query:
-        :param data:
-        :param proximity:
-        :return Query results:
+        :param: query  - The String we are looking for.
+        :param: data - The String we are searching through.:
+        :param: proximity - The size of the acceptable variation from the query.:
+        :return:Indexes corresponding to the beginning of the location of the String in question.
         """
         locations = [];
         queryIndex = 0;
@@ -263,17 +274,13 @@ class Web_Crawler(object):
                     distance = 0;
 
         return locations;
-    """
-     Returns true if the character passed in is a whitespace character such as tab, space or newline.
-     @param a - The character to be checked.
-     @return Whether the character is whitespace.
-    """
+
     def whitespace_checker(self,character):
         """
-        Returns whether the character passed in is certain types of whitespace.
+        Returns true if the character passed in is a whitespace character such as tab, space or newline.
 
-        :param character:
-        :return boolean, if there is whitespace True:
+        :param character - The character to be checked.:
+        :return boolean, if there is whitespace True,Whether the character is whitespace:
         """
         return character == ' ' or character == '    ' or character == os.linesep;
 
@@ -405,9 +412,9 @@ class Web_Crawler(object):
             print 'Links searching...'
             print list_of_links
             for link in list_of_links:
-                print 'Hey Buddy...I just searched ' + str(link)
                 data = self.HTML_text(link)
                 if self.search_choice == "exact":
+                    print 'Hey Buddy...I just searched ' + str(link)
                     indexes = self.exact_query(query,data)
                     print indexes
                     for index in indexes :
@@ -418,6 +425,7 @@ class Web_Crawler(object):
 
                 elif self.search_choice == "similar":
                     proximity = raw_input("Set the promixity of similar query: ")
+                    print 'Hey Buddy...I just searched ' + str(link)
                     indexes = self.similar_query(query,data,proximity)
                     print indexes
                     for index in indexes:
@@ -460,14 +468,13 @@ class Web_Crawler(object):
     def website_structure(self,link,depth):
         """
         It provides a structured model of the website and other site the initial site is connect to. It displays
-        a hierarchy that will show users how crawled link interact with each other.
+        a hierarchy that will show users how crawled link interact with each other. Shows all the depths
 
         :param link:
         :param depth:
         :return A pretty print of Hierarchy:
         """
-
-        pass
+        crawler.bfs(link)
 
 class HTML_corrector_help(object):
     """

@@ -1,0 +1,6 @@
+<map id="Web_Crawler.Web_Crawler.query_search" name="Web_Crawler.Web_Crawler.query_search">
+<area shape="rect" id="node2" href="$class_web___crawler_1_1_web___crawler.html#a7353f65405aef84af008bd8fc1eef4f6" title="Web_Crawler.Web_Crawler.\lHTML_text" alt="" coords="294,5,482,43"/>
+<area shape="rect" id="node3" href="$class_web___crawler_1_1_web___crawler.html#afed56534dbc43008f574caad90e0bc68" title="Web_Crawler.Web_Crawler.exact\l_query" alt="" coords="278,67,498,106"/>
+<area shape="rect" id="node4" href="$class_web___crawler_1_1_web___crawler.html#a1981e0ead7b4b5b9d3cce3524bb05ebe" title="Web_Crawler.Web_Crawler.similar\l_query" alt="" coords="275,130,501,169"/>
+<area shape="rect" id="node5" href="$class_web___crawler_1_1_web___crawler.html#ac8850d91b2011b6f490d711033e8f191" title="Web_Crawler.Web_Crawler.whitespace\l_checker" alt="" coords="550,130,805,169"/>
+</map>
