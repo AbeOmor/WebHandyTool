@@ -1,0 +1,64 @@
+\documentclass[titlepage]{article}
+\usepackage{xcolor} % for different colour comments
+\usepackage[left=15mm,right=15mm,top=1in,bottom=1in]{geometry}
+\usepackage{framed}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+%% Comments
+\newif\ifcomments\commentsfalse %i replaced comments true by comment false so the comments will be hidden
+
+\ifcomments
+\newcommand{\authornote}[3]{\textcolor{#1}{[#3 ---#2]}}
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+\else
+\newcommand{\authornote}[3]{}
+\newcommand{\todo}[1]{}
+\fi
+
+\newcommand{\wss}[1]{\authornote{magenta}{SS}{#1}}
+\newcommand{\hm}[1]{\authornote{blue}{HM}{#1}} %Hediyeh
+\newcommand{\tz}[1]{\authornote{blue}{TZ}{#1}} %Tahereh
+\newcommand{\pl}[1]{\authornote{blue}{PL}{#1}} %Peng
+
+\begin{document}
+\title{pylinkvalidator \\
+ Test Report : newAGEtech, Group H }
+\author{Genevieve Okon (Okong), Abraham Omorogbe(Omorogoa),\\
+ Eric Le Forti(Leforte)}
+\date{\today}
+\maketitle
+
+\section{Revision History}
+\begin{table}[h!]
+	\begin{tabular}{| p{5cm} | p{5cm} | p{5cm} |p{5cm} |}    \hline
+Revision  &Revision Date &Description of Change &Author\\ \hline
+1& 20-10-15 &Initiate Test Plan Document &Eric Le Fort\\ \hline
+       \end{tabular}
+       \caption{Revision History}
+       \label{table:Revision History}
+\end{table}
+
+
+
+\section{Introduction}
+\subsection{Objective}
+\subsection{Approach}
+\subsection{Table of Acronyms \& Definitions}
+
+\section{Functional System Tests}
+
+\section{Non-Functional Tests}
+
+\section{Traceability to Requirements}
+
+\section{Testing Summary}
+\subsection{Testing Results}
+\subsection{Changes Due to Testing}
+
+\noindent \wss{This is an example comment.  You can turn comments off by replacing
+  commentstrue by commentsfalse.}\\
+\hm{Sample comment}\\
+\tz{Sample comment}\\
+\pl{Sample comment}
+
+\end{document}
