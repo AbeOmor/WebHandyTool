@@ -1,6 +1,7 @@
 \documentclass[12pt]{article}
 \usepackage{xcolor} % for different colour comments
 \usepackage[left=15mm,right=15mm,top=0.6in,bottom=0.5in]{geometry}
+\usepackage{color}%
 
 %% Comments
 \newif\ifcomments\commentsfalse %i replaced comments true by comment false so the comments will be hidden
@@ -29,6 +30,9 @@
  Eric Le Forti(Leforte)}
 \date{\today}
 \maketitle
+
+
+%\texttt{color} package
 
 \tableofcontents
 \listoffigures
@@ -63,7 +67,7 @@ As the world-wide web increases in size, it's becoming more cumbersome for users
 
 Stakeholders of the project, as of this moment, are researchers, developers, and companies and this software will primarily be run on company workstations.\\
 
-Researchers, developers and their employers will benefit from our solution. We will be focusing on implementing the core functionality of a web crawler as the primary objective along with various secondary functionalities if time permits. Researchers will be able to search through websites to find important information and download available resources all at once. Developers can crawl through a website in order to map its depth, check status code on links and possibly download resources available on the site.Companies will be able to save money and resources due to their employees spending less time and effort on trivial tasks such as link validation. Given various starting details,the system will be able to map the links of a given website as well as notifying the user of any errors arising from those links.\newline
+Researchers, developers and their employers will benefit from our solution. We will be focusing on implementing the core functionality of a web crawler as the primary objective along with various secondary functionalities if time permits. Researchers will be able to search through websites to find important information and download available resources all at once. Developers can crawl through a website in order to map its \textcolor{red}{depth}, check status code on links and possibly download resources available on the site.Companies will be able to save money and resources due to their employees spending less time and effort on trivial tasks such as link validation. Given various starting details,the system will be able to map the links of a given website as well as notifying the user of any errors arising from those links.\newline
 
 
 
