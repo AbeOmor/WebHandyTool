@@ -61,7 +61,7 @@ Certain tests, such as those concerning usability or involving acquiring user in
 
 \begin{table}[h!]
 \centering
-\begin{tabular}{| p{5cm} | p{5cm} |}    \hline
+\begin{tabular}{| p{3cm} | p{10cm} |}    \hline
 	Term &Meaning\\ \hline
 \end{tabular}
 \caption{Acronyms \& Abbreviations}
@@ -70,9 +70,11 @@ Certain tests, such as those concerning usability or involving acquiring user in
 
 \begin{table}[h!]
 \centering
-\begin{tabular}{| p{5cm} | p{5cm} |}    \hline
+\begin{tabular}{| p{3cm} | p{10cm} |}    \hline
 	Term &Definition\\ \hline
 	PyUnit &A widely accepted testing suite to be used with the Python programming language.\\ \hline
+	\{$\emptyset$\} &Denotes an empty set, not to be confused with \{0\} which is a set containing only 0.\\ \hline
+	Beautiful Soup &An existing framework that breaks a webpage down into its components.\\ \hline
 \end{tabular}
 \caption{Definitions}
 \label{table:Definitions}
@@ -82,46 +84,142 @@ Certain tests, such as those concerning usability or involving acquiring user in
 
 \section{Functional System Tests}
 \subsection{F1: Exact String Searching}
-//TODO fill in test cases
+\textbf{Process:}
+\begin{enumerate}
+\item{Receive String to be parsed through and a query to search for.}
+\item{Search through that String for the query.}
+\item{Check that the results of the search match those that should be returned.}
+\end{enumerate}
+~\\
+The queries used for each input String will be as follows:
+\begin{itemize}
+\item{hello}
+\item{LASDGLKGSVLIUGAEOUGSVLUHwe;ofrw.k?bwri;hqf.IBA LIU GqleiugwKUGwrliugwrgOUGFW	;OURW;U}
+\item{Eric}
+\item{my name is Eric!}
+\item{my name is Eric}
+\end{itemize}
+~\\
+The input Strings used will be as follows:
+\begin{enumerate}
+\item{"Hello world!"}
+\item{""}
+\item{"Hello. My name is Eric. I am writing this simple test to check to see how well my parsing algorithm is performing. hello again, don't forget my name: Eric. That is all."}
+\end{enumerate}
 \begin{table}[h!]
 \centering
-\begin{tabular}{| p{6cm} | p{5cm} | p{5cm} |}    \hline
-	Process &Expected Results &Actual Results\\ \hline
+\begin{tabular}{ p{7cm}  p{4cm}  p{4cm} }
+	Input &Expected Result &Actual Result\\\\ \hline
+	1 &\{0\}  &\{0\}\\ 
+	~ &\{$\emptyset$\} &\{$\emptyset$\}\\
+	~ &\{$\emptyset$\} &\{$\emptyset$\}\\
+	~ &\{$\emptyset$\} &\{$\emptyset$\}\\
+	~ &\{$\emptyset$\} &\{$\emptyset$\}\\ \hline
+	2 &\{$\emptyset$\} &\{$\emptyset$\}\\ 
+	~ &\{$\emptyset$\} &\{$\emptyset$\}\\
+	~ &\{$\emptyset$\} &\{$\emptyset$\}\\
+	~ &\{$\emptyset$\} &\{$\emptyset$\}\\
+	~ &\{$\emptyset$\} &\{$\emptyset$\}\\ \hline
+	3 &\{0, 114\}  &\{0, 114\}\\ 
+	~ &\{$\emptyset$\} &\{$\emptyset$\}\\
+	~ &\{18, 149\} &\{18, 149\}\\
+	~ &\{$\emptyset$\} &\{$\emptyset$\}\\
+	~ &\{7\} &\{7\}\\ \hline
 \end{tabular}
 \caption{F1 Tests}
 \label{table:F1 Tests}
 \end{table}
 
 \subsection{F2: Similar String Searching}
-//TODO fill in test cases
+The tests that were run during F1 will be ran again in the same fashion using a proximity of 0. This forces the same functionality as performing an exact String search and so the results shall be the same as above.\\\\
+\textbf{Process:}
+\begin{enumerate}
+\item{Receive String to be parsed through and a query to search for.}
+\item{Search through that String for the query.}
+\item{Check that the results of the search match those that should be returned.}
+\end{enumerate}
 \begin{table}[h!]
 \centering
-\begin{tabular}{| p{6cm} | p{5cm} | p{5cm} |}    \hline
-	Process &Expected Results &Actual Results\\ \hline
+\begin{tabular}{ p{7cm}  p{4cm}  p{4cm} }
+	Input &Expected Result &Actual Result\\ \hline
+	String: "Here comes my hero"\\
+	Query: "HERE"\\
+	proximity: 1 & \{0, 14\} & \{0, 14\}\\ \hline
+	String: "Some text, hello"\\
+	Query: "hello"\\
+	proximity: 2 & \{11\} & \{11\}\\ \hline
+	String: "hehhhehellp"\\
+	Query: "hello"\\
+	proximity: 1 & \{6\} & \{6\}\\ \hline
+	String: ". \textbackslash n .. \textbackslash n q1/.SQL \textbackslash n q2.SQL \textbackslash n fileResult.txt"\\
+	Query: "fileResults"\\
+	proximity: 1 & \{28\} & \{28\}\\ \hline
+	String: ". \textbackslash n .. \textbackslash n q1/.SQL \textbackslash n q2.SQL \textbackslash n fileResult.txt"\\
+	Query: "fileResults"\\
+	proximity: & \{32\} & \{$\emptyset$\}\\ \hline
 \end{tabular}
 \caption{F2 Test Cases}
 \label{table:F2 Test Cases}
 \end{table}
 
-\subsection{F3: }
+\subsection{F3: BFS Execution}
 //TODO fill in test cases
+//TODO explain the structure of the website from the starting page to be tested.
 \begin{table}[h!]
 \centering
-\begin{tabular}{| p{6cm} | p{5cm} | p{5cm} |}    \hline
-	Process &Expected Results &Actual Results\\ \hline
+\begin{tabular}{ p{7cm}  p{4cm}  p{4cm} }
+	Input &Expected Results &Actual Results\\ \hline
 \end{tabular}
 \caption{F3 Test Cases}
 \label{table:F3 Test Cases}
 \end{table}
 
-//TODO write tests and determine sections
+\subsection{F4: Program Navigation}
+\textbf{Process:}\\
+This test will be conducted by manually entering each possible value the program prompts for. Once entering a number, the program shall use that option as appropriate. Values that are not within the acceptable set of options shall return a result specifying that the value entered is invalid.\\\\
+\textbf{Results:}\\
+//TODO fill in the results
+
+\subsection{F5: Grab Links}
+//TODO fill in test cases
+\begin{table}[h!]
+\centering
+\begin{tabular}{ p{7cm}  p{4cm}  p{4cm} }
+	Input &Expected Results &Actual Results\\ \hline
+\end{tabular}
+\caption{F5 Test Cases}
+\label{table:F5 Test Cases}
+\end{table}
+
+\subsection{F6: HTML Correction}
+//TODO fill in test cases
+\begin{table}[h!]
+\centering
+\begin{tabular}{ p{7cm}  p{4cm}  p{4cm} }
+	Input &Expected Results &Actual Results\\ \hline
+\end{tabular}
+\caption{F6 Test Cases}
+\label{table:F6 Test Cases}
+\end{table}
+
+\subsection{F7: Error Notifications}
+//TODO fill in test cases
+\begin{table}[h!]
+\centering
+\begin{tabular}{ p{7cm}  p{4cm}  p{4cm} }
+	Input &Expected Results &Actual Results\\ \hline
+\end{tabular}
+\caption{F7 Test Cases}
+\label{table:F7 Test Cases}
+\end{table}
 
 \section{Non-Functional Tests}
 \subsection{Usability}
-//TODO list as NF1:, NF2:,..., NFn
-//TODO
+\textbf{U1:} A user that knows how to execute a Python application should be able to operate this program without difficulty.
+
 \subsection{Performance}
-//TODO
+\textbf{P1:} All String searching operations shall be completed within a second assuming the input String isn't unreasonably large.\\\\
+\textbf{P2:} Grabbing links from a page using Beautiful Soup shall be completed within a second assuming the webpage isn't unreasonably large.
 \subsection{Robustness}
 Implicitly included within the list of functional test cases since extreme cases as well as boundary cases will be performed.
 
@@ -132,9 +230,12 @@ Implicitly included within the list of functional test cases since extreme cases
 	Requirement Designation &Associated Requirement\\ \hline
 	F1 &Functional requirements 5 and 7.\\ \hline
 	F2 &Functional requirements 5 and 7.\\ \hline
+	U1 &Non-Functional requirements: 
+	P1 &Non-Functional requirement: Performance\\ \hline
+	P2 &Non-Functional requirement: Performance\\ \hline
 \end{tabular}
-\caption{F1 Tests}
-\label{table:F1 Tests}
+\caption{Traceability to Requirements}
+\label{table:Traceability to Requirements}
 \end{table}
 //TODO ensure above table is fully completed after completion of test case specifications.
 
