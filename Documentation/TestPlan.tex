@@ -3,6 +3,7 @@
 \usepackage[left=15mm,right=15mm,top=1in,bottom=1in]{geometry}
 \usepackage{framed}
 \usepackage{graphicx}
+\usepackage{color}%
 \graphicspath{ {images/} }
 %% Comments
 \newif\ifcomments\commentsfalse %i replaced comments true by comment false so the comments will be hidden
@@ -28,6 +29,8 @@
 \date{\today}
 \maketitle
 \pagebreak
+%\texttt{color} package%
+
 
 \tableofcontents
 
@@ -52,6 +55,10 @@ Revision  &Revision Date &Description of Change &Author\\ \hline
 9& 23-10-15& Modification to Factors to be tested&Abraham Omorogbe\\ \hline
 10& 23-10-15& Test factors rationale and testing methods&Abraham Omorogbe\\ \hline
 11& 22-10-15& Table of Contents&Eric Le Fort\\ \hline
+
+12& 26-11-15& Revised features tested in final&Genevieve Okon\\ \hline
+13& 26-11-15& Revised section 5.2, Test cases&Genevieve Okon\\ \hline
+14& 26-11-15& Revised section 6.2, Test cases&Genevieve Okon\\ \hline
        \end{tabular}
        
        \caption{Revision History}
@@ -253,7 +260,7 @@ This application needs to parse through an HTML document in order to locate all 
 \textbf{Approach}\\
 This feature will be tested by setting up sample webpages or using existing ones on the web and verifying that all link tags are extracted correctly. This test will be considered to be passed if all expected results occur.
 
-\textbf{Test Cases (Blackbox, Using PyUnit)}\\
+\textbf{Test Cases (\textcolor{red}{Whitebox}, Using PyUnit)}\\
 The process will involve parsing a file, extracting the links, comparing them to expected links.\\
 The output will be an array of Strings containing the extracted links.\\
 
@@ -267,21 +274,21 @@ The output will be an array of Strings containing the extracted links.\\
 \end{itemize}
 
 \section{Features Tested in Final}
-\subsection{Depth First Crawl}
-This type of crawl involves going down into every link that is found recursively down as deep as possible first. This is optimal for smaller websites as you can analyze the whole website very efficiently.\\
+%\subsection{Depth First Crawl}
+%This type of crawl involves going down into every link that is found recursively down as deep as possible first. This is optimal for smaller websites as you can %analyze the whole website very efficiently.\\
 
-\textbf{Approach}\\
-This feature will be tested by setting up a sample website and ensuring all of its pages are traversed in the correct order as well as that pages that should not be accessible are not. This test will be considered to be passed if all expected results occur.\\
+%\textbf{Approach}\\
+%This feature will be tested by setting up a sample website and ensuring all of its pages are traversed in the correct order as well as that pages that should not be %accessible are not. This test will be considered to be passed if all expected results occur.\\
 
-\textbf{Test Cases (White Box, Using PyUnit)}\\
-The process will involve performing the crawling algorithm, recording links visited and any notifications raised.\\
-The output will be an array of Strings containing the list of links and notifications in the order they were visited.\\
+%\textbf{Test Cases (White Box, Using PyUnit)}\\
+%The process will involve performing the crawling algorithm, recording links visited and any notifications raised.\\
+%The output will be an array of Strings containing the list of links and notifications in the order they were visited.\\
 
-\textbf{Files Used:}
-\begin{itemize}
-\item root.html
-\item evenTree.html
-\end{itemize}
+%\textbf{Files Used:}
+%\begin{itemize}
+%\item root.html
+%\item evenTree.html
+%\end{itemize}
 
 \subsection{Breadth First Crawl}
 This type of crawl involves finding every link found on a page and then following each one. From there, this step occurs iteratively while there are remaining links that don?t lead to dead-ends. This is optimal for larger websites as you can analyze the website layer by layer in a short time instead of taking a large amount of time delving all the way down first.\\
@@ -305,7 +312,7 @@ This application should be able to download various resources that are made read
 \textbf{Approach}\\
 This feature will be tested by adding various resources to our website (including broken links) and attempting to download them. We will then test to ensure that the downloaded resource matches the original version or that broken links return the correct notification. This test will be considered to be passed if all expected results occur.\\
 
-\textbf{Test Cases (White Box, Using PyUnit)}\\
+\textbf{Test Cases (\textcolor{red}{Blackbox}, Using PyUnit)}\\
 The process will involve performing the crawling algorithm, download all links and any notifications in the order they were visited.\\
 The output will be a set of nested folders containing all the downloaded images for each page (i.e. img1, img2, etc).\\
 
