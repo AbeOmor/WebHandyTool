@@ -3,6 +3,7 @@
 \usepackage[left=15mm,right=15mm,top=1in,bottom=1in]{geometry}
 \usepackage{framed}
 \usepackage{graphicx}
+\usepackage{color}%
 \graphicspath{ {../images/} }
 %% Comments
 \newif\ifcomments\commentsfalse %i replaced comments true by comment false so the comments will be hidden
@@ -52,6 +53,12 @@ Revision  &Revision Date &Description of Change &Author\\ \hline
 8& 5-11-15& created Hardware/behaviour Hiding Modules&Abraham Omorogbe\\ \hline
 10& 5-11-15& Software Decision Modules&Eric Le Fort\\ \hline
 11& 5-11-15& Table of Contents&Genevieve Okon\\ \hline
+
+
+12& 26-11-15&Revised section 4, M13&Genevieve Okon\\ \hline
+13& 26-11-15&Revised section 4, Behaviour hiding module&Genevieve Okon\\ \hline
+14& 26-11-15&Revised section 5, Module Hierarchy diagram&Genevieve Okon\\ \hline
+15& 26-11-15&Revised section 7.2.9, Website depth modelling&Genevieve Okon\\ \hline
        \end{tabular}
        
        \caption{Revision History}
@@ -112,7 +119,7 @@ M9: Check Errors Module\\
 M10: Parse Data Module\\
 M11: Query Search Module\\
 M12: Depth Setter Module\\
-M13: Website Structure Modelling Module\\
+M13: \textcolor{red}{Website Depth Modelling Module}\\
 
 Note that M5, M6, M7 are submodules of the larger Query Search Module. M2 is the highest level module and utilizes all others internally.\\
 
@@ -131,7 +138,7 @@ N/A\\
 \item{Check Errors Module}\\
 \item{Parse Data Module}\\
 \item{Query Search Module}\\
-\item{Website Structure Modelling Module}\\
+\item\textcolor{red}{Website Depth Modelling Module}\\
 \end{itemize}
 
 \textbf{Software Decision Modules}
@@ -146,7 +153,7 @@ N/A\\
 
 
 \section{Module Hierarchy Diagram}
-\includegraphics[width=19cm, height=13cm]{UsesDiagram.png}
+\includegraphics[width=19cm, height=13cm]{UsesDiagrams.png}
 
 
 \section{Connection Between Requirements \& Design}
@@ -256,14 +263,14 @@ Writes all resources matching the given file type from the page link to the file
 \textbf{Implemented By:}
 Python
 
-\subsubsection{Website Structure Modelling}
-String webStructureModel(String: link, int: depth)\\
+\subsubsection{\textcolor{red}{Website Depth Modelling}}
+String \textcolor{red}{webDepthModel}(String: link, int: depth)\\
 
 \textbf{Secrets:}
- An algorithm that uses the seed link and structures the crawled links by depth\\
+ \textcolor{red}{An algorithm that uses the seed link and shows the website depth}\\
  
 \textbf{Services:}
-It provides a structured model of the website and other site the initial site is connect to. It displays a hierarchy that will show users how crawled link interact with each other.\\
+\textcolor{red}{It provides a Depth model of the website and other site the initial site is connect to. It displays a hierarchy that will show users how crawled link interact with each other.}\\
 
 \textbf{Implemented By:}
 Python
