@@ -3,6 +3,9 @@
 \usepackage[left=15mm,right=15mm,top=1in,bottom=1in]{geometry}
 \usepackage{framed}
 \usepackage{graphicx}
+\usepackage{color}%
+\usepackage{float}
+\usepackage{lipsum}
 \graphicspath{ {../images/} }
 %% Comments
 \newif\ifcomments\commentsfalse %i replaced comments true by comment false so the comments will be hidden
@@ -29,17 +32,37 @@
 \date{\today}
 \maketitle
 
-
+\texttt{color} package%
 \tableofcontents
 \listoffigures
 \listoftables
 
-\textbf{Revision History} \\ \normalsize
-First Draft October 10th 2015\\
-Revision0 Draft October 10th 2015\\
-\clearpage
+%\textbf{Revision History} \\ \normalsize
+%First Draft October 10th 2015\\
+%Revision0 Draft October 10th 2015\\
+%\clearpage
+
+%\textbf{Revision History} \\ \normalsize
+\pagebreak
 
 
+%%
+\section{Revision History}
+\begin{table}[h!]
+	\begin{tabular}{| p{5cm} | p{5cm} | p{5cm} |p{5cm} |}    \hline
+Revision  &Revision Date &Description of Change &Author\\ \hline
+1& 10-10-15&First Draft&Abraham Omorogbe\\ \hline
+2& 10-10-15& Revision 0 Draft&Genevieve Okon\\ \hline
+4& 26-11-15& Revised section 8 product use case list &Eric Le Fort\\ \hline
+3& 26-11-15& Revised section 8 individual product use case Number 6&Genevieve Okon\\ \hline
+3& 26-11-15& Revised section 9 Functional and data requirements, Requirement 6&Genevieve Okon\\ \hline
+
+       \end{tabular}
+       
+       \caption{Revision History}
+       \label{table:Revision History}
+\end{table}
+%%%
 
 \addcontentsline{toc}{section}{Project Drivers}
 
@@ -271,7 +294,7 @@ The figure \ref{figure:work context} is a Use case Diagram and the product bound
 \subsection*{Work Partitioning}
 The table \ref{table:Business Event List} is a Business Event List.
 
-\begin{table}[h!]
+\begin{table}[H]
     \begin{tabular}{| p{5cm} | p{5cm} | p{5cm} |}    \hline
     Event Name &	Input and Output	 & Summary\\ \hline
     User requests information about a website	& Website start link to crawl and specific info gathering setting (In)	& Have a starting point for crawler can gather resources from. \\ \hline
@@ -286,16 +309,18 @@ The table \ref{table:Business Event List} is a Business Event List.
     \caption{Business Event List}
 \label{table:Business Event List}
 \end{table}
+\lipsum[7]
 
 
 \section{The Scope of the Product}
 \subsection*{Product Boundary}
 The figure \ref{figure:use case} is a Use case Diagram and the product boundary.
-\begin{figure}[h!]
+\begin{figure}[H]
   \caption{Use case Diagram and the product boundary}
   \centering
     \includegraphics[scale=0.75]{pylinkvalidator_Use_Case_Diagram}
 \end{figure}
+\lipsum[8]
 \label{figure:use case}
 
 \subsection*{Product Use Case List  }
@@ -305,9 +330,12 @@ The figure \ref{figure:use case} is a Use case Diagram and the product boundary.
   \item View list of status codes from website 
   \item Specify website to crawl
   \item Audit Content on companies website 
-  \item Map website structure
+  \item \textcolor{red}{Map website Depth}
   \item Return website status code
 \end{itemize}
+
+
+
 
 \subsection*{Individual Product Use Cases  }
 \begin{enumerate}
@@ -341,12 +369,12 @@ Preconditions: User must enter a website with valid $<$a href= "\ldots"$>$ $<$/a
 Interested Stakeholders: Companies and Developers\\
 Actors: User, Website\\
 Outcome: The users can see a list of on the links and resources attached to every webpage associated with the specified domain.\\
-  \item Product Use Case Name: Map website structure\\
-Trigger: User requests a structure of a website\\
+  \item \textcolor{red}{ Product Use Case Name: Map website Depth\\
+Trigger: User requests depth of the website\\
 Preconditions: Must have entered a valid URL/HTML.\\
 Interested Stakeholders: Researchers, Developers and companies\\
 Actors: Web Server, Website\\
-Outcome: User is shown the website file structure.\\
+Outcome: User is shown the website Depth.\\}
   \item Product Use Case Name: Return website status code\\
 Trigger: Web crawler sends request query to web server\\
 Preconditions: Web server must respond to queries with status codes. \\
@@ -426,15 +454,16 @@ Outcome: The web server responds with correct status code.\\
 \end{framed}
 
 \begin{framed}
+\textcolor{red}{
 \textbf{Requirement \#}: 6 \hfill \textbf{Requirement Type}: 9 \hfill\textbf{Event/Use case \#}: 5,6 \hfill\\
-\textbf{Description}:  The product shall able to display website’s structure\\
-\textbf{Rationale}: Give to users a visually representation of the structure for entered website.\\
+\textbf{Description}:  The product shall able to display website’s depth\\
+\textbf{Rationale}: Give to users a visual representation of the depth for entered website.\\
 \textbf{Originator}: Abraham Omorogbe\\
-\textbf{Fit Criterion}: The web structure matches the structure of inputted website.	\\
+\textbf{Fit Criterion}: The web depth matches the depth of inputted website.	\\
 \textbf{Customer Satisfaction}: 5 \hfill 	\textbf{Customer Dissatisfaction}: 5 \hfill\\
 \textbf{Priority}: High \hfill \textbf{Conflicts}: None \hfill 		\\
 \textbf{Supporting Material}: None\\
-\textbf{History}: Created October 9, 2015 \hfill	 \textbf{Volere}\hfill
+\textbf{History}: Created October 9, 2015 \hfill	 \textbf{Volere}\hfill}
 
 \end{framed}
 
@@ -610,7 +639,12 @@ Making changes to the web-crawler as more changes occur
 \begin{itemize}
   \item Work on prototype and get feedback from supervisor.
   \item Discuss missing requirements and add them.
-     \item Revise requirements document.  \item Create a test plan.  \item Demonstrate a proof of concept.  \item Draw up design documents.  \item Revision 0 project demonstration.\item Final revision project demonstration.
+     \item Revise requirements document.
+  \item Create a test plan.
+  \item Demonstrate a proof of concept.
+  \item Draw up design documents.
+  \item Revision 0 project demonstration.
+\item Final revision project demonstration.
 \end{itemize}
 
 \section{Migration to the New Product }
