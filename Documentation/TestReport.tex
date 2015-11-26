@@ -1,4 +1,4 @@
-\documentclass[titlepage]{article}
+\documentclass[12pt, titlepage]{article}
 \usepackage{xcolor} % for different colour comments
 \usepackage[left=15mm,right=15mm,top=1in,bottom=1in]{geometry}
 \usepackage{framed}
@@ -28,30 +28,118 @@
 \date{\today}
 \maketitle
 
-\section{Revision History}
+\tableofcontents
+\pagebreak
+
+\begin{center}\textbf{Revision History}\end{center}
 \begin{table}[h!]
-	\begin{tabular}{| p{5cm} | p{5cm} | p{5cm} |p{5cm} |}    \hline
-Revision  &Revision Date &Description of Change &Author\\ \hline
-1& 20-10-15 &Initiate Test Plan Document &Eric Le Fort\\ \hline
+\centering
+	\begin{tabular}{| p{1.5cm} | p{2.5cm} | p{7cm} |p{3cm} |}    \hline
+	Revision  &Revision Date &Description of Change &Author\\ \hline
+	1& 20-10-15 &Initiate Test Plan Document &Eric Le Fort\\ \hline
        \end{tabular}
        \caption{Revision History}
        \label{table:Revision History}
 \end{table}
 
+\listoftables
+\listoffigures
+\pagebreak
+
 
 
 \section{Introduction}
 \subsection{Objective}
+The purpose of this report is to specify the methodology of testing to be used for Pylinkvalidator in detail. Every test case will be accompanied by a short description to convey the reason each test was written as well as a breakdown of expected results as well as whether those results were achieved or not. Following that section the document will trace the tests back to the requirements and then provide a more general summary of the results of testing.
+
 \subsection{Approach}
-\subsection{Table of Acronyms \& Definitions}
+The methodology to be used for testing will involve a succinct set of tests to prove each requirement is fully functional and performing at an acceptable level. These tests will cover white-boxed boundary cases, cases dealing with extremes as well as standard cases.\\
+
+Certain tests, such as those concerning usability or involving acquiring user input, are tested much more straightforwardly using manual methods. Therefore, these sorts of tests will be performed in a manual manner. All other tests will be conducted using automated testing utilizing a testing suite known as PyUnit.
+
+\subsection{Tables of Acronyms, Abbreviations \& Definitions}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{| p{5cm} | p{5cm} |}    \hline
+	Term &Meaning\\ \hline
+\end{tabular}
+\caption{Acronyms \& Abbreviations}
+\label{table:Acronyms and Abbreviations}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{| p{5cm} | p{5cm} |}    \hline
+	Term &Definition\\ \hline
+	PyUnit &A widely accepted testing suite to be used with the Python programming language.\\ \hline
+\end{tabular}
+\caption{Definitions}
+\label{table:Definitions}
+\end{table}
+
+
 
 \section{Functional System Tests}
+\subsection{F1: Exact String Searching}
+//TODO fill in test cases
+\begin{table}[h!]
+\centering
+\begin{tabular}{| p{6cm} | p{5cm} | p{5cm} |}    \hline
+	Process &Expected Results &Actual Results\\ \hline
+\end{tabular}
+\caption{F1 Tests}
+\label{table:F1 Tests}
+\end{table}
+
+\subsection{F2: Similar String Searching}
+//TODO fill in test cases
+\begin{table}[h!]
+\centering
+\begin{tabular}{| p{6cm} | p{5cm} | p{5cm} |}    \hline
+	Process &Expected Results &Actual Results\\ \hline
+\end{tabular}
+\caption{F2 Test Cases}
+\label{table:F2 Test Cases}
+\end{table}
+
+\subsection{F3: }
+//TODO fill in test cases
+\begin{table}[h!]
+\centering
+\begin{tabular}{| p{6cm} | p{5cm} | p{5cm} |}    \hline
+	Process &Expected Results &Actual Results\\ \hline
+\end{tabular}
+\caption{F3 Test Cases}
+\label{table:F3 Test Cases}
+\end{table}
+
+//TODO write tests and determine sections
 
 \section{Non-Functional Tests}
+\subsection{Usability}
+//TODO list as NF1:, NF2:,..., NFn
+//TODO
+\subsection{Performance}
+//TODO
+\subsection{Robustness}
+Implicitly included within the list of functional test cases since extreme cases as well as boundary cases will be performed.
 
 \section{Traceability to Requirements}
+\begin{table}[h!]
+\centering
+\begin{tabular}{| p{2.5cm} | p{8cm} |}    \hline
+	Requirement Designation &Associated Requirement\\ \hline
+	F1 &Functional requirements 5 and 7.\\ \hline
+	F2 &Functional requirements 5 and 7.\\ \hline
+\end{tabular}
+\caption{F1 Tests}
+\label{table:F1 Tests}
+\end{table}
+//TODO ensure above table is fully completed after completion of test case specifications.
 
 \section{Testing Summary}
+\subsection{Code Coverage}
 \subsection{Testing Results}
 \subsection{Changes Due to Testing}
 
