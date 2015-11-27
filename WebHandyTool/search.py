@@ -149,7 +149,7 @@ class search(object):
                     queryIndex += 1;
             else:
                 if data[i] == query[0]:
-                    queryIndex = 0;
+                    queryIndex = 1;
                     distance = 0;
                 else:
                     queryIndex = 0;
