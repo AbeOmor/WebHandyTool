@@ -87,6 +87,7 @@ Certain tests, such as those concerning usability or involving acquiring user in
 	PyUnit &A widely accepted testing suite to be used with the Python programming language.\\ \hline
 	\{$\emptyset$\} &Denotes an empty set, not to be confused with \{0\} which is a set containing only 0.\\ \hline
 	Beautiful Soup &An existing framework that breaks a webpage down into its components.\\ \hline
+	HTML Error Code &A three digit number that corresponds to various states of a website.
 \end{tabular}
 \caption{Definitions}
 \label{table:Definitions}
@@ -215,19 +216,14 @@ This test will be conducted by manually entering each possible value the program
 \begin{table}[h!]
 \centering
 \begin{tabular}{ p{7cm}  p{4cm}  p{4cm} }{H}
-	Input &Expected Results &Actual Results\\ \hline
-	value: 1 \\
-	&Download Resources& Download Resources\\ \hline
-	value: 2 \\
-	 & Check for Errors & Check for Errors \\ \hline
-         value: 3 \\
-	 & Search for Query & Search for Query \\ \hline
+	Input &Expected Results &Actual Results\\\\ \hline
+	value: 1  &Download Resources& Download Resources\\\\ \hline
+	value: 2  &Check for Errors & Check for Errors \\\\ \hline
+         value: 3 & Search for Query & Search for Query \\\\ \hline
 	url: "/depth/root.html"\\
-	value: 4 \\
-	 & Just Crawl & Just Crawl \\ \hline
+	value: 4 & Just Crawl & Just Crawl \\\\ \hline
 	url: "/depth/root.html"\\
-	value: 100 \\
-	& Incorrect input. & Incorrect input.\\ \hline
+	value: 100 &Incorrect input. & Incorrect input.\\\\ \hline
 \end{tabular}
 \caption{F4: Program Navigation}
 \label{table:F4: Program Navigation}
@@ -265,35 +261,26 @@ The program is going to take all the links on any page\\\\
 
 \subsection{F6: HTML Correction}
 \textbf{Process:}\\
-The program is going to correct any url that is missing a HTTP SCHEME such as HTTP,www or the base url. So is a url is just /about, it program will append /about with the base url. And is a url is missing a www, or HTTP:// ,this should fix that issue..\\\\
+The program is going to correct any url that is missing a HTTP SCHEME such as HTTP,www or the base url. So for example, if a url is just "/about", the program will append "/about" with the base url (e.g. http://www.google.ca/about"). And if a url is missing a www, or HTTP:// ,this should fix that issue.\\\\
 \begin{table}[h!]
 \centering
-\begin{tabular}{ p{4cm}  p{8cm}  p{2cm} }{H}
+\begin{tabular}{ p{6cm}  p{8cm}  p{2cm} }{H}
 	Input &Results & Status\\ \hline
-	url: "www.example.com"\\
-	&"http://www.example.com/" & PASS\\ \hline
-	url: "//www.example.com"\\
-	 & "http://www.example.com/" & PASS\\ \hline
-	url: "http://www.example.com"\\
-	 &"http://www.example.com/"& PASS\\ \hline
-	url: "www.example.com/"\\
-	 & "http://www.example.com/"& PASS\\ \hline
-	url: "//www.example.com/"\\
-	 & "http://www.example.com/" & PASS\\ \hline
-	url: "http://www.example.com/"\\
-	&"http://www.example.com/" & PASS\\ \hline
-	base: "https://www.example.com/hello/index.html"\\
-	url: "//www.example2.com/test.js"\\
-	&"http://www.example2.com/test.js" & PASS\\ \hline
-	base: "https://www.example.com/hello/index.html"\\
-	url: "/hello2/test.html"\\
-	 & "http://www.example.com/hello2/test.html" & PASS\\ \hline
-	base: "https://www.example.com/hello/index.html"\\
-	url: "test.html"\\
-	 &"http://www.example.com/hello/test.html"& PASS\\ \hline
-	base: "https://www.example.com/hello/index.html"\\
-	url: "../test.html" \\
-	 & "https://www.example.com/test.html"& PASS\\ \hline
+	url: "www.example.com" &"http://www.example.com/" & PASS\\\\ \hline
+	url: "//www.example.com" & "http://www.example.com/" & PASS\\\\ \hline
+	url: "http://www.example.com" &"http://www.example.com/"& PASS\\\\ \hline
+	url: "www.example.com/" & "http://www.example.com/"& PASS\\\\ \hline
+	url: "//www.example.com/" & "http://www.example.com/" & PASS\\\\ \hline
+	url: "http://www.example.com/" &"http://www.example.com/" & PASS\\\\ \hline
+	base: "https://www.example.com /hello/index.html"\\\\
+	url: "//www.example2.com/test.js" &"http://www.example2.com/test.js" & PASS\\\\ \hline
+	
+	base: "https://www.example.com /hello/index.html"\\\\
+	url: "/hello2/test.html" & "http://www.example.com /hello2/test.html" & PASS\\\\ \hline
+	base: "https://www.example.com/hello/index.html"\\\\
+	url: "test.html" &"http://www.example.com/hello/test.html"& PASS\\\\ \hline
+	base: "https://www.example.com/hello/index.html"\\\\
+	url: "../test.html" & "https://www.example.com/test.html"& PASS\\\\ \hline
 
 	
 	
@@ -307,15 +294,13 @@ The program is going to correct any url that is missing a HTTP SCHEME such as HT
 
 \subsection{F7: Error Notifications}
 \textbf{Process:}\\
-This test will be conducted to check errors and success on my test html pages. 404 error means the page doesn't exist and 200 means it exist and it is healthy and has no errors. \\\
+This test will be conducted to check errors and successes on the test html pages. Two HTML error codes that we will be testing for are a 404 error, which means the page doesn't exist, and 200, which means it exist and it is healthy and has no errors. \\\
 \begin{table}[h!]
 \centering
 \begin{tabular}{ p{7cm}  p{4cm}  p{4cm} }
 	Input &Results & Status\\ \hline
-	url: "/does\_not\_exist.html"\\
-	& Error code: 404  & PASS\\ \hline
-	url: "/index.html"\\
-	 & Status code: 200 & PASS\\ \hline
+	url: "/does\_not\_exist.html" & Error code: 404  & PASS\\\\ \hline
+	url: "/index.html" & Status code: 200 & PASS\\\\ \hline
 \end{tabular}
 \caption{F7 Test Cases}
 \label{table:F7 Test Cases}
@@ -358,26 +343,25 @@ Implicitly included within the list of functional test cases since extreme cases
 \subsection{Usability Testing }
 For our Usability testing we had a few participants execute common actions within the system. We found that while the log-in process was received quite well by all the participants, there was sort of an issue with the command-line interface. For the downloading of the Webcrawler program files, it wasn't hard for the participants. Although they felt the number of files needed to be downloaded for the program was a bit too much and  the initialization of the command line was a bit tedious.
 Inputting the option for the web crawler program wasn't deemed as hard by most users.
+
 \subsection{Performance Testing}
 We will want to test the number of active users that can be on the system at one time even though each user of the program is independent of the other. We will also want to test the number of active users that can be downloading resources at the same time from the same website. These tests will also be run using the same website on multiple browsers to test compatibility.  To test the performance of a single user, we manually executed tasks that the user normally would.
+
 \subsection{Security}
 Security concerns have already been validated. Every user of the program has a different command line interface, no additional security is required. In light of this, we focused on getting feedback in other areas.
-\subsection{Response to feedback}
-At the moment we are considering creating a user manual to make using this program on the command line much easier.
-One participant expressed during a task where they were to check for errors difficult, we assume that the right installation was not made in the users command line. The solution to this will be in the user manual. Participants were generally pleased with the way the program worked. 
 
+\subsection{Response to feedback}
+A User Manual will need to be created in order to make learning how to use this program on the command line much easier.
+One participant expressed during a task where they were to check for errors that it was slightly difficult. This was due to the user not having the right installations present on the user's system. The solution to this will be in the user manual. Participants were generally pleased with the way the program worked. 
 
 \subsection{Changes Due to Testing}
-The interface for saving html links needs some refinement, There were some changes implemented; however, more refinement will occur
-during future implementations 
-
-
+The interface for saving html links needs some refinement. There were some changes implemented, however more refinement will occur during future versions.
 
 
 \section{Code Coverage}
 \begin{table}[h!]
 \centering
-\begin{tabular}{| p{5cm} | p{5cm} | p{4cm}}    \hline
+\begin{tabular}{| p{5cm} | p{5cm} | p{4cm} |}    \hline
 Requirement & Positive TC Result &Negative TC Result \\ \hline
 Locate Information and related websites& Pass & Pass\\ \hline
 Automatically download resources from a web page.&Pass & Pass\\ \hline
@@ -392,7 +376,7 @@ Return website status code&Pass & Pass\\ \hline
 \label{table:Code Coverage}
 \end{table}
 
-We have successfully run our tests. From the tests we conducted, we feel that we have achieved a proficient coverage rate.  We see that a few of our methods have never been called and this methods in our opinion do not need to be tested. We are content with our code coverage since we realize that the amount of testing necessary depends on a number of factors, and since this is our code we are aware of the factors.
+We have successfully ran our tests. From the tests we conducted, a  proficient coverage rate has been achieved. A few of our methods have never been called however, it is not crucial that these methods be tested. This report shows that code coverage is satisfactory since the amount of testing necessary depends on a number of factors, and all of those factors have in face been achieved. These factors in the case of this program include algorithmic implementations, use of external libraries and interface robustness. Since all of these factors have been tested thoroughly, there is no need for anymore coverage.
 
 
 
