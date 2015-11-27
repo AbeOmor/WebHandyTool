@@ -125,7 +125,6 @@ class search(object):
         query.strip();
         query = query.lower();
         data = data.lower();
-
         if len(query) > len(data) or (len(query) == len(data) and not query is data) or len(query) == 0 or proximity > (0.4) * len(query):
             return [];
 

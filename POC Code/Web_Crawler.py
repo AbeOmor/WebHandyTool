@@ -5,6 +5,7 @@ from urllib2 import *
 import datetime
 import urllib2
 import re
+from urllib import urlretrieve
 
 class Web_Crawler(object):
 
@@ -475,7 +476,6 @@ class Web_Crawler(object):
         :return A pretty print of Hierarchy:
         """
         crawler.bfs(link)
-
 class HTML_corrector_help(object):
     """
     Library of helper functions that are used by HTML corrector to

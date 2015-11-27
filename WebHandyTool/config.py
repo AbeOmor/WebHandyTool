@@ -5,5 +5,9 @@ def getConfig():
                 "type": "1",
                 "proximity": "1"
         },
-        "depth": 0
+        "depth": 0,
+        "download": {
+            "file_types": "*.js",
+            "option": "-rA"
+        }
     }

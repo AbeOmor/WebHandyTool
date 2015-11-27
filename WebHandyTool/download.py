@@ -1,14 +1,11 @@
 import subprocess
-from bs4 import BeautifulSoup
-from urllib2 import *
-import datetime
-import urllib2
-import re
-from urllib import urlretrieve
+from config import getConfig
 
 class download(object):
+    def __init__(self):
+        self.config = getConfig()
 
-    def download_resources(self,link,options = '-rA', file_type=None):
+    def download_resources(self,link, file_type=None):
         """
         Writes all resources matching the given file type from the page link to the file specified by destination.
 
@@ -17,15 +14,10 @@ class download(object):
         :param file_type:
         :return:
         """
+        if not file_type:
+            file_type = self.config["download"]["file_types"]
 
-        file_type = raw_input("Enter the extension you would like to download: ")
-        more_request = raw_input('Do you want more, enter Y or N: ')
-
-        while more_request.lower() == 'y':
-            more_file_type = raw_input("Enter the next extension you would like to download: ")
-            file_type+= "," + more_file_type
-            print file_type
-            more_request = raw_input('Do you want to enter more extensions? Enter Y or N:')
+        options = self.config["download"]["option"]
 
         if file_type:
             # Call UNIX wget process to download files

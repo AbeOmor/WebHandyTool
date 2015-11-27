@@ -163,12 +163,30 @@ The tests that were run during F1 will be ran again in the same fashion using a 
 \end{table}
 
 \subsection{F3: BFS Execution}
-//TODO fill in test cases
-//TODO explain the structure of the website from the starting page to be tested.
+This test will be created in an environment to effectively test depth of a BFS. The depth folder is structure in such a way the root.html, link to the 1.html and 1.html links to 2.html and 2,html links to 3.html and so on. With this structure you can test the depth 0 -5
 \begin{table}[h!]
 \centering
 \begin{tabular}{ p{7cm}  p{4cm}  p{4cm} }
 	Input &Expected Results &Actual Results\\ \hline
+	url: "/depth/root.html"\\
+	depth: "0"\\
+	&[u'root.html']& [u'root.html']\\ \hline
+	url: "/depth/root.html"\\
+	depth: "1"\\
+	 & [u'/root.html', u'/0.html'] & [u'/root.html', u'/0.html'] \\ \hline
+	url: "/depth/root.html"\\
+	depth: "2"\\
+	 & [u'/root.html', u'/0.html', u'/1.html'] & [u'/root.html', u'/0.html', u'/1.html']\\ \hline
+	url: "/depth/root.html"\\
+	depth: "3"\\
+	 & [u'/root.html', u'/0.html', u'/1.html', u'/2.html'] & [u'/root.html', u'/0.html', u'/1.html', u'/2.html']\\ \hline
+	url: "/depth/root.html"\\
+	depth: "4"\\
+	 & [u'/root.html', u'/0.html', u'/1.html', u'/2.html', u'/3.html'] & [u'/root.html', u'/0.html', u'/1.html', u'/2.html', u'/3.html']\\ \hline
+	url: "/depth/root.html"\\
+	depth: "5"\\
+	& [u'/root.html', u'/0.html', u'/1.html', u'/2.html', u'/3.html', u'/4.html'] & [u'/root.html', u'/0.html', u'/1.html', u'/2.html', u'/3.html', u'/4.html']\\ \hline
+
 \end{tabular}
 \caption{F3 Test Cases}
 \label{table:F3 Test Cases}
@@ -177,37 +195,102 @@ The tests that were run during F1 will be ran again in the same fashion using a 
 \subsection{F4: Program Navigation}
 \textbf{Process:}\\
 This test will be conducted by manually entering each possible value the program prompts for. Once entering a number, the program shall use that option as appropriate. Values that are not within the acceptable set of options shall return a result specifying that the value entered is invalid.\\\\
-\textbf{Results:}\\
-//TODO fill in the results
-
-\subsection{F5: Grab Links}
-//TODO fill in test cases
 \begin{table}[h!]
 \centering
 \begin{tabular}{ p{7cm}  p{4cm}  p{4cm} }
 	Input &Expected Results &Actual Results\\ \hline
+	value: 1 \\
+	&Download Resources& Download Resources\\ \hline
+	value: 2 \\
+	 & Check for Errors & Check for Errors \\ \hline
+         value: 3 \\
+	 & Search for Query & Search for Query \\ \hline
+	url: "/depth/root.html"\\
+	value: 4 \\
+	 & Just Crawl & Just Crawl \\ \hline
+	url: "/depth/root.html"\\
+	value: 100 \\
+	& Incorrect input. & Incorrect input.\\ \hline
+\end{tabular}
+\caption{F4: Program Navigation}
+\label{table:F4: Program Navigation}
+\end{table}
+
+\subsection{F5: Grab Links}
+\textbf{Process:}\\
+The program is going to take all the links on any page\\\\
+\begin{table}[h!]
+\centering
+\begin{tabular}{ p{7cm}  p{4cm}  p{4cm} }
+	Input &Expected Results &Actual Results\\ \hline
+        input HTML: 
+        ${<html>}$
+    	${<body>}$
+       ${ <a href="\#">Test hash</a>}$
+       ${ <a name="hello">Test name</a>}$
+      ${ <a href="a.html">Test A</a>}$
+     ${   <a href="sub/b.html">Test B</a>}$
+      ${  <a href="/c.html">Test C</a>}$
+    ${    <a href="d.html">Test D</a>}$
+    ${    <a href="//www.perdu.com">Test External</a>}$
+    ${    </body>}$
+     ${   </html>}$
+	&[None, u'a.html', u'sub/b.html', u'/c.html', u'd.html', u'//www.perdu.com']& [None, u'a.html', u'sub/b.html', u'/c.html', u'd.html', u'//www.perdu.com']\\ \hline
 \end{tabular}
 \caption{F5 Test Cases}
 \label{table:F5 Test Cases}
 \end{table}
 
 \subsection{F6: HTML Correction}
-//TODO fill in test cases
+\textbf{Process:}\\
+The program is going to correct any url that is missing a HTTP SCHEME such as HTTP,www or the base url. So is a url is just /about, it program will append /about with the base url. And is a url is missing a www, or HTTP:// ,this should fix that issue..\\\\
 \begin{table}[h!]
 \centering
-\begin{tabular}{ p{7cm}  p{4cm}  p{4cm} }
-	Input &Expected Results &Actual Results\\ \hline
+\begin{tabular}{ p{4cm}  p{8cm}  p{2cm} }
+	Input &Results & Status\\ \hline
+	url: "www.example.com"\\
+	&"http://www.example.com/" & PASS\\ \hline
+	url: "//www.example.com"\\
+	 & "http://www.example.com/" & PASS\\ \hline
+	url: "http://www.example.com"\\
+	 &"http://www.example.com/"& PASS\\ \hline
+	url: "www.example.com/"\\
+	 & "http://www.example.com/"& PASS\\ \hline
+	url: "//www.example.com/"\\
+	 & "http://www.example.com/" & PASS\\ \hline
+	url: "http://www.example.com/"\\
+	&"http://www.example.com/" & PASS\\ \hline
+	base: "https://www.example.com/hello/index.html"\\
+	url: "//www.example2.com/test.js"\\
+	&"http://www.example2.com/test.js" & PASS\\ \hline
+	base: "https://www.example.com/hello/index.html"\\
+	url: "/hello2/test.html"\\
+	 & "http://www.example.com/hello2/test.html" & PASS\\ \hline
+	base: "https://www.example.com/hello/index.html"\\
+	url: "test.html"\\
+	 &"http://www.example.com/hello/test.html"& PASS\\ \hline
+	base: "https://www.example.com/hello/index.html"\\
+	url: "../test.html" \\
+	 & "https://www.example.com/test.html"& PASS\\ \hline
+
+	
+	
 \end{tabular}
 \caption{F6 Test Cases}
 \label{table:F6 Test Cases}
 \end{table}
 
 \subsection{F7: Error Notifications}
-//TODO fill in test cases
+\textbf{Process:}\\
+This test will be conducted to check errors and success on my test html pages. 404 error means the page doesn't exist and 200 means it exist and it is healthy and has no errors. \\\
 \begin{table}[h!]
 \centering
 \begin{tabular}{ p{7cm}  p{4cm}  p{4cm} }
-	Input &Expected Results &Actual Results\\ \hline
+	Input &Results & Status\\ \hline
+	url: "/does\_not\_exist.html"\\
+	& Error code: 404  & PASS\\ \hline
+	url: "/index.html"\\
+	 & Status code: 200 & PASS\\ \hline
 \end{tabular}
 \caption{F7 Test Cases}
 \label{table:F7 Test Cases}

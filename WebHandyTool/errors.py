@@ -45,7 +45,7 @@ class errors(object):
             request = urllib2.Request(base_url)
             try:
                response = urllib2.urlopen(request)
-               success = response.getcode()
+               success = 'Status code: ' + str(response.getcode())
                print str(base_url)  + ' -- ' + success
 
             except urllib2.HTTPError, e:
