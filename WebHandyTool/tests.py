@@ -67,6 +67,9 @@ def has_gevent():
 
     return has_gevent
 
+def get_url(self, test_url):
+        return "http://{0}:{1}{2}".format(self.ip, self.port, test_url)
+
 class urlCorrectorTest(unittest.TestCase):
     def test_clean_url_split(self):
         urlCorrect = urlCorrector()
@@ -110,19 +113,109 @@ class urlCorrectorTest(unittest.TestCase):
             urlCorrect.absolute_HTML_corrector("../test.html", base_url_split).geturl())
 
 class searchTest(unittest.TestCase):
-    def test_exact_string_search(self):
+    def test_exact_string_search_1(self):
         searcher = search()
-        inputString = ["Hello world!","","Hello. My name is Eric. I am writing this simple test to check to see how well my parsing algorithm is performing. hello again, dont forget my name: Eric. That is all."]
+        inputString = "Hello world!"
         queries = ['hello','LASDGLKGSVLIUGAEOUGSVLUHwe;ofrw.k?bwri;hqf.IBALIUGqleiugwKUGwrliugwrgOUGFW ;OURW;U','Eric','my name is Eric!','my name is Eric']
         self.assertEqual(
         [0],
-        searcher.exact_query(queries[0],inputString[0]))
+        searcher.exact_query(queries[0],inputString))
+        self.assertEqual(
+        [],
+        searcher.exact_query(queries[1],inputString))
+        self.assertEqual(
+        [],
+        searcher.exact_query(queries[2],inputString))
+        self.assertEqual(
+        [],
+        searcher.exact_query(queries[3],inputString))
+        self.assertEqual(
+        [],
+        searcher.exact_query(queries[4],inputString))
 
-
-    def test_similar_string_search(self):
+    def test_exact_string_search_2(self):
         searcher = search()
+        inputString = ""
+        queries = ['hello','LASDGLKGSVLIUGAEOUGSVLUHwe;ofrw.k?bwri;hqf.IBALIUGqleiugwKUGwrliugwrgOUGFW ;OURW;U','Eric','my name is Eric!','my name is Eric']
+        self.assertEqual(
+        [],
+        searcher.exact_query(queries[0],inputString))
+        self.assertEqual(
+        [],
+        searcher.exact_query(queries[1],inputString))
+        self.assertEqual(
+        [],
+        searcher.exact_query(queries[2],inputString))
+        self.assertEqual(
+        [],
+        searcher.exact_query(queries[3],inputString))
+        self.assertEqual(
+        [],
+        searcher.exact_query(queries[4],inputString))
+
+    def test_exact_string_search_3(self):
+        searcher = search()
+        inputString = "Hello. My name is Eric. I am writing this simple test to check to see how well my parsing algorithm is performing. hello again, dont forget my name: Eric. That is all."
+        queries = ['hello','LASDGLKGSVLIUGAEOUGSVLUHwe;ofrw.k?bwri;hqf.IBALIUGqleiugwKUGwrliugwrgOUGFW ;OURW;U','Eric','my name is Eric!','my name is Eric']
+        self.assertEqual(
+        [0,115],
+        searcher.exact_query(queries[0],inputString))
+        self.assertEqual(
+        [],
+        searcher.exact_query(queries[1],inputString))
+        self.assertEqual(
+        [18,149],
+        searcher.exact_query(queries[2],inputString))
+        self.assertEqual(
+        [],
+        searcher.exact_query(queries[3],inputString))
+        self.assertEqual(
+        [7],
+        searcher.exact_query(queries[4],inputString))
 
 
+    def test_similar_string_search_1(self):
+        searcher = search()
+        inputString = "Here comes my hero"
+        queries = 'HERE'
+        self.assertEqual(
+        [0,14],
+        searcher.similar_query(queries,inputString,1))
+
+    def test_similar_string_search_2(self):
+        searcher = search()
+        inputString = "Some text, hello"
+        queries = 'hello'
+        self.assertEqual(
+        [11],
+        searcher.similar_query(queries,inputString,2))
+
+    def test_similar_string_search_3(self):
+        searcher = search()
+        inputString = "hehhhehellp"
+        queries = 'hello'
+        self.assertEqual(
+        [6],
+        searcher.similar_query(queries,inputString,1))
+
+    def test_similar_string_search_4(self):
+        searcher = search()
+        inputString = ". \n .. \n q1/.SQL \n q2.SQL \n fileResult.txt"
+        queries = 'fileResults'
+        self.assertEqual(
+        [28],
+        searcher.similar_query(queries,inputString,1))
+
+    def test_similar_string_search_5(self):
+        searcher = search()
+        inputString = ". \n .. \n q1/.SQL \n q2.SQL \n fileResult.txt"
+        queries = 'fileResults'
+        self.assertEqual(
+        [32],
+        searcher.similar_query(queries,inputString,1))
+
+class crawlerTest(unittest.TestCase):
+    def test_exact_string_search_1(self):
 
 if __name__ == '__main__':
     urlTestSuite = unittest.TestLoader().loadTestsFromTestCase(urlCorrectorTest)
