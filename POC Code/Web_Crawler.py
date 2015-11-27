@@ -16,7 +16,7 @@ class Web_Crawler(object):
     def __init__(self):
         self.depth = 0
         self.algo = 'bfs'
-        self.choices = {'1':'download', '2':'error', '3':'search', '4':'crawl','5':'web structure'}
+        self.choices = {'1':'download', '2':'error', '3':'search', '4':'crawl','5':'web Depth'}
         self.search_choices = {'1':'exact', '2':'similar'}
         self.choice = self.choices['4'] #the default is crawl
         self.search_choice = self.choices['1'] #the default is crawl
@@ -42,7 +42,7 @@ class Web_Crawler(object):
                            + "Check for Errors = 2 \n"
                            + "Search for Query = 3 \n"
                            + "Just Crawl = 4  \n"
-                           + "Web Structure = 5  \n")
+                           + "Web Depth= 5  \n")
 
         self.choice = self.choices.get(choice)
         print self.choices.get(choice)
@@ -86,7 +86,7 @@ class Web_Crawler(object):
             print "===================================================="
             print "\t\t\tWeb Tree"
             print "===================================================="
-            self.website_structure(link,self.depth)
+            self.website_Depth(link,self.depth)
 
         else:
             print "Incorrect input."
@@ -466,7 +466,7 @@ class Web_Crawler(object):
 
         self.depth = depth
 
-    def website_structure(self,link,depth):
+    def website_Depth(self,link,depth):
         """
         It provides a structured model of the website and other site the initial site is connect to. It displays
         a hierarchy that will show users how crawled link interact with each other. Shows all the depths
