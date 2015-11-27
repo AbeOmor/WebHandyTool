@@ -3,10 +3,10 @@
 \usepackage[left=15mm,right=15mm,top=1in,bottom=1in]{geometry}
 \usepackage{framed}
 \usepackage{graphicx}
-\usepackage{color}%
+\usepackage{color}
 \usepackage{float}
 \usepackage{lipsum}
-\graphicspath{ {../images/} }
+\graphicspath{ {images/} }
 %% Comments
 \newif\ifcomments\commentsfalse %i replaced comments true by comment false so the comments will be hidden
 
@@ -25,14 +25,14 @@
 
 
 \begin{document}
-\title{pylinkvalidator \\
+\title{WebHandyTool \\
  Problem Statement : newAGEtech, Group H }
 \author{Genevieve Okon (Okong), Abraham Omorogbe(Omorogoa),\\
  Eric Le Forte(Leforte)}
 \date{\today}
 \maketitle
 
-\texttt{color} package%
+%\texttt{color} package%
 \tableofcontents
 \listoffigures
 \listoftables
@@ -48,6 +48,7 @@
 
 %%
 \section{Revision History}
+\textcolor{red}{Red, means the section was removed}
 \begin{table}[h!]
 	\begin{tabular}{| p{5cm} | p{5cm} | p{5cm} |p{5cm} |}    \hline
 Revision  &Revision Date &Description of Change &Author\\ \hline
@@ -289,7 +290,7 @@ The figure \ref{figure:work context} is a Use case Diagram and the product bound
 \begin{figure}[h!]
   \caption{Work Context Diagram}
   \centering
-    \includegraphics[scale=0.6]{Work_Context_Diagrams}
+    \includegraphics[scale=0.6]{Work_Context_Diagram}
 \end{figure}
 \label{figure:work context}
 \subsection*{Work Partitioning}
@@ -319,7 +320,7 @@ The figure \ref{figure:use case} is a Use case Diagram and the product boundary.
 \begin{figure}[H]
   \caption{Use case Diagram and the product boundary}
   \centering
-    \includegraphics[scale=0.75]{pylinkvalidator_Use_Case_Diagram_copy}
+    \includegraphics[scale=0.75]{pylinkvalidator_Use_Case_Diagram}
 \end{figure}
 \lipsum[8]
 \label{figure:use case}
@@ -541,12 +542,12 @@ This program performs a webcrawl on links. So it is reliable until there's a maj
 This program can be used anywhere using a device with suitable software requirements. 
 
 \subsection*{Requirements for Interfacing with Adjacent Systems:}
-pylinkvalidator(the web-crawler) does not require external libraries if executed with python 2.x. It requires beautifulsoup4 if executed with python 3.x. It has been tested on python 2.6, python 2.7, and python 3.3.
+WebHandyTool(the web-crawler) does not require external libraries if executed with python 2.x. It requires beautifulsoup4 if executed with python 3.x. It has been tested on python 2.6, python 2.7, and python 3.3.
 
 
 \subsection*{Production Requirements:}
 
-The product shall be distributed as pip. pylinkvalidator(the web-crawler) file can be downloaded from Github. It can be used on any device, which has an operating system that can run a python program. The device also needs to have a suitable interface for user interaction (e.g. command line interface).
+The product shall be distributed as pip. WebHandyTool(the web-crawler) file can be downloaded from Github. It can be used on any device, which has an operating system that can run a python program. The device also needs to have a suitable interface for user interaction (e.g. command line interface).
 
 
 \subsection*{Release Requirements: }

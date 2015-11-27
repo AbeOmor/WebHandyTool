@@ -3,8 +3,8 @@
 \usepackage[left=15mm,right=15mm,top=1in,bottom=1in]{geometry}
 \usepackage{framed}
 \usepackage{graphicx}
-\usepackage{color}%
-\graphicspath{ {../images/} }
+\usepackage{color}
+\graphicspath{ {images/} }
 %% Comments
 \newif\ifcomments\commentsfalse %i replaced comments true by comment false so the comments will be hidden
 
@@ -23,7 +23,7 @@
 
 
 \begin{document}
-\title{pylinkvalidator \\
+\title{WebHandyTool \\
  Design Document Module Guide : newAGEtech, Group H }
 \author{Genevieve Okon (Okong), Abraham Omorogbe(Omorogoa),\\
  Eric Le Forte(Leforte)}
@@ -39,6 +39,7 @@
 \pagebreak
 
 \section{Revision History}
+\textcolor{red}{Removed changed are in Red}
 \begin{table}[h!]
 	\begin{tabular}{| p{5cm} | p{5cm} | p{5cm} |p{5cm} |}    \hline
 Revision  &Revision Date &Description of Change &Author\\ \hline
@@ -68,7 +69,7 @@ Revision  &Revision Date &Description of Change &Author\\ \hline
 
 
 \section{Introduction}
-The following document details the Module Interface Specifications for the implemented modules in Pylinkvalidator. This will identify and describe the program modules that need to be built in detail so that developers and other viewers can easily understand the program.  Navigation through the program will be simplified for design and maintenance purposes. Complementary documents include the System Requirement Specifications.\\
+The following document details the Module Interface Specifications for the implemented modules in WebHandyTool. This will identify and describe the program modules that need to be built in detail so that developers and other viewers can easily understand the program.  Navigation through the program will be simplified for design and maintenance purposes. Complementary documents include the System Requirement Specifications.\\
 
 The rest of the document is organized as follows. Section 3 lists the anticipated and unlikely changes of the software requirements. Section 7 summarizes the module decomposition that was constructed according to the likely changes. Section 4 specifies the connections between the software requirements and the modules. Section 5 will clarify the levels of modules present in the project. Section 6 will compare the design to the requirements provided in the SRS. Section 7 will give a detailed module-by-module breakdown. The rest of the Sections  will trace anticipated changes and modules back to requirements, show the use hierarchy between the modules in the program, set timelines for the rest of the development process and will provide a Gantt and Pert chart to provide a visualization to these task breakdowns.
 
@@ -82,7 +83,7 @@ AC1: The specific hardware on which the webcrawler is running.\\
 AC2: The format of the initial input data.\\
 AC3: The format of the input parameters.\\
 AC4: The format of the final output data.\\
-AC5: The algorithm used for the pylinkvalidator.\\
+AC5: The algorithm used for the WebHandyTool.\\
 AC6: The implementation of the html parsers.\\
 AC7: How the overall control of the search modules will be made.\\
 AC8: The implementation for the visual version of the structure model\\
@@ -153,7 +154,7 @@ N/A\\
 
 
 \section{Module Hierarchy Diagram}
-\includegraphics[width=19cm, height=13cm]{UsesDiagrams.png}
+\includegraphics[width=19cm, height=13cm]{UsesDiagram}
 
 
 \section{Connection Between Requirements \& Design}
@@ -197,7 +198,7 @@ int[] searchForSimilarString(String: query, String: data, int: proximity)\\
 Iterates through the data provided and records every instance sufficiently close to matching the query String that was passed in. This will be accomplished using a slight deviation from the Knuth-Morris-Pratt String searching algorithm that recognizes fuzzy string searching.\\
 
 \textbf{Services:}
-Returns a list of all occurrences within a certain deviation of a givegit n query in the data provided.\\
+Returns a list of all occurrences within a certain deviation of a give it n query in the data provided.\\
 
 \textbf{Implemented By:}
 Python
@@ -364,12 +365,8 @@ Python
     \caption{Traceback to Anticipated Changes}
 \label{table:Traceback to Anticipated Changes}
 \end{table}
-<<<<<<< HEAD
 
-
-=======
 \pagebreak
->>>>>>> dd3b9fa0830f4907d63fc33b9af26f710f74a9b9
 
 \begin{figure}
 	\includegraphics[width=25cm, height=20cm]{detaildesign}
