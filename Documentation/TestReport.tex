@@ -3,6 +3,7 @@
 \usepackage[left=15mm,right=15mm,top=1in,bottom=1in]{geometry}
 \usepackage{framed}
 \usepackage{graphicx}
+\usepackage{float}
 \graphicspath{ {images/} }
 %% Comments
 \newif\ifcomments\commentsfalse %i replaced comments true by comment false so the comments will be hidden
@@ -29,6 +30,8 @@
 \maketitle
 
 \tableofcontents
+\listoftables
+\listoffigures
 \pagebreak
 
 \begin{center}\textbf{Revision History}\end{center}
@@ -36,15 +39,23 @@
 \centering
 	\begin{tabular}{| p{1.5cm} | p{2.5cm} | p{7cm} |p{3cm} |}    \hline
 	Revision  &Revision Date &Description of Change &Author\\ \hline
-	1& 20-10-15 &Initiate Test Plan Document &Eric Le Fort\\ \hline
+	1& 20-10-15 &Initiate Test Plan Document  and Introduction&Eric Le Fort\\ \hline
+	2&26-11-2015&Finalize Outline & Abraham Omorogbe\\ \hline	
+3&26-11-2015&Functional system tests& Abraham Omorogbe\\ \hline
+4&26-11-2015&Functional system tests& Eric Le Fort\\ \hline
+5&26-11-2015&Non-Functional system tests& Eric Le Fort\\ \hline
+6 &26-11-2015&Usability Testing & Eric Le Fort\\ \hline
+7& 26-11-2015& Requirements Traceability & Eric Le Fort\\ \hline
+8& 27-11-2015 &Testing Summary& Genevieve Okon\\ \hline
+9& 27-11-2015 &Code Coverage& Genevieve Okon\\ \hline
+
+	
        \end{tabular}
        \caption{Revision History}
        \label{table:Revision History}
 \end{table}
 
-\listoftables
-\listoffigures
-\pagebreak
+
 
 
 
@@ -63,6 +74,7 @@ Certain tests, such as those concerning usability or involving acquiring user in
 \centering
 \begin{tabular}{| p{3cm} | p{10cm} |}    \hline
 	Term &Meaning\\ \hline
+	html & Hypertext Markup Language\\ \hline
 \end{tabular}
 \caption{Acronyms \& Abbreviations}
 \label{table:Acronyms and Abbreviations}
@@ -140,7 +152,7 @@ The tests that were run during F1 will be ran again in the same fashion using a 
 \end{enumerate}
 \begin{table}[h!]
 \centering
-\begin{tabular}{ p{7cm}  p{4cm}  p{4cm} }
+\begin{tabular}{ p{7cm}  p{4cm}  p{4cm} }{H}
 	Input &Expected Result &Actual Result\\ \hline
 	String: "Here comes my hero"\\
 	Query: "HERE"\\
@@ -162,11 +174,14 @@ The tests that were run during F1 will be ran again in the same fashion using a 
 \label{table:F2 Test Cases}
 \end{table}
 
+
+\pagebreak
+
 \subsection{F3: BFS Execution}
 This test will be created in an environment to effectively test depth of a BFS. The depth folder is structure in such a way the root.html, link to the 1.html and 1.html links to 2.html and 2,html links to 3.html and so on. With this structure you can test the depth 0 -5
 \begin{table}[h!]
 \centering
-\begin{tabular}{ p{7cm}  p{4cm}  p{4cm} }
+\begin{tabular}{ p{7cm}  p{4cm}  p{4cm} }{H}
 	Input &Expected Results &Actual Results\\ \hline
 	url: "/depth/root.html"\\
 	depth: "0"\\
@@ -192,12 +207,14 @@ This test will be created in an environment to effectively test depth of a BFS. 
 \label{table:F3 Test Cases}
 \end{table}
 
+\pagebreak
+
 \subsection{F4: Program Navigation}
 \textbf{Process:}\\
 This test will be conducted by manually entering each possible value the program prompts for. Once entering a number, the program shall use that option as appropriate. Values that are not within the acceptable set of options shall return a result specifying that the value entered is invalid.\\\\
 \begin{table}[h!]
 \centering
-\begin{tabular}{ p{7cm}  p{4cm}  p{4cm} }
+\begin{tabular}{ p{7cm}  p{4cm}  p{4cm} }{H}
 	Input &Expected Results &Actual Results\\ \hline
 	value: 1 \\
 	&Download Resources& Download Resources\\ \hline
@@ -216,12 +233,15 @@ This test will be conducted by manually entering each possible value the program
 \label{table:F4: Program Navigation}
 \end{table}
 
+\pagebreak
+
+
 \subsection{F5: Grab Links}
 \textbf{Process:}\\
 The program is going to take all the links on any page\\\\
 \begin{table}[h!]
 \centering
-\begin{tabular}{ p{7cm}  p{4cm}  p{4cm} }
+\begin{tabular}{ p{7cm}  p{4cm}  p{4cm} }{H}
 	Input &Expected Results &Actual Results\\ \hline
         input HTML: 
         ${<html>}$
@@ -240,13 +260,15 @@ The program is going to take all the links on any page\\\\
 \caption{F5 Test Cases}
 \label{table:F5 Test Cases}
 \end{table}
+\pagebreak
+
 
 \subsection{F6: HTML Correction}
 \textbf{Process:}\\
 The program is going to correct any url that is missing a HTTP SCHEME such as HTTP,www or the base url. So is a url is just /about, it program will append /about with the base url. And is a url is missing a www, or HTTP:// ,this should fix that issue..\\\\
 \begin{table}[h!]
 \centering
-\begin{tabular}{ p{4cm}  p{8cm}  p{2cm} }
+\begin{tabular}{ p{4cm}  p{8cm}  p{2cm} }{H}
 	Input &Results & Status\\ \hline
 	url: "www.example.com"\\
 	&"http://www.example.com/" & PASS\\ \hline
@@ -280,6 +302,9 @@ The program is going to correct any url that is missing a HTTP SCHEME such as HT
 \label{table:F6 Test Cases}
 \end{table}
 
+
+\pagebreak
+
 \subsection{F7: Error Notifications}
 \textbf{Process:}\\
 This test will be conducted to check errors and success on my test html pages. 404 error means the page doesn't exist and 200 means it exist and it is healthy and has no errors. \\\
@@ -304,12 +329,14 @@ This test will be conducted to check errors and success on my test html pages. 4
 \textbf{P1:} All String searching operations shall be completed within a second assuming the input String isn't unreasonably large.\\\\
 \textbf{P2:} Grabbing links from a page using Beautiful Soup shall be completed within a second assuming the webpage isn't unreasonably large.
 \subsection{Robustness}
-Implicitly included within the list of functional test cases since extreme cases as well as boundary cases will be performed.
+Implicitly included within the list of functional test cases since extreme cases as well as boundary cases will be performed.\\\\
+
+\pagebreak
 
 \section{Traceability to Requirements}
 \begin{table}[h!]
 \centering
-\begin{tabular}{| p{2.5cm} | p{8cm} |}    \hline
+\begin{tabular}{| p{2.5cm} | p{8cm} |}   \hline
 	Requirement Designation &Associated Requirement\\ \hline
 	F1 &Functional requirements 5 and 7.\\ \hline
 	F2 &Functional requirements 5 and 7.\\ \hline
@@ -326,10 +353,49 @@ Implicitly included within the list of functional test cases since extreme cases
 \label{table:Traceability to Requirements}
 \end{table}
 
+
 \section{Testing Summary}
-\subsection{Code Coverage}
-\subsection{Testing Results}
+\subsection{Usability Testing }
+For our Usability testing we had a few participants execute common actions within the system. We found that while the log-in process was received quite well by all the participants, there was sort of an issue with the command-line interface. For the downloading of the Webcrawler program files, it wasn't hard for the participants. Although they felt the number of files needed to be downloaded for the program was a bit too much and  the initialization of the command line was a bit tedious.
+Inputting the option for the web crawler program wasn't deemed as hard by most users.
+\subsection{Performance Testing}
+We will want to test the number of active users that can be on the system at one time even though each user of the program is independent of the other. We will also want to test the number of active users that can be downloading resources at the same time from the same website. These tests will also be run using the same website on multiple browsers to test compatibility.  To test the performance of a single user, we manually executed tasks that the user normally would.
+\subsection{Security}
+Security concerns have already been validated. Every user of the program has a different command line interface, no additional security is required. In light of this, we focused on getting feedback in other areas.
+\subsection{Response to feedback}
+At the moment we are considering creating a user manual to make using this program on the command line much easier.
+One participant expressed during a task where they were to check for errors difficult, we assume that the right installation was not made in the users command line. The solution to this will be in the user manual. Participants were generally pleased with the way the program worked. 
+
+
 \subsection{Changes Due to Testing}
+The interface for saving html links needs some refinement, There were some changes implemented; however, more refinement will occur
+during future implementations 
+
+
+
+
+\section{Code Coverage}
+\begin{table}[h!]
+\centering
+\begin{tabular}{| p{5cm} | p{5cm} | p{4cm}}    \hline
+Requirement & Positive TC Result &Negative TC Result \\ \hline
+Locate Information and related websites& Pass & Pass\\ \hline
+Automatically download resources from a web page.&Pass & Pass\\ \hline
+View list of status codes from website&Pass & Pass\\ \hline
+Specify website to crawl&Pass & Pass\\ \hline
+Audit Content on companies website&Pass & Pass\\ \hline
+Map website Depth&Pass & Pass\\ \hline
+Return website status code&Pass & Pass\\ \hline
+
+\end{tabular}
+\caption{Code Coverage}
+\label{table:Code Coverage}
+\end{table}
+
+We have successfully run our tests. From the tests we conducted, we feel that we have achieved a proficient coverage rate.  We see that a few of our methods have never been called and this methods in our opinion do not need to be tested. We are content with our code coverage since we realize that the amount of testing necessary depends on a number of factors, and since this is our code we are aware of the factors.
+
+
+
 
 \noindent \wss{This is an example comment.  You can turn comments off by replacing
   commentstrue by commentsfalse.}\\
