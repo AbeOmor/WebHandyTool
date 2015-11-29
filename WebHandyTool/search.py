@@ -5,7 +5,6 @@ class search(object):
 
     def __init__(self):
         self.list_of_links = []
-        self.NOT_LINK = ['data','#', ]
         self.SCHEME_HTTP = "http"
         self.SCHEME_HTTPS = "https"
         self.SUPPORTED_SCHEMES = (self.SCHEME_HTTP, self.SCHEME_HTTPS)

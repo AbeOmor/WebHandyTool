@@ -9,7 +9,7 @@ class urlCorrector(object):
 
     def __init__(self):
             self.list_of_links = []
-            self.NOT_LINK = ['data','#', ]
+            self.NOT_LINK = ['data','#','mailto','tel', ]
             self.SCHEME_HTTP = "http"
             self.SCHEME_HTTPS = "https"
             self.SUPPORTED_SCHEMES = (self.SCHEME_HTTP, self.SCHEME_HTTPS)
@@ -55,7 +55,7 @@ class HTML_corrector_help(object):
     fix url links.
     """
     def __init__(self):
-        self.NOT_LINK = ['data','#', ]
+        self.NOT_LINK = ['data','#','mailto','tel', ]
 
     def is_link(self,url):
         """

@@ -19,8 +19,9 @@ class download(object):
 
         options = self.config["download"]["option"]
 
-        if file_type:
+
+        if file_type and "A" not in options:
             # Call UNIX wget process to download files
-            p = subprocess.call(["wget",options,file_type,link])
+            p = subprocess.call(["wget",options,"-A",file_type,link])
         else:
             p = subprocess.call(["wget",options,link])
