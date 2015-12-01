@@ -82,10 +82,14 @@ class linkSearchAlgos(object):
         links = []
 
         if destination:
-            timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H:%M")
-            f = open('Found Links at' +timestamp +'.txt','w')
-            f.write(data.find_all('a'))
+            timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H:%M:%S")
+            f = open('Found Links at ' +timestamp +'.txt','w')
+            for link in data.find_all('a'):
+                links.append(link.get('href'))
+            links = [link for link in links if HTML_corrector_helper.is_link(link)]
+            f.write(str(links))
             f.close()
+            return links
 
         for link in data.find_all('a'):
             links.append(link.get('href'))

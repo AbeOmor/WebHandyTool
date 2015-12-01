@@ -251,7 +251,7 @@ class crawlerTest(unittest.TestCase):
         urlopen = self.get_url_open()
         url = self.get_url("/index.html")
         linkSearch = linkSearchAlgos()
-        links = linkSearch.find_links(url)
+        links = linkSearch.find_links(url,"/Users/Abe/Documents/pylinkvalidator/WebHandyTool")
         self.assertEqual([None, u'a.html', u'sub/b.html', u'/c.html', u'd.html', u'//www.perdu.com'], links)
 
     def test_BFS_depth_0(self):
