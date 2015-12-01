@@ -1,9 +1,11 @@
 import subprocess
 from config import getConfig
+from urlCorrector import urlCorrector
 
 class download(object):
     def __init__(self):
         self.config = getConfig()
+        self.link = urlCorrector()
 
     def download_resources(self,link, file_type=None):
         """
@@ -14,11 +16,12 @@ class download(object):
         :param file_type:
         :return:
         """
+        link = self.link.HTML_corrector(link).geturl()
+
         if not file_type:
             file_type = self.config["download"]["file_types"]
 
         options = self.config["download"]["option"]
-
 
         if file_type and "A" not in options:
             # Call UNIX wget process to download files
