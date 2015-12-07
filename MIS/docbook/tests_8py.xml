@@ -1,0 +1,422 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="tests_8py">
+    <title>tests.py File Reference</title>
+<para>Include dependency diagram for tests.py</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="tests_8py__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for tests.py</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="tests_8py__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1_threaded_t_c_p_server">pylinkvalidator::WebHandyTool::tests::ThreadedTCPServer</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1url_corrector_test">pylinkvalidator::WebHandyTool::tests::urlCorrectorTest</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test">pylinkvalidator::WebHandyTool::tests::searchTest</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test">pylinkvalidator::WebHandyTool::tests::crawlerTest</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1tests">pylinkvalidator::WebHandyTool::tests</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /Users/Abe/Documents/pylinkvalidator/WebHandyTool/tests.py</para>
+    </simplesect>
+    <literallayout><computeroutput>
+<link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1tests">1 </link><emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+2 <emphasis class="stringliteral">Unit&#32;and&#32;integration&#32;tests&#32;for&#32;WebHandyTool</emphasis>
+3 <emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+4 <emphasis class="keyword">import</emphasis>&#32;os
+5 <emphasis class="keyword">import</emphasis>&#32;logging
+6 <emphasis class="keyword">import</emphasis>&#32;sys
+7 <emphasis class="keyword">from</emphasis>&#32;tempfile&#32;<emphasis class="keyword">import</emphasis>&#32;mkstemp
+8 <emphasis class="keyword">import</emphasis>&#32;time
+9 <emphasis class="keyword">import</emphasis>&#32;threading
+10 <emphasis class="keyword">import</emphasis>&#32;unittest
+11 
+12 
+13 <emphasis class="keyword">from</emphasis>&#32;urlCorrector&#32;<emphasis class="keyword">import</emphasis>&#32;*
+14 <emphasis class="keyword">from</emphasis>&#32;linkSearchAlgos&#32;<emphasis class="keyword">import</emphasis>&#32;linkSearchAlgos
+15 <emphasis class="keyword">from</emphasis>&#32;download&#32;<emphasis class="keyword">import</emphasis>&#32;download
+16 <emphasis class="keyword">from</emphasis>&#32;errors&#32;<emphasis class="keyword">import</emphasis>&#32;errors
+17 <emphasis class="keyword">from</emphasis>&#32;parsers&#32;<emphasis class="keyword">import</emphasis>&#32;parsers
+18 <emphasis class="keyword">from</emphasis>&#32;search&#32;<emphasis class="keyword">import</emphasis>&#32;search
+19 
+20 <emphasis class="keyword">import</emphasis>&#32;SocketServer,&#32;SimpleHTTPServer
+21 
+<link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1tests_1a14166a02e5bd8dca477698e70415a8dd">22 </link>TEST_FILES_DIR&#32;=&#32;os.path.join(os.path.dirname(os.path.realpath(__file__)),
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&apos;testfiles&apos;</emphasis>)
+24 
+25 <emphasis class="comment">#&#32;UTILITY&#32;CLASSES&#32;AND&#32;FUNCTIONS&#32;###</emphasis>
+26 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1_threaded_t_c_p_server">27 </link><emphasis class="keyword">class&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1_threaded_t_c_p_server">ThreadedTCPServer</link>(SocketServer.ThreadingMixIn,&#32;SocketServer.TCPServer):
+28 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">pass</emphasis>
+29 
+30 
+<link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1tests_1a9db60e3a111b5405bdfbc14fecaf488d">31 </link><emphasis class="keyword">def&#32;</emphasis><link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1tests_1a9db60e3a111b5405bdfbc14fecaf488d">start_http_server</link>():
+32 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;Starts&#32;a&#32;simple&#32;http&#32;server&#32;for&#32;the&#32;test&#32;files&quot;&quot;&quot;</emphasis>
+33 &#32;&#32;&#32;&#32;<emphasis class="comment">#&#32;For&#32;the&#32;http&#32;handler</emphasis>
+34 &#32;&#32;&#32;&#32;os.chdir(TEST_FILES_DIR)
+35 &#32;&#32;&#32;&#32;handler&#32;=&#32;SimpleHTTPServer.SimpleHTTPRequestHandler
+36 &#32;&#32;&#32;&#32;handler.extensions_map[<emphasis class="stringliteral">&apos;.html&apos;</emphasis>]&#32;=&#32;<emphasis class="stringliteral">&apos;text/html;&#32;charset=UTF-8&apos;</emphasis>
+37 &#32;&#32;&#32;&#32;httpd&#32;=&#32;ThreadedTCPServer((<emphasis class="stringliteral">&quot;localhost&quot;</emphasis>,&#32;0),&#32;handler)
+38 &#32;&#32;&#32;&#32;ip,&#32;port&#32;=&#32;httpd.server_address
+39 
+40 &#32;&#32;&#32;&#32;httpd_thread&#32;=&#32;threading.Thread(target=httpd.serve_forever)
+41 &#32;&#32;&#32;&#32;httpd_thread.setDaemon(<emphasis class="keyword">True</emphasis>)
+42 &#32;&#32;&#32;&#32;httpd_thread.start()
+43 
+44 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;(ip,&#32;port,&#32;httpd,&#32;httpd_thread)
+45 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1url_corrector_test">46 </link><emphasis class="keyword">class&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1url_corrector_test">urlCorrectorTest</link>(unittest.TestCase):
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1url_corrector_test_1adbeab76343c14a02620ed4b8b6fbb4fe">47 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1url_corrector_test_1adbeab76343c14a02620ed4b8b6fbb4fe">test_clean_url_split</link>(self):
+48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;urlCorrect&#32;=&#32;<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector">urlCorrector</link>()
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertEqual(
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;http://www.example.com&quot;</emphasis>,
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;urlCorrect.HTML_corrector(<emphasis class="stringliteral">&quot;www.example.com&quot;</emphasis>).geturl())
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertEqual(
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;http://www.example.com&quot;</emphasis>,
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;urlCorrect.HTML_corrector(<emphasis class="stringliteral">&quot;//www.example.com&quot;</emphasis>).geturl())
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertEqual(
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;http://www.example.com&quot;</emphasis>,
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;urlCorrect.HTML_corrector(<emphasis class="stringliteral">&quot;http://www.example.com&quot;</emphasis>).geturl())
+58 
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertEqual(
+60 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;http://www.example.com/&quot;</emphasis>,
+61 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;urlCorrect.HTML_corrector(<emphasis class="stringliteral">&quot;www.example.com/&quot;</emphasis>).geturl())
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertEqual(
+63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;http://www.example.com/&quot;</emphasis>,
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;urlCorrect.HTML_corrector(<emphasis class="stringliteral">&quot;//www.example.com/&quot;</emphasis>).geturl())
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertEqual(
+66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;http://www.example.com/&quot;</emphasis>,
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;urlCorrect.HTML_corrector(<emphasis class="stringliteral">&quot;http://www.example.com/&quot;</emphasis>).geturl())
+68 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1url_corrector_test_1a7e73d3cd877f27c3f473733a6ccd4773">69 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1url_corrector_test_1a7e73d3cd877f27c3f473733a6ccd4773">test_get_absolute_url</link>(self):
+70 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;urlCorrect&#32;=&#32;<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector">urlCorrector</link>()
+71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;base_url_split&#32;=&#32;urlCorrect.HTML_corrector(
+72 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;https://www.example.com/hello/index.html&quot;</emphasis>)
+73 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertEqual(
+74 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;https://www.example2.com/test.js&quot;</emphasis>,
+75 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;urlCorrect.absolute_HTML_corrector(
+76 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;//www.example2.com/test.js&quot;</emphasis>,&#32;base_url_split).geturl())
+77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertEqual(
+78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;https://www.example.com/hello2/test.html&quot;</emphasis>,
+79 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;urlCorrect.absolute_HTML_corrector(
+80 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;/hello2/test.html&quot;</emphasis>,&#32;base_url_split).geturl())
+81 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertEqual(
+82 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;https://www.example.com/hello/test.html&quot;</emphasis>,
+83 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;urlCorrect.absolute_HTML_corrector(<emphasis class="stringliteral">&quot;test.html&quot;</emphasis>,&#32;base_url_split).geturl())
+84 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertEqual(
+85 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;https://www.example.com/test.html&quot;</emphasis>,
+86 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;urlCorrect.absolute_HTML_corrector(<emphasis class="stringliteral">&quot;../test.html&quot;</emphasis>,&#32;base_url_split).geturl())
+87 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test">88 </link><emphasis class="keyword">class&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test">searchTest</link>(unittest.TestCase):
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test_1a22af068c76d651d26ddec1e3570a6940">89 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test_1a22af068c76d651d26ddec1e3570a6940">test_exact_string_search_1</link>(self):
+90 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;searcher&#32;=&#32;search()
+91 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;inputString&#32;=&#32;<emphasis class="stringliteral">&quot;Hello&#32;world!&quot;</emphasis>
+92 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;queries&#32;=&#32;[<emphasis class="stringliteral">&apos;hello&apos;</emphasis>,<emphasis class="stringliteral">&apos;LASDGLKGSVLIUGAEOUGSVLUHwe;ofrw.k?bwri;hqf.IBALIUGqleiugwKUGwrliugwrgOUGFW&#32;;OURW;U&apos;</emphasis>,<emphasis class="stringliteral">&apos;Eric&apos;</emphasis>,<emphasis class="stringliteral">&apos;my&#32;name&#32;is&#32;Eric!&apos;</emphasis>,<emphasis class="stringliteral">&apos;my&#32;name&#32;is&#32;Eric&apos;</emphasis>]
+93 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertEqual(
+94 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[0],
+95 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;searcher.exact_query(queries[0],inputString))
+96 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertEqual(
+97 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[],
+98 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;searcher.exact_query(queries[1],inputString))
+99 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertEqual(
+100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[],
+101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;searcher.exact_query(queries[2],inputString))
+102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertEqual(
+103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[],
+104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;searcher.exact_query(queries[3],inputString))
+105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertEqual(
+106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[],
+107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;searcher.exact_query(queries[4],inputString))
+108 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test_1a6a143b588cd317e507c1036eb1cff74c">109 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test_1a6a143b588cd317e507c1036eb1cff74c">test_exact_string_search_2</link>(self):
+110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;searcher&#32;=&#32;search()
+111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;inputString&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>
+112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;queries&#32;=&#32;[<emphasis class="stringliteral">&apos;hello&apos;</emphasis>,<emphasis class="stringliteral">&apos;LASDGLKGSVLIUGAEOUGSVLUHwe;ofrw.k?bwri;hqf.IBALIUGqleiugwKUGwrliugwrgOUGFW&#32;;OURW;U&apos;</emphasis>,<emphasis class="stringliteral">&apos;Eric&apos;</emphasis>,<emphasis class="stringliteral">&apos;my&#32;name&#32;is&#32;Eric!&apos;</emphasis>,<emphasis class="stringliteral">&apos;my&#32;name&#32;is&#32;Eric&apos;</emphasis>]
+113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertEqual(
+114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[],
+115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;searcher.exact_query(queries[0],inputString))
+116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertEqual(
+117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[],
+118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;searcher.exact_query(queries[1],inputString))
+119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertEqual(
+120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[],
+121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;searcher.exact_query(queries[2],inputString))
+122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertEqual(
+123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[],
+124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;searcher.exact_query(queries[3],inputString))
+125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertEqual(
+126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[],
+127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;searcher.exact_query(queries[4],inputString))
+128 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test_1a812392a789426a4dfcaf6426969926a2">129 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test_1a812392a789426a4dfcaf6426969926a2">test_exact_string_search_3</link>(self):
+130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;searcher&#32;=&#32;search()
+131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;inputString&#32;=&#32;<emphasis class="stringliteral">&quot;Hello.&#32;My&#32;name&#32;is&#32;Eric.&#32;I&#32;am&#32;writing&#32;this&#32;simple&#32;test&#32;to&#32;check&#32;to&#32;see&#32;how&#32;well&#32;my&#32;parsing&#32;algorithm&#32;is&#32;performing.&#32;hello&#32;again,&#32;dont&#32;forget&#32;my&#32;name:&#32;Eric.&#32;That&#32;is&#32;all.&quot;</emphasis>
+132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;queries&#32;=&#32;[<emphasis class="stringliteral">&apos;hello&apos;</emphasis>,<emphasis class="stringliteral">&apos;LASDGLKGSVLIUGAEOUGSVLUHwe;ofrw.k?bwri;hqf.IBALIUGqleiugwKUGwrliugwrgOUGFW&#32;;OURW;U&apos;</emphasis>,<emphasis class="stringliteral">&apos;Eric&apos;</emphasis>,<emphasis class="stringliteral">&apos;my&#32;name&#32;is&#32;Eric!&apos;</emphasis>,<emphasis class="stringliteral">&apos;my&#32;name&#32;is&#32;Eric&apos;</emphasis>]
+133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertEqual(
+134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[0,115],
+135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;searcher.exact_query(queries[0],inputString))
+136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertEqual(
+137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[],
+138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;searcher.exact_query(queries[1],inputString))
+139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertEqual(
+140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[18,149],
+141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;searcher.exact_query(queries[2],inputString))
+142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertEqual(
+143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[],
+144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;searcher.exact_query(queries[3],inputString))
+145 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertEqual(
+146 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[7],
+147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;searcher.exact_query(queries[4],inputString))
+148 
+149 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test_1add0a85705a03e79c4f5cce6d3e561970">150 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test_1add0a85705a03e79c4f5cce6d3e561970">test_similar_string_search_1</link>(self):
+151 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;searcher&#32;=&#32;search()
+152 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;inputString&#32;=&#32;<emphasis class="stringliteral">&quot;Here&#32;comes&#32;my&#32;hero&quot;</emphasis>
+153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;queries&#32;=&#32;<emphasis class="stringliteral">&apos;HERE&apos;</emphasis>
+154 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertEqual(
+155 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[0,14],
+156 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;searcher.similar_query(queries,inputString,1))
+157 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test_1acd6db92558eb31dd8056ae2f78eb9a44">158 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test_1acd6db92558eb31dd8056ae2f78eb9a44">test_similar_string_search_2</link>(self):
+159 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;searcher&#32;=&#32;search()
+160 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;inputString&#32;=&#32;<emphasis class="stringliteral">&quot;Some&#32;text,&#32;hello&quot;</emphasis>
+161 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;queries&#32;=&#32;<emphasis class="stringliteral">&apos;hello&apos;</emphasis>
+162 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertEqual(
+163 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[11],
+164 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;searcher.similar_query(queries,inputString,2))
+165 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test_1af29247a2451b8eb1bba4128d11894623">166 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test_1af29247a2451b8eb1bba4128d11894623">test_similar_string_search_3</link>(self):
+167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;searcher&#32;=&#32;search()
+168 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;inputString&#32;=&#32;<emphasis class="stringliteral">&quot;hehhhehellp&quot;</emphasis>
+169 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;queries&#32;=&#32;<emphasis class="stringliteral">&apos;hello&apos;</emphasis>
+170 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertEqual(
+171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[6],
+172 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;searcher.similar_query(queries,inputString,1))
+173 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test_1a4b8eb65b213a20cc9ffb5cceee0d3edd">174 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test_1a4b8eb65b213a20cc9ffb5cceee0d3edd">test_similar_string_search_4</link>(self):
+175 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;searcher&#32;=&#32;search()
+176 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;inputString&#32;=&#32;<emphasis class="stringliteral">&quot;.&#32;\n&#32;..&#32;\n&#32;q1/.SQL&#32;\n&#32;q2.SQL&#32;\n&#32;fileResult.txt&quot;</emphasis>
+177 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;queries&#32;=&#32;<emphasis class="stringliteral">&apos;fileResults&apos;</emphasis>
+178 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertEqual(
+179 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[28],
+180 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;searcher.similar_query(queries,inputString,1))
+181 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test_1af1b354dddca2b2e216ce2961126b69c4">182 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test_1af1b354dddca2b2e216ce2961126b69c4">test_similar_string_search_5</link>(self):
+183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;searcher&#32;=&#32;search()
+184 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;inputString&#32;=&#32;<emphasis class="stringliteral">&quot;.&#32;\n&#32;..&#32;\n&#32;q1/.SQL&#32;\n&#32;q2.SQL&#32;\n&#32;fileResult.txt&quot;</emphasis>
+185 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;queries&#32;=&#32;<emphasis class="stringliteral">&apos;fileResults&apos;</emphasis>
+186 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertEqual(
+187 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[28],
+188 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;searcher.similar_query(queries,inputString,1))
+189 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test">190 </link><emphasis class="keyword">class&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test">crawlerTest</link>(unittest.TestCase):
+191 
+192 &#32;&#32;&#32;&#32;@classmethod
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a488a0ba0983f998e70b16f99d1206a4e">193 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a488a0ba0983f998e70b16f99d1206a4e">setUpClass</link>(cls):
+194 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(cls.ip,&#32;cls.port,&#32;cls.httpd,&#32;cls.httpd_thread)&#32;=&#32;<link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1tests_1a9db60e3a111b5405bdfbc14fecaf488d">start_http_server</link>()
+195 
+196 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#&#32;FIXME&#32;replace&#32;by&#32;thread&#32;synchronization&#32;on&#32;start</emphasis>
+197 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;time.sleep(0.2)
+198 
+199 &#32;&#32;&#32;&#32;@classmethod
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1af6eb886ff5b26bd69f9f309ce3d84981">200 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1af6eb886ff5b26bd69f9f309ce3d84981">tearDownClass</link>(cls):
+201 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cls.httpd.shutdown()
+202 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a59924a9695a61c66650b7c4c3a5697cc">203 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a59924a9695a61c66650b7c4c3a5697cc">setUp</link>(self):
+204 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#&#32;We&#32;must&#32;do&#32;this&#32;because&#32;Python&#32;2.6&#32;does&#32;not&#32;have&#32;setUpClass</emphasis>
+205 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#&#32;This&#32;will&#32;only&#32;be&#32;executed&#32;if&#32;setUpClass&#32;is&#32;ignored.</emphasis>
+206 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#&#32;It&#32;will&#32;not&#32;be&#32;shutdown&#32;properly&#32;though,&#32;but&#32;this&#32;does&#32;not&#32;prevent</emphasis>
+207 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#&#32;the&#32;unit&#32;test&#32;to&#32;run&#32;properly</emphasis>
+208 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;<emphasis class="keywordflow">not</emphasis>&#32;hasattr(self,&#32;<emphasis class="stringliteral">&apos;port&apos;</emphasis>):
+209 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(self.ip,&#32;self.port,&#32;self.httpd,&#32;self.httpd_thread)&#32;=\
+210 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1tests_1a9db60e3a111b5405bdfbc14fecaf488d">start_http_server</link>()
+211 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#&#32;FIXME&#32;replace&#32;by&#32;thread&#32;synchronization&#32;on&#32;start</emphasis>
+212 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;time.sleep(0.2)
+213 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a9bfdb2427ff25ed415115347baa183e3">214 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a9bfdb2427ff25ed415115347baa183e3">get_url</link>(self,&#32;test_url):
+215 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="stringliteral">&quot;http://{0}:{1}{2}&quot;</emphasis>.format(self.ip,&#32;self.port,&#32;test_url)
+216 
+217 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a3db5e9ca3315af5e2b8f29c098667a9d">218 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a3db5e9ca3315af5e2b8f29c098667a9d">get_url_open</link>(self):
+219 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#&#32;Not&#32;automatically&#32;imported&#32;to&#32;allow&#32;monkey&#32;patching.</emphasis>
+220 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;sys.version_info[0]&#32;&lt;&#32;3:
+221 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">from</emphasis>&#32;urllib2&#32;<emphasis class="keyword">import</emphasis>&#32;urlopen
+222 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">else</emphasis>:
+223 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">from</emphasis>&#32;urllib.request&#32;<emphasis class="keyword">import</emphasis>&#32;urlopen
+224 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;urlopen
+225 
+226 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a16539cd0e3add6d4ec5557194a96c0bc">227 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a16539cd0e3add6d4ec5557194a96c0bc">get_url_request</link>(self):
+228 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;sys.version_info[0]&#32;&lt;&#32;3:
+229 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">from</emphasis>&#32;urllib2&#32;<emphasis class="keyword">import</emphasis>&#32;Request
+230 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">else</emphasis>:
+231 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">from</emphasis>&#32;urllib.request&#32;<emphasis class="keyword">import</emphasis>&#32;Request
+232 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;Request
+233 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a404f44c124831e5c9593b2b3ebc6be88">234 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a404f44c124831e5c9593b2b3ebc6be88">test_404_error</link>(self):
+235 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;errorCheck&#32;=&#32;errors()
+236 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;urlopen&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a3db5e9ca3315af5e2b8f29c098667a9d">get_url_open</link>()
+237 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;url&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a9bfdb2427ff25ed415115347baa183e3">get_url</link>(<emphasis class="stringliteral">&quot;/does_not_exist.html&quot;</emphasis>)
+238 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;response&#32;=&#32;errorCheck.check_errors(url)
+239 
+240 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertEqual(url&#32;+<emphasis class="stringliteral">&quot;&#32;--&#32;Error&#32;code:&#32;404&quot;</emphasis>,&#32;response)
+241 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1adb2a22bd6d79bc38b353d966d9a2b45f">242 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1adb2a22bd6d79bc38b353d966d9a2b45f">test_200_error</link>(self):
+243 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;errorCheck&#32;=&#32;errors()
+244 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;urlopen&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a3db5e9ca3315af5e2b8f29c098667a9d">get_url_open</link>()
+245 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;url&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a9bfdb2427ff25ed415115347baa183e3">get_url</link>(<emphasis class="stringliteral">&quot;/index.html&quot;</emphasis>)
+246 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;response&#32;=&#32;errorCheck.check_errors(url)
+247 
+248 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertEqual(url&#32;+<emphasis class="stringliteral">&quot;&#32;--&#32;Status&#32;code:&#32;200&quot;</emphasis>,&#32;response)
+249 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1ac00856c89d2d4130ffe0ca385df3f679">250 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1ac00856c89d2d4130ffe0ca385df3f679">test_link_grabber</link>(self):
+251 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;urlopen&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a3db5e9ca3315af5e2b8f29c098667a9d">get_url_open</link>()
+252 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;url&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a9bfdb2427ff25ed415115347baa183e3">get_url</link>(<emphasis class="stringliteral">&quot;/index.html&quot;</emphasis>)
+253 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;linkSearch&#32;=&#32;linkSearchAlgos()
+254 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;links&#32;=&#32;linkSearch.find_links(url,<emphasis class="stringliteral">&quot;/Users/Abe/Documents/pylinkvalidator/WebHandyTool&quot;</emphasis>)
+255 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertEqual([<emphasis class="keywordtype">None</emphasis>,&#32;<emphasis class="stringliteral">u&apos;a.html&apos;</emphasis>,&#32;<emphasis class="stringliteral">u&apos;sub/b.html&apos;</emphasis>,&#32;<emphasis class="stringliteral">u&apos;/c.html&apos;</emphasis>,&#32;<emphasis class="stringliteral">u&apos;d.html&apos;</emphasis>,&#32;<emphasis class="stringliteral">u&apos;//www.perdu.com&apos;</emphasis>],&#32;links)
+256 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a48e6e241f7fa3ceaa7c49675292c8218">257 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a48e6e241f7fa3ceaa7c49675292c8218">test_BFS_depth_0</link>(self):
+258 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;url&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a9bfdb2427ff25ed415115347baa183e3">get_url</link>(<emphasis class="stringliteral">&quot;/depth/root.html&quot;</emphasis>)
+259 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;urlopen&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a3db5e9ca3315af5e2b8f29c098667a9d">get_url_open</link>()
+260 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;linkSearch&#32;=&#32;linkSearchAlgos()
+261 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;linkSearch.depth_setter(0)
+262 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;links&#32;=&#32;linkSearch.bfs(url)
+263 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;expected_link&#32;=&#32;[<emphasis class="stringliteral">u&apos;root.html&apos;</emphasis>]
+264 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i=0
+265 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;link&#32;<emphasis class="keywordflow">in</emphasis>&#32;links:
+266 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertTrue(expected_link[i]&#32;<emphasis class="keywordflow">in</emphasis>&#32;link)
+267 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i&#32;=&#32;i+1
+268 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1acde5a29e709f738a357da43e8ce8e06b">269 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1acde5a29e709f738a357da43e8ce8e06b">test_BFS_depth_1</link>(self):
+270 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;url&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a9bfdb2427ff25ed415115347baa183e3">get_url</link>(<emphasis class="stringliteral">&quot;/depth/root.html&quot;</emphasis>)
+271 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;urlopen&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a3db5e9ca3315af5e2b8f29c098667a9d">get_url_open</link>()
+272 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;linkSearch&#32;=&#32;linkSearchAlgos()
+273 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;linkSearch.depth_setter(1)
+274 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;links&#32;=&#32;linkSearch.bfs(url)
+275 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;expected_link&#32;=&#32;[<emphasis class="stringliteral">u&apos;/root.html&apos;</emphasis>,&#32;<emphasis class="stringliteral">u&apos;/0.html&apos;</emphasis>]
+276 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i=0
+277 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;link&#32;<emphasis class="keywordflow">in</emphasis>&#32;links:
+278 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertTrue(expected_link[i]&#32;<emphasis class="keywordflow">in</emphasis>&#32;link)
+279 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i&#32;=&#32;i+1
+280 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1abb5fe183951e209f66c2b4e292c99eb7">281 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1abb5fe183951e209f66c2b4e292c99eb7">test_BFS_depth_2</link>(self):
+282 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;url&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a9bfdb2427ff25ed415115347baa183e3">get_url</link>(<emphasis class="stringliteral">&quot;/depth/root.html&quot;</emphasis>)
+283 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;urlopen&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a3db5e9ca3315af5e2b8f29c098667a9d">get_url_open</link>()
+284 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;linkSearch&#32;=&#32;linkSearchAlgos()
+285 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;linkSearch.depth_setter(2)
+286 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;links&#32;=&#32;linkSearch.bfs(url)
+287 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;expected_link&#32;=&#32;[<emphasis class="stringliteral">u&apos;/root.html&apos;</emphasis>,&#32;<emphasis class="stringliteral">u&apos;/0.html&apos;</emphasis>,&#32;<emphasis class="stringliteral">u&apos;/1.html&apos;</emphasis>]
+288 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i=0
+289 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;link&#32;<emphasis class="keywordflow">in</emphasis>&#32;links:
+290 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertTrue(expected_link[i]&#32;<emphasis class="keywordflow">in</emphasis>&#32;link)
+291 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i&#32;=&#32;i+1
+292 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a92c82295f6e332a249a11868f5999218">293 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a92c82295f6e332a249a11868f5999218">test_BFS_depth_3</link>(self):
+294 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;url&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a9bfdb2427ff25ed415115347baa183e3">get_url</link>(<emphasis class="stringliteral">&quot;/depth/root.html&quot;</emphasis>)
+295 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;urlopen&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a3db5e9ca3315af5e2b8f29c098667a9d">get_url_open</link>()
+296 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;linkSearch&#32;=&#32;linkSearchAlgos()
+297 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;linkSearch.depth_setter(3)
+298 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;links&#32;=&#32;linkSearch.bfs(url)
+299 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;expected_link&#32;=&#32;[<emphasis class="stringliteral">u&apos;/root.html&apos;</emphasis>,&#32;<emphasis class="stringliteral">u&apos;/0.html&apos;</emphasis>,&#32;<emphasis class="stringliteral">u&apos;/1.html&apos;</emphasis>,&#32;<emphasis class="stringliteral">u&apos;/2.html&apos;</emphasis>]
+300 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i=0
+301 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;link&#32;<emphasis class="keywordflow">in</emphasis>&#32;links:
+302 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertTrue(expected_link[i]&#32;<emphasis class="keywordflow">in</emphasis>&#32;link)
+303 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i&#32;=&#32;i+1
+304 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a433365f3474025469ab42635234cbef0">305 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a433365f3474025469ab42635234cbef0">test_BFS_depth_4</link>(self):
+306 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;url&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a9bfdb2427ff25ed415115347baa183e3">get_url</link>(<emphasis class="stringliteral">&quot;/depth/root.html&quot;</emphasis>)
+307 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;urlopen&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a3db5e9ca3315af5e2b8f29c098667a9d">get_url_open</link>()
+308 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;linkSearch&#32;=&#32;linkSearchAlgos()
+309 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;linkSearch.depth_setter(4)
+310 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;links&#32;=&#32;linkSearch.bfs(url)
+311 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;expected_link&#32;=&#32;[<emphasis class="stringliteral">u&apos;/root.html&apos;</emphasis>,&#32;<emphasis class="stringliteral">u&apos;/0.html&apos;</emphasis>,&#32;<emphasis class="stringliteral">u&apos;/1.html&apos;</emphasis>,&#32;<emphasis class="stringliteral">u&apos;/2.html&apos;</emphasis>,&#32;<emphasis class="stringliteral">u&apos;/3.html&apos;</emphasis>]
+312 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i=0
+313 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;link&#32;<emphasis class="keywordflow">in</emphasis>&#32;links:
+314 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertTrue(expected_link[i]&#32;<emphasis class="keywordflow">in</emphasis>&#32;link)
+315 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i&#32;=&#32;i+1
+316 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a96a6738fbd35cf6397c417d262dd30f0">317 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a96a6738fbd35cf6397c417d262dd30f0">test_BFS_depth_5</link>(self):
+318 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;url&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a9bfdb2427ff25ed415115347baa183e3">get_url</link>(<emphasis class="stringliteral">&quot;/depth/root.html&quot;</emphasis>)
+319 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;urlopen&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a3db5e9ca3315af5e2b8f29c098667a9d">get_url_open</link>()
+320 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;linkSearch&#32;=&#32;linkSearchAlgos()
+321 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;linkSearch.depth_setter(5)
+322 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;links&#32;=&#32;linkSearch.bfs(url)
+323 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;expected_link&#32;=&#32;[<emphasis class="stringliteral">u&apos;/root.html&apos;</emphasis>,&#32;<emphasis class="stringliteral">u&apos;/0.html&apos;</emphasis>,&#32;<emphasis class="stringliteral">u&apos;/1.html&apos;</emphasis>,&#32;<emphasis class="stringliteral">u&apos;/2.html&apos;</emphasis>,&#32;<emphasis class="stringliteral">u&apos;/3.html&apos;</emphasis>,&#32;<emphasis class="stringliteral">u&apos;/4.html&apos;</emphasis>]
+324 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i=0
+325 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;link&#32;<emphasis class="keywordflow">in</emphasis>&#32;links:
+326 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.assertTrue(expected_link[i]&#32;<emphasis class="keywordflow">in</emphasis>&#32;link)
+327 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i&#32;=&#32;i+1
+328 
+329 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a4f86d42852e498de1c0d70b11c8950a1">330 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a4f86d42852e498de1c0d70b11c8950a1">test_download</link>(self):
+331 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;url&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a9bfdb2427ff25ed415115347baa183e3">get_url</link>(<emphasis class="stringliteral">&quot;/sub&quot;</emphasis>)
+332 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;urlopen&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a3db5e9ca3315af5e2b8f29c098667a9d">get_url_open</link>()
+333 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;downloading&#32;=&#32;download()
+334 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;downloading.download_resources(url,<emphasis class="stringliteral">&apos;*.js&apos;</emphasis>)
+335 
+336 <emphasis class="keywordflow">if</emphasis>&#32;__name__&#32;==&#32;<emphasis class="stringliteral">&apos;__main__&apos;</emphasis>:
+337 
+338 &#32;&#32;&#32;&#32;<emphasis class="comment">#Test&#32;the&#32;urlCorrector</emphasis>
+<link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1tests_1acf8bf6dfdff5780f67938a68973a60c8">339 </link>&#32;&#32;&#32;&#32;urlTestSuite&#32;=&#32;unittest.TestLoader().loadTestsFromTestCase(urlCorrectorTest)
+340 &#32;&#32;&#32;&#32;unittest.TextTestRunner(verbosity=2).run(urlTestSuite)
+341 
+342 &#32;&#32;&#32;&#32;<emphasis class="comment">#Test&#32;the&#32;search&#32;string&#32;algorithm</emphasis>
+<link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1tests_1a2e5e49f77bf2a9ce392f59a9bee51808">343 </link>&#32;&#32;&#32;&#32;searchTestSuite&#32;=&#32;unittest.TestLoader().loadTestsFromTestCase(searchTest)
+344 &#32;&#32;&#32;&#32;unittest.TextTestRunner(verbosity=2).run(searchTestSuite)
+345 
+346 &#32;&#32;&#32;&#32;<emphasis class="comment">#Test&#32;the&#32;crawlers&#32;functions&#32;and&#32;bfs</emphasis>
+<link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1tests_1a151ef06220ff5cd22210deb3f5c38a1f">347 </link>&#32;&#32;&#32;&#32;crawlTestSuite&#32;=&#32;unittest.TestLoader().loadTestsFromTestCase(crawlerTest)
+348 &#32;&#32;&#32;&#32;unittest.TextTestRunner(verbosity=2).run(crawlTestSuite)
+349 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&quot;Manual&#32;Check&#32;is&#32;test.js&#32;was&#32;downloaded&#32;in&#32;a&#32;127.0.0.1:*&#32;directory&#32;in&#32;the&#32;testfiles&#32;directory&quot;</emphasis>
+    </computeroutput></literallayout>
+</section>

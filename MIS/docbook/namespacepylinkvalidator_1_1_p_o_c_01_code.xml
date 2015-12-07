@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="namespacepylinkvalidator_1_1_p_o_c_01_code">
+<title>pylinkvalidator::POC Code</title>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespacepylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler">pylinkvalidator::POC Code::Web_Crawler</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespacepylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler___p_o_c">pylinkvalidator::POC Code::Web_Crawler_POC</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <section>
+            <title>Variables</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string <link linkend="namespacepylinkvalidator_1_1_p_o_c_01_code_1ae46fac6f5868586f992149338e72f296">__version__</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+</section>

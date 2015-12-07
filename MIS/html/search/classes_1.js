@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['teststringmethods',['TestStringMethods',['../class_test_string_1_1_test_string_methods.html',1,'TestString']]]
+  ['download',['download',['../classpylinkvalidator_1_1_web_handy_tool_1_1download_1_1download.html',1,'pylinkvalidator::WebHandyTool::download']]]
 ];

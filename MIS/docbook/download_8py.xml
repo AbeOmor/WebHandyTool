@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="download_8py">
+    <title>download.py File Reference</title>
+<para>Include dependency diagram for download.py</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="download_8py__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for download.py</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="download_8py__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1download_1_1download">pylinkvalidator::WebHandyTool::download::download</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1download">pylinkvalidator::WebHandyTool::download</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /Users/Abe/Documents/pylinkvalidator/WebHandyTool/download.py</para>
+    </simplesect>
+    <literallayout><computeroutput>
+<link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1download">1 </link><emphasis class="keyword">import</emphasis>&#32;subprocess
+2 <emphasis class="keyword">from</emphasis>&#32;config&#32;<emphasis class="keyword">import</emphasis>&#32;getConfig
+3 <emphasis class="keyword">from</emphasis>&#32;urlCorrector&#32;<emphasis class="keyword">import</emphasis>&#32;urlCorrector
+4 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1download_1_1download">5 </link><emphasis class="keyword">class&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1download_1_1download">download</link>(object):
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1download_1_1download_1ae62fcb67ed597f005b4e56a5e362eeec">6 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1download_1_1download_1ae62fcb67ed597f005b4e56a5e362eeec">__init__</link>(self):
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1download_1_1download_1a11fcd57c43233322454323c791dec35e">7 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1download_1_1download_1a11fcd57c43233322454323c791dec35e">config</link>&#32;=&#32;<link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1config_1a726d0b4696df7ad8c2ebd386e9853df1">getConfig</link>()
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1download_1_1download_1ae797f56e959b627f4146563aaf63353a">8 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1download_1_1download_1ae797f56e959b627f4146563aaf63353a">link</link>&#32;=&#32;urlCorrector()
+9 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1download_1_1download_1abaf45f1689c16761058cdc9fd5642083">10 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1download_1_1download_1abaf45f1689c16761058cdc9fd5642083">download_resources</link>(self,link,&#32;file_type=None):
+11 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+12 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Writes&#32;all&#32;resources&#32;matching&#32;the&#32;given&#32;file&#32;type&#32;from&#32;the&#32;page&#32;link&#32;to&#32;the&#32;file&#32;specified&#32;by&#32;destination.</emphasis>
+13 <emphasis class="stringliteral"></emphasis>
+14 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;link:</emphasis>
+15 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;options:</emphasis>
+16 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;file_type:</emphasis>
+17 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:return:</emphasis>
+18 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;link&#32;=&#32;self.link.HTML_corrector(link).geturl()
+20 
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;<emphasis class="keywordflow">not</emphasis>&#32;file_type:
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;file_type&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1download_1_1download_1a11fcd57c43233322454323c791dec35e">config</link>[<emphasis class="stringliteral">&quot;download&quot;</emphasis>][<emphasis class="stringliteral">&quot;file_types&quot;</emphasis>]
+23 
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;options&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1download_1_1download_1a11fcd57c43233322454323c791dec35e">config</link>[<emphasis class="stringliteral">&quot;download&quot;</emphasis>][<emphasis class="stringliteral">&quot;option&quot;</emphasis>]
+25 
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;file_type&#32;<emphasis class="keywordflow">and</emphasis>&#32;<emphasis class="stringliteral">&quot;A&quot;</emphasis>&#32;<emphasis class="keywordflow">not</emphasis>&#32;<emphasis class="keywordflow">in</emphasis>&#32;options:
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#&#32;Call&#32;UNIX&#32;wget&#32;process&#32;to&#32;download&#32;files</emphasis>
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;p&#32;=&#32;subprocess.call([<emphasis class="stringliteral">&quot;wget&quot;</emphasis>,options,<emphasis class="stringliteral">&quot;-A&quot;</emphasis>,file_type,link])
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">else</emphasis>:
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;p&#32;=&#32;subprocess.call([<emphasis class="stringliteral">&quot;wget&quot;</emphasis>,options,link])
+    </computeroutput></literallayout>
+</section>

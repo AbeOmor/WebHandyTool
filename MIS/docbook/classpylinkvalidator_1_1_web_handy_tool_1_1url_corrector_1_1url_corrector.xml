@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector">
+<title>pylinkvalidator::WebHandyTool::urlCorrector::urlCorrector class Reference</title>
+<para>Inheritance diagram for pylinkvalidator::WebHandyTool::urlCorrector::urlCorrector</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for pylinkvalidator::WebHandyTool::urlCorrector::urlCorrector</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Public Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>list_of_links</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>NOT_LINK</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>SCHEME_HTTP</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>SCHEME_HTTPS</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>SUPPORTED_SCHEMES</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector_1a74c7cfee65534308bc6ed2ff2731d87a">__init__</link> (
+self )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector_1a5779046db561bf9a2716aa3189af838b">HTML_corrector</link> (
+self , link )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector_1a4c652295a197e0cb7a967628c627d441">absolute_HTML_corrector</link> (
+self , link , base_link_split )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector_1a74c7cfee65534308bc6ed2ff2731d87a">
+                <title>def pylinkvalidator.WebHandyTool.urlCorrector.urlCorrector.__init__ (self)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector_1a5779046db561bf9a2716aa3189af838b">
+                <title>def pylinkvalidator.WebHandyTool.urlCorrector.urlCorrector.HTML_corrector (self, link)</title> <emphasis></emphasis>
+                
+<para><literallayout>Fixes the link passed in such that it becomes either a functioning link or is flagged as a broken link.
+:param link:
+:return  Url object of split url result corrected link Ex; SplitResult(scheme=u&apos;http&apos;, netloc=u&apos;canvasgroup.ca&apos;, path=u&apos;/zdfzd&apos;, query=u&apos;&apos;, fragment=u&apos;&apos;) :
+</literallayout> </para>
+
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector_1a4c652295a197e0cb7a967628c627d441">
+                <title>def pylinkvalidator.WebHandyTool.urlCorrector.urlCorrector.absolute_HTML_corrector (self, link, base_link_split)</title> <emphasis></emphasis>
+                
+<para><literallayout>Takes in the base url and appends any relative or absolute links to the base urk.
+
+:param link:
+:param base_link_split:
+:return Url object of split url result corrected link Ex; SplitResult(scheme=u&apos;http&apos;, netloc=u&apos;canvasgroup.ca&apos;, path=u&apos;/zdfzd&apos;, query=u&apos;&apos;, fragment=u&apos;&apos;) ::
+</literallayout> </para>
+
+            </section>
+</section>

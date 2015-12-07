@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_test_string_1_1_test_string_methods">
+<title>TestString::TestStringMethods class Reference</title>
+<para>Inheritance diagram for TestString::TestStringMethods</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_test_string_1_1_test_string_methods__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for TestString::TestStringMethods</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_test_string_1_1_test_string_methods__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="class_test_string_1_1_test_string_methods_1abd3a37be3b26c3bf46c303db0c03b7e5">test_upper</link> (
+self )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="class_test_string_1_1_test_string_methods_1a6529ba420211e4577fa0c79ab7b20e1a">test_isupper</link> (
+self )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="class_test_string_1_1_test_string_methods_1a3e28d67b465886b07c81361541ce839f">test_split</link> (
+self )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="class_test_string_1_1_test_string_methods_1abd3a37be3b26c3bf46c303db0c03b7e5">
+                <title>def TestString.TestStringMethods.test_upper (self)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_test_string_1_1_test_string_methods_1a6529ba420211e4577fa0c79ab7b20e1a">
+                <title>def TestString.TestStringMethods.test_isupper (self)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_test_string_1_1_test_string_methods_1a3e28d67b465886b07c81361541ce839f">
+                <title>def TestString.TestStringMethods.test_split (self)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

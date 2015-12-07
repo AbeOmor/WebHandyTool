@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="namespacepylinkvalidator_1_1_web_handy_tool">
+<title>pylinkvalidator::WebHandyTool</title>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1config">pylinkvalidator::WebHandyTool::config</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1download">pylinkvalidator::WebHandyTool::download</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1errors">pylinkvalidator::WebHandyTool::errors</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1link_search_algos">pylinkvalidator::WebHandyTool::linkSearchAlgos</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1parsers">pylinkvalidator::WebHandyTool::parsers</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1search">pylinkvalidator::WebHandyTool::search</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1tests">pylinkvalidator::WebHandyTool::tests</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1url_corrector">pylinkvalidator::WebHandyTool::urlCorrector</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1_web___crawler">pylinkvalidator::WebHandyTool::Web_Crawler</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <section>
+            <title>Variables</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string <link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1aa28b35e25a140274f3d623a89fc7d0ee">__version__</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+</section>

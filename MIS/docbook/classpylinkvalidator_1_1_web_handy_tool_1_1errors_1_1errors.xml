@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1errors_1_1errors">
+<title>pylinkvalidator::WebHandyTool::errors::errors class Reference</title>
+<para>Inheritance diagram for pylinkvalidator::WebHandyTool::errors::errors</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classpylinkvalidator_1_1_web_handy_tool_1_1errors_1_1errors__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for pylinkvalidator::WebHandyTool::errors::errors</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classpylinkvalidator_1_1_web_handy_tool_1_1errors_1_1errors__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Public Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>urlCorrect</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1errors_1_1errors_1a897c66f55e075d1bb5df00ad5dd966ab">__init__</link> (
+self )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1errors_1_1errors_1a560745957eb76bc1b2ea4acb29a42798">check_errors</link> (
+self , link , list_of_links )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1errors_1_1errors_1a897c66f55e075d1bb5df00ad5dd966ab">
+                <title>def pylinkvalidator.WebHandyTool.errors.errors.__init__ (self)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1errors_1_1errors_1a560745957eb76bc1b2ea4acb29a42798">
+                <title>def pylinkvalidator.WebHandyTool.errors.errors.check_errors (self, link, list_of_links=None)</title> <emphasis></emphasis>
+                
+<para><literallayout>Checks the all the links and reports the error message associated with
+all the links inputted
+
+:param link:
+:param list_of_links:
+:return List of Errors:
+</literallayout> </para>
+
+            </section>
+</section>

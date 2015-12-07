@@ -1,5 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$class_web___crawler_1_1_h_t_m_l__corrector__help.html" title="Web_Crawler.HTML_corrector_help" alt="" coords="112,5,346,30"/>
-<area shape="rect" id="node3" href="$class_web___crawler_1_1_web___crawler.html" title="Web_Crawler.Web_Crawler" alt="" coords="137,54,322,79"/>
-<area shape="rect" id="node4" href="$class_web___crawler___p_o_c_1_1_web___crawler___p_o_c.html" title="Web_Crawler_POC.Web\l_Crawler_POC" alt="" coords="145,103,314,142"/>
+<area shape="rect" id="node2" href="$classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test.html" title="pylinkvalidator.WebHandy\lTool.tests.crawlerTest" alt="" coords="141,5,315,43"/>
+<area shape="rect" id="node3" href="$classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test.html" title="pylinkvalidator.WebHandy\lTool.tests.searchTest" alt="" coords="141,67,315,106"/>
+<area shape="rect" id="node4" href="$classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1url_corrector_test.html" title="pylinkvalidator.WebHandy\lTool.tests.urlCorrectorTest" alt="" coords="140,130,316,169"/>
+<area shape="rect" id="node5" href="$class_test_string_1_1_test_string_methods.html" title="TestString.TestStringMethods" alt="" coords="131,193,325,218"/>
 </map>

@@ -1,0 +1,200 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search">
+<title>pylinkvalidator::WebHandyTool::search::search class Reference</title>
+<para>Inheritance diagram for pylinkvalidator::WebHandyTool::search::search</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for pylinkvalidator::WebHandyTool::search::search</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Public Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>list_of_links</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>SCHEME_HTTP</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>SCHEME_HTTPS</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>SUPPORTED_SCHEMES</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>parser</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>search_choices</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>search_choice</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>proximity</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1a938adf672af9ce7a03aa3f1dfc1a4148">__init__</link> (
+self )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1aed98782e4a3538c3be75eeb3af8050e5">query_search</link> (
+self , query , link , <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1a906e019972fbdaef6ef37b50edc2cb1f">list_of_links</link> , choice )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1a2f6e5ce0d893c396139877a60b34d8e9">exact_query</link> (
+self , query , data )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1ad8279fa98fb80bfaae0800cd7c5fa21e">similar_query</link> (
+self , query , data , <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1ad4742d4d507c4ea17dd4f4b5881047db">proximity</link> )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1a95044af0828393b590c4946fe8aa16b5">whitespace_checker</link> (
+self , character )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1a3070944be3de739d70f8c4c4603cbf4a">setProximity</link> (
+self , <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1ad4742d4d507c4ea17dd4f4b5881047db">proximity</link> )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1a938adf672af9ce7a03aa3f1dfc1a4148">
+                <title>def pylinkvalidator.WebHandyTool.search.search.__init__ (self)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1aed98782e4a3538c3be75eeb3af8050e5">
+                <title>def pylinkvalidator.WebHandyTool.search.search.query_search (self, query, link, list_of_links=None, choice=&apos;exact&apos;)</title> <emphasis></emphasis>
+                
+<para><literallayout>Find queries
+
+:param query:
+:param data:
+:param choice:
+:return Query results:
+</literallayout> </para>
+
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1a2f6e5ce0d893c396139877a60b34d8e9">
+                <title>def pylinkvalidator.WebHandyTool.search.search.exact_query (self, query, data)</title> <emphasis></emphasis>
+                
+<para><literallayout>Searches through a String for a certain phrase or term. Returns the starting index for all occurrences of the query String.
+If the query is not located, it will return an empty array.
+
+:param query - The String we are looking for:
+:param data - The String we are searching through.:
+:return Indexes corresponding to the beginning of the location of the String in question.:
+</literallayout> </para>
+
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1ad8279fa98fb80bfaae0800cd7c5fa21e">
+                <title>def pylinkvalidator.WebHandyTool.search.search.similar_query (self, query, data, proximity)</title> <emphasis></emphasis>
+                
+<para><literallayout>Searches through a String for a certain phrase or term. Returns results that are close to the query as well.
+(i.e. &quot;ap ple&quot; or &quot;bpple&quot; would be noted for &quot;apple&quot;) Returns the starting index for all occurrences of Strings sufficiently close to
+the query. If the query is not located, it will return an empty array.
+
+:param: query  - The String we are looking for.
+:param: data - The String we are searching through.:
+:param: proximity - The size of the acceptable variation from the query.:
+:return:Indexes corresponding to the beginning of the location of the String in question.
+</literallayout> </para>
+
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1a95044af0828393b590c4946fe8aa16b5">
+                <title>def pylinkvalidator.WebHandyTool.search.search.whitespace_checker (self, character)</title> <emphasis></emphasis>
+                
+<para><literallayout>Returns true if the character passed in is a whitespace character such as tab, space or newline.
+
+:param character - The character to be checked.:
+:return boolean, if there is whitespace True,Whether the character is whitespace:
+</literallayout> </para>
+
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1a3070944be3de739d70f8c4c4603cbf4a">
+                <title>def pylinkvalidator.WebHandyTool.search.search.setProximity (self, proximity)</title> <emphasis></emphasis>
+                
+<para><literallayout>Set the search proximity
+:param proximity:
+:return:
+</literallayout> </para>
+
+            </section>
+</section>

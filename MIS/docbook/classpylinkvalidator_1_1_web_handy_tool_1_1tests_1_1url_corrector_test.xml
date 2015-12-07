@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1url_corrector_test">
+<title>pylinkvalidator::WebHandyTool::tests::urlCorrectorTest class Reference</title>
+<para>Inheritance diagram for pylinkvalidator::WebHandyTool::tests::urlCorrectorTest</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1url_corrector_test__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for pylinkvalidator::WebHandyTool::tests::urlCorrectorTest</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1url_corrector_test__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1url_corrector_test_1adbeab76343c14a02620ed4b8b6fbb4fe">test_clean_url_split</link> (
+self )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1url_corrector_test_1a7e73d3cd877f27c3f473733a6ccd4773">test_get_absolute_url</link> (
+self )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1url_corrector_test_1adbeab76343c14a02620ed4b8b6fbb4fe">
+                <title>def pylinkvalidator.WebHandyTool.tests.urlCorrectorTest.test_clean_url_split (self)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1url_corrector_test_1a7e73d3cd877f27c3f473733a6ccd4773">
+                <title>def pylinkvalidator.WebHandyTool.tests.urlCorrectorTest.test_get_absolute_url (self)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

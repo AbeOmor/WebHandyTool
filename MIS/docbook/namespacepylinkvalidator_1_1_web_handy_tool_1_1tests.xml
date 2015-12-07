@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="namespacepylinkvalidator_1_1_web_handy_tool_1_1tests">
+<title>pylinkvalidator::WebHandyTool::tests</title>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test">pylinkvalidator::WebHandyTool::tests::crawlerTest</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test">pylinkvalidator::WebHandyTool::tests::searchTest</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1_threaded_t_c_p_server">pylinkvalidator::WebHandyTool::tests::ThreadedTCPServer</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1url_corrector_test">pylinkvalidator::WebHandyTool::tests::urlCorrectorTest</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Variables</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>tuple <link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1tests_1a14166a02e5bd8dca477698e70415a8dd">TEST_FILES_DIR</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>tuple <link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1tests_1acf8bf6dfdff5780f67938a68973a60c8">urlTestSuite</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>tuple <link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1tests_1a2e5e49f77bf2a9ce392f59a9bee51808">searchTestSuite</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>tuple <link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1tests_1a151ef06220ff5cd22210deb3f5c38a1f">crawlTestSuite</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1tests_1a9db60e3a111b5405bdfbc14fecaf488d">start_http_server</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para><literallayout>Unit and integration tests for WebHandyTool
+</literallayout> </para>
+                <para>Definition at line 1 of file tests.py</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>tests.py</para></listitem></itemizedlist></para>
+        </simplesect>
+</section>

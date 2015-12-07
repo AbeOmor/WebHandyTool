@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="namespacepylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler___p_o_c">
+<title>pylinkvalidator::POC Code::Web_Crawler_POC</title>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler___p_o_c_1_1_web___crawler___p_o_c">pylinkvalidator::POC Code::Web_Crawler_POC::Web_Crawler_POC</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Variables</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string <link linkend="namespacepylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler___p_o_c_1a22c868491c11af4cb64226ff9b053b32">__author__</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>tuple <link linkend="namespacepylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler___p_o_c_1a4666fce36918603f23fdc35bf9439a79">choice</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>tuple <link linkend="namespacepylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler___p_o_c_1a6207ec383f50bd418bb20f680ae55e1a">webcrawl</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+</section>

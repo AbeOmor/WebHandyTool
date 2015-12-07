@@ -9,7 +9,7 @@ class search(object):
         self.SCHEME_HTTPS = "https"
         self.SUPPORTED_SCHEMES = (self.SCHEME_HTTP, self.SCHEME_HTTPS)
         self.parser = parsers()
-        self.search_choices = {'1':'exact', '2':'similar'}
+        self.search_choices = {1:'exact', 2:'similar'}
         config = getConfig()
         self.search_choice= config["string_search"]["type"]
         self.setProximity(config["string_search"]["proximity"])
@@ -66,6 +66,7 @@ class search(object):
                     print '---------------------------------------------'
                     print data[index-30:index+30]
                     print '---------------------------------------------'
+
 
         return indexes
 

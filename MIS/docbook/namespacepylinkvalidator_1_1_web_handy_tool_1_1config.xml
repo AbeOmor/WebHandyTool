@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="namespacepylinkvalidator_1_1_web_handy_tool_1_1config">
+<title>pylinkvalidator::WebHandyTool::config</title>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1config_1a726d0b4696df7ad8c2ebd386e9853df1">getConfig</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+</section>

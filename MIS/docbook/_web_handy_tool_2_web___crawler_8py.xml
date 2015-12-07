@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_web_handy_tool_2_web___crawler_8py">
+    <title>Web_Crawler.py File Reference</title>
+<para>Include dependency diagram for Web_Crawler.py</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="_web_handy_tool_2_web___crawler_8py__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for Web_Crawler.py</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="_web_handy_tool_2_web___crawler_8py__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler">pylinkvalidator::WebHandyTool::Web_Crawler::Web_Crawler</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1_web___crawler">pylinkvalidator::WebHandyTool::Web_Crawler</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /Users/Abe/Documents/pylinkvalidator/WebHandyTool/Web_Crawler.py</para>
+    </simplesect>
+    <literallayout><computeroutput>
+<link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1affb3151f3f1a14a483da5ff3c2c148cf">1 </link>__author__&#32;=&#32;<emphasis class="stringliteral">&apos;Abe&apos;</emphasis>
+2 <emphasis class="keyword">import</emphasis>&#32;subprocess
+3 <emphasis class="keyword">import</emphasis>&#32;datetime
+4 
+5 <emphasis class="keyword">from</emphasis>&#32;urlCorrector&#32;<emphasis class="keyword">import</emphasis>&#32;*
+6 <emphasis class="keyword">from</emphasis>&#32;linkSearchAlgos&#32;<emphasis class="keyword">import</emphasis>&#32;linkSearchAlgos
+7 <emphasis class="keyword">from</emphasis>&#32;download&#32;<emphasis class="keyword">import</emphasis>&#32;download
+8 <emphasis class="keyword">from</emphasis>&#32;errors&#32;<emphasis class="keyword">import</emphasis>&#32;errors
+9 <emphasis class="keyword">from</emphasis>&#32;parsers&#32;<emphasis class="keyword">import</emphasis>&#32;parsers
+10 <emphasis class="keyword">from</emphasis>&#32;search&#32;<emphasis class="keyword">import</emphasis>&#32;search
+11 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler">12 </link><emphasis class="keyword">class&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler">Web_Crawler</link>(object):
+13 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+14 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;Main&#32;class,&#32;it&#32;is&#32;for&#32;crawling.</emphasis>
+15 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;Class&#32;variable&#32;includes&#32;depth,algo,choices,choice,output,seed,list&#32;of&#32;links</emphasis>
+16 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a0c6acebeeeb1b339c5b04f2d74eabac0">17 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a0c6acebeeeb1b339c5b04f2d74eabac0">__init__</link>(self):
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1ac5607c7fd029489ae1f1059b923a1c5d">18 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1ac5607c7fd029489ae1f1059b923a1c5d">urlCorrect</link>&#32;=&#32;<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector">urlCorrector</link>()
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a503ed797477e7f2330d6fd12eecdbfbf">19 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a503ed797477e7f2330d6fd12eecdbfbf">HTML_corrector_helper</link>&#32;=&#32;<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1_h_t_m_l__corrector__help">HTML_corrector_help</link>()
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a78cfcfc8cf0d05a198fd503d4dccb7e8">20 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a78cfcfc8cf0d05a198fd503d4dccb7e8">download</link>&#32;=&#32;<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a78cfcfc8cf0d05a198fd503d4dccb7e8">download</link>()
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1ac9882206ade067f487bce87abfaeb366">21 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1ac9882206ade067f487bce87abfaeb366">errors</link>&#32;=&#32;<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1ac9882206ade067f487bce87abfaeb366">errors</link>()
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a02fe862be3ebcbd5b0b82eedc2c112c4">22 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a02fe862be3ebcbd5b0b82eedc2c112c4">parsers</link>&#32;=&#32;<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a02fe862be3ebcbd5b0b82eedc2c112c4">parsers</link>()
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a2dc503030dc8778ddd79b531d8a1af3a">23 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a2dc503030dc8778ddd79b531d8a1af3a">choices</link>&#32;=&#32;{<emphasis class="stringliteral">&apos;1&apos;</emphasis>:<emphasis class="stringliteral">&apos;download&apos;</emphasis>,&#32;<emphasis class="stringliteral">&apos;2&apos;</emphasis>:<emphasis class="stringliteral">&apos;error&apos;</emphasis>,&#32;<emphasis class="stringliteral">&apos;3&apos;</emphasis>:<emphasis class="stringliteral">&apos;search&apos;</emphasis>,&#32;<emphasis class="stringliteral">&apos;4&apos;</emphasis>:<emphasis class="stringliteral">&apos;crawl&apos;</emphasis>,<emphasis class="stringliteral">&apos;5&apos;</emphasis>:<emphasis class="stringliteral">&apos;web&#32;structure&apos;</emphasis>}
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a74b96d3dbb1098882912627bd1d3c9db">24 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a74b96d3dbb1098882912627bd1d3c9db">choice</link>&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a2dc503030dc8778ddd79b531d8a1af3a">choices</link>[<emphasis class="stringliteral">&apos;4&apos;</emphasis>]&#32;<emphasis class="comment">#the&#32;default&#32;is&#32;crawl</emphasis>
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a8af49ff27b9cd2fdba5cc1998409f9d9">25 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a8af49ff27b9cd2fdba5cc1998409f9d9">list_of_links</link>&#32;=&#32;self.urlCorrect.list_of_links
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a26310024328f981af47daf57e0a217a6">26 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a26310024328f981af47daf57e0a217a6">NOT_LINK</link>&#32;=&#32;self.urlCorrect.NOT_LINK
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a09943bf9c81005f22aa847bacc6b7a7c">27 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a09943bf9c81005f22aa847bacc6b7a7c">SCHEME_HTTP</link>&#32;=&#32;self.urlCorrect.SCHEME_HTTP
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a42b4d78e04f54d3a3964c9fce45d671a">28 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a42b4d78e04f54d3a3964c9fce45d671a">SCHEME_HTTPS</link>&#32;=&#32;self.urlCorrect.SCHEME_HTTPS
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a25c92404798a0622427d5a2d7a87111f">29 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a25c92404798a0622427d5a2d7a87111f">SUPPORTED_SCHEMES</link>&#32;=&#32;self.urlCorrect.SUPPORTED_SCHEMES
+30 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a1b3df36953ff7ba0450d1809e4d6defb">31 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a1b3df36953ff7ba0450d1809e4d6defb">option</link>(self):
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+33 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Gets&#32;user&#32;input&#32;to&#32;set&#32;various&#32;program&#32;options&#32;related&#32;to</emphasis>
+34 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;how&#32;the&#32;user&#32;would&#32;like&#32;to&#32;handle&#32;crawling&#32;a&#32;webpage.</emphasis>
+35 <emphasis class="stringliteral"></emphasis>
+36 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Ask&#32;for&#32;users&#32;option&#32;choices</emphasis>
+37 <emphasis class="stringliteral"></emphasis>
+38 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:return:</emphasis>
+39 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;choice&#32;=&#32;raw_input(<emphasis class="stringliteral">&quot;Choose&#32;your&#32;option&#32;\n&quot;</emphasis>
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;+&#32;<emphasis class="stringliteral">&quot;Download&#32;Resources&#32;=&#32;1&#32;\n&quot;</emphasis>
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;+&#32;<emphasis class="stringliteral">&quot;Check&#32;for&#32;Errors&#32;=&#32;2&#32;\n&quot;</emphasis>
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;+&#32;<emphasis class="stringliteral">&quot;Search&#32;for&#32;Query&#32;=&#32;3&#32;\n&quot;</emphasis>
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;+&#32;<emphasis class="stringliteral">&quot;Just&#32;Crawl&#32;=&#32;4&#32;&#32;\n&quot;</emphasis>)
+45 
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a74b96d3dbb1098882912627bd1d3c9db">choice</link>&#32;=&#32;self.choices.get(choice)
+47 
+48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;link&#32;=&#32;raw_input(<emphasis class="stringliteral">&quot;Website&#32;you&#32;would&#32;like&#32;use:&#32;&quot;</emphasis>)
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;link&#32;=&#32;self.urlCorrect.HTML_corrector(link).geturl()
+50 
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#parseType&#32;=&#32;raw_input(&quot;Would&#32;you&#32;like&#32;to&#32;do&#32;a&#32;breadth-first&#32;(0)&#32;or&#32;depth-first&#32;(1)&#32;search?&quot;);</emphasis>
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a74b96d3dbb1098882912627bd1d3c9db">choice</link>&#32;=&#32;self.choices.get(choice)
+53 
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a74b96d3dbb1098882912627bd1d3c9db">choice</link>&#32;==&#32;<emphasis class="stringliteral">&quot;download&quot;</emphasis>:
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.download.download_resources(link)
+56 
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">elif</emphasis>&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a74b96d3dbb1098882912627bd1d3c9db">choice</link>&#32;==&#32;<emphasis class="stringliteral">&quot;error&quot;</emphasis>:
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a633bb070956c3317fbdc27e2cc03975a">58 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a633bb070956c3317fbdc27e2cc03975a">algo</link>&#32;=&#32;linkSearchAlgos()
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a8af49ff27b9cd2fdba5cc1998409f9d9">list_of_links</link>&#32;=&#32;self.algo.bfs(link)
+60 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.errors.check_errors(link,self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a8af49ff27b9cd2fdba5cc1998409f9d9">list_of_links</link>)
+61 
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">elif</emphasis>&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a74b96d3dbb1098882912627bd1d3c9db">choice</link>&#32;==&#32;<emphasis class="stringliteral">&quot;search&quot;</emphasis>:
+63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a633bb070956c3317fbdc27e2cc03975a">algo</link>&#32;=&#32;linkSearchAlgos()
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;searchOp&#32;=&#32;search()
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;query&#32;=&#32;raw_input(<emphasis class="stringliteral">&quot;What&apos;s&#32;your&#32;query:&#32;&quot;</emphasis>)
+66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;searchOp.search_choice&#32;=&#32;searchOp.search_choices.get(searchOp.search_choice)
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;list_of_links&#32;=&#32;self.algo.bfs(link)
+68 
+69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;searchOp.query_search(query,link,list_of_links,searchOp.search_choice)
+70 
+71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">elif</emphasis>&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a74b96d3dbb1098882912627bd1d3c9db">choice</link>&#32;==&#32;<emphasis class="stringliteral">&quot;crawl&quot;</emphasis>:
+72 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a633bb070956c3317fbdc27e2cc03975a">algo</link>&#32;=&#32;linkSearchAlgos()
+73 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a8af49ff27b9cd2fdba5cc1998409f9d9">list_of_links</link>&#32;=&#32;self.algo.bfs(link)
+74 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&quot;THE&#32;LINK&#32;ON&#32;SELECTED&#32;DEPTH&quot;</emphasis>
+75 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler_1a8af49ff27b9cd2fdba5cc1998409f9d9">list_of_links</link>
+76 
+77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">else</emphasis>:
+78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&quot;Incorrect&#32;input.&quot;</emphasis>
+79 
+80 
+81 <emphasis class="keywordflow">if</emphasis>&#32;__name__&#32;==&#32;<emphasis class="stringliteral">&apos;__main__&apos;</emphasis>:
+<link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1a3b4c79fe9756714e1b12573b644499bc">82 </link>&#32;&#32;&#32;&#32;crawler&#32;=&#32;<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler">Web_Crawler</link>()
+<link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1a51cc3473f0ab9b1254af83e5559b129e">83 </link>&#32;&#32;&#32;&#32;option&#32;=&#32;crawler.option()
+84 
+    </computeroutput></literallayout>
+</section>

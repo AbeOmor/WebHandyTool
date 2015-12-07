@@ -1,0 +1,609 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_p_o_c_01_code_2_web___crawler_8py">
+    <title>Web_Crawler.py File Reference</title>
+<para>Include dependency diagram for Web_Crawler.py</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="_p_o_c_01_code_2_web___crawler_8py__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for Web_Crawler.py</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="_p_o_c_01_code_2_web___crawler_8py__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler">pylinkvalidator::POC Code::Web_Crawler::Web_Crawler</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_h_t_m_l__corrector__help">pylinkvalidator::POC Code::Web_Crawler::HTML_corrector_help</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespacepylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler">pylinkvalidator::POC Code::Web_Crawler</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespaceurllib2">urllib2</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /Users/Abe/Documents/pylinkvalidator/POC Code/Web_Crawler.py</para>
+    </simplesect>
+    <literallayout><computeroutput>
+<link linkend="namespacepylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1a29affd71d39a1882ce8bba5aab752d93">1 </link>__author__&#32;=&#32;<emphasis class="stringliteral">&apos;Abe&apos;</emphasis>
+2 <emphasis class="keyword">import</emphasis>&#32;subprocess
+3 <emphasis class="keyword">from</emphasis>&#32;bs4&#32;<emphasis class="keyword">import</emphasis>&#32;BeautifulSoup
+4 <emphasis class="keyword">from</emphasis>&#32;urllib2&#32;<emphasis class="keyword">import</emphasis>&#32;*
+5 <emphasis class="keyword">import</emphasis>&#32;datetime
+6 <emphasis class="keyword">import</emphasis>&#32;urllib2
+7 <emphasis class="keyword">import</emphasis>&#32;re
+8 <emphasis class="keyword">from</emphasis>&#32;urllib&#32;<emphasis class="keyword">import</emphasis>&#32;urlretrieve
+9 
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler">10 </link><emphasis class="keyword">class&#32;</emphasis><link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler">Web_Crawler</link>(object):
+11 
+12 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+13 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;Main&#32;class,&#32;it&#32;is&#32;for&#32;crawling.</emphasis>
+14 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;Class&#32;variable&#32;includes&#32;depth,algo,choices,choice,output,seed,list&#32;of&#32;links</emphasis>
+15 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a11f494a5019e83e4e97de9d02e70eac0">16 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a11f494a5019e83e4e97de9d02e70eac0">__init__</link>(self):
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a4b25f5a1077981b4fc673a30cd6f60f5">17 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a4b25f5a1077981b4fc673a30cd6f60f5">depth</link>&#32;=&#32;0
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ae21f36bb8bac5b3a440e372a6898fdb3">18 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ae21f36bb8bac5b3a440e372a6898fdb3">algo</link>&#32;=&#32;<emphasis class="stringliteral">&apos;bfs&apos;</emphasis>
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a17e17d066349bf6795a8f3a6a2dfc909">19 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a17e17d066349bf6795a8f3a6a2dfc909">choices</link>&#32;=&#32;{<emphasis class="stringliteral">&apos;1&apos;</emphasis>:<emphasis class="stringliteral">&apos;download&apos;</emphasis>,&#32;<emphasis class="stringliteral">&apos;2&apos;</emphasis>:<emphasis class="stringliteral">&apos;error&apos;</emphasis>,&#32;<emphasis class="stringliteral">&apos;3&apos;</emphasis>:<emphasis class="stringliteral">&apos;search&apos;</emphasis>,&#32;<emphasis class="stringliteral">&apos;4&apos;</emphasis>:<emphasis class="stringliteral">&apos;crawl&apos;</emphasis>,<emphasis class="stringliteral">&apos;5&apos;</emphasis>:<emphasis class="stringliteral">&apos;web&#32;Depth&apos;</emphasis>}
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a33c0a83d96930b31e2a8f0f81345a18f">20 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a33c0a83d96930b31e2a8f0f81345a18f">search_choices</link>&#32;=&#32;{<emphasis class="stringliteral">&apos;1&apos;</emphasis>:<emphasis class="stringliteral">&apos;exact&apos;</emphasis>,&#32;<emphasis class="stringliteral">&apos;2&apos;</emphasis>:<emphasis class="stringliteral">&apos;similar&apos;</emphasis>}
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a4100bfbd077cd54c5ee1b6e3ad21ba05">21 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a4100bfbd077cd54c5ee1b6e3ad21ba05">choice</link>&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a17e17d066349bf6795a8f3a6a2dfc909">choices</link>[<emphasis class="stringliteral">&apos;4&apos;</emphasis>]&#32;<emphasis class="comment">#the&#32;default&#32;is&#32;crawl</emphasis>
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ac2c45da364f56570078463b236a3db9a">22 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ac2c45da364f56570078463b236a3db9a">search_choice</link>&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a17e17d066349bf6795a8f3a6a2dfc909">choices</link>[<emphasis class="stringliteral">&apos;1&apos;</emphasis>]&#32;<emphasis class="comment">#the&#32;default&#32;is&#32;crawl</emphasis>
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a72c07e1d106dac630b27ad7844742f21">23 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a72c07e1d106dac630b27ad7844742f21">output</link>&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a783243f26a2aa6c636626231ec137c35">24 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a783243f26a2aa6c636626231ec137c35">seed</link>&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ac2956f25315755df07ef3ba47f283e83">25 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ac2956f25315755df07ef3ba47f283e83">list_of_links</link>&#32;=&#32;[]
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1aad9d98c171e3d7014a3eee1d061e1381">26 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1aad9d98c171e3d7014a3eee1d061e1381">NOT_LINK</link>&#32;=&#32;[<emphasis class="stringliteral">&apos;data&apos;</emphasis>,<emphasis class="stringliteral">&apos;#&apos;</emphasis>,&#32;]
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1aa8af000696c151fe4972d098507e7654">27 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1aa8af000696c151fe4972d098507e7654">SCHEME_HTTP</link>&#32;=&#32;<emphasis class="stringliteral">&quot;http&quot;</emphasis>
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a6d304fcbd84982b5b7560d9f7bd9f3d4">28 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a6d304fcbd84982b5b7560d9f7bd9f3d4">SCHEME_HTTPS</link>&#32;=&#32;<emphasis class="stringliteral">&quot;https&quot;</emphasis>
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a917f9b86adefbcb3dc0dc53075ebbd34">29 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a917f9b86adefbcb3dc0dc53075ebbd34">SUPPORTED_SCHEMES</link>&#32;=&#32;(self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1aa8af000696c151fe4972d098507e7654">SCHEME_HTTP</link>,&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a6d304fcbd84982b5b7560d9f7bd9f3d4">SCHEME_HTTPS</link>)
+30 
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ab88f99b20a665b945bbfbacd29c7cd35">31 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ab88f99b20a665b945bbfbacd29c7cd35">option</link>(self):
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+33 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Gets&#32;user&#32;input&#32;to&#32;set&#32;various&#32;program&#32;options&#32;related&#32;to</emphasis>
+34 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;how&#32;the&#32;user&#32;would&#32;like&#32;to&#32;handle&#32;crawling&#32;a&#32;webpage.</emphasis>
+35 <emphasis class="stringliteral"></emphasis>
+36 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Ask&#32;for&#32;users&#32;option&#32;choices</emphasis>
+37 <emphasis class="stringliteral"></emphasis>
+38 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:return:</emphasis>
+39 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;choice&#32;=&#32;raw_input(<emphasis class="stringliteral">&quot;Choose&#32;your&#32;option&#32;\n&quot;</emphasis>
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;+&#32;<emphasis class="stringliteral">&quot;Download&#32;Resources&#32;=&#32;1&#32;\n&quot;</emphasis>
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;+&#32;<emphasis class="stringliteral">&quot;Check&#32;for&#32;Errors&#32;=&#32;2&#32;\n&quot;</emphasis>
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;+&#32;<emphasis class="stringliteral">&quot;Search&#32;for&#32;Query&#32;=&#32;3&#32;\n&quot;</emphasis>
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;+&#32;<emphasis class="stringliteral">&quot;Just&#32;Crawl&#32;=&#32;4&#32;&#32;\n&quot;</emphasis>
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;+&#32;<emphasis class="stringliteral">&quot;Web&#32;Depth=&#32;5&#32;&#32;\n&quot;</emphasis>)
+46 
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a4100bfbd077cd54c5ee1b6e3ad21ba05">choice</link>&#32;=&#32;self.choices.get(choice)
+48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;self.choices.get(choice)
+49 
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;link&#32;=&#32;raw_input(<emphasis class="stringliteral">&quot;Website&#32;you&#32;would&#32;like&#32;use:&#32;&quot;</emphasis>)
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;link&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a685b38e7e243a8edbae39c1ee31ba866">HTML_corrector</link>(link).geturl()
+52 
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ac5547b7358459fc652278d1fd7306621">depth_setter</link>(input(<emphasis class="stringliteral">&quot;Choose&#32;a&#32;depth&#32;of&#32;0&#32;or&#32;greater&#32;to&#32;parse&#32;the&#32;website&#32;using.&quot;</emphasis>));
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#parseType&#32;=&#32;raw_input(&quot;Would&#32;you&#32;like&#32;to&#32;do&#32;a&#32;breadth-first&#32;(0)&#32;or&#32;depth-first&#32;(1)&#32;search?&quot;);</emphasis>
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a4b25f5a1077981b4fc673a30cd6f60f5">depth</link>
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a4100bfbd077cd54c5ee1b6e3ad21ba05">choice</link>&#32;=&#32;self.choices.get(choice)
+57 
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a4100bfbd077cd54c5ee1b6e3ad21ba05">choice</link>&#32;==&#32;<emphasis class="stringliteral">&quot;download&quot;</emphasis>:
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a70b41cbe1f381fd211536be5b6ab6c49">download_resources</link>(link)
+60 
+61 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">elif</emphasis>&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a4100bfbd077cd54c5ee1b6e3ad21ba05">choice</link>&#32;==&#32;<emphasis class="stringliteral">&quot;error&quot;</emphasis>:
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ac2956f25315755df07ef3ba47f283e83">list_of_links</link>&#32;=&#32;crawler.bfs(link)
+63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a2fc6c2e07ddf12c96da4216bc11763d5">check_errors</link>(link,self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ac2956f25315755df07ef3ba47f283e83">list_of_links</link>)
+64 
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">elif</emphasis>&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a4100bfbd077cd54c5ee1b6e3ad21ba05">choice</link>&#32;==&#32;<emphasis class="stringliteral">&quot;search&quot;</emphasis>:
+66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ac2956f25315755df07ef3ba47f283e83">list_of_links</link>&#32;=&#32;crawler.bfs(link)
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#&#32;indexes&#32;=&#32;self.exact_query(&apos;ehima&apos;,self.HTML_text(link))</emphasis>
+68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#&#32;print&#32;indexes</emphasis>
+69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#&#32;for&#32;i&#32;in&#32;range(0,len(indexes)):</emphasis>
+70 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#&#32;&#32;&#32;&#32;&#32;print&#32;self.HTML_text(link)[indexes[i]-30:indexes[i]+30]</emphasis>
+71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;choice&#32;=&#32;raw_input(<emphasis class="stringliteral">&quot;Choose&#32;your&#32;option&#32;\n&quot;</emphasis>
+72 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;+&#32;<emphasis class="stringliteral">&quot;Exact&#32;Search&#32;=&#32;1&#32;\n&quot;</emphasis>
+73 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;+&#32;<emphasis class="stringliteral">&quot;Similar&#32;Search&#32;=&#32;2&#32;\n&quot;</emphasis>)
+74 
+75 
+76 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ac2c45da364f56570078463b236a3db9a">search_choice</link>&#32;=&#32;self.search_choices.get(choice)
+77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;self.search_choices.get(choice)
+78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;query&#32;=&#32;raw_input(<emphasis class="stringliteral">&quot;What&apos;s&#32;your&#32;query:&#32;&quot;</emphasis>)
+79 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;crawler.query_search(query,link,self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ac2956f25315755df07ef3ba47f283e83">list_of_links</link>,self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ac2c45da364f56570078463b236a3db9a">search_choice</link>)
+80 
+81 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">elif</emphasis>&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a4100bfbd077cd54c5ee1b6e3ad21ba05">choice</link>&#32;==&#32;<emphasis class="stringliteral">&quot;crawl&quot;</emphasis>:
+82 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ac2956f25315755df07ef3ba47f283e83">list_of_links</link>&#32;=&#32;crawler.bfs(link)
+83 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ac2956f25315755df07ef3ba47f283e83">list_of_links</link>
+84 
+85 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">elif</emphasis>&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a4100bfbd077cd54c5ee1b6e3ad21ba05">choice</link>&#32;==&#32;<emphasis class="stringliteral">&quot;web&#32;structure&quot;</emphasis>:
+86 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&quot;====================================================&quot;</emphasis>
+87 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&quot;\t\t\tWeb&#32;Tree&quot;</emphasis>
+88 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&quot;====================================================&quot;</emphasis>
+89 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a0c6649825a52751d19cd23e093e2c6c3">website_Depth</link>(link,self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a4b25f5a1077981b4fc673a30cd6f60f5">depth</link>)
+90 
+91 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">else</emphasis>:
+92 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&quot;Incorrect&#32;input.&quot;</emphasis>
+93 
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a56ce7ff8f340a4e3a12fa6af7aa685ef">94 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a56ce7ff8f340a4e3a12fa6af7aa685ef">dfs</link>(self,&#32;choice):
+95 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#TODO&#32;implement</emphasis>
+96 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">pass</emphasis>
+97 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a5fc56f19ac8d7aa5a6f1dcc2dd2c7f43">98 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a5fc56f19ac8d7aa5a6f1dcc2dd2c7f43">bfs</link>(self,&#32;link):
+99 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+100 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Finds&#32;all&#32;the&#32;links&#32;on&#32;a&#32;give&#32;website&#32;using&#32;the&#32;BFS&#32;algorithm</emphasis>
+101 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;link:</emphasis>
+102 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:return&#32;A&#32;list&#32;of&#32;all&#32;the&#32;links&#32;found&#32;by&#32;BFS:</emphasis>
+103 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+104 
+105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;count&#32;=&#32;0
+106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;base_link&#32;=&#32;self.HTML_corrector(link)
+107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;current_depth&#32;=&#32;[link]
+108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;next_depth&#32;=&#32;[]
+109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;links&#32;=&#32;[]
+110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">while</emphasis>&#32;count&#32;&lt;=&#32;self.depth:
+111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&quot;Depth&#32;&quot;</emphasis>&#32;+&#32;str(count)
+112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&quot;LINKS&#32;USED&#32;IN&#32;DEPTH&#32;&quot;</emphasis>&#32;+&#32;str(count)
+113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;current_depth
+114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;link&#32;<emphasis class="keywordflow">in</emphasis>&#32;current_depth:
+115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;links.append(self.HTML_corrector(link).geturl())
+116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;correct_link&#32;=&#32;self.absolute_HTML_corrector(link,base_link).geturl()
+117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;new_links&#32;=&#32;self.find_links(correct_link)
+118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;new_links:
+119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;link&#32;<emphasis class="keywordflow">in</emphasis>&#32;new_links:
+120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;next_depth.append(self.absolute_HTML_corrector(link,base_link).geturl())
+121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&quot;Links&#32;on&#32;this&#32;page:&#32;&quot;</emphasis>&#32;+&#32;str(correct_link)&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;HERE&#32;is&#32;the&#32;list:&#32;&quot;</emphasis>
+122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;new_links
+123 
+124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&quot;ALL&#32;LINKS&#32;FOUND&#32;IN&#32;DEPTH&#32;&quot;</emphasis>&#32;+&#32;str(count)
+125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;next_depth
+126 
+127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;current_depth&#32;=&#32;next_depth
+128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;next_depth&#32;=&#32;[]
+129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;count&#32;+=&#32;1
+130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;links
+131 
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a685b38e7e243a8edbae39c1ee31ba866">132 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a685b38e7e243a8edbae39c1ee31ba866">HTML_corrector</link>(self,link):
+133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+134 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Fixes&#32;the&#32;link&#32;passed&#32;in&#32;such&#32;that&#32;it&#32;becomes&#32;either&#32;a&#32;functioning&#32;link&#32;or&#32;is&#32;flagged&#32;as&#32;a&#32;broken&#32;link.</emphasis>
+135 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;link:</emphasis>
+136 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:return&#32;&#32;Url&#32;object&#32;of&#32;split&#32;url&#32;result&#32;corrected&#32;link&#32;Ex;&#32;SplitResult(scheme=u&apos;http&apos;,&#32;netloc=u&apos;canvasgroup.ca&apos;,&#32;path=u&apos;/zdfzd&apos;,&#32;query=u&apos;&apos;,&#32;fragment=u&apos;&apos;)&#32;:</emphasis>
+137 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HTML_corrector_helper&#32;=&#32;<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_h_t_m_l__corrector__help">HTML_corrector_help</link>()
+139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;<emphasis class="keywordflow">not</emphasis>&#32;link:
+140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">raise</emphasis>&#32;ValueError(<emphasis class="stringliteral">&apos;The&#32;URL&#32;must&#32;not&#32;be&#32;empty&apos;</emphasis>)
+141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;split_result&#32;=&#32;urlparse.urlsplit(link)
+142 
+143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;<emphasis class="keywordflow">not</emphasis>&#32;split_result.scheme:
+144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;split_result.netloc:
+145 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;url&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1aa8af000696c151fe4972d098507e7654">SCHEME_HTTP</link>&#32;+&#32;<emphasis class="stringliteral">&quot;:&quot;</emphasis>&#32;+&#32;link
+146 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">else</emphasis>:
+147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;url&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1aa8af000696c151fe4972d098507e7654">SCHEME_HTTP</link>&#32;+&#32;<emphasis class="stringliteral">&quot;://&quot;</emphasis>&#32;+&#32;link
+148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;split_result&#32;=&#32;urlparse.urlsplit(url)
+149 
+150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;split_result&#32;=&#32;HTML_corrector_helper.convert_iri_to_uri(split_result)
+151 
+152 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;split_result
+153 
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ac4ba57c891836fb48a2115d51538e9bc">154 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ac4ba57c891836fb48a2115d51538e9bc">absolute_HTML_corrector</link>(self,link,base_link_split):
+155 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+156 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Takes&#32;in&#32;the&#32;base&#32;url&#32;and&#32;appends&#32;any&#32;relative&#32;or&#32;absolute&#32;links&#32;to&#32;the&#32;base&#32;urk.</emphasis>
+157 <emphasis class="stringliteral"></emphasis>
+158 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;link:</emphasis>
+159 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;base_link_split:</emphasis>
+160 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:return&#32;Url&#32;object&#32;of&#32;split&#32;url&#32;result&#32;corrected&#32;link&#32;Ex;&#32;SplitResult(scheme=u&apos;http&apos;,&#32;netloc=u&apos;canvasgroup.ca&apos;,&#32;path=u&apos;/zdfzd&apos;,&#32;query=u&apos;&apos;,&#32;fragment=u&apos;&apos;)&#32;::</emphasis>
+161 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+162 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;new_link&#32;=&#32;urlparse.urljoin(base_link_split.geturl(),&#32;link)
+163 
+164 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a685b38e7e243a8edbae39c1ee31ba866">HTML_corrector</link>(new_link)
+165 
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a70b41cbe1f381fd211536be5b6ab6c49">166 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a70b41cbe1f381fd211536be5b6ab6c49">download_resources</link>(self,link,options&#32;=&#32;&apos;-rA&apos;,&#32;file_type=None):
+167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+168 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Writes&#32;all&#32;resources&#32;matching&#32;the&#32;given&#32;file&#32;type&#32;from&#32;the&#32;page&#32;link&#32;to&#32;the&#32;file&#32;specified&#32;by&#32;destination.</emphasis>
+169 <emphasis class="stringliteral"></emphasis>
+170 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;link:</emphasis>
+171 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;options:</emphasis>
+172 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;file_type:</emphasis>
+173 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:return:</emphasis>
+174 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+175 
+176 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;file_type&#32;=&#32;raw_input(<emphasis class="stringliteral">&quot;Enter&#32;the&#32;extension&#32;you&#32;would&#32;like&#32;to&#32;download:&#32;&quot;</emphasis>)
+177 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;more_request&#32;=&#32;raw_input(<emphasis class="stringliteral">&apos;Do&#32;you&#32;want&#32;more,&#32;enter&#32;Y&#32;or&#32;N:&#32;&apos;</emphasis>)
+178 
+179 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">while</emphasis>&#32;more_request.lower()&#32;==&#32;<emphasis class="stringliteral">&apos;y&apos;</emphasis>:
+180 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;more_file_type&#32;=&#32;raw_input(<emphasis class="stringliteral">&quot;Enter&#32;the&#32;next&#32;extension&#32;you&#32;would&#32;like&#32;to&#32;download:&#32;&quot;</emphasis>)
+181 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;file_type+=&#32;<emphasis class="stringliteral">&quot;,&quot;</emphasis>&#32;+&#32;more_file_type
+182 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;file_type
+183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;more_request&#32;=&#32;raw_input(<emphasis class="stringliteral">&apos;Do&#32;you&#32;want&#32;to&#32;enter&#32;more&#32;extensions?&#32;Enter&#32;Y&#32;or&#32;N:&apos;</emphasis>)
+184 
+185 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;file_type:
+186 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#&#32;Call&#32;UNIX&#32;wget&#32;process&#32;to&#32;download&#32;files</emphasis>
+187 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;p&#32;=&#32;subprocess.call([<emphasis class="stringliteral">&quot;wget&quot;</emphasis>,options,file_type,link])
+188 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">else</emphasis>:
+189 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;p&#32;=&#32;subprocess.call([<emphasis class="stringliteral">&quot;wget&quot;</emphasis>,options,link])
+190 
+191 
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1afbaad82f02609f768b0c7fd9baa83048">192 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1afbaad82f02609f768b0c7fd9baa83048">exact_query</link>(self,query,data):
+193 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+194 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Searches&#32;through&#32;a&#32;String&#32;for&#32;a&#32;certain&#32;phrase&#32;or&#32;term.&#32;Returns&#32;the&#32;starting&#32;index&#32;for&#32;all&#32;occurrences&#32;of&#32;the&#32;query&#32;String.</emphasis>
+195 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;If&#32;the&#32;query&#32;is&#32;not&#32;located,&#32;it&#32;will&#32;return&#32;an&#32;empty&#32;array.</emphasis>
+196 <emphasis class="stringliteral"></emphasis>
+197 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;query&#32;-&#32;The&#32;String&#32;we&#32;are&#32;looking&#32;for:</emphasis>
+198 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;data&#32;-&#32;The&#32;String&#32;we&#32;are&#32;searching&#32;through.:</emphasis>
+199 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:return&#32;Indexes&#32;corresponding&#32;to&#32;the&#32;beginning&#32;of&#32;the&#32;location&#32;of&#32;the&#32;String&#32;in&#32;question.:</emphasis>
+200 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+201 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;locations&#32;=&#32;[];
+202 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;queryIndex&#32;=&#32;0;
+203 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+204 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data.strip();
+205 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;query.strip();
+206 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;query&#32;=&#32;query.lower();
+207 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data&#32;=&#32;data.lower();
+208 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#&#32;Impossible&#32;for&#32;data&#32;to&#32;contain&#32;query&#32;or&#32;query&#32;is&#32;nonsensical.</emphasis>
+209 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;len(query)&#32;&gt;&#32;len(data)&#32;<emphasis class="keywordflow">or</emphasis>&#32;(len(query)&#32;==&#32;len(data)&#32;<emphasis class="keywordflow">and</emphasis>&#32;<emphasis class="keywordflow">not</emphasis>&#32;query&#32;<emphasis class="keywordflow">is</emphasis>&#32;data)&#32;<emphasis class="keywordflow">or</emphasis>&#32;len(query)&#32;==&#32;0:&#32;
+210 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;[];
+211 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+212 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;i&#32;<emphasis class="keywordflow">in</emphasis>&#32;range(0,&#32;len(data)):
+213 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;data[i]&#32;==&#32;query[queryIndex]:&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#&#32;Current&#32;location&#32;is&#32;matching&#32;the&#32;query&#32;pattern&#32;so&#32;far.</emphasis>
+214 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;queryIndex&#32;==&#32;len(query)&#32;-&#32;1:&#32;&#32;&#32;&#32;<emphasis class="comment">#&#32;The&#32;whole&#32;query&#32;pattern&#32;is&#32;matched,&#32;add&#32;starting&#32;index.</emphasis>
+215 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;locations.append(i&#32;-&#32;len(query)&#32;+&#32;1);
+216 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;queryIndex&#32;=&#32;0;
+217 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">else</emphasis>:
+218 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;queryIndex&#32;+=&#32;1;
+219 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+220 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">else</emphasis>:&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#Current&#32;location&#32;didn&apos;t&#32;match&#32;the&#32;pattern.</emphasis>
+221 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;data[i]&#32;==&#32;query[0]:
+222 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;queryIndex&#32;=&#32;1;
+223 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">else</emphasis>:
+224 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;queryIndex&#32;=&#32;0;&#32;&#32;&#32;
+225 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+226 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;locations;
+227 
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a0ac2dcc6a346b596678fd923ce62c422">228 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a0ac2dcc6a346b596678fd923ce62c422">similar_query</link>(self,&#32;query,&#32;data,&#32;proximity):
+229 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+230 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Searches&#32;through&#32;a&#32;String&#32;for&#32;a&#32;certain&#32;phrase&#32;or&#32;term.&#32;Returns&#32;results&#32;that&#32;are&#32;close&#32;to&#32;the&#32;query&#32;as&#32;well.</emphasis>
+231 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(i.e.&#32;&quot;ap&#32;ple&quot;&#32;or&#32;&quot;bpple&quot;&#32;would&#32;be&#32;noted&#32;for&#32;&quot;apple&quot;)&#32;Returns&#32;the&#32;starting&#32;index&#32;for&#32;all&#32;occurrences&#32;of&#32;Strings&#32;sufficiently&#32;close&#32;to</emphasis>
+232 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;the&#32;query.&#32;If&#32;the&#32;query&#32;is&#32;not&#32;located,&#32;it&#32;will&#32;return&#32;an&#32;empty&#32;array.</emphasis>
+233 <emphasis class="stringliteral"></emphasis>
+234 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param:&#32;query&#32;&#32;-&#32;The&#32;String&#32;we&#32;are&#32;looking&#32;for.</emphasis>
+235 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param:&#32;data&#32;-&#32;The&#32;String&#32;we&#32;are&#32;searching&#32;through.:</emphasis>
+236 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param:&#32;proximity&#32;-&#32;The&#32;size&#32;of&#32;the&#32;acceptable&#32;variation&#32;from&#32;the&#32;query.:</emphasis>
+237 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:return:Indexes&#32;corresponding&#32;to&#32;the&#32;beginning&#32;of&#32;the&#32;location&#32;of&#32;the&#32;String&#32;in&#32;question.</emphasis>
+238 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+239 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;locations&#32;=&#32;[];
+240 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;queryIndex&#32;=&#32;0;
+241 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;distance&#32;=&#32;0;
+242 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+243 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data.strip();
+244 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;query.strip();
+245 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;query&#32;=&#32;query.lower();
+246 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data&#32;=&#32;data.lower();
+247 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+248 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;len(query)&#32;&gt;&#32;len(data)&#32;<emphasis class="keywordflow">or</emphasis>&#32;(len(query)&#32;==&#32;len(data)&#32;<emphasis class="keywordflow">and</emphasis>&#32;<emphasis class="keywordflow">not</emphasis>&#32;query&#32;<emphasis class="keywordflow">is</emphasis>&#32;data)&#32;<emphasis class="keywordflow">or</emphasis>&#32;len(query)&#32;==&#32;0&#32;<emphasis class="keywordflow">or</emphasis>&#32;proximity&#32;&gt;&#32;(0.4)&#32;*&#32;len(query):
+249 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;[];
+250 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+251 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;i&#32;<emphasis class="keywordflow">in</emphasis>&#32;range(0,&#32;len(data)):
+252 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;data[i]&#32;==&#32;query[queryIndex]:
+253 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;queryIndex&#32;==&#32;len(query)&#32;-&#32;1:
+254 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;locations.append(i&#32;-&#32;len(query)&#32;+&#32;1);
+255 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;queryIndex&#32;=&#32;0;
+256 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;distance&#32;=&#32;0;
+257 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">else</emphasis>:
+258 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;queryIndex&#32;+=&#32;1;
+259 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">elif</emphasis>&#32;distance&#32;&lt;&#32;proximity:
+260 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;queryIndex&#32;==&#32;len(query)&#32;-&#32;1:
+261 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;locations.append(i&#32;-&#32;len(query)&#32;+&#32;1);
+262 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;queryIndex&#32;=&#32;0;
+263 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;distance&#32;=&#32;0;
+264 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">elif</emphasis>&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ad00325e9391b34decc4960520f929deb">whitespace_checker</link>(data[i]):
+265 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;distance&#32;+=&#32;1;
+266 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">else</emphasis>:
+267 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;distance&#32;+=&#32;1;
+268 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;queryIndex&#32;+=&#32;1;
+269 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">else</emphasis>:
+270 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;data[i]&#32;==&#32;query[0]:
+271 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;queryIndex&#32;=&#32;0;
+272 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;distance&#32;=&#32;0;
+273 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">else</emphasis>:
+274 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;queryIndex&#32;=&#32;0;
+275 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;distance&#32;=&#32;0;
+276 
+277 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;locations;
+278 
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ad00325e9391b34decc4960520f929deb">279 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ad00325e9391b34decc4960520f929deb">whitespace_checker</link>(self,character):
+280 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+281 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Returns&#32;true&#32;if&#32;the&#32;character&#32;passed&#32;in&#32;is&#32;a&#32;whitespace&#32;character&#32;such&#32;as&#32;tab,&#32;space&#32;or&#32;newline.</emphasis>
+282 <emphasis class="stringliteral"></emphasis>
+283 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;character&#32;-&#32;The&#32;character&#32;to&#32;be&#32;checked.:</emphasis>
+284 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:return&#32;boolean,&#32;if&#32;there&#32;is&#32;whitespace&#32;True,Whether&#32;the&#32;character&#32;is&#32;whitespace:</emphasis>
+285 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+286 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;character&#32;==&#32;<emphasis class="stringliteral">&apos;&#32;&apos;</emphasis>&#32;<emphasis class="keywordflow">or</emphasis>&#32;character&#32;==&#32;<emphasis class="stringliteral">&apos;&#32;&#32;&#32;&#32;&apos;</emphasis>&#32;<emphasis class="keywordflow">or</emphasis>&#32;character&#32;==&#32;os.linesep;
+287 
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a77d0c8f8dad271699c5c26a65c127767">288 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a77d0c8f8dad271699c5c26a65c127767">find_links</link>(self,link,destination=None):
+289 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+290 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Finds&#32;all&#32;the&#32;links&#32;(&lt;a&gt;&lt;/a&gt;&#32;anchor&#32;tags&#32;on&#32;page)&#32;on&#32;a&#32;page,&#32;also&#32;removes&#32;all</emphasis>
+291 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;the&#32;link&#32;that&#32;start&#32;with&#32;&apos;#&apos;&#32;or&#32;&apos;data:&apos;&#32;as&#32;these&#32;are&#32;not&#32;valid&#32;urls</emphasis>
+292 <emphasis class="stringliteral"></emphasis>
+293 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;link:</emphasis>
+294 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;destination:</emphasis>
+295 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:return&#32;List&#32;of&#32;Links:</emphasis>
+296 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+297 
+298 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HTML_corrector_helper&#32;=&#32;<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_h_t_m_l__corrector__help">HTML_corrector_help</link>()
+299 
+300 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a09080daab7b16e68d2dbd4468079ae81">BS_parse_data</link>(link)
+301 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;data&#32;==&#32;<emphasis class="stringliteral">&apos;HTTP&#32;Error&apos;</emphasis>:
+302 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">False</emphasis>
+303 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;links&#32;=&#32;[]
+304 
+305 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;destination:
+306 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;timestamp&#32;=&#32;datetime.datetime.now().strftime(<emphasis class="stringliteral">&quot;%Y-%m-%d_%H:%M&quot;</emphasis>)
+307 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;f&#32;=&#32;open(<emphasis class="stringliteral">&apos;Found&#32;Links&#32;at&apos;</emphasis>&#32;+timestamp&#32;+<emphasis class="stringliteral">&apos;.txt&apos;</emphasis>,<emphasis class="stringliteral">&apos;w&apos;</emphasis>)
+308 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;f.write(data.find_all(<emphasis class="stringliteral">&apos;a&apos;</emphasis>))
+309 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;f.close()
+310 
+311 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;link&#32;<emphasis class="keywordflow">in</emphasis>&#32;data.find_all(<emphasis class="stringliteral">&apos;a&apos;</emphasis>):
+312 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;links.append(link.get(<emphasis class="stringliteral">&apos;href&apos;</emphasis>))
+313 
+314 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;links&#32;=&#32;[link&#32;<emphasis class="keywordflow">for</emphasis>&#32;link&#32;<emphasis class="keywordflow">in</emphasis>&#32;links&#32;<emphasis class="keywordflow">if</emphasis>&#32;HTML_corrector_helper.is_link(link)]
+315 
+316 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#&#32;More&#32;understandable&#32;version&#32;of&#32;code&#32;above</emphasis>
+317 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#list_of_valid_links&#32;=&#32;[]</emphasis>
+318 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#for&#32;link&#32;in&#32;links:</emphasis>
+319 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#&#32;&#32;&#32;&#32;if&#32;self.is_link(link):</emphasis>
+320 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#&#32;&#32;&#32;&#32;&#32;&#32;&#32;list_of_valid_links.append(link)</emphasis>
+321 
+322 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;links
+323 
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a2fc6c2e07ddf12c96da4216bc11763d5">324 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a2fc6c2e07ddf12c96da4216bc11763d5">check_errors</link>(self,link,list_of_links=None):
+325 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+326 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Checks&#32;the&#32;all&#32;the&#32;links&#32;and&#32;reports&#32;the&#32;error&#32;message&#32;associated&#32;with</emphasis>
+327 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;all&#32;the&#32;links&#32;inputted</emphasis>
+328 <emphasis class="stringliteral"></emphasis>
+329 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;link:</emphasis>
+330 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;list_of_links:</emphasis>
+331 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:return&#32;List&#32;of&#32;Errors:</emphasis>
+332 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+333 
+334 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;status_msg_list&#32;=&#32;[]
+335 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;base_url&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a685b38e7e243a8edbae39c1ee31ba866">HTML_corrector</link>(link)
+336 
+337 
+338 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;list_of_links:
+339 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;link&#32;<emphasis class="keywordflow">in</emphasis>&#32;list_of_links:
+340 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;corrected_link&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ac4ba57c891836fb48a2115d51538e9bc">absolute_HTML_corrector</link>(link,base_url).geturl()
+341 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;request&#32;=&#32;urllib2.Request(corrected_link)
+342 
+343 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>:
+344 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;response&#32;=&#32;urllib2.urlopen(request)
+345 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;success&#32;=&#32;<emphasis class="stringliteral">&apos;Status&#32;code:&#32;&apos;</emphasis>&#32;+&#32;str(response.getcode())
+346 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;str(corrected_link)&#32;+&#32;<emphasis class="stringliteral">&apos;&#32;--&#32;&apos;</emphasis>&#32;+&#32;success
+347 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;status_msg_list.append(str(corrected_link)&#32;+&#32;<emphasis class="stringliteral">&apos;&#32;--&#32;&apos;</emphasis>&#32;+&#32;success)
+348 
+349 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">except</emphasis>&#32;urllib2.HTTPError,&#32;e:
+350 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;error&#32;=&#32;<emphasis class="stringliteral">&apos;Error&#32;code:&#32;&apos;</emphasis>&#32;+&#32;str(e.code)
+351 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;str(corrected_link)&#32;+&#32;<emphasis class="stringliteral">&apos;&#32;--&#32;&apos;</emphasis>&#32;+&#32;error
+352 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;status_msg_list.append(str(corrected_link)&#32;+&#32;<emphasis class="stringliteral">&apos;&#32;--&#32;&apos;</emphasis>&#32;+&#32;error)
+353 
+354 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;status_msg_list
+355 
+356 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">else</emphasis>:
+357 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;base_url&#32;=&#32;base_url.geturl()
+358 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;request&#32;=&#32;urllib2.Request(base_url)
+359 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>:
+360 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;response&#32;=&#32;urllib2.urlopen(request)
+361 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;success&#32;=&#32;response.getcode()
+362 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;str(base_url)&#32;&#32;+&#32;<emphasis class="stringliteral">&apos;&#32;--&#32;&apos;</emphasis>&#32;+&#32;success
+363 
+364 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">except</emphasis>&#32;urllib2.HTTPError,&#32;e:
+365 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;error&#32;=&#32;<emphasis class="stringliteral">&apos;Error&#32;code:&#32;&apos;</emphasis>&#32;+&#32;str(e.code)
+366 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;str(base_url)&#32;&#32;+&#32;<emphasis class="stringliteral">&apos;&#32;--&#32;&apos;</emphasis>&#32;+&#32;error
+367 
+368 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;str(base_url)&#32;+&#32;<emphasis class="stringliteral">&apos;&#32;--&#32;&apos;</emphasis>&#32;+&#32;error
+369 
+370 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;str(base_url)&#32;+&#32;<emphasis class="stringliteral">&apos;&#32;--&#32;&apos;</emphasis>&#32;+&#32;success
+371 
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a09080daab7b16e68d2dbd4468079ae81">372 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a09080daab7b16e68d2dbd4468079ae81">BS_parse_data</link>(self,link):
+373 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+374 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Returns&#32;BeautifulSoup&#32;object&#32;for&#32;the&#32;link&#32;given,&#32;this&#32;will&#32;allow&#32;modules&#32;parse&#32;through&#32;pages&#32;data&#32;much&#32;faster</emphasis>
+375 <emphasis class="stringliteral"></emphasis>
+376 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;link:</emphasis>
+377 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:return&#32;BeautifulSoup&#32;:</emphasis>
+378 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+379 
+380 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>:
+381 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;soup&#32;=&#32;BeautifulSoup(urlopen(link),<emphasis class="stringliteral">&quot;html.parser&quot;</emphasis>)
+382 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">except</emphasis>&#32;urllib2.HTTPError:
+383 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;soup&#32;=&#32;<emphasis class="stringliteral">&apos;HTTP&#32;Error&apos;</emphasis>
+384 
+385 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;soup
+386 &#32;&#32;&#32;&#32;
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a048a3be9f662196c8c355cb5f12c1cd8">387 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a048a3be9f662196c8c355cb5f12c1cd8">HTML_text</link>(self,link):
+388 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+389 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Returns&#32;HTML&#32;text&#32;data&#32;for&#32;Query&#32;search</emphasis>
+390 <emphasis class="stringliteral"></emphasis>
+391 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;link:</emphasis>
+392 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:return&#32;String&#32;:</emphasis>
+393 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+394 
+395 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>:
+396 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;soup&#32;=&#32;BeautifulSoup(urlopen(link),<emphasis class="stringliteral">&quot;html.parser&quot;</emphasis>)
+397 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data&#32;=&#32;re.sub(<emphasis class="stringliteral">r&apos;\n\s*\n&apos;</emphasis>,&#32;<emphasis class="stringliteral">r&apos;\n\n&apos;</emphasis>,&#32;soup.get_text().strip(),&#32;flags=re.M)
+398 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">except</emphasis>&#32;urllib2.HTTPError:
+399 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;soup&#32;=&#32;<emphasis class="stringliteral">&apos;HTTP&#32;Error&apos;</emphasis>
+400 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;soup
+401 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;data
+402 
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1afac8f54efb9be45422268f8ccf9a5d48">403 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1afac8f54efb9be45422268f8ccf9a5d48">query_search</link>(self,query,link,list_of_links&#32;=&#32;None,choice=&apos;exact&apos;):
+404 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+405 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Find&#32;queries</emphasis>
+406 <emphasis class="stringliteral"></emphasis>
+407 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;query:</emphasis>
+408 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;data:</emphasis>
+409 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;choice:</emphasis>
+410 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:return&#32;Query&#32;results:</emphasis>
+411 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+412 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;list_of_links:
+413 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&apos;Links&#32;searching...&apos;</emphasis>
+414 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;list_of_links
+415 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;link&#32;<emphasis class="keywordflow">in</emphasis>&#32;list_of_links:
+416 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a048a3be9f662196c8c355cb5f12c1cd8">HTML_text</link>(link)
+417 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ac2c45da364f56570078463b236a3db9a">search_choice</link>&#32;==&#32;<emphasis class="stringliteral">&quot;exact&quot;</emphasis>:
+418 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&apos;Hey&#32;Buddy...I&#32;just&#32;searched&#32;&apos;</emphasis>&#32;+&#32;str(link)
+419 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;indexes&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1afbaad82f02609f768b0c7fd9baa83048">exact_query</link>(query,data)
+420 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;indexes
+421 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;index&#32;<emphasis class="keywordflow">in</emphasis>&#32;indexes&#32;:
+422 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&apos;Found&#32;at&#32;index&#32;&apos;</emphasis>&#32;+&#32;str(index)
+423 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&apos;---------------------------------------------&apos;</emphasis>
+424 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;data[index-30:index+30]
+425 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&apos;---------------------------------------------&apos;</emphasis>
+426 
+427 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">elif</emphasis>&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ac2c45da364f56570078463b236a3db9a">search_choice</link>&#32;==&#32;<emphasis class="stringliteral">&quot;similar&quot;</emphasis>:
+428 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;proximity&#32;=&#32;raw_input(<emphasis class="stringliteral">&quot;Set&#32;the&#32;promixity&#32;of&#32;similar&#32;query:&#32;&quot;</emphasis>)
+429 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&apos;Hey&#32;Buddy...I&#32;just&#32;searched&#32;&apos;</emphasis>&#32;+&#32;str(link)
+430 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;indexes&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a0ac2dcc6a346b596678fd923ce62c422">similar_query</link>(query,data,proximity)
+431 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;indexes
+432 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;index&#32;<emphasis class="keywordflow">in</emphasis>&#32;indexes:
+433 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&apos;Found&#32;at&#32;index&#32;&apos;</emphasis>&#32;+&#32;str(index)
+434 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&apos;---------------------------------------------&apos;</emphasis>
+435 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;data[index-30:index+30]
+436 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&apos;---------------------------------------------&apos;</emphasis>
+437 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">else</emphasis>:
+438 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a048a3be9f662196c8c355cb5f12c1cd8">HTML_text</link>(link)
+439 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ac2c45da364f56570078463b236a3db9a">search_choice</link>&#32;==&#32;<emphasis class="stringliteral">&quot;exact&quot;</emphasis>:
+440 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;indexes&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1afbaad82f02609f768b0c7fd9baa83048">exact_query</link>(query,data)
+441 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;indexes
+442 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;index&#32;<emphasis class="keywordflow">in</emphasis>&#32;indexes&#32;:
+443 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&apos;Found&#32;at&#32;index&#32;&apos;</emphasis>&#32;+&#32;str(index)
+444 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&apos;---------------------------------------------&apos;</emphasis>
+445 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;data[index-30:index+30]
+446 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&apos;---------------------------------------------&apos;</emphasis>
+447 
+448 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">elif</emphasis>&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ac2c45da364f56570078463b236a3db9a">search_choice</link>&#32;==&#32;<emphasis class="stringliteral">&quot;similar&quot;</emphasis>:
+449 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;proximity&#32;=&#32;raw_input(<emphasis class="stringliteral">&quot;Set&#32;the&#32;promixity&#32;of&#32;similar&#32;query:&#32;&quot;</emphasis>)
+450 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;indexes&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a0ac2dcc6a346b596678fd923ce62c422">similar_query</link>(query,data,proximity)
+451 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;indexes
+452 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;index&#32;<emphasis class="keywordflow">in</emphasis>&#32;indexes:
+453 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&apos;Found&#32;at&#32;index&#32;&apos;</emphasis>&#32;+&#32;str(index)
+454 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&apos;---------------------------------------------&apos;</emphasis>
+455 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;data[index-30:index+30]
+456 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&apos;---------------------------------------------&apos;</emphasis>
+457 
+458 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;indexes
+459 
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ac5547b7358459fc652278d1fd7306621">460 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ac5547b7358459fc652278d1fd7306621">depth_setter</link>(self,&#32;depth):
+461 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+462 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Sets&#32;the&#32;default&#32;max&#32;depth&#32;variable&#32;for&#32;the&#32;web&#32;crawler</emphasis>
+463 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;depth:</emphasis>
+464 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:return:</emphasis>
+465 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+466 
+467 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a4b25f5a1077981b4fc673a30cd6f60f5">depth</link>&#32;=&#32;depth
+468 
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a0c6649825a52751d19cd23e093e2c6c3">469 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a0c6649825a52751d19cd23e093e2c6c3">website_Depth</link>(self,link,depth):
+470 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+471 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;It&#32;provides&#32;a&#32;structured&#32;model&#32;of&#32;the&#32;website&#32;and&#32;other&#32;site&#32;the&#32;initial&#32;site&#32;is&#32;connect&#32;to.&#32;It&#32;displays</emphasis>
+472 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;a&#32;hierarchy&#32;that&#32;will&#32;show&#32;users&#32;how&#32;crawled&#32;link&#32;interact&#32;with&#32;each&#32;other.&#32;Shows&#32;all&#32;the&#32;depths</emphasis>
+473 <emphasis class="stringliteral"></emphasis>
+474 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;link:</emphasis>
+475 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;depth:</emphasis>
+476 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:return&#32;A&#32;pretty&#32;print&#32;of&#32;Hierarchy:</emphasis>
+477 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+478 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;crawler.bfs(link)
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_h_t_m_l__corrector__help">479 </link><emphasis class="keyword">class&#32;</emphasis><link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_h_t_m_l__corrector__help">HTML_corrector_help</link>(object):
+480 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+481 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;Library&#32;of&#32;helper&#32;functions&#32;that&#32;are&#32;used&#32;by&#32;HTML&#32;corrector&#32;to</emphasis>
+482 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;fix&#32;url&#32;links.</emphasis>
+483 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_h_t_m_l__corrector__help_1a74a8cbe051183c34bc6326175808b44a">484 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_h_t_m_l__corrector__help_1a74a8cbe051183c34bc6326175808b44a">__init__</link>(self):
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_h_t_m_l__corrector__help_1a862769bf382fae597f7be261e69ebf0a">485 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_h_t_m_l__corrector__help_1a862769bf382fae597f7be261e69ebf0a">NOT_LINK</link>&#32;=&#32;[<emphasis class="stringliteral">&apos;data&apos;</emphasis>,<emphasis class="stringliteral">&apos;#&apos;</emphasis>,&#32;]
+486 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_h_t_m_l__corrector__help_1ac5786be0512ad6da9959426d38890919">487 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_h_t_m_l__corrector__help_1ac5786be0512ad6da9959426d38890919">is_link</link>(self,url):
+488 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+489 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Return&#32;True&#32;if&#32;the&#32;url&#32;is&#32;not&#32;base&#32;64&#32;data&#32;or&#32;a&#32;local&#32;ref&#32;(#)</emphasis>
+490 <emphasis class="stringliteral"></emphasis>
+491 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;url:</emphasis>
+492 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:return&#32;Boolean&#32;either&#32;True&#32;or&#32;False:</emphasis>
+493 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+494 
+495 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;prefix&#32;<emphasis class="keywordflow">in</emphasis>&#32;self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_h_t_m_l__corrector__help_1a862769bf382fae597f7be261e69ebf0a">NOT_LINK</link>:
+496 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>:
+497 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;url.startswith(prefix):
+498 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">False</emphasis>
+499 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">except</emphasis>&#32;AttributeError&#32;<emphasis class="keyword">as</emphasis>&#32;e:
+500 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">pass</emphasis>
+501 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">True</emphasis>
+502 
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_h_t_m_l__corrector__help_1af6b498d8b0c15bd9e103906e099e48f5">503 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_h_t_m_l__corrector__help_1af6b498d8b0c15bd9e103906e099e48f5">convert_iri_to_uri</link>(self,url_split):
+504 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+505 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Attempts&#32;to&#32;convert&#32;potential&#32;IRI&#32;to&#32;URI.</emphasis>
+506 <emphasis class="stringliteral"></emphasis>
+507 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;IRI&#32;may&#32;contain&#32;non-ascii&#32;characters.</emphasis>
+508 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;url_split:</emphasis>
+509 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:return:</emphasis>
+510 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+511 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;new_parts&#32;=&#32;[]
+512 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;i,&#32;part&#32;<emphasis class="keywordflow">in</emphasis>&#32;enumerate(url_split):
+513 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;i&#32;==&#32;1:
+514 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#&#32;domain&#32;name</emphasis>
+515 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;new_parts.append(part.encode(<emphasis class="stringliteral">&apos;idna&apos;</emphasis>).decode(<emphasis class="stringliteral">&apos;ascii&apos;</emphasis>))
+516 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">else</emphasis>:
+517 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#&#32;other&#32;parts&#32;such&#32;as&#32;path&#32;or&#32;query&#32;string.</emphasis>
+518 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;new_parts.append(self.<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_h_t_m_l__corrector__help_1ac8fb606d19d641436906401f41a1ca2f">url_encode_non_ascii</link>(part))
+519 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;urlparse.SplitResult(*new_parts)
+520 
+<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_h_t_m_l__corrector__help_1ac8fb606d19d641436906401f41a1ca2f">521 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_h_t_m_l__corrector__help_1ac8fb606d19d641436906401f41a1ca2f">url_encode_non_ascii</link>(self,url_part):
+522 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+523 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;For&#32;each&#32;byte&#32;in&#32;url_part,&#32;if&#32;the&#32;byte&#32;is&#32;outside&#32;ascii&#32;range,&#32;quote&#32;the</emphasis>
+524 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;byte.&#32;UTF&#32;characters&#32;that&#32;take&#32;two&#32;bytes&#32;will&#32;be&#32;correctly&#32;converted&#32;using</emphasis>
+525 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this&#32;technique.</emphasis>
+526 <emphasis class="stringliteral"></emphasis>
+527 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;We&#32;do&#32;not&#32;quote&#32;the&#32;whole&#32;url&#32;part&#32;because&#32;it&#32;might&#32;contain&#32;already&#32;quoted</emphasis>
+528 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;characters,&#32;which&#32;would&#32;then&#32;be&#32;double-quoted.</emphasis>
+529 <emphasis class="stringliteral"></emphasis>
+530 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;The&#32;url&#32;part&#32;is&#32;converted&#32;from&#32;utf-8&#32;and&#32;then&#32;to&#32;utf-8,&#32;which&#32;might&#32;not</emphasis>
+531 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;always&#32;work&#32;if&#32;there&#32;is&#32;mixed&#32;or&#32;bad&#32;encoding.</emphasis>
+532 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;url_part:</emphasis>
+533 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:return:</emphasis>
+534 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+535 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;re.sub(
+536 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;b<emphasis class="stringliteral">&apos;[\x80-\xFF]&apos;</emphasis>,
+537 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">lambda</emphasis>&#32;match:&#32;quote(match.group(0)).encode(<emphasis class="stringliteral">&quot;utf-8&quot;</emphasis>),
+538 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;url_part.encode(<emphasis class="stringliteral">&quot;utf-8&quot;</emphasis>)).decode(<emphasis class="stringliteral">&quot;ascii&quot;</emphasis>)
+539 
+540 <emphasis class="keywordflow">if</emphasis>&#32;__name__&#32;==&#32;<emphasis class="stringliteral">&apos;__main__&apos;</emphasis>:
+<link linkend="namespacepylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1a5705d7998995ead364d203ed5cf4410c">541 </link>&#32;&#32;&#32;&#32;crawler&#32;=&#32;<link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler">Web_Crawler</link>()
+<link linkend="namespacepylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1ab229bf4382abf99f92e073a92aa85348">542 </link>&#32;&#32;&#32;&#32;option&#32;=&#32;crawler.option()
+543 
+    </computeroutput></literallayout>
+</section>

@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test">
+<title>pylinkvalidator::WebHandyTool::tests::searchTest class Reference</title>
+<para>Inheritance diagram for pylinkvalidator::WebHandyTool::tests::searchTest</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for pylinkvalidator::WebHandyTool::tests::searchTest</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test_1a22af068c76d651d26ddec1e3570a6940">test_exact_string_search_1</link> (
+self )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test_1a6a143b588cd317e507c1036eb1cff74c">test_exact_string_search_2</link> (
+self )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test_1a812392a789426a4dfcaf6426969926a2">test_exact_string_search_3</link> (
+self )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test_1add0a85705a03e79c4f5cce6d3e561970">test_similar_string_search_1</link> (
+self )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test_1acd6db92558eb31dd8056ae2f78eb9a44">test_similar_string_search_2</link> (
+self )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test_1af29247a2451b8eb1bba4128d11894623">test_similar_string_search_3</link> (
+self )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test_1a4b8eb65b213a20cc9ffb5cceee0d3edd">test_similar_string_search_4</link> (
+self )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test_1af1b354dddca2b2e216ce2961126b69c4">test_similar_string_search_5</link> (
+self )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test_1a22af068c76d651d26ddec1e3570a6940">
+                <title>def pylinkvalidator.WebHandyTool.tests.searchTest.test_exact_string_search_1 (self)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test_1a6a143b588cd317e507c1036eb1cff74c">
+                <title>def pylinkvalidator.WebHandyTool.tests.searchTest.test_exact_string_search_2 (self)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test_1a812392a789426a4dfcaf6426969926a2">
+                <title>def pylinkvalidator.WebHandyTool.tests.searchTest.test_exact_string_search_3 (self)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test_1add0a85705a03e79c4f5cce6d3e561970">
+                <title>def pylinkvalidator.WebHandyTool.tests.searchTest.test_similar_string_search_1 (self)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test_1acd6db92558eb31dd8056ae2f78eb9a44">
+                <title>def pylinkvalidator.WebHandyTool.tests.searchTest.test_similar_string_search_2 (self)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test_1af29247a2451b8eb1bba4128d11894623">
+                <title>def pylinkvalidator.WebHandyTool.tests.searchTest.test_similar_string_search_3 (self)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test_1a4b8eb65b213a20cc9ffb5cceee0d3edd">
+                <title>def pylinkvalidator.WebHandyTool.tests.searchTest.test_similar_string_search_4 (self)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test_1af1b354dddca2b2e216ce2961126b69c4">
+                <title>def pylinkvalidator.WebHandyTool.tests.searchTest.test_similar_string_search_5 (self)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

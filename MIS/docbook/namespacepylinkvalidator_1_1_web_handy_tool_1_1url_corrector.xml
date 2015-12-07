@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="namespacepylinkvalidator_1_1_web_handy_tool_1_1url_corrector">
+<title>pylinkvalidator::WebHandyTool::urlCorrector</title>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1_h_t_m_l__corrector__help">pylinkvalidator::WebHandyTool::urlCorrector::HTML_corrector_help</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector">pylinkvalidator::WebHandyTool::urlCorrector::urlCorrector</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+</section>

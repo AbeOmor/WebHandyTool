@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="url_corrector_8py">
+    <title>urlCorrector.py File Reference</title>
+<para>Include dependency diagram for urlCorrector.py</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="url_corrector_8py__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for urlCorrector.py</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="url_corrector_8py__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector">pylinkvalidator::WebHandyTool::urlCorrector::urlCorrector</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1_h_t_m_l__corrector__help">pylinkvalidator::WebHandyTool::urlCorrector::HTML_corrector_help</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1url_corrector">pylinkvalidator::WebHandyTool::urlCorrector</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /Users/Abe/Documents/pylinkvalidator/WebHandyTool/urlCorrector.py</para>
+    </simplesect>
+    <literallayout><computeroutput>
+<link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1url_corrector">1 </link><emphasis class="keyword">import</emphasis>&#32;subprocess
+2 <emphasis class="keyword">from</emphasis>&#32;bs4&#32;<emphasis class="keyword">import</emphasis>&#32;BeautifulSoup
+3 <emphasis class="keyword">from</emphasis>&#32;urllib2&#32;<emphasis class="keyword">import</emphasis>&#32;*
+4 <emphasis class="keyword">import</emphasis>&#32;datetime
+5 <emphasis class="keyword">import</emphasis>&#32;urllib2
+6 <emphasis class="keyword">import</emphasis>&#32;re
+7 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector">8 </link><emphasis class="keyword">class&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector">urlCorrector</link>(object):
+9 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector_1a74c7cfee65534308bc6ed2ff2731d87a">10 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector_1a74c7cfee65534308bc6ed2ff2731d87a">__init__</link>(self):
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector_1aa94922a0d69691e5a1a06cd15965bb4c">11 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector_1aa94922a0d69691e5a1a06cd15965bb4c">list_of_links</link>&#32;=&#32;[]
+12 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HTML_help&#32;=&#32;<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1_h_t_m_l__corrector__help">HTML_corrector_help</link>()
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector_1a7aa527e3b15ca61414c7fafcf07c26f7">13 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector_1a7aa527e3b15ca61414c7fafcf07c26f7">NOT_LINK</link>&#32;=&#32;HTML_help.NOT_LINK
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector_1a2106176e98a66feeef4b49729caebb94">14 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector_1a2106176e98a66feeef4b49729caebb94">SCHEME_HTTP</link>&#32;=&#32;<emphasis class="stringliteral">&quot;http&quot;</emphasis>
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector_1af2a52a31f8cb0410112f845ddf8f75d5">15 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector_1af2a52a31f8cb0410112f845ddf8f75d5">SCHEME_HTTPS</link>&#32;=&#32;<emphasis class="stringliteral">&quot;https&quot;</emphasis>
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector_1ab43ea2d3a9244b23ce58ea5e63934d1b">16 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector_1ab43ea2d3a9244b23ce58ea5e63934d1b">SUPPORTED_SCHEMES</link>&#32;=&#32;(self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector_1a2106176e98a66feeef4b49729caebb94">SCHEME_HTTP</link>,&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector_1af2a52a31f8cb0410112f845ddf8f75d5">SCHEME_HTTPS</link>)
+17 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector_1a5779046db561bf9a2716aa3189af838b">18 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector_1a5779046db561bf9a2716aa3189af838b">HTML_corrector</link>(self,link):
+19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+20 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Fixes&#32;the&#32;link&#32;passed&#32;in&#32;such&#32;that&#32;it&#32;becomes&#32;either&#32;a&#32;functioning&#32;link&#32;or&#32;is&#32;flagged&#32;as&#32;a&#32;broken&#32;link.</emphasis>
+21 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;link:</emphasis>
+22 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:return&#32;&#32;Url&#32;object&#32;of&#32;split&#32;url&#32;result&#32;corrected&#32;link&#32;Ex;&#32;SplitResult(scheme=u&apos;http&apos;,&#32;netloc=u&apos;canvasgroup.ca&apos;,&#32;path=u&apos;/zdfzd&apos;,&#32;query=u&apos;&apos;,&#32;fragment=u&apos;&apos;)&#32;:</emphasis>
+23 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HTML_corrector_helper&#32;=&#32;<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1_h_t_m_l__corrector__help">HTML_corrector_help</link>()
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;<emphasis class="keywordflow">not</emphasis>&#32;link:
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">raise</emphasis>&#32;ValueError(<emphasis class="stringliteral">&apos;The&#32;URL&#32;must&#32;not&#32;be&#32;empty&apos;</emphasis>)
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;split_result&#32;=&#32;urlparse.urlsplit(link)
+28 
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;<emphasis class="keywordflow">not</emphasis>&#32;split_result.scheme:
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;split_result.netloc:
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;url&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector_1a2106176e98a66feeef4b49729caebb94">SCHEME_HTTP</link>&#32;+&#32;<emphasis class="stringliteral">&quot;:&quot;</emphasis>&#32;+&#32;link
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">else</emphasis>:
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;url&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector_1a2106176e98a66feeef4b49729caebb94">SCHEME_HTTP</link>&#32;+&#32;<emphasis class="stringliteral">&quot;://&quot;</emphasis>&#32;+&#32;link
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;split_result&#32;=&#32;urlparse.urlsplit(url)
+35 
+36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;split_result&#32;=&#32;HTML_corrector_helper.convert_iri_to_uri(split_result)
+37 
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;split_result
+39 
+40 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector_1a4c652295a197e0cb7a967628c627d441">41 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector_1a4c652295a197e0cb7a967628c627d441">absolute_HTML_corrector</link>(self,link,base_link_split):
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+43 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Takes&#32;in&#32;the&#32;base&#32;url&#32;and&#32;appends&#32;any&#32;relative&#32;or&#32;absolute&#32;links&#32;to&#32;the&#32;base&#32;urk.</emphasis>
+44 <emphasis class="stringliteral"></emphasis>
+45 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;link:</emphasis>
+46 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;base_link_split:</emphasis>
+47 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:return&#32;Url&#32;object&#32;of&#32;split&#32;url&#32;result&#32;corrected&#32;link&#32;Ex;&#32;SplitResult(scheme=u&apos;http&apos;,&#32;netloc=u&apos;canvasgroup.ca&apos;,&#32;path=u&apos;/zdfzd&apos;,&#32;query=u&apos;&apos;,&#32;fragment=u&apos;&apos;)&#32;::</emphasis>
+48 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;new_link&#32;=&#32;urlparse.urljoin(base_link_split.geturl(),&#32;link)
+50 
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector_1a5779046db561bf9a2716aa3189af838b">HTML_corrector</link>(new_link)
+52 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1_h_t_m_l__corrector__help">53 </link><emphasis class="keyword">class&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1_h_t_m_l__corrector__help">HTML_corrector_help</link>(object):
+54 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+55 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;Library&#32;of&#32;helper&#32;functions&#32;that&#32;are&#32;used&#32;by&#32;HTML&#32;corrector&#32;to</emphasis>
+56 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;fix&#32;url&#32;links.</emphasis>
+57 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1_h_t_m_l__corrector__help_1ab6ebabc9defb9cba0d6dedb9254149b8">58 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1_h_t_m_l__corrector__help_1ab6ebabc9defb9cba0d6dedb9254149b8">__init__</link>(self):
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1_h_t_m_l__corrector__help_1a5b2cbd7348808b3fa573af6d89fd0bef">59 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1_h_t_m_l__corrector__help_1a5b2cbd7348808b3fa573af6d89fd0bef">NOT_LINK</link>&#32;=&#32;[<emphasis class="stringliteral">&apos;data&apos;</emphasis>,<emphasis class="stringliteral">&apos;#&apos;</emphasis>,<emphasis class="stringliteral">&apos;mailto&apos;</emphasis>,<emphasis class="stringliteral">&apos;tel&apos;</emphasis>,&#32;<emphasis class="stringliteral">&apos;javascript&apos;</emphasis>]
+60 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1_h_t_m_l__corrector__help_1ae1494f4d37f13c5a1bc9a46e00b48bc5">61 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1_h_t_m_l__corrector__help_1ae1494f4d37f13c5a1bc9a46e00b48bc5">is_link</link>(self,url):
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+63 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Return&#32;True&#32;if&#32;the&#32;url&#32;is&#32;not&#32;base&#32;64&#32;data&#32;or&#32;a&#32;local&#32;ref&#32;(#)</emphasis>
+64 <emphasis class="stringliteral"></emphasis>
+65 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;url:</emphasis>
+66 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:return&#32;Boolean&#32;either&#32;True&#32;or&#32;False:</emphasis>
+67 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+68 
+69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;prefix&#32;<emphasis class="keywordflow">in</emphasis>&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1_h_t_m_l__corrector__help_1a5b2cbd7348808b3fa573af6d89fd0bef">NOT_LINK</link>:
+70 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>:
+71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;url.startswith(prefix):
+72 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">False</emphasis>
+73 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">except</emphasis>&#32;AttributeError&#32;<emphasis class="keyword">as</emphasis>&#32;e:
+74 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">pass</emphasis>
+75 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">True</emphasis>
+76 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1_h_t_m_l__corrector__help_1abc2880e66a8f0145fef8e1629f465d17">77 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1_h_t_m_l__corrector__help_1abc2880e66a8f0145fef8e1629f465d17">convert_iri_to_uri</link>(self,url_split):
+78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+79 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Attempts&#32;to&#32;convert&#32;potential&#32;IRI&#32;to&#32;URI.</emphasis>
+80 <emphasis class="stringliteral"></emphasis>
+81 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;IRI&#32;may&#32;contain&#32;non-ascii&#32;characters.</emphasis>
+82 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;url_split:</emphasis>
+83 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:return:</emphasis>
+84 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+85 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;new_parts&#32;=&#32;[]
+86 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;i,&#32;part&#32;<emphasis class="keywordflow">in</emphasis>&#32;enumerate(url_split):
+87 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;i&#32;==&#32;1:
+88 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#&#32;domain&#32;name</emphasis>
+89 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;new_parts.append(part.encode(<emphasis class="stringliteral">&apos;idna&apos;</emphasis>).decode(<emphasis class="stringliteral">&apos;ascii&apos;</emphasis>))
+90 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">else</emphasis>:
+91 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#&#32;other&#32;parts&#32;such&#32;as&#32;path&#32;or&#32;query&#32;string.</emphasis>
+92 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;new_parts.append(self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1_h_t_m_l__corrector__help_1a894ef6c5bc2150372a36b8c0abbca8d2">url_encode_non_ascii</link>(part))
+93 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;urlparse.SplitResult(*new_parts)
+94 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1_h_t_m_l__corrector__help_1a894ef6c5bc2150372a36b8c0abbca8d2">95 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1_h_t_m_l__corrector__help_1a894ef6c5bc2150372a36b8c0abbca8d2">url_encode_non_ascii</link>(self,url_part):
+96 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+97 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;For&#32;each&#32;byte&#32;in&#32;url_part,&#32;if&#32;the&#32;byte&#32;is&#32;outside&#32;ascii&#32;range,&#32;quote&#32;the</emphasis>
+98 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;byte.&#32;UTF&#32;characters&#32;that&#32;take&#32;two&#32;bytes&#32;will&#32;be&#32;correctly&#32;converted&#32;using</emphasis>
+99 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this&#32;technique.</emphasis>
+100 <emphasis class="stringliteral"></emphasis>
+101 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;We&#32;do&#32;not&#32;quote&#32;the&#32;whole&#32;url&#32;part&#32;because&#32;it&#32;might&#32;contain&#32;already&#32;quoted</emphasis>
+102 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;characters,&#32;which&#32;would&#32;then&#32;be&#32;double-quoted.</emphasis>
+103 <emphasis class="stringliteral"></emphasis>
+104 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;The&#32;url&#32;part&#32;is&#32;converted&#32;from&#32;utf-8&#32;and&#32;then&#32;to&#32;utf-8,&#32;which&#32;might&#32;not</emphasis>
+105 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;always&#32;work&#32;if&#32;there&#32;is&#32;mixed&#32;or&#32;bad&#32;encoding.</emphasis>
+106 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;url_part:</emphasis>
+107 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:return:</emphasis>
+108 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;re.sub(
+110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;b<emphasis class="stringliteral">&apos;[\x80-\xFF]&apos;</emphasis>,
+111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">lambda</emphasis>&#32;match:&#32;quote(match.group(0)).encode(<emphasis class="stringliteral">&quot;utf-8&quot;</emphasis>),
+112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;url_part.encode(<emphasis class="stringliteral">&quot;utf-8&quot;</emphasis>)).decode(<emphasis class="stringliteral">&quot;ascii&quot;</emphasis>)
+    </computeroutput></literallayout>
+</section>

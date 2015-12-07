@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<book xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <info>
+    <title>WebHandyTool</title>
+    </info>
+    <chapter>
+        <title>Namespace Documentation</title>
+        <xi:include href="namespacepylinkvalidator.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="namespacepylinkvalidator_1_1_p_o_c_01_code.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="namespacepylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="namespacepylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler___p_o_c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="namespacepylinkvalidator_1_1_web_handy_tool.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="namespacepylinkvalidator_1_1_web_handy_tool_1_1config.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="namespacepylinkvalidator_1_1_web_handy_tool_1_1download.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="namespacepylinkvalidator_1_1_web_handy_tool_1_1errors.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="namespacepylinkvalidator_1_1_web_handy_tool_1_1link_search_algos.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="namespacepylinkvalidator_1_1_web_handy_tool_1_1parsers.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="namespacepylinkvalidator_1_1_web_handy_tool_1_1search.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="namespacepylinkvalidator_1_1_web_handy_tool_1_1tests.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="namespacepylinkvalidator_1_1_web_handy_tool_1_1url_corrector.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="namespacepylinkvalidator_1_1_web_handy_tool_1_1_web___crawler.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="namespace_test_string.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="namespaceurllib2.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    </chapter>
+    <chapter>
+        <title>Class Documentation</title>
+        <xi:include href="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="classpylinkvalidator_1_1_web_handy_tool_1_1download_1_1download.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="classpylinkvalidator_1_1_web_handy_tool_1_1errors_1_1errors.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_h_t_m_l__corrector__help.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1_h_t_m_l__corrector__help.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="classpylinkvalidator_1_1_web_handy_tool_1_1link_search_algos_1_1link_search_algos.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="classobject.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="classpylinkvalidator_1_1_web_handy_tool_1_1parsers_1_1parsers.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1search_test.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_socket_server_1_1_t_c_p_server.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="classunittest_1_1_test_case.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_test_string_1_1_test_string_methods.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1_threaded_t_c_p_server.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_socket_server_1_1_threading_mix_in.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1url_corrector_test.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="classpylinkvalidator_1_1_web_handy_tool_1_1_web___crawler_1_1_web___crawler.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler___p_o_c_1_1_web___crawler___p_o_c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    </chapter>
+    <chapter>
+        <title>File Documentation</title>
+        <xi:include href="____init_____8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_p_o_c_01_code_2____init_____8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_web_handy_tool_2____init_____8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_test_string_8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_p_o_c_01_code_2_web___crawler_8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_web_handy_tool_2_web___crawler_8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_web___crawler___p_o_c_8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="config_8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="download_8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="errors_8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="link_search_algos_8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="parsers_8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="search_8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="tests_8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="url_corrector_8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    </chapter>
+    <chapter>
+        <title>Directory Documentation</title>
+        <xi:include href="dir_a66bc3c7809516d8df24c4063ccedbba.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="dir_21553f8552ca4cfa5c40f1efbc5f6e92.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="dir_5c5545c0d1bf6fff889aee7dbe59211d.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    </chapter>
+</book>

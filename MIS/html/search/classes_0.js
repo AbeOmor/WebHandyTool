@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['html_5fcorrector_5fhelp',['HTML_corrector_help',['../class_web___crawler_1_1_h_t_m_l__corrector__help.html',1,'Web_Crawler']]]
+  ['crawlertest',['crawlerTest',['../classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test.html',1,'pylinkvalidator::WebHandyTool::tests']]]
 ];

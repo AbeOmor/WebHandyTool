@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_h_t_m_l__corrector__help">
+<title>pylinkvalidator::POC Code::Web_Crawler::HTML_corrector_help class Reference</title>
+<para>Inheritance diagram for pylinkvalidator::POC Code::Web_Crawler::HTML_corrector_help</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_h_t_m_l__corrector__help__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for pylinkvalidator::POC Code::Web_Crawler::HTML_corrector_help</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_h_t_m_l__corrector__help__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Public Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>NOT_LINK</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_h_t_m_l__corrector__help_1a74a8cbe051183c34bc6326175808b44a">__init__</link> (
+self )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_h_t_m_l__corrector__help_1ac5786be0512ad6da9959426d38890919">is_link</link> (
+self , url )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_h_t_m_l__corrector__help_1af6b498d8b0c15bd9e103906e099e48f5">convert_iri_to_uri</link> (
+self , url_split )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_h_t_m_l__corrector__help_1ac8fb606d19d641436906401f41a1ca2f">url_encode_non_ascii</link> (
+self , url_part )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para><literallayout>Library of helper functions that are used by HTML corrector to
+fix url links.
+</literallayout> </para>
+                <para>Definition at line 479 of file Web_Crawler.py</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>Web_Crawler.py</para></listitem></itemizedlist></para>
+        </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_h_t_m_l__corrector__help_1a74a8cbe051183c34bc6326175808b44a">
+                <title>def pylinkvalidator.POC Code.Web_Crawler.HTML_corrector_help.__init__ (self)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_h_t_m_l__corrector__help_1ac5786be0512ad6da9959426d38890919">
+                <title>def pylinkvalidator.POC Code.Web_Crawler.HTML_corrector_help.is_link (self, url)</title> <emphasis></emphasis>
+                
+<para><literallayout>Return True if the url is not base 64 data or a local ref (#)
+
+:param url:
+:return Boolean either True or False:
+</literallayout> </para>
+
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_h_t_m_l__corrector__help_1af6b498d8b0c15bd9e103906e099e48f5">
+                <title>def pylinkvalidator.POC Code.Web_Crawler.HTML_corrector_help.convert_iri_to_uri (self, url_split)</title> <emphasis></emphasis>
+                
+<para><literallayout>Attempts to convert potential IRI to URI.
+
+IRI may contain non-ascii characters.
+:param url_split:
+:return:
+</literallayout> </para>
+
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_h_t_m_l__corrector__help_1ac8fb606d19d641436906401f41a1ca2f">
+                <title>def pylinkvalidator.POC Code.Web_Crawler.HTML_corrector_help.url_encode_non_ascii (self, url_part)</title> <emphasis></emphasis>
+                
+<para><literallayout>For each byte in url_part, if the byte is outside ascii range, quote the
+byte. UTF characters that take two bytes will be correctly converted using
+this technique.
+
+We do not quote the whole url part because it might contain already quoted
+characters, which would then be double-quoted.
+
+The url part is converted from utf-8 and then to utf-8, which might not
+always work if there is mixed or bad encoding.
+:param url_part:
+:return:
+</literallayout> </para>
+
+            </section>
+</section>

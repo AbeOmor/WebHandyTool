@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="link_search_algos_8py">
+    <title>linkSearchAlgos.py File Reference</title>
+<para>Include dependency diagram for linkSearchAlgos.py</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="link_search_algos_8py__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for linkSearchAlgos.py</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="link_search_algos_8py__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1link_search_algos_1_1link_search_algos">pylinkvalidator::WebHandyTool::linkSearchAlgos::linkSearchAlgos</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1link_search_algos">pylinkvalidator::WebHandyTool::linkSearchAlgos</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /Users/Abe/Documents/pylinkvalidator/WebHandyTool/linkSearchAlgos.py</para>
+    </simplesect>
+    <literallayout><computeroutput>
+<link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1link_search_algos">1 </link><emphasis class="keyword">import</emphasis>&#32;subprocess
+2 <emphasis class="keyword">from</emphasis>&#32;bs4&#32;<emphasis class="keyword">import</emphasis>&#32;BeautifulSoup
+3 <emphasis class="keyword">from</emphasis>&#32;urllib2&#32;<emphasis class="keyword">import</emphasis>&#32;*
+4 <emphasis class="keyword">import</emphasis>&#32;datetime
+5 <emphasis class="keyword">import</emphasis>&#32;urllib2
+6 <emphasis class="keyword">import</emphasis>&#32;re
+7 <emphasis class="keyword">from</emphasis>&#32;urllib&#32;<emphasis class="keyword">import</emphasis>&#32;urlretrieve
+8 <emphasis class="keyword">from</emphasis>&#32;parsers&#32;<emphasis class="keyword">import</emphasis>&#32;parsers
+9 <emphasis class="keyword">from</emphasis>&#32;urlCorrector&#32;<emphasis class="keyword">import</emphasis>&#32;*
+10 <emphasis class="keyword">from</emphasis>&#32;config&#32;<emphasis class="keyword">import</emphasis>&#32;getConfig
+11 
+12 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1link_search_algos_1_1link_search_algos">13 </link><emphasis class="keyword">class&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1link_search_algos_1_1link_search_algos">linkSearchAlgos</link>(object):
+14 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1link_search_algos_1_1link_search_algos_1a9aa0ef968fed3bf2cb5588a84658fa6c">15 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1link_search_algos_1_1link_search_algos_1a9aa0ef968fed3bf2cb5588a84658fa6c">__init__</link>(self):
+16 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#super(linkSearchAlgos,self).__init__()</emphasis>
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1link_search_algos_1_1link_search_algos_1adaaf5c989830ecfbdf552255678a0eb2">17 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1link_search_algos_1_1link_search_algos_1adaaf5c989830ecfbdf552255678a0eb2">urlCorrect</link>&#32;=&#32;<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector">urlCorrector</link>()
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1link_search_algos_1_1link_search_algos_1a8941e82772705f2e0462a628532075d1">18 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1link_search_algos_1_1link_search_algos_1a8941e82772705f2e0462a628532075d1">HTML_help</link>&#32;=&#32;<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1_h_t_m_l__corrector__help">HTML_corrector_help</link>()
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1link_search_algos_1_1link_search_algos_1a326fd2c6dda6c9ecd87e7e09c2fdd2cc">19 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1link_search_algos_1_1link_search_algos_1a326fd2c6dda6c9ecd87e7e09c2fdd2cc">parser</link>&#32;=&#32;parsers()
+20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;config&#32;=&#32;<link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1config_1a726d0b4696df7ad8c2ebd386e9853df1">getConfig</link>()
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1link_search_algos_1_1link_search_algos_1ad4cf802e4c3d47fc31b9d1e8e4c7c3d5">depth_setter</link>(config[<emphasis class="stringliteral">&quot;depth&quot;</emphasis>])
+22 
+23 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1link_search_algos_1_1link_search_algos_1ad4cf802e4c3d47fc31b9d1e8e4c7c3d5">24 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1link_search_algos_1_1link_search_algos_1ad4cf802e4c3d47fc31b9d1e8e4c7c3d5">depth_setter</link>(self,&#32;depth):
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+26 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Sets&#32;the&#32;default&#32;max&#32;depth&#32;variable&#32;for&#32;the&#32;web&#32;crawler</emphasis>
+27 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;depth:</emphasis>
+28 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:return:</emphasis>
+29 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+30 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1link_search_algos_1_1link_search_algos_1ab4bb72e4cdf3e63f85c88e49fe2abec6">31 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1link_search_algos_1_1link_search_algos_1ab4bb72e4cdf3e63f85c88e49fe2abec6">depth</link>&#32;=&#32;depth
+32 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1link_search_algos_1_1link_search_algos_1a3c4cb4d12b1850f7da9b84e612eac9bd">33 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1link_search_algos_1_1link_search_algos_1a3c4cb4d12b1850f7da9b84e612eac9bd">bfs</link>(self,&#32;link):
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+35 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Finds&#32;all&#32;the&#32;links&#32;on&#32;a&#32;give&#32;website&#32;using&#32;the&#32;BFS&#32;algorithm</emphasis>
+36 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;link:</emphasis>
+37 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:return&#32;A&#32;list&#32;of&#32;all&#32;the&#32;links&#32;found&#32;by&#32;BFS:</emphasis>
+38 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+39 
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;count&#32;=&#32;0
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;base_link&#32;=&#32;self.urlCorrect.HTML_corrector(link)
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;current_depth&#32;=&#32;[link]
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;next_depth&#32;=&#32;[]
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;links&#32;=&#32;[]
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">while</emphasis>&#32;count&#32;&lt;=&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1link_search_algos_1_1link_search_algos_1ab4bb72e4cdf3e63f85c88e49fe2abec6">depth</link>:
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&quot;Depth&#32;&quot;</emphasis>&#32;+&#32;str(count)
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&quot;LINKS&#32;USED&#32;IN&#32;DEPTH&#32;&quot;</emphasis>&#32;+&#32;str(count)
+48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;current_depth
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;link&#32;<emphasis class="keywordflow">in</emphasis>&#32;current_depth:
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;links.append(self.urlCorrect.HTML_corrector(link).geturl())
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;correct_link&#32;=&#32;self.urlCorrect.absolute_HTML_corrector(link,base_link).geturl()
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;new_links&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1link_search_algos_1_1link_search_algos_1aa4e7f6b9aa325f9cc21fe7aefd9ecad1">find_links</link>(correct_link)
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;new_links:
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;link&#32;<emphasis class="keywordflow">in</emphasis>&#32;new_links:
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;next_depth.append(self.urlCorrect.absolute_HTML_corrector(link,base_link).geturl())
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&quot;Links&#32;on&#32;this&#32;page:&#32;&quot;</emphasis>&#32;+&#32;str(correct_link)&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;HERE&#32;is&#32;the&#32;list:&#32;&quot;</emphasis>
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;new_links
+58 
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&quot;ALL&#32;LINKS&#32;FOUND&#32;IN&#32;DEPTH&#32;&quot;</emphasis>&#32;+&#32;str(count)
+60 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;next_depth
+61 
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;current_depth&#32;=&#32;next_depth
+63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;next_depth&#32;=&#32;[]
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;count&#32;+=&#32;1
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;links
+66 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1link_search_algos_1_1link_search_algos_1aa4e7f6b9aa325f9cc21fe7aefd9ecad1">67 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1link_search_algos_1_1link_search_algos_1aa4e7f6b9aa325f9cc21fe7aefd9ecad1">find_links</link>(self,link,destination=None):
+68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+69 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Finds&#32;all&#32;the&#32;links&#32;(&lt;a&gt;&lt;/a&gt;&#32;anchor&#32;tags&#32;on&#32;page)&#32;on&#32;a&#32;page,&#32;also&#32;removes&#32;all</emphasis>
+70 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;the&#32;link&#32;that&#32;start&#32;with&#32;&apos;#&apos;&#32;or&#32;&apos;data:&apos;&#32;as&#32;these&#32;are&#32;not&#32;valid&#32;urls</emphasis>
+71 <emphasis class="stringliteral"></emphasis>
+72 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;link:</emphasis>
+73 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;destination:</emphasis>
+74 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:return&#32;List&#32;of&#32;Links:</emphasis>
+75 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+76 
+77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HTML_corrector_helper&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1link_search_algos_1_1link_search_algos_1a8941e82772705f2e0462a628532075d1">HTML_help</link>
+78 
+79 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data&#32;=&#32;self.parser.BS_parse_data(link)
+80 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;data&#32;==&#32;<emphasis class="stringliteral">&apos;HTTP&#32;Error&apos;</emphasis>:
+81 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">False</emphasis>
+82 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;links&#32;=&#32;[]
+83 
+84 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;destination:
+85 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;timestamp&#32;=&#32;datetime.datetime.now().strftime(<emphasis class="stringliteral">&quot;%Y-%m-%d_%H:%M:%S&quot;</emphasis>)
+86 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;f&#32;=&#32;open(<emphasis class="stringliteral">&apos;Found&#32;Links&#32;at&#32;&apos;</emphasis>&#32;+timestamp&#32;+<emphasis class="stringliteral">&apos;.txt&apos;</emphasis>,<emphasis class="stringliteral">&apos;w&apos;</emphasis>)
+87 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;link&#32;<emphasis class="keywordflow">in</emphasis>&#32;data.find_all(<emphasis class="stringliteral">&apos;a&apos;</emphasis>):
+88 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;links.append(link.get(<emphasis class="stringliteral">&apos;href&apos;</emphasis>))
+89 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;links&#32;=&#32;[link&#32;<emphasis class="keywordflow">for</emphasis>&#32;link&#32;<emphasis class="keywordflow">in</emphasis>&#32;links&#32;<emphasis class="keywordflow">if</emphasis>&#32;HTML_corrector_helper.is_link(link)]
+90 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;f.write(str(links))
+91 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;f.close()
+92 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;links
+93 
+94 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;link&#32;<emphasis class="keywordflow">in</emphasis>&#32;data.find_all(<emphasis class="stringliteral">&apos;a&apos;</emphasis>):
+95 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;links.append(link.get(<emphasis class="stringliteral">&apos;href&apos;</emphasis>))
+96 
+97 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;links&#32;=&#32;[link&#32;<emphasis class="keywordflow">for</emphasis>&#32;link&#32;<emphasis class="keywordflow">in</emphasis>&#32;links&#32;<emphasis class="keywordflow">if</emphasis>&#32;HTML_corrector_helper.is_link(link)]
+98 
+99 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#&#32;More&#32;understandable&#32;version&#32;of&#32;code&#32;above</emphasis>
+100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#list_of_valid_links&#32;=&#32;[]</emphasis>
+101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#for&#32;link&#32;in&#32;links:</emphasis>
+102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#&#32;&#32;&#32;&#32;if&#32;self.is_link(link):</emphasis>
+103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#&#32;&#32;&#32;&#32;&#32;&#32;&#32;list_of_valid_links.append(link)</emphasis>
+104 
+105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;links
+    </computeroutput></literallayout>
+</section>

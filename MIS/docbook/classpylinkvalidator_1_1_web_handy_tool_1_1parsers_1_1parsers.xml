@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1parsers_1_1parsers">
+<title>pylinkvalidator::WebHandyTool::parsers::parsers class Reference</title>
+<para>Inheritance diagram for pylinkvalidator::WebHandyTool::parsers::parsers</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classpylinkvalidator_1_1_web_handy_tool_1_1parsers_1_1parsers__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for pylinkvalidator::WebHandyTool::parsers::parsers</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classpylinkvalidator_1_1_web_handy_tool_1_1parsers_1_1parsers__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1parsers_1_1parsers_1ac6c458e5f64a0cddded5782799aa0a3f">BS_parse_data</link> (
+self , link )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1parsers_1_1parsers_1a8145b02d268056ef0153e42ea4a0aa70">HTML_text</link> (
+self , link )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1parsers_1_1parsers_1ac6c458e5f64a0cddded5782799aa0a3f">
+                <title>def pylinkvalidator.WebHandyTool.parsers.parsers.BS_parse_data (self, link)</title> <emphasis></emphasis>
+                
+<para><literallayout>Returns BeautifulSoup object for the link given, this will allow modules parse through pages data much faster
+
+:param link:
+:return BeautifulSoup :
+</literallayout> </para>
+
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1parsers_1_1parsers_1a8145b02d268056ef0153e42ea4a0aa70">
+                <title>def pylinkvalidator.WebHandyTool.parsers.parsers.HTML_text (self, link)</title> <emphasis></emphasis>
+                
+<para><literallayout>Returns HTML text data for Query search
+
+:param link:
+:return String :
+</literallayout> </para>
+
+            </section>
+</section>

@@ -1,0 +1,221 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test">
+<title>pylinkvalidator::WebHandyTool::tests::crawlerTest class Reference</title>
+<para>Inheritance diagram for pylinkvalidator::WebHandyTool::tests::crawlerTest</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for pylinkvalidator::WebHandyTool::tests::crawlerTest</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a488a0ba0983f998e70b16f99d1206a4e">setUpClass</link> (
+cls )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1af6eb886ff5b26bd69f9f309ce3d84981">tearDownClass</link> (
+cls )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a59924a9695a61c66650b7c4c3a5697cc">setUp</link> (
+self )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a9bfdb2427ff25ed415115347baa183e3">get_url</link> (
+self , test_url )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a3db5e9ca3315af5e2b8f29c098667a9d">get_url_open</link> (
+self )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a16539cd0e3add6d4ec5557194a96c0bc">get_url_request</link> (
+self )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a404f44c124831e5c9593b2b3ebc6be88">test_404_error</link> (
+self )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1adb2a22bd6d79bc38b353d966d9a2b45f">test_200_error</link> (
+self )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1ac00856c89d2d4130ffe0ca385df3f679">test_link_grabber</link> (
+self )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a48e6e241f7fa3ceaa7c49675292c8218">test_BFS_depth_0</link> (
+self )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1acde5a29e709f738a357da43e8ce8e06b">test_BFS_depth_1</link> (
+self )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1abb5fe183951e209f66c2b4e292c99eb7">test_BFS_depth_2</link> (
+self )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a92c82295f6e332a249a11868f5999218">test_BFS_depth_3</link> (
+self )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a433365f3474025469ab42635234cbef0">test_BFS_depth_4</link> (
+self )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a96a6738fbd35cf6397c417d262dd30f0">test_BFS_depth_5</link> (
+self )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a4f86d42852e498de1c0d70b11c8950a1">test_download</link> (
+self )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a488a0ba0983f998e70b16f99d1206a4e">
+                <title>def pylinkvalidator.WebHandyTool.tests.crawlerTest.setUpClass (cls)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1af6eb886ff5b26bd69f9f309ce3d84981">
+                <title>def pylinkvalidator.WebHandyTool.tests.crawlerTest.tearDownClass (cls)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a59924a9695a61c66650b7c4c3a5697cc">
+                <title>def pylinkvalidator.WebHandyTool.tests.crawlerTest.setUp (self)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a9bfdb2427ff25ed415115347baa183e3">
+                <title>def pylinkvalidator.WebHandyTool.tests.crawlerTest.get_url (self, test_url)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a3db5e9ca3315af5e2b8f29c098667a9d">
+                <title>def pylinkvalidator.WebHandyTool.tests.crawlerTest.get_url_open (self)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a16539cd0e3add6d4ec5557194a96c0bc">
+                <title>def pylinkvalidator.WebHandyTool.tests.crawlerTest.get_url_request (self)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a404f44c124831e5c9593b2b3ebc6be88">
+                <title>def pylinkvalidator.WebHandyTool.tests.crawlerTest.test_404_error (self)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1adb2a22bd6d79bc38b353d966d9a2b45f">
+                <title>def pylinkvalidator.WebHandyTool.tests.crawlerTest.test_200_error (self)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1ac00856c89d2d4130ffe0ca385df3f679">
+                <title>def pylinkvalidator.WebHandyTool.tests.crawlerTest.test_link_grabber (self)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a48e6e241f7fa3ceaa7c49675292c8218">
+                <title>def pylinkvalidator.WebHandyTool.tests.crawlerTest.test_BFS_depth_0 (self)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1acde5a29e709f738a357da43e8ce8e06b">
+                <title>def pylinkvalidator.WebHandyTool.tests.crawlerTest.test_BFS_depth_1 (self)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1abb5fe183951e209f66c2b4e292c99eb7">
+                <title>def pylinkvalidator.WebHandyTool.tests.crawlerTest.test_BFS_depth_2 (self)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a92c82295f6e332a249a11868f5999218">
+                <title>def pylinkvalidator.WebHandyTool.tests.crawlerTest.test_BFS_depth_3 (self)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a433365f3474025469ab42635234cbef0">
+                <title>def pylinkvalidator.WebHandyTool.tests.crawlerTest.test_BFS_depth_4 (self)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a96a6738fbd35cf6397c417d262dd30f0">
+                <title>def pylinkvalidator.WebHandyTool.tests.crawlerTest.test_BFS_depth_5 (self)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_web_handy_tool_1_1tests_1_1crawler_test_1a4f86d42852e498de1c0d70b11c8950a1">
+                <title>def pylinkvalidator.WebHandyTool.tests.crawlerTest.test_download (self)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

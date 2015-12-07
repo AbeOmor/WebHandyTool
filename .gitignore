@@ -5,3 +5,6 @@
 *.toc
 *.lot
 *.pyc
+*.out
+POC Code/
+WebHandyTool/testfiles/

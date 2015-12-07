@@ -1,0 +1,226 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="search_8py">
+    <title>search.py File Reference</title>
+<para>Include dependency diagram for search.py</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="search_8py__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for search.py</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="search_8py__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search">pylinkvalidator::WebHandyTool::search::search</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1search">pylinkvalidator::WebHandyTool::search</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /Users/Abe/Documents/pylinkvalidator/WebHandyTool/search.py</para>
+    </simplesect>
+    <literallayout><computeroutput>
+<link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1search">1 </link><emphasis class="keyword">from</emphasis>&#32;urllib2&#32;<emphasis class="keyword">import</emphasis>&#32;*
+2 <emphasis class="keyword">from</emphasis>&#32;parsers&#32;<emphasis class="keyword">import</emphasis>&#32;parsers
+3 <emphasis class="keyword">from</emphasis>&#32;config&#32;<emphasis class="keyword">import</emphasis>&#32;getConfig
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search">4 </link><emphasis class="keyword">class&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search">search</link>(object):
+5 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1a938adf672af9ce7a03aa3f1dfc1a4148">6 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1a938adf672af9ce7a03aa3f1dfc1a4148">__init__</link>(self):
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1a906e019972fbdaef6ef37b50edc2cb1f">7 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1a906e019972fbdaef6ef37b50edc2cb1f">list_of_links</link>&#32;=&#32;[]
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1a31e3b450f5d912acbd1023535bef5599">8 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1a31e3b450f5d912acbd1023535bef5599">SCHEME_HTTP</link>&#32;=&#32;<emphasis class="stringliteral">&quot;http&quot;</emphasis>
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1a8827d73fa0682f75372ea6ca6a74fc48">9 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1a8827d73fa0682f75372ea6ca6a74fc48">SCHEME_HTTPS</link>&#32;=&#32;<emphasis class="stringliteral">&quot;https&quot;</emphasis>
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1a40286fb518de4e5067f92d1b65870cf5">10 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1a40286fb518de4e5067f92d1b65870cf5">SUPPORTED_SCHEMES</link>&#32;=&#32;(self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1a31e3b450f5d912acbd1023535bef5599">SCHEME_HTTP</link>,&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1a8827d73fa0682f75372ea6ca6a74fc48">SCHEME_HTTPS</link>)
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1ad36362c5105b91945b7aa63b16f237c1">11 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1ad36362c5105b91945b7aa63b16f237c1">parser</link>&#32;=&#32;parsers()
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1a6d89cd65d2a2103906c1b72acfdc35a2">12 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1a6d89cd65d2a2103906c1b72acfdc35a2">search_choices</link>&#32;=&#32;{<emphasis class="stringliteral">&apos;1&apos;</emphasis>:<emphasis class="stringliteral">&apos;exact&apos;</emphasis>,&#32;<emphasis class="stringliteral">&apos;2&apos;</emphasis>:<emphasis class="stringliteral">&apos;similar&apos;</emphasis>}
+13 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;config&#32;=&#32;<link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1config_1a726d0b4696df7ad8c2ebd386e9853df1">getConfig</link>()
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1a8aad3e0ea9b36c98f84fd6f192fb12e7">14 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1a8aad3e0ea9b36c98f84fd6f192fb12e7">search_choice</link>=&#32;config[<emphasis class="stringliteral">&quot;string_search&quot;</emphasis>][<emphasis class="stringliteral">&quot;type&quot;</emphasis>]
+15 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1a3070944be3de739d70f8c4c4603cbf4a">setProximity</link>(config[<emphasis class="stringliteral">&quot;string_search&quot;</emphasis>][<emphasis class="stringliteral">&quot;proximity&quot;</emphasis>])
+16 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1aed98782e4a3538c3be75eeb3af8050e5">17 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1aed98782e4a3538c3be75eeb3af8050e5">query_search</link>(self,query,link,list_of_links&#32;=&#32;None,choice=&apos;exact&apos;):
+18 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+19 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Find&#32;queries</emphasis>
+20 <emphasis class="stringliteral"></emphasis>
+21 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;query:</emphasis>
+22 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;data:</emphasis>
+23 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;choice:</emphasis>
+24 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:return&#32;Query&#32;results:</emphasis>
+25 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;list_of_links:
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&apos;Links&#32;searching...&apos;</emphasis>
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;list_of_links
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;link&#32;<emphasis class="keywordflow">in</emphasis>&#32;list_of_links:
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data&#32;=&#32;self.parser.HTML_text(link)
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;choice&#32;==&#32;<emphasis class="stringliteral">&quot;exact&quot;</emphasis>:
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&apos;Hey&#32;Buddy...I&#32;just&#32;searched&#32;&apos;</emphasis>&#32;+&#32;str(link)
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;indexes&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1a2f6e5ce0d893c396139877a60b34d8e9">exact_query</link>(query,data)
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;indexes
+35 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;index&#32;<emphasis class="keywordflow">in</emphasis>&#32;indexes&#32;:
+36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&apos;Found&#32;at&#32;index&#32;&apos;</emphasis>&#32;+&#32;str(index)
+37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&apos;---------------------------------------------&apos;</emphasis>
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;data[index-30:index+30]
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&apos;---------------------------------------------&apos;</emphasis>
+40 
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">elif</emphasis>&#32;choice&#32;==&#32;<emphasis class="stringliteral">&quot;similar&quot;</emphasis>:
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&apos;Hey&#32;Buddy...I&#32;just&#32;searched&#32;&apos;</emphasis>&#32;+&#32;str(link)
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;indexes&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1ad8279fa98fb80bfaae0800cd7c5fa21e">similar_query</link>(query,data,self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1ad4742d4d507c4ea17dd4f4b5881047db">proximity</link>)
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;indexes
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;index&#32;<emphasis class="keywordflow">in</emphasis>&#32;indexes:
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&apos;Found&#32;at&#32;index&#32;&apos;</emphasis>&#32;+&#32;str(index)
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&apos;---------------------------------------------&apos;</emphasis>
+48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;data[index-30:index+30]
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&apos;---------------------------------------------&apos;</emphasis>
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">else</emphasis>:
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data&#32;=&#32;self.parser.HTML_text(link)
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;choice&#32;==&#32;<emphasis class="stringliteral">&quot;exact&quot;</emphasis>:
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;indexes&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1a2f6e5ce0d893c396139877a60b34d8e9">exact_query</link>(query,data)
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;indexes
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;index&#32;<emphasis class="keywordflow">in</emphasis>&#32;indexes&#32;:
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&apos;Found&#32;at&#32;index&#32;&apos;</emphasis>&#32;+&#32;str(index)
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&apos;---------------------------------------------&apos;</emphasis>
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;data[index-30:index+30]
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&apos;---------------------------------------------&apos;</emphasis>
+60 
+61 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">elif</emphasis>&#32;choice&#32;==&#32;<emphasis class="stringliteral">&quot;similar&quot;</emphasis>:
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;indexes&#32;=&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1ad8279fa98fb80bfaae0800cd7c5fa21e">similar_query</link>(query,data,self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1ad4742d4d507c4ea17dd4f4b5881047db">proximity</link>)
+63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;indexes
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;index&#32;<emphasis class="keywordflow">in</emphasis>&#32;indexes:
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&apos;Found&#32;at&#32;index&#32;&apos;</emphasis>&#32;+&#32;str(index)
+66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&apos;---------------------------------------------&apos;</emphasis>
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;data[index-30:index+30]
+68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;<emphasis class="stringliteral">&apos;---------------------------------------------&apos;</emphasis>
+69 
+70 
+71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;indexes
+72 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1a2f6e5ce0d893c396139877a60b34d8e9">73 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1a2f6e5ce0d893c396139877a60b34d8e9">exact_query</link>(self,query,data):
+74 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+75 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Searches&#32;through&#32;a&#32;String&#32;for&#32;a&#32;certain&#32;phrase&#32;or&#32;term.&#32;Returns&#32;the&#32;starting&#32;index&#32;for&#32;all&#32;occurrences&#32;of&#32;the&#32;query&#32;String.</emphasis>
+76 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;If&#32;the&#32;query&#32;is&#32;not&#32;located,&#32;it&#32;will&#32;return&#32;an&#32;empty&#32;array.</emphasis>
+77 <emphasis class="stringliteral"></emphasis>
+78 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;query&#32;-&#32;The&#32;String&#32;we&#32;are&#32;looking&#32;for:</emphasis>
+79 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;data&#32;-&#32;The&#32;String&#32;we&#32;are&#32;searching&#32;through.:</emphasis>
+80 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:return&#32;Indexes&#32;corresponding&#32;to&#32;the&#32;beginning&#32;of&#32;the&#32;location&#32;of&#32;the&#32;String&#32;in&#32;question.:</emphasis>
+81 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+82 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;locations&#32;=&#32;[];
+83 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;queryIndex&#32;=&#32;0;
+84 
+85 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data.strip();
+86 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;query.strip();
+87 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;query&#32;=&#32;query.lower();
+88 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data&#32;=&#32;data.lower();
+89 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#&#32;Impossible&#32;for&#32;data&#32;to&#32;contain&#32;query&#32;or&#32;query&#32;is&#32;nonsensical.</emphasis>
+90 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;len(query)&#32;&gt;&#32;len(data)&#32;<emphasis class="keywordflow">or</emphasis>&#32;(len(query)&#32;==&#32;len(data)&#32;<emphasis class="keywordflow">and</emphasis>&#32;<emphasis class="keywordflow">not</emphasis>&#32;query&#32;<emphasis class="keywordflow">is</emphasis>&#32;data)&#32;<emphasis class="keywordflow">or</emphasis>&#32;len(query)&#32;==&#32;0:
+91 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;[];
+92 
+93 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;i&#32;<emphasis class="keywordflow">in</emphasis>&#32;range(0,&#32;len(data)):
+94 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;data[i]&#32;==&#32;query[queryIndex]:&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#&#32;Current&#32;location&#32;is&#32;matching&#32;the&#32;query&#32;pattern&#32;so&#32;far.</emphasis>
+95 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;queryIndex&#32;==&#32;len(query)&#32;-&#32;1:&#32;&#32;&#32;&#32;<emphasis class="comment">#&#32;The&#32;whole&#32;query&#32;pattern&#32;is&#32;matched,&#32;add&#32;starting&#32;index.</emphasis>
+96 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;locations.append(i&#32;-&#32;len(query)&#32;+&#32;1);
+97 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;queryIndex&#32;=&#32;0;
+98 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">else</emphasis>:
+99 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;queryIndex&#32;+=&#32;1;
+100 
+101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">else</emphasis>:&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#Current&#32;location&#32;didn&apos;t&#32;match&#32;the&#32;pattern.</emphasis>
+102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;data[i]&#32;==&#32;query[0]:
+103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;queryIndex&#32;=&#32;1;
+104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">else</emphasis>:
+105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;queryIndex&#32;=&#32;0;
+106 
+107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;locations;
+108 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1ad8279fa98fb80bfaae0800cd7c5fa21e">109 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1ad8279fa98fb80bfaae0800cd7c5fa21e">similar_query</link>(self,&#32;query,&#32;data,&#32;proximity):
+110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+111 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Searches&#32;through&#32;a&#32;String&#32;for&#32;a&#32;certain&#32;phrase&#32;or&#32;term.&#32;Returns&#32;results&#32;that&#32;are&#32;close&#32;to&#32;the&#32;query&#32;as&#32;well.</emphasis>
+112 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(i.e.&#32;&quot;ap&#32;ple&quot;&#32;or&#32;&quot;bpple&quot;&#32;would&#32;be&#32;noted&#32;for&#32;&quot;apple&quot;)&#32;Returns&#32;the&#32;starting&#32;index&#32;for&#32;all&#32;occurrences&#32;of&#32;Strings&#32;sufficiently&#32;close&#32;to</emphasis>
+113 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;the&#32;query.&#32;If&#32;the&#32;query&#32;is&#32;not&#32;located,&#32;it&#32;will&#32;return&#32;an&#32;empty&#32;array.</emphasis>
+114 <emphasis class="stringliteral"></emphasis>
+115 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param:&#32;query&#32;&#32;-&#32;The&#32;String&#32;we&#32;are&#32;looking&#32;for.</emphasis>
+116 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param:&#32;data&#32;-&#32;The&#32;String&#32;we&#32;are&#32;searching&#32;through.:</emphasis>
+117 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param:&#32;proximity&#32;-&#32;The&#32;size&#32;of&#32;the&#32;acceptable&#32;variation&#32;from&#32;the&#32;query.:</emphasis>
+118 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:return:Indexes&#32;corresponding&#32;to&#32;the&#32;beginning&#32;of&#32;the&#32;location&#32;of&#32;the&#32;String&#32;in&#32;question.</emphasis>
+119 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;locations&#32;=&#32;[];
+121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;queryIndex&#32;=&#32;0;
+122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;distance&#32;=&#32;0;
+123 
+124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data.strip();
+125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;query.strip();
+126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;query&#32;=&#32;query.lower();
+127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data&#32;=&#32;data.lower();
+128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;len(query)&#32;&gt;&#32;len(data)&#32;<emphasis class="keywordflow">or</emphasis>&#32;(len(query)&#32;==&#32;len(data)&#32;<emphasis class="keywordflow">and</emphasis>&#32;<emphasis class="keywordflow">not</emphasis>&#32;query&#32;<emphasis class="keywordflow">is</emphasis>&#32;data)&#32;<emphasis class="keywordflow">or</emphasis>&#32;len(query)&#32;==&#32;0&#32;<emphasis class="keywordflow">or</emphasis>&#32;proximity&#32;&gt;&#32;(0.4)&#32;*&#32;len(query):
+129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;[];
+130 
+131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;i&#32;<emphasis class="keywordflow">in</emphasis>&#32;range(0,&#32;len(data)):
+132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;data[i]&#32;==&#32;query[queryIndex]:
+133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;queryIndex&#32;==&#32;len(query)&#32;-&#32;1:
+134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;locations.append(i&#32;-&#32;len(query)&#32;+&#32;1);
+135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;queryIndex&#32;=&#32;0;
+136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;distance&#32;=&#32;0;
+137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">else</emphasis>:
+138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;queryIndex&#32;+=&#32;1;
+139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">elif</emphasis>&#32;distance&#32;&lt;&#32;proximity:
+140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;queryIndex&#32;==&#32;len(query)&#32;-&#32;1:
+141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;locations.append(i&#32;-&#32;len(query)&#32;+&#32;1);
+142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;queryIndex&#32;=&#32;0;
+143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;distance&#32;=&#32;0;
+144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">elif</emphasis>&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1a95044af0828393b590c4946fe8aa16b5">whitespace_checker</link>(data[i]):
+145 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;distance&#32;+=&#32;1;
+146 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">else</emphasis>:
+147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;distance&#32;+=&#32;1;
+148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;queryIndex&#32;+=&#32;1;
+149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">else</emphasis>:
+150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;data[i]&#32;==&#32;query[0]:
+151 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;queryIndex&#32;=&#32;1;
+152 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;distance&#32;=&#32;0;
+153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">else</emphasis>:
+154 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;queryIndex&#32;=&#32;0;
+155 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;distance&#32;=&#32;0;
+156 
+157 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;locations;
+158 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1a95044af0828393b590c4946fe8aa16b5">159 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1a95044af0828393b590c4946fe8aa16b5">whitespace_checker</link>(self,character):
+160 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+161 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Returns&#32;true&#32;if&#32;the&#32;character&#32;passed&#32;in&#32;is&#32;a&#32;whitespace&#32;character&#32;such&#32;as&#32;tab,&#32;space&#32;or&#32;newline.</emphasis>
+162 <emphasis class="stringliteral"></emphasis>
+163 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;character&#32;-&#32;The&#32;character&#32;to&#32;be&#32;checked.:</emphasis>
+164 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:return&#32;boolean,&#32;if&#32;there&#32;is&#32;whitespace&#32;True,Whether&#32;the&#32;character&#32;is&#32;whitespace:</emphasis>
+165 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;character&#32;==&#32;<emphasis class="stringliteral">&apos;&#32;&apos;</emphasis>&#32;<emphasis class="keywordflow">or</emphasis>&#32;character&#32;==&#32;<emphasis class="stringliteral">&apos;&#32;&#32;&#32;&#32;&apos;</emphasis>&#32;<emphasis class="keywordflow">or</emphasis>&#32;character&#32;==&#32;os.linesep;
+167 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1a3070944be3de739d70f8c4c4603cbf4a">168 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1a3070944be3de739d70f8c4c4603cbf4a">setProximity</link>(self,proximity):
+169 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+170 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Set&#32;the&#32;search&#32;proximity</emphasis>
+171 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;proximity:</emphasis>
+172 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:return:</emphasis>
+173 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1ad4742d4d507c4ea17dd4f4b5881047db">174 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1search_1_1search_1ad4742d4d507c4ea17dd4f4b5881047db">proximity</link>&#32;=&#32;proximity;
+    </computeroutput></literallayout>
+</section>

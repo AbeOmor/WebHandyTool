@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="namespacepylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler">
+<title>pylinkvalidator::POC Code::Web_Crawler</title>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_h_t_m_l__corrector__help">pylinkvalidator::POC Code::Web_Crawler::HTML_corrector_help</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler">pylinkvalidator::POC Code::Web_Crawler::Web_Crawler</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Variables</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string <link linkend="namespacepylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1a29affd71d39a1882ce8bba5aab752d93">__author__</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>tuple <link linkend="namespacepylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1a5705d7998995ead364d203ed5cf4410c">crawler</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>tuple <link linkend="namespacepylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1ab229bf4382abf99f92e073a92aa85348">option</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+</section>

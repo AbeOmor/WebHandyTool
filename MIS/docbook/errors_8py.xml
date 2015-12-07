@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="errors_8py">
+    <title>errors.py File Reference</title>
+<para>Include dependency diagram for errors.py</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="errors_8py__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for errors.py</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="errors_8py__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1errors_1_1errors">pylinkvalidator::WebHandyTool::errors::errors</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1errors">pylinkvalidator::WebHandyTool::errors</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /Users/Abe/Documents/pylinkvalidator/WebHandyTool/errors.py</para>
+    </simplesect>
+    <literallayout><computeroutput>
+<link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1errors">1 </link><emphasis class="keyword">import</emphasis>&#32;urllib2
+2 
+3 <emphasis class="keyword">import</emphasis>&#32;urlCorrector
+4 
+5 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1errors_1_1errors">6 </link><emphasis class="keyword">class&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1errors_1_1errors">errors</link>(object):
+7 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1errors_1_1errors_1a897c66f55e075d1bb5df00ad5dd966ab">8 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1errors_1_1errors_1a897c66f55e075d1bb5df00ad5dd966ab">__init__</link>(self):
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1errors_1_1errors_1a25aadeefbd1492f5efd8690cb1deecb5">9 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self.<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1errors_1_1errors_1a25aadeefbd1492f5efd8690cb1deecb5">urlCorrect</link>&#32;=&#32;<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1url_corrector_1_1url_corrector">urlCorrector.urlCorrector</link>()
+10 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1errors_1_1errors_1a560745957eb76bc1b2ea4acb29a42798">11 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1errors_1_1errors_1a560745957eb76bc1b2ea4acb29a42798">check_errors</link>(self,link,list_of_links=None):
+12 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+13 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Checks&#32;the&#32;all&#32;the&#32;links&#32;and&#32;reports&#32;the&#32;error&#32;message&#32;associated&#32;with</emphasis>
+14 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;all&#32;the&#32;links&#32;inputted</emphasis>
+15 <emphasis class="stringliteral"></emphasis>
+16 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;link:</emphasis>
+17 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;list_of_links:</emphasis>
+18 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:return&#32;List&#32;of&#32;Errors:</emphasis>
+19 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+20 
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;status_msg_list&#32;=&#32;[]
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;base_url&#32;=&#32;self.urlCorrect.HTML_corrector(link)
+23 
+24 
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;list_of_links:
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;link&#32;<emphasis class="keywordflow">in</emphasis>&#32;list_of_links:
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;corrected_link&#32;=&#32;self.urlCorrect.absolute_HTML_corrector(link,base_url).geturl()
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;request&#32;=&#32;urllib2.Request(corrected_link)
+29 
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>:
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;response&#32;=&#32;urllib2.urlopen(request)
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;success&#32;=&#32;<emphasis class="stringliteral">&apos;Status&#32;code:&#32;&apos;</emphasis>&#32;+&#32;str(response.getcode())
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;str(corrected_link)&#32;+&#32;<emphasis class="stringliteral">&apos;&#32;--&#32;&apos;</emphasis>&#32;+&#32;success
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;status_msg_list.append(str(corrected_link)&#32;+&#32;<emphasis class="stringliteral">&apos;&#32;--&#32;&apos;</emphasis>&#32;+&#32;success)
+35 
+36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">except</emphasis>&#32;urllib2.HTTPError,&#32;e:
+37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;error&#32;=&#32;<emphasis class="stringliteral">&apos;Error&#32;code:&#32;&apos;</emphasis>&#32;+&#32;str(e.code)
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;str(corrected_link)&#32;+&#32;<emphasis class="stringliteral">&apos;&#32;--&#32;&apos;</emphasis>&#32;+&#32;error
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;status_msg_list.append(str(corrected_link)&#32;+&#32;<emphasis class="stringliteral">&apos;&#32;--&#32;&apos;</emphasis>&#32;+&#32;error)
+40 
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;status_msg_list
+42 
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">else</emphasis>:
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;base_url&#32;=&#32;base_url.geturl()
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;request&#32;=&#32;urllib2.Request(base_url)
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>:
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;response&#32;=&#32;urllib2.urlopen(request)
+48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;success&#32;=&#32;<emphasis class="stringliteral">&apos;Status&#32;code:&#32;&apos;</emphasis>&#32;+&#32;str(response.getcode())
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;str(base_url)&#32;&#32;+&#32;<emphasis class="stringliteral">&apos;&#32;--&#32;&apos;</emphasis>&#32;+&#32;success
+50 
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">except</emphasis>&#32;urllib2.HTTPError,&#32;e:
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;error&#32;=&#32;<emphasis class="stringliteral">&apos;Error&#32;code:&#32;&apos;</emphasis>&#32;+&#32;str(e.code)
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">print</emphasis>&#32;str(base_url)&#32;&#32;+&#32;<emphasis class="stringliteral">&apos;&#32;--&#32;&apos;</emphasis>&#32;+&#32;error
+54 
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;str(base_url)&#32;+&#32;<emphasis class="stringliteral">&apos;&#32;--&#32;&apos;</emphasis>&#32;+&#32;error
+56 
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;str(base_url)&#32;+&#32;<emphasis class="stringliteral">&apos;&#32;--&#32;&apos;</emphasis>&#32;+&#32;success
+    </computeroutput></literallayout>
+</section>

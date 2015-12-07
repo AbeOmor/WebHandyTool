@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="config_8py">
+    <title>config.py File Reference</title>
+<para>Include dependency diagram for config.py</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="config_8py__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for config.py</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="config_8py__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1config">pylinkvalidator::WebHandyTool::config</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /Users/Abe/Documents/pylinkvalidator/WebHandyTool/config.py</para>
+    </simplesect>
+    <literallayout><computeroutput>
+<link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1config_1a726d0b4696df7ad8c2ebd386e9853df1">1 </link><emphasis class="keyword">def&#32;</emphasis><link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1config_1a726d0b4696df7ad8c2ebd386e9853df1">getConfig</link>():
+2 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;{
+3 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;string_search&quot;</emphasis>:&#32;{
+4 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#Exact&#32;Search&#32;=&#32;1,&#32;Similar&#32;Search&#32;=&#32;2</emphasis>
+5 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;type&quot;</emphasis>:&#32;<emphasis class="stringliteral">&quot;1&quot;</emphasis>,
+6 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;proximity&quot;</emphasis>:&#32;<emphasis class="stringliteral">&quot;1&quot;</emphasis>
+7 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;},
+8 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;depth&quot;</emphasis>:&#32;1,
+9 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;download&quot;</emphasis>:&#32;{
+10 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#&#32;change&#32;file_type&#32;to&#32;any&#32;thing&#32;you&#32;wish&#32;(*.pdf,*.png&#32;etc.)&#32;and</emphasis>
+11 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#&#32;all&#32;the&#32;option&#32;are&#32;from&#32;wget&#32;library,&#32;only&#32;use&#32;options&#32;specified&#32;below.</emphasis>
+12 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#&#32;-r&#32;recursive</emphasis>
+13 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#&#32;np&#32;no-parent</emphasis>
+14 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;file_types&quot;</emphasis>:&#32;<emphasis class="keywordtype">None</emphasis>,
+15 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;option&quot;</emphasis>:&#32;<emphasis class="stringliteral">&quot;-rnp&quot;</emphasis>
+16 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+17 &#32;&#32;&#32;&#32;}
+    </computeroutput></literallayout>
+</section>

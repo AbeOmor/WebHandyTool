@@ -1,0 +1,446 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler">
+<title>pylinkvalidator::POC Code::Web_Crawler::Web_Crawler class Reference</title>
+<para>Inheritance diagram for pylinkvalidator::POC Code::Web_Crawler::Web_Crawler</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for pylinkvalidator::POC Code::Web_Crawler::Web_Crawler</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Public Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>depth</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>algo</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>choices</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>search_choices</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>choice</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>search_choice</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>output</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>seed</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>list_of_links</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>NOT_LINK</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>SCHEME_HTTP</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>SCHEME_HTTPS</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>SUPPORTED_SCHEMES</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a11f494a5019e83e4e97de9d02e70eac0">__init__</link> (
+self )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ab88f99b20a665b945bbfbacd29c7cd35">option</link> (
+self )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a56ce7ff8f340a4e3a12fa6af7aa685ef">dfs</link> (
+self , <link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a4100bfbd077cd54c5ee1b6e3ad21ba05">choice</link> )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a5fc56f19ac8d7aa5a6f1dcc2dd2c7f43">bfs</link> (
+self , link )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a685b38e7e243a8edbae39c1ee31ba866">HTML_corrector</link> (
+self , link )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ac4ba57c891836fb48a2115d51538e9bc">absolute_HTML_corrector</link> (
+self , link , base_link_split )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a70b41cbe1f381fd211536be5b6ab6c49">download_resources</link> (
+self , link , options , file_type )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1afbaad82f02609f768b0c7fd9baa83048">exact_query</link> (
+self , query , data )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a0ac2dcc6a346b596678fd923ce62c422">similar_query</link> (
+self , query , data , proximity )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ad00325e9391b34decc4960520f929deb">whitespace_checker</link> (
+self , character )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a77d0c8f8dad271699c5c26a65c127767">find_links</link> (
+self , link , destination )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a2fc6c2e07ddf12c96da4216bc11763d5">check_errors</link> (
+self , link , <link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ac2956f25315755df07ef3ba47f283e83">list_of_links</link> )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a09080daab7b16e68d2dbd4468079ae81">BS_parse_data</link> (
+self , link )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a048a3be9f662196c8c355cb5f12c1cd8">HTML_text</link> (
+self , link )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1afac8f54efb9be45422268f8ccf9a5d48">query_search</link> (
+self , query , link , <link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ac2956f25315755df07ef3ba47f283e83">list_of_links</link> , <link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a4100bfbd077cd54c5ee1b6e3ad21ba05">choice</link> )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ac5547b7358459fc652278d1fd7306621">depth_setter</link> (
+self , <link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a4b25f5a1077981b4fc673a30cd6f60f5">depth</link> )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a0c6649825a52751d19cd23e093e2c6c3">website_Depth</link> (
+self , link , <link linkend="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a4b25f5a1077981b4fc673a30cd6f60f5">depth</link> )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para><literallayout>Main class, it is for crawling.
+Class variable includes depth,algo,choices,choice,output,seed,list of links
+</literallayout> </para>
+                <para>Definition at line 10 of file Web_Crawler.py</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>Web_Crawler.py</para></listitem></itemizedlist></para>
+        </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a11f494a5019e83e4e97de9d02e70eac0">
+                <title>def pylinkvalidator.POC Code.Web_Crawler.Web_Crawler.__init__ (self)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ab88f99b20a665b945bbfbacd29c7cd35">
+                <title>def pylinkvalidator.POC Code.Web_Crawler.Web_Crawler.option (self)</title> <emphasis></emphasis>
+                
+<para><literallayout>Gets user input to set various program options related to
+how the user would like to handle crawling a webpage.
+
+Ask for users option choices
+
+:return:
+</literallayout> </para>
+
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a56ce7ff8f340a4e3a12fa6af7aa685ef">
+                <title>def pylinkvalidator.POC Code.Web_Crawler.Web_Crawler.dfs (self, choice)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a5fc56f19ac8d7aa5a6f1dcc2dd2c7f43">
+                <title>def pylinkvalidator.POC Code.Web_Crawler.Web_Crawler.bfs (self, link)</title> <emphasis></emphasis>
+                
+<para><literallayout>Finds all the links on a give website using the BFS algorithm
+:param link:
+:return A list of all the links found by BFS:
+</literallayout> </para>
+
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a685b38e7e243a8edbae39c1ee31ba866">
+                <title>def pylinkvalidator.POC Code.Web_Crawler.Web_Crawler.HTML_corrector (self, link)</title> <emphasis></emphasis>
+                
+<para><literallayout>Fixes the link passed in such that it becomes either a functioning link or is flagged as a broken link.
+:param link:
+:return  Url object of split url result corrected link Ex; SplitResult(scheme=u&apos;http&apos;, netloc=u&apos;canvasgroup.ca&apos;, path=u&apos;/zdfzd&apos;, query=u&apos;&apos;, fragment=u&apos;&apos;) :
+</literallayout> </para>
+
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ac4ba57c891836fb48a2115d51538e9bc">
+                <title>def pylinkvalidator.POC Code.Web_Crawler.Web_Crawler.absolute_HTML_corrector (self, link, base_link_split)</title> <emphasis></emphasis>
+                
+<para><literallayout>Takes in the base url and appends any relative or absolute links to the base urk.
+
+:param link:
+:param base_link_split:
+:return Url object of split url result corrected link Ex; SplitResult(scheme=u&apos;http&apos;, netloc=u&apos;canvasgroup.ca&apos;, path=u&apos;/zdfzd&apos;, query=u&apos;&apos;, fragment=u&apos;&apos;) ::
+</literallayout> </para>
+
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a70b41cbe1f381fd211536be5b6ab6c49">
+                <title>def pylinkvalidator.POC Code.Web_Crawler.Web_Crawler.download_resources (self, link, options=&apos;-rA&apos;, file_type=None)</title> <emphasis></emphasis>
+                
+<para><literallayout>Writes all resources matching the given file type from the page link to the file specified by destination.
+
+:param link:
+:param options:
+:param file_type:
+:return:
+</literallayout> </para>
+
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1afbaad82f02609f768b0c7fd9baa83048">
+                <title>def pylinkvalidator.POC Code.Web_Crawler.Web_Crawler.exact_query (self, query, data)</title> <emphasis></emphasis>
+                
+<para><literallayout>Searches through a String for a certain phrase or term. Returns the starting index for all occurrences of the query String.
+If the query is not located, it will return an empty array.
+
+:param query - The String we are looking for:
+:param data - The String we are searching through.:
+:return Indexes corresponding to the beginning of the location of the String in question.:
+</literallayout> </para>
+
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a0ac2dcc6a346b596678fd923ce62c422">
+                <title>def pylinkvalidator.POC Code.Web_Crawler.Web_Crawler.similar_query (self, query, data, proximity)</title> <emphasis></emphasis>
+                
+<para><literallayout>Searches through a String for a certain phrase or term. Returns results that are close to the query as well.
+(i.e. &quot;ap ple&quot; or &quot;bpple&quot; would be noted for &quot;apple&quot;) Returns the starting index for all occurrences of Strings sufficiently close to
+the query. If the query is not located, it will return an empty array.
+
+:param: query  - The String we are looking for.
+:param: data - The String we are searching through.:
+:param: proximity - The size of the acceptable variation from the query.:
+:return:Indexes corresponding to the beginning of the location of the String in question.
+</literallayout> </para>
+
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ad00325e9391b34decc4960520f929deb">
+                <title>def pylinkvalidator.POC Code.Web_Crawler.Web_Crawler.whitespace_checker (self, character)</title> <emphasis></emphasis>
+                
+<para><literallayout>Returns true if the character passed in is a whitespace character such as tab, space or newline.
+
+:param character - The character to be checked.:
+:return boolean, if there is whitespace True,Whether the character is whitespace:
+</literallayout> </para>
+
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a77d0c8f8dad271699c5c26a65c127767">
+                <title>def pylinkvalidator.POC Code.Web_Crawler.Web_Crawler.find_links (self, link, destination=None)</title> <emphasis></emphasis>
+                
+<para><literallayout>Finds all the links (&lt;a&gt;&lt;/a&gt; anchor tags on page) on a page, also removes all
+the link that start with &apos;#&apos; or &apos;data:&apos; as these are not valid urls
+
+:param link:
+:param destination:
+:return List of Links:
+</literallayout> </para>
+
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a2fc6c2e07ddf12c96da4216bc11763d5">
+                <title>def pylinkvalidator.POC Code.Web_Crawler.Web_Crawler.check_errors (self, link, list_of_links=None)</title> <emphasis></emphasis>
+                
+<para><literallayout>Checks the all the links and reports the error message associated with
+all the links inputted
+
+:param link:
+:param list_of_links:
+:return List of Errors:
+</literallayout> </para>
+
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a09080daab7b16e68d2dbd4468079ae81">
+                <title>def pylinkvalidator.POC Code.Web_Crawler.Web_Crawler.BS_parse_data (self, link)</title> <emphasis></emphasis>
+                
+<para><literallayout>Returns BeautifulSoup object for the link given, this will allow modules parse through pages data much faster
+
+:param link:
+:return BeautifulSoup :
+</literallayout> </para>
+
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a048a3be9f662196c8c355cb5f12c1cd8">
+                <title>def pylinkvalidator.POC Code.Web_Crawler.Web_Crawler.HTML_text (self, link)</title> <emphasis></emphasis>
+                
+<para><literallayout>Returns HTML text data for Query search
+
+:param link:
+:return String :
+</literallayout> </para>
+
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1afac8f54efb9be45422268f8ccf9a5d48">
+                <title>def pylinkvalidator.POC Code.Web_Crawler.Web_Crawler.query_search (self, query, link, list_of_links=None, choice=&apos;exact&apos;)</title> <emphasis></emphasis>
+                
+<para><literallayout>Find queries
+
+:param query:
+:param data:
+:param choice:
+:return Query results:
+</literallayout> </para>
+
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1ac5547b7358459fc652278d1fd7306621">
+                <title>def pylinkvalidator.POC Code.Web_Crawler.Web_Crawler.depth_setter (self, depth)</title> <emphasis></emphasis>
+                
+<para><literallayout>Sets the default max depth variable for the web crawler
+:param depth:
+:return:
+</literallayout> </para>
+
+            </section>
+            <section xml:id="classpylinkvalidator_1_1_p_o_c_01_code_1_1_web___crawler_1_1_web___crawler_1a0c6649825a52751d19cd23e093e2c6c3">
+                <title>def pylinkvalidator.POC Code.Web_Crawler.Web_Crawler.website_Depth (self, link, depth)</title> <emphasis></emphasis>
+                
+<para><literallayout>It provides a structured model of the website and other site the initial site is connect to. It displays
+a hierarchy that will show users how crawled link interact with each other. Shows all the depths
+
+:param link:
+:param depth:
+:return A pretty print of Hierarchy:
+</literallayout> </para>
+
+            </section>
+</section>

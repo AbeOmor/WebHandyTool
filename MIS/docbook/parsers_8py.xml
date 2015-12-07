@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="parsers_8py">
+    <title>parsers.py File Reference</title>
+<para>Include dependency diagram for parsers.py</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="parsers_8py__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for parsers.py</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="parsers_8py__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1parsers_1_1parsers">pylinkvalidator::WebHandyTool::parsers::parsers</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1parsers">pylinkvalidator::WebHandyTool::parsers</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /Users/Abe/Documents/pylinkvalidator/WebHandyTool/parsers.py</para>
+    </simplesect>
+    <literallayout><computeroutput>
+<link linkend="namespacepylinkvalidator_1_1_web_handy_tool_1_1parsers">1 </link><emphasis class="keyword">import</emphasis>&#32;subprocess
+2 <emphasis class="keyword">from</emphasis>&#32;bs4&#32;<emphasis class="keyword">import</emphasis>&#32;BeautifulSoup
+3 <emphasis class="keyword">from</emphasis>&#32;urllib2&#32;<emphasis class="keyword">import</emphasis>&#32;*
+4 <emphasis class="keyword">import</emphasis>&#32;datetime
+5 <emphasis class="keyword">import</emphasis>&#32;urllib2
+6 <emphasis class="keyword">import</emphasis>&#32;re
+7 <emphasis class="keyword">from</emphasis>&#32;urllib&#32;<emphasis class="keyword">import</emphasis>&#32;urlretrieve
+8 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1parsers_1_1parsers">9 </link><emphasis class="keyword">class&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1parsers_1_1parsers">parsers</link>(object):
+10 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1parsers_1_1parsers_1ac6c458e5f64a0cddded5782799aa0a3f">11 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1parsers_1_1parsers_1ac6c458e5f64a0cddded5782799aa0a3f">BS_parse_data</link>(self,link):
+12 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+13 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Returns&#32;BeautifulSoup&#32;object&#32;for&#32;the&#32;link&#32;given,&#32;this&#32;will&#32;allow&#32;modules&#32;parse&#32;through&#32;pages&#32;data&#32;much&#32;faster</emphasis>
+14 <emphasis class="stringliteral"></emphasis>
+15 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;link:</emphasis>
+16 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:return&#32;BeautifulSoup&#32;:</emphasis>
+17 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+18 
+19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>:
+20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;soup&#32;=&#32;BeautifulSoup(urlopen(link),<emphasis class="stringliteral">&quot;html.parser&quot;</emphasis>)
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">except</emphasis>&#32;urllib2.HTTPError:
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;soup&#32;=&#32;<emphasis class="stringliteral">&apos;HTTP&#32;Error&apos;</emphasis>
+23 
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;soup
+25 
+<link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1parsers_1_1parsers_1a8145b02d268056ef0153e42ea4a0aa70">26 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="classpylinkvalidator_1_1_web_handy_tool_1_1parsers_1_1parsers_1a8145b02d268056ef0153e42ea4a0aa70">HTML_text</link>(self,link):
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&quot;&quot;</emphasis>
+28 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Returns&#32;HTML&#32;text&#32;data&#32;for&#32;Query&#32;search</emphasis>
+29 <emphasis class="stringliteral"></emphasis>
+30 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:param&#32;link:</emphasis>
+31 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:return&#32;String&#32;:</emphasis>
+32 <emphasis class="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+33 
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>:
+35 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;soup&#32;=&#32;BeautifulSoup(urlopen(link),<emphasis class="stringliteral">&quot;html.parser&quot;</emphasis>)
+36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data&#32;=&#32;re.sub(<emphasis class="stringliteral">r&apos;\n\s*\n&apos;</emphasis>,&#32;<emphasis class="stringliteral">r&apos;\n\n&apos;</emphasis>,&#32;soup.get_text().strip(),&#32;flags=re.M)
+37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">except</emphasis>&#32;urllib2.HTTPError:
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;soup&#32;=&#32;<emphasis class="stringliteral">&apos;HTTP&#32;Error&apos;</emphasis>
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;soup
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;data
+    </computeroutput></literallayout>
+</section>

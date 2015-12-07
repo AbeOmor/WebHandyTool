@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_test_string_8py">
+    <title>TestString.py File Reference</title>
+<para>Include dependency diagram for TestString.py</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="_test_string_8py__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for TestString.py</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="_test_string_8py__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_test_string_1_1_test_string_methods">TestString::TestStringMethods</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_test_string">TestString</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /Users/Abe/Documents/pylinkvalidator/InLabSubmissions/TestString.py</para>
+    </simplesect>
+    <literallayout><computeroutput>
+<link linkend="namespace_test_string">1 </link><emphasis class="keyword">import</emphasis>&#32;unittest
+2 
+<link linkend="class_test_string_1_1_test_string_methods">3 </link><emphasis class="keyword">class&#32;</emphasis><link linkend="class_test_string_1_1_test_string_methods">TestStringMethods</link>(unittest.TestCase):
+4 
+<link linkend="class_test_string_1_1_test_string_methods_1abd3a37be3b26c3bf46c303db0c03b7e5">5 </link>&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="class_test_string_1_1_test_string_methods_1abd3a37be3b26c3bf46c303db0c03b7e5">test_upper</link>(self):
+6 &#32;&#32;&#32;&#32;&#32;&#32;self.assertEqual(<emphasis class="stringliteral">&apos;foo&apos;</emphasis>.upper(),&#32;<emphasis class="stringliteral">&apos;FOO&apos;</emphasis>)
+7 
+<link linkend="class_test_string_1_1_test_string_methods_1a6529ba420211e4577fa0c79ab7b20e1a">8 </link>&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="class_test_string_1_1_test_string_methods_1a6529ba420211e4577fa0c79ab7b20e1a">test_isupper</link>(self):
+9 &#32;&#32;&#32;&#32;&#32;&#32;self.assertTrue(<emphasis class="stringliteral">&apos;FOO&apos;</emphasis>.isupper())
+10 &#32;&#32;&#32;&#32;&#32;&#32;self.assertFalse(<emphasis class="stringliteral">&apos;Foo&apos;</emphasis>.isupper())
+11 
+<link linkend="class_test_string_1_1_test_string_methods_1a3e28d67b465886b07c81361541ce839f">12 </link>&#32;&#32;<emphasis class="keyword">def&#32;</emphasis><link linkend="class_test_string_1_1_test_string_methods_1a3e28d67b465886b07c81361541ce839f">test_split</link>(self):
+13 &#32;&#32;&#32;&#32;&#32;&#32;s&#32;=&#32;<emphasis class="stringliteral">&apos;hello&#32;world&apos;</emphasis>
+14 &#32;&#32;&#32;&#32;&#32;&#32;self.assertEqual(s.split(),&#32;[<emphasis class="stringliteral">&apos;hello&apos;</emphasis>,&#32;<emphasis class="stringliteral">&apos;world&apos;</emphasis>])
+15 &#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">#&#32;check&#32;that&#32;s.split&#32;fails&#32;when&#32;the&#32;separator&#32;is&#32;not&#32;a&#32;string</emphasis>
+16 &#32;&#32;&#32;&#32;&#32;&#32;with&#32;self.assertRaises(TypeError):
+17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;s.split(2)
+18 
+19 <emphasis class="keywordflow">if</emphasis>&#32;__name__&#32;==&#32;<emphasis class="stringliteral">&apos;__main__&apos;</emphasis>:
+20 &#32;&#32;&#32;&#32;unittest.main()
+    </computeroutput></literallayout>
+</section>
