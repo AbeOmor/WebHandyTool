@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 \usepackage{color}
 \graphicspath{ {images/} }
+
 %% Comments
 \newif\ifcomments\commentsfalse %i replaced comments true by comment false so the comments will be hidden
 
@@ -16,11 +17,12 @@
 \newcommand{\todo}[1]{}
 \fi
 
+
 \newcommand{\wss}[1]{\authornote{magenta}{SS}{#1}}
 \newcommand{\hm}[1]{\authornote{blue}{HM}{#1}} %Hediyeh
 \newcommand{\tz}[1]{\authornote{blue}{TZ}{#1}} %Tahereh
 \newcommand{\pl}[1]{\authornote{blue}{PL}{#1}} %Peng
-
+\newcommand{\group}[1]{{\leavevmode\color{red}[#1]}}
 
 \begin{document}
 \title{WebHandyTool \\
@@ -51,7 +53,7 @@ Revision  &Revision Date &Description of Change &Author\\ \hline
 6& 4-11-15& Proofreading and merging of overall content&Genevieve Okon\\ \hline
 7& 4-11-15& Use Hierarchy Between Modules&Eric Le Fort\\ \hline
 8& 4-11-15&Connection Between Requirements and Design&Eric Le Fort\\ \hline
-8& 5-11-15& created Hardware/behaviour Hiding Modules&Abraham Omorogbe\\ \hline
+9& 5-11-15& created Hardware/behaviour Hiding Modules&Abraham Omorogbe\\ \hline
 10& 5-11-15& Software Decision Modules&Eric Le Fort\\ \hline
 11& 5-11-15& Table of Contents&Genevieve Okon\\ \hline
 
@@ -60,7 +62,9 @@ Revision  &Revision Date &Description of Change &Author\\ \hline
 13& 26-11-15&Revised section 4, Behaviour hiding module&Genevieve Okon\\ \hline
 14& 26-11-15&Revised section 5, Module Hierarchy diagram&Genevieve Okon\\ \hline
 15& 26-11-15&Revised section 7.2.9, Website depth modelling&Genevieve Okon\\ \hline
-12& 7-12-15& Revised module secrets& Eric Le Fort \\ \hline
+16& 7-12-15& Revised module secrets& Eric Le Fort \\ \hline
+17& 7-12-15&Revised section 7.2&Genevieve Okon\\ \hline
+18& 7-12-15&Revised section 4,5,8 &Genevieve Okon\\ \hline
        \end{tabular}
        
        \caption{Revision History}
@@ -109,21 +113,19 @@ This section contains the module design structure of our project. Modules are su
 \textbf{Modules}\\
 
 \noindent
-M1: Option Module\\
-M2: Crawler Module\\
-M3: HTML Corrector Module\\
-M4: Download Resources Module\\
-M5: Exact Query Search Module\\
-M6: Similar Query Search Module\\
-M7: Whitespace Checker Module\\
-M8: Find Links Module\\
-M9: Check Errors Module\\
-M10: Parse Data Module\\
-M11: Query Search Module\\
-M12: Depth Setter Module\\
-M13: \textcolor{red}{Website Depth Modelling Module}\\
+\group{
+M1: Web Crawler Module\\
+M2: URL Corrector Module\\
+M3: Parser Module\\
+M4: Download Module\\
+M5: Search Module\\
+M6: Link search algo Module\\
+M7:Errors Module\\
+M8:HTML Corrector Help module\\
+}
 
-Note that M5, M6, M7 are submodules of the larger Query Search Module. M2 is the highest level module and utilizes all others internally.\\
+
+%Note that M5, M6, M7 are submodules of the larger Query Search Module. M2 is the highest level module and utilizes all others internally.\\
 
 \textbf{Hardware hiding}\\
 
@@ -132,30 +134,26 @@ N/A\\
 \textbf{Behaviour Hiding Modules}
 
 \begin{itemize}
-\item{Download Resources Module}\\
-\item{Exact Query Search Module}\\
-\item{Similar Query Search Module}\\
-\item{Whitespace Checker Module}\\
-\item{Find Links Module}\\
-\item{Check Errors Module}\\
-\item{Parse Data Module}\\
-\item{Query Search Module}\\
-\item\textcolor{red}{Website Depth Modelling Module}\\
+\item URL Corrector Module\\
+\item Parser Module\\
+\item Download Module\\
+\item Search Module\\
+\item Link search algo Module\\
+\item Errors Module\\
+\item HTML Corrector Help module
+
 \end{itemize}
 
 \textbf{Software Decision Modules}
 
 \begin{itemize}
-\item{Option Module}\\
-\item{Crawler Module}\\
-\item{HTML Corrector Module}\\
-\item{Depth Setter Module}\\
+\item{Web Crawler Module}\\
 \end{itemize}
 
 
 
-\section{Module Hierarchy Diagram}
-\includegraphics[width=19cm, height=13cm]{UsesDiagrams}
+\section{\group{Module Hierarchy Diagram}}
+\includegraphics[width=19cm, height=13cm]{Hierarchy}
 
 
 \section{Connection Between Requirements \& Design}
@@ -164,11 +162,14 @@ This design was developed using the requirements document to help guide the deco
 
 
 \section{Module Decomposition}
+\textcolor{red}{MORE DETAIL ON VARIABLES AND CONNECTION read the MIS as PDF.pdf document}
 \subsection{Hardware Hiding Modules}
 N/A
 \subsection{Behaviour Hiding Modules}
-\subsubsection{Download Resources}
-void downloadResources(String: link, String: fileType, String: destination)\\
+\group{
+\subsubsection{Download }
+
+%void downloadResources(String: link, String: fileType, String: destination)\\
 
 \textbf{Secrets:}
 Parse through the HTML code in the link provided in order to locate all files that match the specified file type. For each file, the result is downloaded into a folder specified by the user.\\
@@ -179,45 +180,35 @@ Writes all resources matching the given file type from the page link to the file
 \textbf{Implemented By:}
 Python
 
-\subsubsection{Exact Query Search}
-int[] searchForString(String: query, String: data)\\
+\subsubsection{Linksearchalgo}
+%void crawler()\\
 
 \textbf{Secrets:}
-\textcolor{red}{Uses the Knuth-Morris-Pratt String searching algorithm.}\\
+using the BFS algorithm it finds all the links on a given website.\\
 
 \textbf{Services:}
-Returns a list of all occurrences of a given query in the data provided.\\
+Finds all the links on a given website\\
 
 \textbf{Implemented By:}
 Python
 
 
-\subsubsection{Similar Query Search}
-int[] searchForSimilarString(String: query, String: data, int: proximity)\\
+
+
+\subsubsection{Search}
+%void crawler()\\
 
 \textbf{Secrets:}
-\textcolor{red}{Uses a slight deviation from the Knuth-Morris-Pratt String searching algorithm that recognizes fuzzy string searching.}\\
+ Knuth Morris pratt algorithm is used for string matching to get results while searching.\\ 
 
 \textbf{Services:}
-Returns a list of all occurrences within a certain deviation of a give it n query in the data provided.\\
+Searches through a webpage according to the query the user inputs.\\
 
 \textbf{Implemented By:}
 Python
 
-\subsubsection{Whitespace Checker}
-boolean isWhitespace(char: character)\\
-
-\textbf{Secrets:}
-Checks to see if the character passed in is a tab, a space or a new line character.\\
-
-\textbf{Services:}
-Returns whether the character passed in is certain types of whitespace.\\
-
-\textbf{Implemented By:}
-Python
-
-\subsubsection{Find Links}
-List<Links> findLinks(BeautifulSoup: data, String: destination) Exceptions: No Data Found\\
+\subsubsection{Parser}
+%List<Links> findLinks(BeautifulSoup: data, String: destination) Exceptions: No Data Found\\
 
 \textbf{Secrets:}
 Parser that parsers through the HTML code in the data provided\\
@@ -228,8 +219,8 @@ Finds all the links ($<$a$>$$<$/a$>$ anchor tags on page) on a page \\
 \textbf{Implemented By:}
 Python
 
-\subsubsection{Check Errors}
-List<Errors> checkErrors(String: link, Array: List of links) Exceptions: Webpage Unavailable\\
+\subsubsection{ Errors}
+%List<Errors> checkErrors(String: link, Array: List of links) Exceptions: Webpage Unavailable\\
 
 \textbf{Secrets:}
 Algorithm to check the header in all the links provided \\
@@ -239,71 +230,9 @@ Checks the all the links and reports the error message associated with all the l
 
 \textbf{Implemented By:} Python
 
-\subsubsection{Parse Data}
-BeautifulSoup parseData(String: link) Exceptions: Invalid Link\\
 
-\textbf{Secrets:}
-Converter that converts HTML code link to BeautifulSoup object \\
-
-\textbf{Services:}
-Returns Beautiful object for the link given, this will allow modules parse through pages data much faster\\
-
-\textbf{Implemented By:} Python
-
-\subsubsection{Query Search}
-void querySearch(String: Query, BeautifulSoup: data, String: choice) Exceptions: Invalid Choice\\
-
-\textbf{Environment Variables:}
-rawInput: Users keyboard input\\
-
-\textbf{Secrets:}
-An algorithm that figures out what query search type to implement \\
-
-\textbf{Services:}
-Writes all resources matching the given file type from the page link to the file specified by destination.\\
-
-\textbf{Implemented By:}
-Python
-
-\subsubsection{\textcolor{red}{Website Depth Modelling}}
-String \textcolor{red}{webDepthModel}(String: link, int: depth)\\
-
-\textbf{Secrets:}
- \textcolor{red}{An algorithm that uses the seed link and shows the website depth}\\
- 
-\textbf{Services:}
-\textcolor{red}{It provides a Depth model of the website and other site the initial site is connect to. It displays a hierarchy that will show users how crawled link interact with each other.}\\
-
-\textbf{Implemented By:}
-Python
-
-\subsection{Software Decision Modules}
-\subsubsection{Options}
-void chooseOption()\\
-
-\textbf{Secrets:}
-Obtains input from the user to decide whether they would like to download resources, crawl a website, search for a certain String or model a website. Uses searchDepth to allow the user to set their search depth for all but the download resources option as well as allowing the user to set their seed link.\\
-
-\textbf{Services:}
-Gets user input to set various program options related to how the user would like to handle crawling a webpage.\\
-
-\textbf{Implemented By:}
-Python
-
-\subsubsection{Crawler}
-void crawler()\\
-
-\textbf{Secrets:}
-Directly calls the methods shown in the Use Hierarchy (found in section 7 of this document) and consolidates the results.
-
-\textbf{Services:}
-Delegates various tasks of crawling a webpage to the other methods of this program.\\
-
-\textbf{Implemented By:}
-Python
-
-\subsubsection{HTML Corrector}
-String HTMLCorrector(String: link)\\
+\subsubsection{URLCorrector}
+%String HTMLCorrector(String: link)\\
 
 \textbf{Secrets:}
 Tries to fix the given String in various ways in order to create a functioning link. This can include fixing the prefix (http://), adding www., or appending the link to the current page's path.\\
@@ -314,40 +243,58 @@ Fixes the link passed in such that it becomes either a functioning link or is fl
 \textbf{Implemented By:}
 Python
 
-\subsubsection{Depth Setter}
-int depthSetter(int depth) Exception: Not positive int\\
 
-\textbf{Environment Variables}\\
-rawInput: Users keyboard input\\
+\subsubsection{HTML Corrector Help}
+%String HTMLCorrector(String: link)\\
 
 \textbf{Secrets:}
-Assignor which sets the depth variable\\
+Algorithm to check for any character error in a give url.\\
 
 \textbf{Services:}
-Sets the default max depth variable for the web crawler\\
+ Helps the html corrector convert all characters to ascii and removes any links starting with invalid prefixes like hashtags ,or data.\\
 
 \textbf{Implemented By:}
 Python
 
+
+\subsection{Software Decision Modules}
+
+\subsubsection{WebCrawler}
+%void crawler()\\
+
+\textbf{Secrets:}
+Directly calls the methods shown in the Use Hierarchy (found in section 7 of this document) and consolidates the results.
+
+\textbf{Services:}
+Delegates various tasks of crawling a webpage to the other methods of this program.\\
+
+\textbf{Implemented By:}
+Python
+
+
+
+}
+\\
+    \group{
 \section{Traceability Matrix}
 \begin{table}[h!]
 \centering
     \begin{tabular}{| p{5cm} | p{5cm} |}    \hline
     Requirements &Modules\\ \hline
-    
-      R1  &M1, M2, M3, M9, M10 \\ \hline
-      R2  &M1, M2, M3, M4, M10 \\ \hline
-      R3  &M12 \\ \hline
-      R4  &M2 \\ \hline
-      R5  &M1, M2, M3, M4, M5, M6, M7, M8, M9, M10, M11, M12, M13 \\ \hline
-      R6  &M1, M2, M3, M8, M10, M12, M13 \\ \hline
-      R7  &M1, M2, M3, M5, M6, M7, M8, M10, M11, M12 \\ \hline
+
+      R1  &M1, M2, M6, M7, M3, M8\\ \hline
+      R2  &M1, M2, M6, M4, M3, M8 \\ \hline
+      R3  &M6 \\ \hline
+      R4  &M6 \\ \hline
+      R5  &M1, M2, M3, M4, M5, M6, M7, M8 \\ \hline
+      R6  &M6, M2, M3, M8, M1 \\ \hline
+      R7  &M1, M2, M3, M5, M6, M7, M8, M4 \\ \hline
       
     \end{tabular}
     \caption{Traceback to Requirements}
 \label{table:Traceback to Requirements}
 \end{table}
-
+}
 \begin{table}[h!]
 \centering
     \begin{tabular}{| p{5cm} | p{5cm} |}    \hline
