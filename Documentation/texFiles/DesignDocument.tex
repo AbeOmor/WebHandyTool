@@ -63,12 +63,8 @@ Revision  &Revision Date &Description of Change &Author\\ \hline
 14& 26-11-15&Revised section 5, Module Hierarchy diagram&Genevieve Okon\\ \hline
 15& 26-11-15&Revised section 7.2.9, Website depth modelling&Genevieve Okon\\ \hline
 16& 7-12-15& Revised module secrets& Eric Le Fort \\ \hline
-<<<<<<< HEAD
 17& 7-12-15&Revised section 7.2&Genevieve Okon\\ \hline
 18& 7-12-15&Revised section 4,5,8 &Genevieve Okon\\ \hline
-=======
-17& 7-12-15& Revised state variables& Eric Le Fort \\ \hline
->>>>>>> eba24c98e0483fad7f3ebcb4ff69d0e754b37f70
        \end{tabular}
        
        \caption{Revision History}
@@ -166,23 +162,18 @@ This design was developed using the requirements document to help guide the deco
 
 
 \section{Module Decomposition}
-\textcolor{red}{MORE DETAIL ON VARIABLES AND CONNECTION read the MIS as PDF.pdf document}
+\textcolor{red}{For a very in-depth MIS and more detail about variables and modules, please reference "MIS as PDF.pdf" document}
 \subsection{Hardware Hiding Modules}
 N/A
 \subsection{Behaviour Hiding Modules}
-<<<<<<< HEAD
 \group{
 \subsubsection{Download }
 
 %void downloadResources(String: link, String: fileType, String: destination)\\
+State Variables: N/A\\
 
-=======
-\subsubsection{Download Resources}
-void downloadResources(String: link, String: fileType, String: destination)\\
-\textcolor{red}{\textbf{State Variables: N/A}}\\
->>>>>>> eba24c98e0483fad7f3ebcb4ff69d0e754b37f70
 \textbf{Secrets:}
-Parse through the HTML code in the link provided in order to locate all files that match the specified file type. For each file, the result is downloaded into a folder specified by the user.\\
+wget command line process, that helps download resources from servers\\
 
 \textbf{Services:}
 Writes all resources matching the given file type from the page link to the file specified by destination.\\
@@ -190,12 +181,13 @@ Writes all resources matching the given file type from the page link to the file
 \textbf{Implemented By:}
 Python
 
-\subsubsection{Linksearchalgo}
+\subsubsection{Link Search Algorithm}
 %void crawler()\\
+State Variables: List of Websites : List of links\\
 
 \textcolor{red}{\textbf{State Variables: N/A}}\\
 \textbf{Secrets:}
-using the BFS algorithm it finds all the links on a given website.\\
+Using the BFS algorithm it finds all the links on a given website.\\
 
 \textbf{Services:}
 Finds all the links on a given website\\
@@ -203,32 +195,12 @@ Finds all the links on a given website\\
 \textbf{Implemented By:}
 Python
 
-
-<<<<<<< HEAD
-
-
 \subsubsection{Search}
 %void crawler()\\
+State Variables: N/A\\
 
-=======
-\subsubsection{Similar Query Search}
-int[] searchForSimilarString(String: query, String: data, int: proximity)\\
-\textcolor{red}{\textbf{State Variables: N/A}}\\
 \textbf{Secrets:}
-\textcolor{red}{Uses a slight deviation from the Knuth-Morris-Pratt String searching algorithm that recognizes fuzzy string searching.}\\
-
-\textbf{Services:}
-Returns a list of all occurrences within a certain deviation of a give it n query in the data provided.\\
-
-\textbf{Implemented By:}
-Python
-
-\subsubsection{Whitespace Checker}
-boolean isWhitespace(char: character)\\
-\textcolor{red}{\textbf{State Variables: N/A}}\\
->>>>>>> eba24c98e0483fad7f3ebcb4ff69d0e754b37f70
-\textbf{Secrets:}
- Knuth Morris pratt algorithm is used for string matching to get results while searching.\\ 
+ Knuth Morris Pratt Algorithm is used for string matching to get results while searching.\\ 
 
 \textbf{Services:}
 Searches through a webpage according to the query the user inputs.\\
@@ -236,32 +208,24 @@ Searches through a webpage according to the query the user inputs.\\
 \textbf{Implemented By:}
 Python
 
-<<<<<<< HEAD
 \subsubsection{Parser}
 %List<Links> findLinks(BeautifulSoup: data, String: destination) Exceptions: No Data Found\\
 
-=======
-\subsubsection{Find Links}
-List${<Links> }$findLinks(BeautifulSoup: data, String: destination) Exceptions: No Data Found\\
-\textcolor{red}{\textbf{State Variables: N/A}}\\
->>>>>>> eba24c98e0483fad7f3ebcb4ff69d0e754b37f70
+State Variables: N/A\\
+
 \textbf{Secrets:}
 Parser that parsers through the HTML code in the data provided\\
 
 \textbf{Services:}
 Finds all the links (${<a></a>}$ anchor tags on page) on a page \\
+
 \textbf{Implemented By:}
 Python
 
-<<<<<<< HEAD
 \subsubsection{ Errors}
 %List<Errors> checkErrors(String: link, Array: List of links) Exceptions: Webpage Unavailable\\
+State Variables: N/A\\
 
-=======
-\subsubsection{Check Errors}
-List<Errors> checkErrors(String: link, Array: List of links) Exceptions: Webpage Unavailable\\
-\textcolor{red}{\textbf{State Variables: N/A}}\\
->>>>>>> eba24c98e0483fad7f3ebcb4ff69d0e754b37f70
 \textbf{Secrets:}
 Algorithm to check the header in all the links provided \\
 
@@ -270,31 +234,12 @@ Checks the all the links and reports the error message associated with all the l
 
 \textbf{Implemented By:} Python
 
-<<<<<<< HEAD
-
 \subsubsection{URLCorrector}
 %String HTMLCorrector(String: link)\\
-=======
-\subsubsection{Parse Data}
-BeautifulSoup parseData(String: link) Exceptions: Invalid Link\\
-\textcolor{red}{\textbf{State Variables: N/A}}\\
-\textbf{Secrets:}
-Converter that converts HTML code link to BeautifulSoup object \\
-
-\textbf{Services:}
-Returns Beautiful object for the link given, this will allow modules parse through pages data much faster\\
-
-\textbf{Implemented By:} Python
-
-\subsubsection{Query Search}
-void querySearch(String: Query, BeautifulSoup: data, String: choice) Exceptions: Invalid Choice\\
-\textcolor{red}{\textbf{State Variables: N/A}}\\
-\textbf{Environment Variables:}
-rawInput: Users keyboard input\\
->>>>>>> eba24c98e0483fad7f3ebcb4ff69d0e754b37f70
+State Variables: N/A\\
 
 \textbf{Secrets:}
-Tries to fix the given String in various ways in order to create a functioning link. This can include fixing the prefix (http://), adding www., or appending the link to the current page's path.\\
+Algorithm to fix the given String in various ways in order to create a functioning link. This can include fixing the prefix (http://), adding www., or appending the link to the current page's path.\\
 
 \textbf{Services:}
 Fixes the link passed in such that it becomes either a functioning link or is flagged as a broken link.\\
@@ -302,29 +247,11 @@ Fixes the link passed in such that it becomes either a functioning link or is fl
 \textbf{Implemented By:}
 Python
 
-<<<<<<< HEAD
 
 \subsubsection{HTML Corrector Help}
 %String HTMLCorrector(String: link)\\
-=======
-\subsubsection{\textcolor{red}{Website Depth Modelling}}
-String \textcolor{red}{webDepthModel}(String: link, int: depth)\\
-\textcolor{red}{\textbf{State Variables: N/A}}\\
-\textbf{Secrets:}
- \textcolor{red}{An algorithm that uses the seed link and shows the website depth}\\
- 
-\textbf{Services:}
-\textcolor{red}{It provides a Depth model of the website and other site the initial site is connect to. It displays a hierarchy that will show users how crawled link interact with each other.}\\
 
-\textbf{Implemented By:}
-Python
-
-\subsection{Software Decision Modules}
-\subsubsection{Options}
-void chooseOption()\\
-\textcolor{red}{\textbf{State Variables:}}\\
-Users Option Choices : int 
->>>>>>> eba24c98e0483fad7f3ebcb4ff69d0e754b37f70
+State Variables: N/A\\
 
 \textbf{Secrets:}
 Algorithm to check for any character error in a give url.\\
@@ -335,26 +262,12 @@ Algorithm to check for any character error in a give url.\\
 \textbf{Implemented By:}
 Python
 
-<<<<<<< HEAD
-=======
-\subsubsection{Crawler}
-void crawler()\\
-
-\textcolor{red}{\textbf{State Variables: N/A}}\\
-
-\textbf{Secrets:}
-Directly calls the methods shown in the Use Hierarchy (found in section 7 of this document) and consolidates the results.
-
-\textbf{Services:}
-Delegates various tasks of crawling a webpage to the other methods of this program.\\
->>>>>>> eba24c98e0483fad7f3ebcb4ff69d0e754b37f70
-
 \subsection{Software Decision Modules}
 
 \subsubsection{WebCrawler}
 %void crawler()\\
 
-\textcolor{red}{\textbf{State Variables: N/A}}\\
+State Variables: User Choice : int\\
 
 \textbf{Secrets:}
 Directly calls the methods shown in the Use Hierarchy (found in section 7 of this document) and consolidates the results.
@@ -364,25 +277,6 @@ Delegates various tasks of crawling a webpage to the other methods of this progr
 
 \textbf{Implemented By:}
 Python
-
-
-<<<<<<< HEAD
-=======
-\textcolor{red}{\textbf{State Variables: N/A}}\\
-
-\textbf{Environment Variables}\\
-rawInput: Users keyboard input\\
-
-\textbf{Secrets:}
-Assignor which sets the depth variable\\
-
-\textbf{Services:}
-Sets the default max depth variable for the web crawler\\
-
-\textbf{Implemented By:}
-Python
->>>>>>> eba24c98e0483fad7f3ebcb4ff69d0e754b37f70
-
 }
 \\
     \group{
@@ -424,7 +318,6 @@ Python
 \label{table:Traceback to Anticipated Changes}
 \end{table}
 
-\pagebreak
 
 \begin{figure}
 	\includegraphics[width=25cm, height=20cm]{detaildesign}
