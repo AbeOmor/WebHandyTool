@@ -58,9 +58,9 @@
 \pagebreak
 \section{Introduction}
 \subsection{Purpose}
-WebHandyTool was created in an attempt to ease the difficult and tedious process of verifying a websites current status and state of availability. As well as being able to assist researchers in scouring the web efficiently for potentially relevant sources of data. Some specific tasks expected to be completed using this software include ensuring all of a websites pages are functioning correctly and resources that should be available are, data mining for certain research topics and for security professionals ensuring that only the webpages that should be visible are. 
+WebHandyTool was created in an attempt to ease the difficult and tedious process of verifying a website's current status and state of availability as well as to assist researchers in scouring the web efficiently for potentially relevant sources of data. Some specific tasks expected to be completed using this software include: ensuring all of a website's pages are functioning correctly and resources that should be available are, data mining for certain research topics and for security professionals ensuring that only the webpages that should be visible are. 
 
-WebHandyTool will allow any user search for any query on a website, crawl a website, check a website for error and download all the websites resources.
+WebHandyTool will allow any user to search for any query on a website, crawl a website, check a website for error and download all the website's resources.
 
 \subsection{Tables of Acronyms, Abbreviations \& Definitions}
 
@@ -68,11 +68,11 @@ WebHandyTool will allow any user search for any query on a website, crawl a webs
 \centering
 \begin{tabular}{| p{3cm} | p{10cm} |}    \hline
 	Term &Definition\\ \hline
-	PIP & pip is a package management system used to install and manage software packages written in Python.\\ \hline
+	PIP & A package management system used to install and manage software packages written in Python.\\ \hline
 	UNIX &Computer operating system\\ \hline
 	Beautiful Soup & An existing framework that breaks a webpage down into its components.\\ \hline
 	WGET & A computer program that retrieves content from web servers.\\ \hline
-	HTML Status Code & A three digit number that corresponds to various states of a website.
+	HTML Status Code & A three digit number that corresponds to various states of a website.\\ \hline
 \end{tabular}
 \caption{Definitions}
 \label{table:Definitions}
@@ -84,22 +84,21 @@ WebHandyTool will allow any user search for any query on a website, crawl a webs
 \section{Installation Instructions}
 
 \subsection{Safety and Precaution}
-Setting the depth above 2, will result in extremely long processing times, be very patience when you select this option.
+Setting the depth above 2 may result in extremely long processing times depending on the website in question, use it with caution and be patient when you select this option.
 
 \subsection{OS X}
-1. Make sure Python is installed on your machine. If it is not install Python \url{https://www.python.org/downloads/}\\
-2. Install pip on your machine,  \url{https://pip.pypa.io/en/stable/installing/}\\
-3. Install Beautiful Soup 4, go the terminal and run the command \textit{pip install beautifulsoup4}\\
+1. Make sure Python is installed on your machine. If it is not, install it from here: \url{https://www.python.org/downloads/}\\
+2. Install pip on your machine from here: \url{https://pip.pypa.io/en/stable/installing/}\\
+3. Install Beautiful Soup 4, go the terminal and run the command: \textit{pip install beautifulsoup4}\\
 \textit{*If you are using the downloading option, your must have wget installed.}\\
-4. If not installed already, install wget  \url{http://coolestguidesontheplanet.com/install-and-configure-wget-on-os-x/}\\
+4. If not installed already, install wget from here: \url{http://coolestguidesontheplanet.com/install-and-configure-wget-on-os-x/}\\
 
 \subsection{Linux}
-
-1. Make sure Python is installed on your machine. If it is not install Python \url{https://www.python.org/downloads/}\\
-2. Install pip on your machine,  \url{https://pip.pypa.io/en/stable/installing/}\\
-3. Install Beautiful Soup 4, go the terminal and run the command \textit{pip install beautifulsoup4}\\
+1. Make sure Python is installed on your machine. If it is not install it from here: \url{https://www.python.org/downloads/}\\
+2. Install pip on your machine, from here: \url{https://pip.pypa.io/en/stable/installing/}\\
+3. Install Beautiful Soup 4, go the terminal and run the command: \textit{pip install beautifulsoup4}\\
 \textit{*If you are using the downloading option, your must have wget installed.}\\
-4. If not installed already, install wget  \url{http://www.ehowstuff.com/how-to-install-wget-on-linux/}\\
+4. If not installed already, install wget from here \url{http://www.ehowstuff.com/how-to-install-wget-on-linux/}\\
 
 \subsection{Windows}
 \textit{*Windows is not recommended, try to use a UNIX based machine.}\\
@@ -111,21 +110,21 @@ Setting the depth above 2, will result in extremely long processing times, be ve
 
 \pagebreak
 \section{Getting Started}
-1.  Go the terminal and make sure you are in the source folder WebHandyTool\\
-2.  Run the command \textit{python Web\_Crawler.py}\\
-3.  Select your options. (option description below)\\
-4. Enter Website, you want to use.\\
+1. Go the terminal and make sure you are in the correct directory, it should be named WebHandyTool\\
+2. Run the command: \textit{python Web\_Crawler.py}\\
+3. Select your options. (option description below)\\
+4. Enter the website, you want to use.\\
 5. Watch WebHandyTool work its magic. The tool will constantly update the screen with the links it is currently working on.\\
 
 \subsection{Options}
 \subsubsection{Select 1 for Download Resources }
-This option will download all the data from the website you entered. The file type that is downloaded is set in the config.py file (Refer the configurations section). The resources are stored in the source folder under the domain name of the enter website.\\
+This option will download all the data from the website you entered. The file type that is downloaded is set in the config.py file (Refer to the configurations section). The resources are stored in the source folder under the domain name of the selected website.\\
 \subsubsection{Select 2 for Check for Errors}
-This option will return status code from website crawled. The depth is set in the config.py file (Refer the configurations section)\\
+This option will return a status code from website crawled. The depth is set in the config.py file (Refer to the configurations section)\\
 \subsubsection{Select 3 for Search for Query}
-This option will return the index of query, and 30 characters before and after the search query. The option also show you what page the query was found. The search type (exact or similar)  is set in the config.py file (Refer the configurations section)\\
+This option will return the index of where the query was found, and 30 characters before and after the search query. The option also shows you the page where the query was found. The search type (exact or similar) is set in the config.py file (Refer to the configurations section)\\
 \subsubsection{Select 4 for Just Crawl }
-This option will return a list of all the links that were found on the website specified by the user.  The depth is set in the config.py file (Refer the configurations section)\\
+This option will return a list of all the links that were found on the website specified by the user.  The depth is set in the config.py file (Refer to the configurations section)\\
 
 \pagebreak
 
@@ -138,13 +137,13 @@ Similar Search = 2\\
 To change similar search proximity, use the following options, and change "proximity" variable (Refer to the FAQ's to understand similar search better)\\
 
 \subsection{Depth} 
-Change the "depth" variable to increase or reduce the depth the crawl traverses to.
+Change the "depth" variable to increase or reduce the depth the crawl traverses.
 
 \subsection{Download} 
-You can specific the downloader to only retrieve file type you specify (None will download all types). Change "file\_type" to any thing you wish (*.pdf,*.png etc.)\\
-To change the downloaders option you change the "option" variable. All the option are from wget library, However we high recommend you only use options specified below.\\
+You can specify the downloader to only retrieve file type you specify (None will download all types). Change "file\_type" to any thing you wish (*.pdf,*.png, etc.)\\
+To alter the downloaders option you change the "option" variable. All the options are from wget library, however we highly recommend you only use the options specified below.\\
 -r : recursive, downloads every link on that domain.\\
--np : no-parent, only downloads children links. It will NOT download from that are not connect to the specified site.\\
+-np : no-parent, only downloads children links. It will NOT download from links that are not connected to the specified site.\\
 \textit{*To join both commands simple write "-rnp"}
 
 \pagebreak

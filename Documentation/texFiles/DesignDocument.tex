@@ -60,6 +60,7 @@ Revision  &Revision Date &Description of Change &Author\\ \hline
 13& 26-11-15&Revised section 4, Behaviour hiding module&Genevieve Okon\\ \hline
 14& 26-11-15&Revised section 5, Module Hierarchy diagram&Genevieve Okon\\ \hline
 15& 26-11-15&Revised section 7.2.9, Website depth modelling&Genevieve Okon\\ \hline
+12& 7-12-15& Revised module secrets& Eric Le Fort \\ \hline
        \end{tabular}
        
        \caption{Revision History}
@@ -182,7 +183,7 @@ Python
 int[] searchForString(String: query, String: data)\\
 
 \textbf{Secrets:}
-Iterates through the data provided and records every instance matching the query String that was passed in. This will be accomplished using the Knuth-Morris-Pratt String searching algorithm.\\
+\textcolor{red}{Uses the Knuth-Morris-Pratt String searching algorithm.}\\
 
 \textbf{Services:}
 Returns a list of all occurrences of a given query in the data provided.\\
@@ -195,7 +196,7 @@ Python
 int[] searchForSimilarString(String: query, String: data, int: proximity)\\
 
 \textbf{Secrets:}
-Iterates through the data provided and records every instance sufficiently close to matching the query String that was passed in. This will be accomplished using a slight deviation from the Knuth-Morris-Pratt String searching algorithm that recognizes fuzzy string searching.\\
+\textcolor{red}{Uses a slight deviation from the Knuth-Morris-Pratt String searching algorithm that recognizes fuzzy string searching.}\\
 
 \textbf{Services:}
 Returns a list of all occurrences within a certain deviation of a give it n query in the data provided.\\
