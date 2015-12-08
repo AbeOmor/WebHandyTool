@@ -26,7 +26,7 @@
 
 \begin{document}
 \title{WebHandyTool \\
- Problem Statement : newAGEtech, Group H }
+Software Requirements Specification : newAGEtech, Group H }
 \author{Genevieve Okon (Okong), Abraham Omorogbe(Omorogoa),\\
  Eric Le Forte(Leforte)}
 \date{\today}
@@ -58,6 +58,7 @@ Revision  &Revision Date &Description of Change &Author\\ \hline
 5& 26-11-15& Revised section  individual product use case Number 6&Genevieve Okon\\ \hline
 6& 26-11-15& Revised section Functional and data requirements, Requirement 6&Genevieve Okon\\ \hline
 7& 26-11-15& Revised section The scope of the  product, The use case diagram &Genevieve Okon\\ \hline
+8& 7-12-15& Revised section 2,10,11 &Abraham Omorogbe\\ \hline
 
        \end{tabular}
        
@@ -76,7 +77,7 @@ This document makes usage of the Volere Template for all its organization
 \section{The Purpose of the Project}
 
 \subsection*{The User Business or Background of the Project}
-This project will be an attempt to ease the difficult and tedious process of verifying a websiteâ€™s current status and state of availability. As well as being able to assist researchers in scouring the web efficiently for potentially relevant sources of data. Some specific tasks expected to be completed using this software include ensuring all of a websiteâ€™s pages are functioning correctly and resources that should be available are, data mining for certain research topics and for security professionals ensuring that only the webpages that should be visible are.
+This project will be an attempt to ease the difficult and tedious process of verifying a website'€™s current status and state of availability. As well as being able to assist researchers in scouring the web efficiently for potentially relevant sources of data. Some specific tasks expected to be completed using this software include ensuring all of a website'€™s pages are functioning correctly and resources that should be available are, data mining for certain research topics and for security professionals ensuring that only the webpages that should be visible are.
 
 \subsection*{Goals of the Project}
 This product aims to be used as an effective tool dealing with various forms of website analysis. It will be an efficient and customizable resource that allows you to perform various web crawler based activities on websites in order to increase productivity and for businesses to save money.
@@ -85,20 +86,21 @@ This product aims to be used as an effective tool dealing with various forms of 
 \section{Clients, Customers, Stakeholders}
 
 \subsection*{The Client}
-The clients of this product will primarily be analysts and website developers.
+\textcolor{red}{The client is for this project is McMaster University, in particular Dr Smith, the professor that ordered the project}
 
 \subsection*{The Customer}
-The customers of this product will be the companies who employ the aforementioned clients as well as the clients themselves if it is purchased for personal use.
+\textcolor{red}{The customers of this product will be researchers, web developers and web enthusiast}
+
 
 \subsection*{Other Stakeholders}
-The other stakeholders include the developers of the software, investors as well as a previously established application store (i.e. Google Play or Appleâ€™s App Store) for distribution.
+The other stakeholders include the developers of the software, investors as well as a previously established application store (i.e. Google Play or Apple's App Store) for distribution.
 
 \section{Users of the Product}
 
 \subsection*{The Hands-On Users of the Product}
 Software Developers/Testers\\
 - Develops, tests and maintains websites.\\
-- Strong knowledge of technology, especially technology involved in this productâ€™s field.\\
+- Strong knowledge of technology, especially technology involved in this product'€™s field.\\
 - Reasonably educated (most likely a college degree or better).
 - Anticipated age group: 20+\\
 
@@ -147,7 +149,7 @@ N/A
 \subsection*{Implementation Environment of the Current System}
 This product will be installed onto a computer system using any platform that accepts the use of Python and will utilize the architecture of the world wide web.
 
-\subsection*{Partner or Collabrative Applications}
+\subsection*{Partner or Collaborative Applications}
 This product will be capable of operating on websites that are locally stored.
 
 \subsection*{Off-The-Shelf Software}
@@ -163,7 +165,7 @@ This project must be completed by the eleventh of November.
 The budget for this project is exactly \$0.
 
 
-\section{Naming Conventions \& Defintions}
+\section{Naming Conventions \& Definitions}
 
 \subsection*{Definition of All Terms, Including Acronyms, Used in the Project}
 Web Crawler/Crawler - An internet bot which systematically browses the World Wide Web, typically for the purpose of Web indexing.
@@ -482,6 +484,8 @@ Outcome: The web server responds with correct status code.\\
 
 \end{framed}
 
+\textcolor{red}{All this requirement were built as a core part of the system. They will not be phased out in the near future}
+
 \subsection*{Data Requirements}
 \begin{itemize}
   \item Valid HTML pages to be parsed and crawl through.
@@ -513,8 +517,8 @@ Outcome: The web server responds with correct status code.\\
 \subsection*{Speed and Latency Requirements:}
 Speed of the program depends on the speed of the operating system. The program shall respond to the user's requests within seconds, dependent on the number of links on the webpage. 
 
-\subsection*{Safety-Critical Requirements: }The program should not infringe the user's privacy. 
-This will be verified prior to completion of the program.
+\subsection*{Safety-Critical Requirements: }
+\textcolor{red}{The crawler should avoid rapid changes in colors, when printing out results, this is a precaution for epileptic uses.}
 
 \subsection*{Precision or Accuracy Requirements:}
 The program should specify the type of error accurately. If a link is not working the program should identify that it's not working with the correct error code.
@@ -653,6 +657,8 @@ Making changes to the web-crawler as more changes occur
 Not applicable.
 
 \section{Risks }
+
+\textcolor{red}{\subsection*{Inability to download files:} The crawler might not be able to download all the resources from the websites, it crawled. This risk will be tested during the proof of concept. The POC will test what files can be accessed and downloaded}
 
 \subsection*{Loss of Personnel:}The loss of one member would be detrimental due to the size on our small group. Each group member has been assigned tasks of equal value. We are having weekly meetings to share detailed progress reports as a precautionary measure. 
 
